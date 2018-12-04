@@ -1,2 +1,4 @@
 plotly
 pandas
+pytest
+pytest-cov
