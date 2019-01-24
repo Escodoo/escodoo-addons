@@ -12,6 +12,7 @@
     'website': 'http://www.trustcode.com.br',
     'contributors': [
         'Johny Chen Jy <johnychenjy@gmail.com>',
+        'Marcel Savegnago <marcel.savegnago@gmail.com>',
     ],
     'depends': [
         'br_account',
