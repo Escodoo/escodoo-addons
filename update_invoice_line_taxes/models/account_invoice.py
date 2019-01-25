@@ -20,7 +20,7 @@ class AccountInvoice(models.Model):
                 line._br_account_onchange_product_id()
                 line._set_extimated_taxes(line.price_total)
                 line.write({
-                    'price_unit':price_unit,
+                    'price_unit': price_unit,
                     'price_total': price_total,
                     'account_analytic_id': account_analytic_id
                 })
