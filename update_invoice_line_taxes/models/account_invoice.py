@@ -9,6 +9,7 @@ class AccountInvoice(models.Model):
         if fpos:
             for line in self.invoice_line_ids:
                 price_total = line.price_total
+                price_unit = line.price_unit
                 if price_total == 0.0:
                     continue
                 account_analytic_id = line.account_analytic_id.id
@@ -19,6 +20,7 @@ class AccountInvoice(models.Model):
                 line._br_account_onchange_product_id()
                 line._set_extimated_taxes(line.price_total)
                 line.write({
+                    'price_unit':price_unit,
                     'price_total': price_total,
                     'account_analytic_id': account_analytic_id
                 })
