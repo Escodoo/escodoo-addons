@@ -18,12 +18,12 @@ class AccountInvoice(models.Model):
                 line._set_taxes()
                 line._onchange_product_id()
                 line._br_account_onchange_product_id()
-                line._set_extimated_taxes(line.price_total)
                 line.write({
                     'price_unit': price_unit,
                     'price_total': price_total,
                     'account_analytic_id': account_analytic_id
                 })
+                line._set_extimated_taxes(line.price_total)
             self._onchange_invoice_line_ids()
 
     def clear_line_tax_ids(self, line):
