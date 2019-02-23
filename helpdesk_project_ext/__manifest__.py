@@ -8,8 +8,8 @@ issues.''',
     'summary': '''Helpdesk with project and task feature for generating
 issues.''',
     'category': 'Human Resources',
-    'author': 'Odoo',
-    'website': 'www.odoo.com',
+    'author': 'FlectraHQ',
+    'website': 'https://flectrahq.com',
     'depends': ['helpdesk_basic', 'project'],
     'data': [
         'views/helpdesk_ticket_view.xml',

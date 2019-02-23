@@ -6,8 +6,8 @@
     'description': '''Website Helpdesk''',
     'summary': '''Website Helpdesk''',
     'category': 'Human Resources',
-    'author': 'Odoo',
-    'website': 'www.odoo.com',
+    'author': 'FlectraHQ',
+    'website': 'https://flectrahq.com',
     'depends': ['helpdesk_basic', 'website', 'portal', 'website_rating'],
     'data': [
         'views/pages/helpdesk_register_website_view.xml',

@@ -8,8 +8,8 @@ helpdesk team''',
     'summary': '''Helpdesk Forum will provide you forum per
 helpdesk team''',
     'category': 'Human Resources',
-    'author': 'Odoo',
-    'website': 'www.odoo.com',
+    'author': 'FlectraHQ',
+    'website': 'https://flectrahq.com',
     'depends': ['helpdesk_basic', 'website_forum'],
     'data': [
         'views/helpdesk_team_view.xml',

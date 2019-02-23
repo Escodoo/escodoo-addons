@@ -10,8 +10,8 @@
     responsible for answering the technical questions of its users.
 ''',
     'category': 'Human Resources',
-    'author': 'Odoo',
-    'website': 'www.odoo.com',
+    'author': 'FlectraHQ',
+    'website': 'https://flectrahq.com',
     'depends': ['mail'],
     'data': [
         'security/helpdesk_security_view.xml',
