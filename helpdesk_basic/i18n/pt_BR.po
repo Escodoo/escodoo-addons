@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Flectra Server 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-05 09:52+0000\n"
-"PO-Revision-Date: 2019-02-23 15:41-0300\n"
+"PO-Revision-Date: 2019-02-23 20:52-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,6 +60,8 @@ msgid ""
 "A Python dictionary that will be evaluated to provide default values when "
 "creating new records for this alias."
 msgstr ""
+"Um dicionário em Python que será avaliado para fornecer valores padrão ao "
+"criar novos registros para esse alias."
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_active
@@ -75,7 +77,7 @@ msgstr "Adicionar Anexos"
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_alias_id
 msgid "Alias"
-msgstr ""
+msgstr "Apelidos"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_alias_contact
@@ -187,7 +189,7 @@ msgstr "Criado em"
 #: model:ir.actions.act_window,name:helpdesk_basic.act_team_dashboard_view
 #: model:ir.ui.menu,name:helpdesk_basic.menu_helpdesk_dashboard
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_alias_defaults
@@ -257,14 +259,14 @@ msgstr "Data Final"
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_stage_fold
 msgid "Fold in Kanban"
-msgstr ""
+msgstr "Dobre no Kanban"
 
 #. module: helpdesk_basic
 #: code:addons/helpdesk_basic/models/helpdesk_team.py:111
 #: code:addons/helpdesk_basic/models/issue_type.py:70
 #, python-format
 msgid "Future"
-msgstr ""
+msgstr "Futuro"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
@@ -295,18 +297,18 @@ msgstr "Central de Apoio"
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_helpdesk_report_graph
 msgid "Helpdesk Analysis"
-msgstr ""
+msgstr "Análises da Central de Apoio"
 
 #. module: helpdesk_basic
 #: model:ir.model,name:helpdesk_basic.model_helpdesk_report
 #: model:ir.ui.menu,name:helpdesk_basic.helpdesk_report
 msgid "Helpdesk Report"
-msgstr ""
+msgstr "Relatório da Central de Apoio"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_report_helpdesk_pivot
 msgid "Helpdesk Statistics"
-msgstr ""
+msgstr "Estatísticas da Central de Apoio "
 
 #. module: helpdesk_basic
 #: model:ir.actions.act_window,name:helpdesk_basic.action_helpdesk_team
@@ -314,7 +316,7 @@ msgstr ""
 #: model:ir.ui.menu,name:helpdesk_basic.helpdesk_team_menu
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
 msgid "Helpdesk Team"
-msgstr ""
+msgstr "Equipe da Central de Apoio"
 
 #. module: helpdesk_basic
 #: selection:helpdesk.report,priority:0 selection:helpdesk.ticket,priority:0
@@ -329,7 +331,7 @@ msgstr "Alto"
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_ticket_id
 #: model:ir.model.fields,field_description:helpdesk_basic.field_issue_type_id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,help:helpdesk_basic.field_helpdesk_team_alias_parent_thread_id
@@ -337,6 +339,8 @@ msgid ""
 "ID of the parent record holding the alias (example: project holding the task "
 "creation alias)"
 msgstr ""
+"ID do registro pai que contém o alias (exemplo: projeto que mantém o alias "
+"de criação de tarefa)"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
@@ -347,7 +351,7 @@ msgstr "Em Andamento"
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_ticket_is_accessible
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_ticket_is_assigned
 msgid "Is Accessible"
-msgstr ""
+msgstr "É acessível"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_helpdesk_form
@@ -362,7 +366,7 @@ msgstr "Detalhes do Problema"
 #: model:ir.ui.menu,name:helpdesk_basic.issue_type_menu
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_issue_type_form
 msgid "Issue Type"
-msgstr ""
+msgstr "Tipo de Problema"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.helpdesk_team_kanban_view
@@ -373,13 +377,13 @@ msgstr "Problemas"
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
 msgid "Journal invoices with period in current year"
-msgstr ""
+msgstr "Faturas do diário com período no ano atual"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_kanban_dashboard_graph
 #: model:ir.model.fields,field_description:helpdesk_basic.field_issue_type_kanban_dashboard_graph
 msgid "Kanban Dashboard Graph"
-msgstr ""
+msgstr "Gráfico do Dashboard Kanban"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_report___last_update
@@ -389,12 +393,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_ticket___last_update
 #: model:ir.model.fields,field_description:helpdesk_basic.field_issue_type___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última Modiciação em"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
 msgid "Last Month"
-msgstr ""
+msgstr "Último  Mês"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_stage_write_uid
@@ -403,7 +407,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_ticket_write_uid
 #: model:ir.model.fields,field_description:helpdesk_basic.field_issue_type_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultima Atualização por"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_stage_write_date
@@ -412,7 +416,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_ticket_write_date
 #: model:ir.model.fields,field_description:helpdesk_basic.field_issue_type_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última Atualização em"
 
 #. module: helpdesk_basic
 #: selection:helpdesk.report,priority:0 selection:helpdesk.ticket,priority:0
@@ -437,7 +441,7 @@ msgstr "Membros"
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
 msgid "My Issues"
-msgstr ""
+msgstr "Meus Problemas"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_report_name
@@ -459,11 +463,15 @@ msgstr "Novo"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,help:helpdesk_basic.field_helpdesk_team_alias_force_thread_id
+#, fuzzy
 msgid ""
 "Optional ID of a thread (record) to which all incoming messages will be "
 "attached, even if they did not reply to it. If set, this will disable the "
 "creation of new records completely."
 msgstr ""
+"ID opcional de um encadeamento (registro) ao qual todas as mensagens "
+"recebidas serão anexadas, mesmo que não tenham respondido. Se definido, isso "
+"desativará completamente a criação de novos registros."
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_alias_user_id
@@ -473,12 +481,12 @@ msgstr "Dono"
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_alias_parent_model_id
 msgid "Parent Model"
-msgstr ""
+msgstr "Modelo Pai"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_alias_parent_thread_id
 msgid "Parent Record Thread ID"
-msgstr ""
+msgstr "ID da Thread de Registro Pai"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,help:helpdesk_basic.field_helpdesk_team_alias_parent_model_id
@@ -487,6 +495,9 @@ msgid ""
 "necessarily the model given by alias_model_id (example: project "
 "(parent_model) and task (model))"
 msgstr ""
+"Modelo pai segurando o alias. O modelo que contém a referência de alias não "
+"é necessariamente o modelo fornecido por alias_model_id (exemplo: project "
+"(parent_model) e task (model))"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
@@ -496,17 +507,18 @@ msgstr "Parceiro"
 #. module: helpdesk_basic
 #: model:ir.model.fields,help:helpdesk_basic.field_helpdesk_ticket_partner_id
 msgid "Partner-related data of the user"
-msgstr ""
+msgstr "Dados relacionados ao parceiro do usuário"
 
 #. module: helpdesk_basic
 #: code:addons/helpdesk_basic/models/helpdesk_team.py:103
 #: code:addons/helpdesk_basic/models/issue_type.py:62
 #, python-format
 msgid "Past"
-msgstr ""
+msgstr "Passado"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,help:helpdesk_basic.field_helpdesk_team_alias_contact
+#, fuzzy
 msgid ""
 "Policy to post a message on the document using the mailgateway.\n"
 "- everyone: everyone can post\n"
@@ -514,6 +526,11 @@ msgid ""
 "- followers: only followers of the related document or members of following "
 "channels\n"
 msgstr ""
+"Política para postar uma mensagem no documento usando o gateway de correio.\n"
+"- todos: todos podem postar\n"
+"- parceiros: somente parceiros autenticados\n"
+"- seguidores: somente seguidores do documento relacionado ou membros dos "
+"seguintes canais\n"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_report_priority
@@ -523,46 +540,48 @@ msgstr "Prioridade"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_alias_force_thread_id
+#, fuzzy
 msgid "Record Thread ID"
-msgstr ""
+msgstr "ID da Thread do Registro"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.helpdesk_kanban_view
 msgid "Record's Color"
-msgstr ""
+msgstr "Cor de Registros"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_report_partner_id
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_ticket_partner_id
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_helpdesk_search
 msgid "Related Partner"
-msgstr ""
+msgstr "Parceiro Relacionado"
 
 #. module: helpdesk_basic
 #: model:ir.ui.menu,name:helpdesk_basic.helpdesk_report_main_menu
 msgid "Reporting"
-msgstr ""
+msgstr "Relatórios"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_issue_type_reporting_template
 msgid "Reporting Template"
-msgstr ""
+msgstr "Padrão de Relatórios"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_issue_type_form
 msgid "Reporting Template Content"
-msgstr ""
+msgstr "Conteúdo Padrão dos Relatórios"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_helpdesk_search
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_helpdesk_team_search
+#, fuzzy
 msgid "Search for Helpdesk"
-msgstr ""
+msgstr "Procurar Ticket"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_issue_type_search
 msgid "Search for Issue Type"
-msgstr ""
+msgstr "Procurar por Tipo de Problema"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_report_sequence
@@ -580,7 +599,7 @@ msgstr "Configurações"
 #. module: helpdesk_basic
 #: model:helpdesk.ticket,name:helpdesk_basic.helpdesk_ticket
 msgid "Software Issue"
-msgstr ""
+msgstr "Problema de Software"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_report_stage_id
@@ -630,7 +649,7 @@ msgstr "Equipe"
 #. module: helpdesk_basic
 #: model:helpdesk.team,name:helpdesk_basic.helpdesk_hardware
 msgid "Team Hardware"
-msgstr ""
+msgstr "Equipe de Hardware"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.helpdesk_team_form_view
@@ -640,58 +659,70 @@ msgstr "Membros da Equipe"
 #. module: helpdesk_basic
 #: model:helpdesk.team,name:helpdesk_basic.helpdesk_software
 msgid "Team Software"
-msgstr ""
+msgstr "Equipe de Software"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.view_helpdesk_team_search
 msgid "Team id"
-msgstr ""
+msgstr "ID da Equipe"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,help:helpdesk_basic.field_helpdesk_team_alias_model_id
+#, fuzzy
 msgid ""
 "The model (Flectra Document Kind) to which this alias corresponds. Any "
 "incoming email that does not reply to an existing record will cause the "
 "creation of a new record of this model (e.g. a Project Task)"
 msgstr ""
+"O modelo ao qual esse alias corresponde. Qualquer email recebido que não "
+"responda a um registro existente causará a criação de um novo registro desse "
+"modelo (por exemplo, uma tarefa de projeto)"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,help:helpdesk_basic.field_helpdesk_team_alias_name
+#, fuzzy
 msgid ""
 "The name of the email alias, e.g. 'jobs' if you want to catch emails for "
 "<jobs@example.flectrahq.com>"
 msgstr ""
+"O nome do alias de Email, por ex. 'empregos' se você quiser pegar e-mails "
+"para <jobs@example.com>"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,help:helpdesk_basic.field_helpdesk_team_alias_user_id
+#, fuzzy
 msgid ""
 "The owner of records created upon receiving emails on this alias. If this "
 "field is not set the system will attempt to find the right owner based on "
 "the sender (From) address, or will use the Administrator account if no "
 "system user is found for that address."
 msgstr ""
+"O proprietário dos registros criados ao receber e-mails nesse alias. Se este "
+"campo não for definido, o sistema tentará encontrar o proprietário correto "
+"com base no endereço do remetente (De) ou usará a conta Administrador se "
+"nenhum usuário do sistema for encontrado para esse endereço."
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
 msgid "This Month"
-msgstr ""
+msgstr "Este Mês"
 
 #. module: helpdesk_basic
 #: code:addons/helpdesk_basic/models/helpdesk_team.py:109
 #: code:addons/helpdesk_basic/models/issue_type.py:68
 #, python-format
 msgid "This Week"
-msgstr ""
+msgstr "Esta Semana"
 
 #. module: helpdesk_basic
 #: model:ir.ui.view,arch_db:helpdesk_basic.report_helpdesk_view_search
 msgid "This Year"
-msgstr ""
+msgstr "Este Ano"
 
 #. module: helpdesk_basic
 #: model:ir.model.fields,field_description:helpdesk_basic.field_helpdesk_team_helpdesk_count
 msgid "Total Helpdesk"
-msgstr ""
+msgstr "Total de Tickets"
 
 #. module: helpdesk_basic
 #: model:res.groups,name:helpdesk_basic.helpdesk_group_user
@@ -701,24 +732,24 @@ msgstr "Usuário"
 #. module: helpdesk_basic
 #: model:ir.model,name:helpdesk_basic.model_helpdesk_stage
 msgid "helpdesk.stage"
-msgstr ""
+msgstr "helpdesk.stage"
 
 #. module: helpdesk_basic
 #: model:ir.model,name:helpdesk_basic.model_helpdesk_tag
 msgid "helpdesk.tag"
-msgstr ""
+msgstr "helpdesk.tag"
 
 #. module: helpdesk_basic
 #: model:ir.model,name:helpdesk_basic.model_helpdesk_team
 msgid "helpdesk.team"
-msgstr ""
+msgstr "helpdesk.team"
 
 #. module: helpdesk_basic
 #: model:ir.model,name:helpdesk_basic.model_helpdesk_ticket
 msgid "helpdesk.ticket"
-msgstr ""
+msgstr "helpdesk.ticket"
 
 #. module: helpdesk_basic
 #: model:ir.model,name:helpdesk_basic.model_issue_type
 msgid "issue.type"
-msgstr ""
+msgstr "issue.type"
