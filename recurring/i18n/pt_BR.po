@@ -1,0 +1,408 @@
+# Translation of Flectra Server.
+# This file contains the translation of the following modules:
+# 	* recurring
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Flectra Server 1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-01 17:11+0000\n"
+"PO-Revision-Date: 2019-02-23 19:35-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: \n"
+"Language: pt_BR\n"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_active
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_active
+msgid "Active"
+msgstr "Ativo"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_create_uid
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_create_uid
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_create_uid
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_create_date
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_create_date
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_create_date
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_cron_id
+msgid "Cron Job"
+msgstr "Cron Job"
+
+#. module: recurring
+#: code:addons/recurring/tests/test_recurring.py:21
+#, python-format
+msgid "Cron is not created"
+msgstr "Cron não foi criado"
+
+#. module: recurring
+#: selection:recurring.document.fields,value:0
+msgid "Current Date"
+msgstr "Data Atual"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_date
+msgid "Date"
+msgstr "Data"
+
+#. module: recurring
+#: selection:recurring,interval_type:0
+msgid "Days"
+msgstr "Dias"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_value
+msgid "Default Value"
+msgstr "Valor Padrão"
+
+#. module: recurring
+#: model:ir.model.fields,help:recurring.field_recurring_document_fields_value
+msgid "Default value is considered for field when new document is generated."
+msgstr ""
+"O valor padrão é considerado para o campo quando um novo documento é gerado."
+
+#. module: recurring
+#: model:ir.model.fields,help:recurring.field_recurring_note
+msgid "Description or Summary of Recurring"
+msgstr "Descrição ou Resumo do Recorrência"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_display_name
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_display_name
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_display_name
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_display_name
+msgid "Display Name"
+msgstr "Nome Exibido"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_doc_lines
+#: model:ir.ui.view,arch_db:recurring.view_recurring_form
+msgid "Documents created"
+msgstr "Documentos criados"
+
+#. module: recurring
+#: selection:recurring,state:0
+msgid "Done"
+msgstr "Concluído"
+
+#. module: recurring
+#: selection:recurring,state:0
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: recurring
+#: selection:recurring.document.fields,value:0
+msgid "False"
+msgstr "Falso"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_field
+msgid "Field"
+msgstr "Campo"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_field_ids
+msgid "Fields"
+msgstr "Campos"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_date_init
+msgid "First Date"
+msgstr "Primeira Data"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_filter
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: recurring
+#: selection:recurring,interval_type:0
+msgid "Hours"
+msgstr "Horas"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_id
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_id
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_id
+#: model:ir.model.fields,field_description:recurring.field_recurring_id
+msgid "ID"
+msgstr "ID"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_wizard_form
+msgid "IR Recurring"
+msgstr "IR Recorrência"
+
+#. module: recurring
+#: model:ir.model.fields,help:recurring.field_recurring_document_active
+msgid ""
+"If the active field is set to False, it will allow you to hide the recurring "
+"document without removing it."
+msgstr ""
+"Se o campo ativo estiver definido como Falso, ele permitirá ocultar o "
+"documento recorrente sem removê-lo."
+
+#. module: recurring
+#: model:ir.model.fields,help:recurring.field_recurring_active
+msgid ""
+"If the active field is set to False, it will allow you to hide the recurring "
+"without removing it."
+msgstr ""
+"Se o campo ativo estiver definido como Falso, ele permitirá ocultar o "
+"recorrente sem removê-lo."
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_notes
+#: model:ir.ui.view,arch_db:recurring.view_recurring_form
+msgid "Internal Notes"
+msgstr "Notas Internas"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_interval_number
+msgid "Internal Qty"
+msgstr "Quantidade de Intervalos"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_interval_type
+msgid "Interval Unit"
+msgstr "Unidade do Intervalo"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring___last_update
+#: model:ir.model.fields,field_description:recurring.field_recurring_document___last_update
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields___last_update
+#: model:ir.model.fields,field_description:recurring.field_recurring_history___last_update
+msgid "Last Modified on"
+msgstr "Última Modiciação em"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_write_uid
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_write_uid
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_write_uid
+#: model:ir.model.fields,field_description:recurring.field_recurring_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Atualização por"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_write_date
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_write_date
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_write_date
+#: model:ir.model.fields,field_description:recurring.field_recurring_write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: recurring
+#: selection:recurring,interval_type:0
+msgid "Minutes"
+msgstr "Minutos"
+
+#. module: recurring
+#: selection:recurring,interval_type:0
+msgid "Months"
+msgstr "Meses"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_name
+#: model:ir.model.fields,field_description:recurring.field_recurring_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_note
+#: model:ir.ui.view,arch_db:recurring.view_recurring_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_exec_init
+msgid "Number of Documents"
+msgstr "Número de Documentos"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_model
+msgid "Object"
+msgstr "Objeto"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_partner_id
+#: model:ir.ui.view,arch_db:recurring.view_recurring_filter
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: recurring
+#: code:addons/recurring/models/recurring.py:221
+#, python-format
+msgid ""
+"Please provide another source document.\n"
+"This one does not exist!"
+msgstr ""
+"Por favor, forneça outro documento de origem.\n"
+"Este não existe!"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_form
+msgid "Process"
+msgstr "Processar"
+
+#. module: recurring
+#: model:ir.model,name:recurring.model_recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_recurring_id
+#: model:ir.ui.view,arch_db:recurring.view_recurring_filter
+msgid "Recurring"
+msgstr "Recorrência"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_form
+msgid "Recurring Data"
+msgstr "Data de Recorrência"
+
+#. module: recurring
+#: model:ir.model,name:recurring.model_recurring_document
+#: model:ir.model.fields,field_description:recurring.field_recurring_document_fields_document_id
+#: model:ir.ui.view,arch_db:recurring.document_form
+#: model:ir.ui.view,arch_db:recurring.document_tree
+#: model:ir.ui.view,arch_db:recurring.view_recurring_document_filter
+msgid "Recurring Document"
+msgstr "Documento da Recorrência"
+
+#. module: recurring
+#: model:ir.model,name:recurring.model_recurring_document_fields
+#: model:ir.ui.view,arch_db:recurring.document_fields_form
+#: model:ir.ui.view,arch_db:recurring.document_fields_tree
+msgid "Recurring Document Fields"
+msgstr "Campos do Documento da Recorrência"
+
+#. module: recurring
+#: model:ir.actions.act_window,name:recurring.action_recurring_form
+#: model:ir.actions.act_window,name:recurring.action_recurring_wizard
+#: model:ir.ui.menu,name:recurring.menu_action_recurring_form
+msgid "Recurring Documents"
+msgstr "Documentos da Recorrência"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.recurring_history_form
+#: model:ir.ui.view,arch_db:recurring.recurring_history_tree
+msgid "Recurring History"
+msgstr "Histórico da recorrência"
+
+#. module: recurring
+#: model:ir.actions.act_window,name:recurring.action_document_form
+#: model:ir.ui.menu,name:recurring.menu_action_document_form
+msgid "Recurring Types"
+msgstr "Tipos de Recorrência"
+
+#. module: recurring
+#: model:ir.model,name:recurring.model_recurring_history
+msgid "Recurring history"
+msgstr "Histórico da Recorrência"
+
+#. module: recurring
+#: code:addons/recurring/tests/test_recurring.py:31
+#, python-format
+msgid "Recurring is in running state"
+msgstr "Recorrência está em estado de execução"
+
+#. module: recurring
+#: code:addons/recurring/tests/test_recurring.py:34
+#, python-format
+msgid "Recurring is not in draft state"
+msgstr "Recorrência não está no estado de rascunho"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_form
+#: model:ir.ui.view,arch_db:recurring.view_recurring_tree
+msgid "Recurrings"
+msgstr "Recorrências"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_filter
+#: selection:recurring,state:0
+msgid "Running"
+msgstr "Executando"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_wizard_form
+msgid "Save"
+msgstr "Salvar"
+
+#. module: recurring
+#: model:ir.model.fields,help:recurring.field_recurring_cron_id
+msgid "Scheduler which runs on recurring"
+msgstr "Agendador que é executado na recorrência"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_filter
+msgid "Search Recurring"
+msgstr "Procurar Recorrência"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_form
+msgid "Set to Draft"
+msgstr "Configurar como Rascunho"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_doc_source
+#: model:ir.model.fields,field_description:recurring.field_recurring_history_document_id
+msgid "Source Document"
+msgstr "Documento Origem"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_wizard_form
+msgid "Start Recurring"
+msgstr "Início da Recorrência"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_state
+#: model:ir.ui.view,arch_db:recurring.view_recurring_filter
+msgid "Status"
+msgstr "Situação"
+
+#. module: recurring
+#: model:ir.ui.view,arch_db:recurring.view_recurring_form
+msgid "Stop"
+msgstr "Para"
+
+#. module: recurring
+#: model:ir.model.fields,field_description:recurring.field_recurring_user_id
+#: model:ir.ui.view,arch_db:recurring.view_recurring_filter
+msgid "User"
+msgstr "Usuário"
+
+#. module: recurring
+#: model:ir.model.fields,help:recurring.field_recurring_doc_source
+msgid ""
+"User can choose the source document on which he wants to create documents"
+msgstr ""
+"O usuário pode escolher o documento de origem no qual ele deseja criar "
+"documentos"
+
+#. module: recurring
+#: selection:recurring,interval_type:0
+msgid "Weeks"
+msgstr "Semanas"
+
+#. module: recurring
+#: code:addons/recurring/models/recurring.py:247
+#, python-format
+msgid "You cannot delete an active recurring!"
+msgstr "Você não pode deltar uma recorrência ativa!"
