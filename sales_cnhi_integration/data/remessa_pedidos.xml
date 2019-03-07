@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+      <!-- Exemplo de dados -->
+      <record id="Remessa_pedidos" model="sale.pedidos">
+          <field name="name">Default</field>
+          <field name="description">Description</field>
+          <field name="code">CODE</field>
+      </record>
+
+  </data>
+</odoo>
