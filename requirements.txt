@@ -2,3 +2,4 @@ plotly
 pandas
 pytest
 pytest-cov
+pagseguro
