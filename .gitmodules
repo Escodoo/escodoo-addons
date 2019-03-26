@@ -1,6 +1,0 @@
-[submodule "escodoo_cnhi_boarding_export"]
-	path = escodoo_cnhi_boarding_export
-	url = https://github.com/marcelsavegnago/escodoo_cnhi_boarding_export.git
-[submodule "escodoo_cnhi_sales_integration"]
-	path = escodoo_cnhi_sales_integration
-	url = https://github.com/marcelsavegnago/escodoo_cnhi_sales_integration.git
