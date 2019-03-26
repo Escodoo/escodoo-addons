@@ -1,2 +1,2 @@
-# escodoo-addons
+# Addons Escodoo
 Addons - Escodoo
