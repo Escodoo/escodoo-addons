@@ -6,10 +6,6 @@ class AccountInvoice(models.Model):
 
     
     def update_taxes(self):
-        
-        taxes = ['icms', 'ipi', 'pis', 'cofins',
-                 'issqn', 'ii', 'irrf', 'csll', 'inss']
-        
         fpos = self.fiscal_position_id
         if fpos:
             for line in self.invoice_line_ids:
@@ -21,12 +17,21 @@ class AccountInvoice(models.Model):
                 self.clear_line_tax_ids(line)
                 line._set_taxes()
                 line._set_taxes_from_fiscal_pos()
-                #line._onchange_product_id()
-                #line._onchange_tax_issqn_id()
-                #line._onchange_tax_issqn_id()
-                #line._onchange_tax_issqn_id()
-                for tax in taxes:
-                    line._onchange({'tax_%s_id' % tax})
+                line._onchange_product_id()
+
+                line._onchange_tax_icms_id()
+                line._onchange_tax_icms_st_id
+                line._onchange_tax_icms_inter_id
+                line._onchange_tax_icms_intra_id
+                line._onchange_tax_icms_fcp_id
+                line._onchange_tax_pis_id()
+                line._onchange_tax_cofins_id()
+                line._onchange_tax_ipi_id()
+                line._onchange_tax_ii_id()
+                line._onchange_tax_issqn_id()
+                line._onchange_tax_csll_id()
+                line._onchange_tax_irrf_id()
+                line._onchange_tax_inss_id()
                  
                 line._br_account_onchange_product_id()
                 line.write({
