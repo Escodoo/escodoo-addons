@@ -4,6 +4,10 @@ from odoo import models
 class AccountInvoice(models.Model):
     _inherit = "account.invoice"
 
+    
+    taxes = ['icms', 'ipi', 'pis', 'cofins',
+                 'issqn', 'ii', 'irrf', 'csll', 'inss']
+    
     def update_taxes(self):
         fpos = self.fiscal_position_id
         if fpos:
@@ -16,14 +20,14 @@ class AccountInvoice(models.Model):
                 self.clear_line_tax_ids(line)
                 line._set_taxes()
                 line._set_taxes_from_fiscal_pos()
-                
+                #line._onchange_product_id()
                 #line._onchange_tax_issqn_id()
                 #line._onchange_tax_issqn_id()
                 #line._onchange_tax_issqn_id()
-                #line._onchange_tax_issqn_id()
-              
+                for tax in taxes:
+                    line._onchange({'tax_%s_id' % tax})
+                 
                 line._br_account_onchange_product_id()
-                line._onchange_product_id()
                 line.write({
                     'price_unit': price_unit,
                     'price_total': price_total,
