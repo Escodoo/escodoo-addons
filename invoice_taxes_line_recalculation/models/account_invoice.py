@@ -5,10 +5,11 @@ class AccountInvoice(models.Model):
     _inherit = "account.invoice"
 
     
-    taxes = ['icms', 'ipi', 'pis', 'cofins',
-                 'issqn', 'ii', 'irrf', 'csll', 'inss']
-    
     def update_taxes(self):
+        
+        taxes = ['icms', 'ipi', 'pis', 'cofins',
+                 'issqn', 'ii', 'irrf', 'csll', 'inss']
+        
         fpos = self.fiscal_position_id
         if fpos:
             for line in self.invoice_line_ids:
