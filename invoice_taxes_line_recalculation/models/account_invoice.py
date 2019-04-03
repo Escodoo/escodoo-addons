@@ -14,8 +14,8 @@ class AccountInvoice(models.Model):
                     continue
                 account_analytic_id = line.account_analytic_id.id
                 self.clear_line_tax_ids(line)
-                line._set_taxes_from_fiscal_pos()
                 line._set_taxes()
+                line._set_taxes_from_fiscal_pos()
                 line._onchange_product_id()
                 line._br_account_onchange_product_id()
                 line.write({
