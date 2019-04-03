@@ -17,6 +17,7 @@ class AccountInvoice(models.Model):
                 line._set_taxes()
                 line._set_taxes_from_fiscal_pos()
                 line._onchange_product_id()
+                line._onchange_tax_issqn_id()
                 line._br_account_onchange_product_id()
                 line.write({
                     'price_unit': price_unit,
