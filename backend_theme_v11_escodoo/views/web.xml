@@ -7,7 +7,7 @@
         <xpath expr="//div[@id='appDrawerAppPanelBody']" position="after">
                 <div class="panel-footer" id="appDrawerAppPanelFooter">
                     <div class="oe_logo">
-                        <img src="/backend_theme_v11_escodoo/static/img/logo_escodoo.pnj" />
+                        <img src="/backend_theme_v11_escodoo/static/img/logo_escodoo.png" />
                     </div>
                 </div>
         </xpath>
