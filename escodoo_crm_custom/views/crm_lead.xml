@@ -21,19 +21,21 @@
                 <field name="lost_reason" attrs="{'invisible': [('active', '=', True)]}"/>
             </field>
             <page name="extra" position="before">
-                <page name="escodoo_lead_details" string="Lead Details">
-                    <group name="escodoo_company_details" string="Company Details">
+                <page name="escodoo_lead_details" string="Company Details">
+                    <group name="escodoo_company_details">
                         <field name="escodoo_company_size"/>
                         <field name="escodoo_annual_revenue"/>
-                        <field name="escodoo_average_selling_price"/>
+                        <field name="escodoo_average_ticket"/>
                         <field name="escodoo_technological_maturity"/>
                         <field name="escodoo_has_dedicate_team"/>
                     </group>
-                    <group name="escodoo_project_detail" string="Project Details">
+                </page>
+                <page name="escodoo_lead_details" string="Project Details">
+                    <group name="escodoo_project_detail">
                         <field name="escodoo_project_budget"/>
                         <field name="escodoo_project_release_date"/>
+                        <field name="escodoo_project_description"/>
                         <field name="escodoo_project_pain_primary"/>
-                        <field name="escodoo_project_pain_secondary"/>
                     </group>
                 </page>
             </page>
@@ -47,20 +49,21 @@
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
         <field name="arch" type="xml">
             <page name="lead" position="before">
-                <page name="escodoo_lead_details" string="Opportunity Details">
-                    <group name="escodoo_company_details" string="Company Details">
+                <page name="escodoo_lead_details" string="Company Details">
+                    <group name="escodoo_company_details">
                         <field name="escodoo_company_size"/>
                         <field name="escodoo_annual_revenue"/>
-                        <field name="escodoo_average_selling_price"/>
+                        <field name="escodoo_average_ticket"/>
                         <field name="escodoo_technological_maturity"/>
                         <field name="escodoo_has_dedicate_team"/>
                     </group>
-                    <group name="escodoo_project_detail" string="Project Details">
+                </page>
+                <page name="escodoo_lead_details" string="Project Details">
+                    <group name="escodoo_project_detail">
                         <field name="escodoo_project_budget"/>
                         <field name="escodoo_project_release_date"/>
+                        <field name="escodoo_project_description"/>
                         <field name="escodoo_project_pain_primary"/>
-                        <field name="escodoo_project_pain_secondary"/>
-                        <field name="escodoo_project_integration"/>
                     </group>
                 </page>
             </page>
