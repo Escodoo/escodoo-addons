@@ -14,8 +14,8 @@ class CrmLead(models.Model):
         'Annual Revenue',
         currency_field='company_currency',
         track_visibility='always')
-    escodoo_average_selling_price = fields.Monetary(
-        'Average Selling Price',
+    escodoo_average_ticket = fields.Monetary(
+        'Average Ticket',
         currency_field='company_currency',
         track_visibility='always')
     escodoo_technological_maturity = fields.Selection(
@@ -33,9 +33,9 @@ class CrmLead(models.Model):
         track_visibility='always')
     escodoo_project_release_date = fields.Date(
         'Release Date')
+    escodoo_project_description = fields.Html(
+        string='General Description')
     escodoo_project_pain_primary = fields.Html(
         string='Primary Pains')
-    escodoo_project_pain_secondary = fields.Html(
-        string='Secondary Pains')
     escodoo_project_integration = fields.Html(
         string='Integrations')
