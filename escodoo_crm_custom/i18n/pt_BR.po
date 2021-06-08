@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-08 22:18+0000\n"
-"PO-Revision-Date: 2021-06-08 19:23-0300\n"
+"POT-Creation-Date: 2021-06-08 23:16+0000\n"
+"PO-Revision-Date: 2021-06-08 20:17-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,9 +23,9 @@ msgid "Annual Revenue"
 msgstr "Faturamento Anual"
 
 #. module: escodoo_crm_custom
-#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_average_selling_price
-msgid "Average Selling Price"
-msgstr "Preço Médio de Venda"
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_average_ticket
+msgid "Average Ticket"
+msgstr "Ticket Médio"
 
 #. module: escodoo_crm_custom
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_budget
@@ -44,6 +44,11 @@ msgid "Company Size"
 msgstr "Porte de Empresa"
 
 #. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_description
+msgid "General Description"
+msgstr "Descrição Geral"
+
+#. module: escodoo_crm_custom
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_has_dedicate_team
 msgid "Has Dedicated Team"
 msgstr "Tem Equipe Dedicada"
@@ -57,11 +62,6 @@ msgstr "Alta"
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_integration
 msgid "Integrations"
 msgstr "Integrações"
-
-#. module: escodoo_crm_custom
-#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
-msgid "Lead Details"
-msgstr "Detalhes do Prospecto"
 
 #. module: escodoo_crm_custom
 #: model:ir.model,name:escodoo_crm_custom.model_crm_lead
@@ -84,11 +84,6 @@ msgid "Medium"
 msgstr "Média"
 
 #. module: escodoo_crm_custom
-#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_oppor
-msgid "Opportunity Details"
-msgstr "Detalhes da Oportunidade"
-
-#. module: escodoo_crm_custom
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_pain_primary
 msgid "Primary Pains"
 msgstr "Dores Primárias"
@@ -103,11 +98,6 @@ msgstr "Detalhes do Projeto"
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_release_date
 msgid "Release Date"
 msgstr "Data de Lançamento"
-
-#. module: escodoo_crm_custom
-#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_pain_secondary
-msgid "Secondary Pains"
-msgstr "Dores Secundárias"
 
 #. module: escodoo_crm_custom
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_technological_maturity
