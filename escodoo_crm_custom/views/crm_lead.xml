@@ -36,6 +36,7 @@
                         <field name="escodoo_project_release_date"/>
                         <field name="escodoo_project_description"/>
                         <field name="escodoo_project_pain_primary"/>
+                        <field name="escodoo_project_integration"/>
                     </group>
                 </page>
             </page>
@@ -64,6 +65,7 @@
                         <field name="escodoo_project_release_date"/>
                         <field name="escodoo_project_description"/>
                         <field name="escodoo_project_pain_primary"/>
+                        <field name="escodoo_project_integration"/>
                     </group>
                 </page>
             </page>
