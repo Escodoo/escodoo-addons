@@ -9,6 +9,7 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
         <field name="arch" type="xml">
+
             <!-- <button name="action_set_lost" position="replace">
                 <button
                     name="%(crm.crm_lead_lost_action)d"
@@ -19,6 +20,7 @@
                     attrs="{'invisible': ['&amp;', ('probability', '=', 0), ('active', '=', False)]}"
                 />
             </button> -->
+
             <field name="tag_ids" position="after">
                 <field
                     name="lost_reason"
@@ -28,11 +30,14 @@
             <page name="extra" position="before">
                 <page name="escodoo_lead_details" string="Company Details">
                     <group name="escodoo_company_details">
+                        <field name="escodoo_primary_interest" />
                         <field name="escodoo_company_size" />
                         <field name="escodoo_annual_revenue" />
                         <field name="escodoo_average_ticket" />
-                        <field name="escodoo_technological_maturity" />
+                        <field name="escodoo_has_management_system" />
+                        <field name="escodoo_management_system_name" />
                         <field name="escodoo_has_dedicate_team" />
+                        <field name="escodoo_technological_maturity" />
                     </group>
                 </page>
                 <page name="escodoo_lead_details" string="Project Details">
@@ -57,11 +62,14 @@
             <page name="lead" position="before">
                 <page name="escodoo_lead_details" string="Company Details">
                     <group name="escodoo_company_details">
+                        <field name="escodoo_primary_interest" />
                         <field name="escodoo_company_size" />
                         <field name="escodoo_annual_revenue" />
                         <field name="escodoo_average_ticket" />
-                        <field name="escodoo_technological_maturity" />
+                        <field name="escodoo_has_management_system" />
+                        <field name="escodoo_management_system_name" />
                         <field name="escodoo_has_dedicate_team" />
+                        <field name="escodoo_technological_maturity" />
                     </group>
                 </page>
                 <page name="escodoo_lead_details" string="Project Details">
