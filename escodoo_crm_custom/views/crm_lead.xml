@@ -1,71 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <odoo>
 
     <!--    Lead Form-->
     <record model="ir.ui.view" id="crm_lead_form_view_leads">
         <field name="name">crm.lead.form.leads (in escodoo_crm_custom)</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
         <field name="arch" type="xml">
-            <button name="action_set_lost" position="replace">
-                <button name="%(crm.crm_lead_lost_action)d"
-                        string="Mark Lost"
-                        type="action" class="oe_highlight"
-                        context="{'default_lead_id': active_id}"
-                        attrs="{'invisible': ['&amp;', ('probability', '=', 0), ('active', '=', False)]}"/>
-            </button>
+            <!-- <button name="action_set_lost" position="replace">
+                <button
+                    name="%(crm.crm_lead_lost_action)d"
+                    string="Mark Lost"
+                    type="action"
+                    class="oe_highlight"
+                    context="{'default_lead_id': active_id}"
+                    attrs="{'invisible': ['&amp;', ('probability', '=', 0), ('active', '=', False)]}"
+                />
+            </button> -->
             <field name="tag_ids" position="after">
-                <field name="lost_reason" attrs="{'invisible': [('active', '=', True)]}"/>
+                <field
+                    name="lost_reason"
+                    attrs="{'invisible': [('active', '=', True)]}"
+                />
             </field>
             <page name="extra" position="before">
                 <page name="escodoo_lead_details" string="Company Details">
                     <group name="escodoo_company_details">
-                        <field name="escodoo_company_size"/>
-                        <field name="escodoo_annual_revenue"/>
-                        <field name="escodoo_average_ticket"/>
-                        <field name="escodoo_technological_maturity"/>
-                        <field name="escodoo_has_dedicate_team"/>
+                        <field name="escodoo_company_size" />
+                        <field name="escodoo_annual_revenue" />
+                        <field name="escodoo_average_ticket" />
+                        <field name="escodoo_technological_maturity" />
+                        <field name="escodoo_has_dedicate_team" />
                     </group>
                 </page>
                 <page name="escodoo_lead_details" string="Project Details">
                     <group name="escodoo_project_detail">
-                        <field name="escodoo_project_budget"/>
-                        <field name="escodoo_project_release_date"/>
-                        <field name="escodoo_project_description"/>
-                        <field name="escodoo_project_pain_primary"/>
-                        <field name="escodoo_project_integration"/>
+                        <field name="escodoo_project_budget" />
+                        <field name="escodoo_project_release_date" />
+                        <field name="escodoo_project_description" />
+                        <field name="escodoo_project_pain_primary" />
+                        <field name="escodoo_project_integration" />
                     </group>
                 </page>
             </page>
         </field>
     </record>
-    
+
     <!-- Opportunity Form -->
     <record model="ir.ui.view" id="crm_lead_form_view_oppor">
         <field name="name">crm.lead.form.oppor (in escodoo_crm_custom)</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
         <field name="arch" type="xml">
             <page name="lead" position="before">
                 <page name="escodoo_lead_details" string="Company Details">
                     <group name="escodoo_company_details">
-                        <field name="escodoo_company_size"/>
-                        <field name="escodoo_annual_revenue"/>
-                        <field name="escodoo_average_ticket"/>
-                        <field name="escodoo_technological_maturity"/>
-                        <field name="escodoo_has_dedicate_team"/>
+                        <field name="escodoo_company_size" />
+                        <field name="escodoo_annual_revenue" />
+                        <field name="escodoo_average_ticket" />
+                        <field name="escodoo_technological_maturity" />
+                        <field name="escodoo_has_dedicate_team" />
                     </group>
                 </page>
                 <page name="escodoo_lead_details" string="Project Details">
                     <group name="escodoo_project_detail">
-                        <field name="escodoo_project_budget"/>
-                        <field name="escodoo_project_release_date"/>
-                        <field name="escodoo_project_description"/>
-                        <field name="escodoo_project_pain_primary"/>
-                        <field name="escodoo_project_integration"/>
+                        <field name="escodoo_project_budget" />
+                        <field name="escodoo_project_release_date" />
+                        <field name="escodoo_project_description" />
+                        <field name="escodoo_project_pain_primary" />
+                        <field name="escodoo_project_integration" />
                     </group>
                 </page>
             </page>
@@ -74,17 +79,17 @@
 
     <!-- Muda sequencia das visões disponiveis nos leads -->
     <record id="crm.crm_lead_all_leads_view_kanban" model="ir.actions.act_window.view">
-        <field name="sequence" eval="1"/>
+        <field name="sequence" eval="1" />
     </record>
     <record id="crm.crm_lead_all_leads_view_tree" model="ir.actions.act_window.view">
-        <field name="sequence" eval="2"/>
+        <field name="sequence" eval="2" />
     </record>
 
     <!-- Adiciona agrupamento padrão por stage_id -->
     <record model="ir.ui.view" id="view_crm_lead_kanban">
         <field name="name">crm.lead.kanban (in escodoo_crm_custom)</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.view_crm_lead_kanban"/>
+        <field name="inherit_id" ref="crm.view_crm_lead_kanban" />
         <field name="arch" type="xml">
              <kanban position="attributes">
                 <attribute name="default_group_by">stage_id</attribute>
