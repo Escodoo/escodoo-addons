@@ -7,7 +7,7 @@
     <record model="ir.ui.view" id="crm_lead_form_view_leads">
         <field name="name">crm.lead.form.leads (in escodoo_crm_custom)</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
         <field name="arch" type="xml">
 
             <!-- <button name="action_set_lost" position="replace">
@@ -45,7 +45,7 @@
                         <field name="escodoo_project_budget" />
                         <field name="escodoo_project_release_date" />
                         <field name="escodoo_project_description" />
-                        <field name="escodoo_project_pain_primary" />
+                        <field name="escodoo_project_primary_pain" />
                         <field name="escodoo_project_integration" />
                     </group>
                 </page>
@@ -54,7 +54,7 @@
     </record>
 
     <!-- Opportunity Form -->
-    <record model="ir.ui.view" id="crm_lead_form_view_oppor">
+    <!-- <record model="ir.ui.view" id="crm_lead_form_view_oppor">
         <field name="name">crm.lead.form.oppor (in escodoo_crm_custom)</field>
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
@@ -77,13 +77,13 @@
                         <field name="escodoo_project_budget" />
                         <field name="escodoo_project_release_date" />
                         <field name="escodoo_project_description" />
-                        <field name="escodoo_project_pain_primary" />
+                        <field name="escodoo_project_primary_pain" />
                         <field name="escodoo_project_integration" />
                     </group>
                 </page>
             </page>
         </field>
-    </record>
+    </record> -->
 
     <!-- Muda sequencia das visões disponiveis nos leads -->
     <record id="crm.crm_lead_all_leads_view_kanban" model="ir.actions.act_window.view">
@@ -91,6 +91,18 @@
     </record>
     <record id="crm.crm_lead_all_leads_view_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="2" />
+    </record>
+
+    <record model="ir.ui.view" id="quick_create_opportunity_form">
+        <field name="name">crm.lead.form.quick_create (in escodoo_crm_custom)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form" />
+        <field name="arch" type="xml">
+            <field name="phone" position="after">
+                <field name="user_id" options="{'no_create': True, 'no_open': True}" />
+                <field name="team_id" options="{'no_create': True, 'no_open': True}" />
+            </field>
+        </field>
     </record>
 
     <!-- Adiciona agrupamento padrão por stage_id -->
