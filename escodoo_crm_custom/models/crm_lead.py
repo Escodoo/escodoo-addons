@@ -19,9 +19,14 @@ class CrmLead(models.Model):
             ("partnership_opportunity", "Partnership Opportunity"),
         ],
         string="Primary Interest",
+        tracking=True,
     )
-    escodoo_has_management_system = fields.Boolean(string="Has Management System?")
-    escodoo_management_system_name = fields.Char(string="Management System Name")
+    escodoo_has_management_system = fields.Boolean(
+        string="Has Management System?", tracking=True
+    )
+    escodoo_management_system_name = fields.Char(
+        string="Management System Name", tracking=True
+    )
     escodoo_company_size = fields.Selection(
         [
             ("micro", "Less than 5 Employees"),
@@ -32,23 +37,26 @@ class CrmLead(models.Model):
             ("large", "More than 250 Employees"),
         ],
         string="Company Size",
+        tracking=True,
     )
-    field_name = fields.Selection([("key", "value")], string="field_name")
     escodoo_annual_revenue = fields.Monetary(
-        "Annual Revenue", currency_field="company_currency", track_visibility="always"
+        "Annual Revenue", currency_field="company_currency", tracking=True
     )
     escodoo_average_ticket = fields.Monetary(
-        "Average Ticket", currency_field="company_currency", track_visibility="always"
+        "Average Ticket", currency_field="company_currency", tracking=True
     )
     escodoo_technological_maturity = fields.Selection(
-        string="Technological Maturity",
         selection=[("low", "Low"), ("medium", "Medium"), ("high", "High")],
+        string="Technological Maturity",
+        tracking=True,
     )
-    escodoo_has_dedicate_team = fields.Boolean(string="Has Dedicated Team")
+    escodoo_has_dedicate_team = fields.Boolean(
+        string="Has Dedicated Team", tracking=True
+    )
     escodoo_project_budget = fields.Monetary(
-        "Budget", currency_field="company_currency", track_visibility="always"
+        "Budget", currency_field="company_currency", tracking=True
     )
-    escodoo_project_release_date = fields.Date("Release Date")
+    escodoo_project_release_date = fields.Date("Release Date", tracking=True)
     escodoo_project_description = fields.Html(string="General Description")
     escodoo_project_primary_pain = fields.Html(string="Primary Pains")
     escodoo_project_integration = fields.Html(string="Integrations")
