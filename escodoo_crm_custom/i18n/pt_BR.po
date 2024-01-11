@@ -4,18 +4,38 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-08 23:16+0000\n"
-"PO-Revision-Date: 2021-06-08 20:17-0300\n"
+"POT-Creation-Date: 2024-01-10 13:28+0000\n"
+"PO-Revision-Date: 2024-01-10 19:41-0300\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.4.1\n"
-"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
-"Language: pt_BR\n"
+"Plural-Forms: \n"
+"Language: pt\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__medium_large
+msgid "100-250 Employees"
+msgstr "100-250 Funcionários"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__medium_small
+msgid "20-50 Employees"
+msgstr "20-50 Funcionários"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__small
+msgid "5-20 Employees"
+msgstr "5-20 Funcionários"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__medium
+msgid "50-100 Employees"
+msgstr "50-100 Funcionários"
 
 #. module: escodoo_crm_custom
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_annual_revenue
@@ -34,7 +54,6 @@ msgstr "Orçamento"
 
 #. module: escodoo_crm_custom
 #: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
-#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_oppor
 msgid "Company Details"
 msgstr "Detalhes da Empresa"
 
@@ -42,6 +61,11 @@ msgstr "Detalhes da Empresa"
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_company_size
 msgid "Company Size"
 msgstr "Porte de Empresa"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__display_name
+msgid "Display Name"
+msgstr "Nome exibido"
 
 #. module: escodoo_crm_custom
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_description
@@ -54,9 +78,24 @@ msgid "Has Dedicated Team"
 msgstr "Tem Equipe Dedicada"
 
 #. module: escodoo_crm_custom
-#: selection:crm.lead,escodoo_technological_maturity:0
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_has_management_system
+msgid "Has Management System?"
+msgstr "Possui Sistema de Gestão?"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_technological_maturity__high
 msgid "High"
-msgstr "Alta"
+msgstr "Alto"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_primary_interest__external_consultant
+msgid "I am an external consultant and want to recommend Odoo"
+msgstr "Sou consultor externo e quero recomendar Odoo"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__id
+msgid "ID"
+msgstr "ID"
 
 #. module: escodoo_crm_custom
 #: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_integration
@@ -64,33 +103,67 @@ msgid "Integrations"
 msgstr "Integrações"
 
 #. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead____last_update
+msgid "Last Modified on"
+msgstr "Última modificação em"
+
+#. module: escodoo_crm_custom
 #: model:ir.model,name:escodoo_crm_custom.model_crm_lead
 msgid "Lead/Opportunity"
 msgstr "Prospecto/Oportunidade"
 
 #. module: escodoo_crm_custom
-#: selection:crm.lead,escodoo_technological_maturity:0
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__micro
+msgid "Less than 5 Employees"
+msgstr "Menos de 5 Funcionários"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_technological_maturity__low
 msgid "Low"
 msgstr "Baixo"
 
 #. module: escodoo_crm_custom
-#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
-msgid "Mark Lost"
-msgstr "Marcar como Perdido"
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_management_system_name
+msgid "Management System Name"
+msgstr "Nome do Sistema de Gerenciamento"
 
 #. module: escodoo_crm_custom
-#: selection:crm.lead,escodoo_technological_maturity:0
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_technological_maturity__medium
 msgid "Medium"
-msgstr "Média"
+msgstr "Médio"
 
 #. module: escodoo_crm_custom
-#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_pain_primary
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__large
+msgid "More than 250 Employees"
+msgstr "Mais de 250 Funcionários"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_primary_interest__seeking_erp
+msgid "My company is seeking an ERP"
+msgstr "Minha Empresa está buscando um ERP"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_primary_interest__using_odoo
+msgid "My company uses Odoo and needs services or improvements"
+msgstr "Minha empresa usa Odoo e precisa de serviços ou melhorias"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_primary_interest__partnership_opportunity
+msgid "Partnership Opportunity"
+msgstr "Oportunidade/Parceria"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_primary_interest
+msgid "Primary Interest"
+msgstr "Interesse Primário"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_primary_pain
 msgid "Primary Pains"
-msgstr "Dores Primárias"
+msgstr "Principais Dores"
 
 #. module: escodoo_crm_custom
 #: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
-#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_oppor
 msgid "Project Details"
 msgstr "Detalhes do Projeto"
 
