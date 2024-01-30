@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 - TODAY, Kaynnan Lemes <kaynnan.lemes@escodooo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="l10n_br_purchase_order_form_view">
+        <field
+            name="name"
+        >l10n_br_purchase.order.form (in escodoo_purchase_custom)</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="l10n_br_purchase.l10n_br_purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='order_line']/form//field[@name='price_unit']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'readonly': [('state', 'in', ('done', 'cancel','purchase'))]}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='order_line']/form//field[@name='product_qty']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'readonly': [('state', 'in', ('done', 'cancel','purchase'))]}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='order_line']/form//field[@name='account_analytic_id']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'readonly': [('state', 'in', ('done', 'cancel','purchase'))]}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='order_line']/form//field[@name='discount_value']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'readonly': [('state', 'in', ('done', 'cancel','purchase'))]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
