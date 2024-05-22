@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+        <!-- Inherit the original template -->
+        <template id="courses_home_inherit" inherit_id="website_slides.courses_home">
+            <!-- Modify the background image of the banner -->
+            <xpath
+                expr="//section[@class='s_banner overflow-hidden bg-900']"
+                position="attributes"
+            >
+                <attribute
+                    name="style"
+                >background-image: url(&quot;/escodoo_website_slides_custom/static/src/img/banner_default.svg&quot;); background-size: cover; background-position: 55% 65%;</attribute>
+            </xpath>
+        </template>
+
+        <!-- Inherit the original template -->
+        <template id="courses_all_inherit" inherit_id="website_slides.courses_all">
+            <!-- Modify the background image of the banner -->
+            <xpath expr="//section[@class='s_banner bg-900']" position="attributes">
+                <attribute
+                    name="style"
+                >background-image: url(&quot;/escodoo_website_slides_custom/static/src/img/banner_default_all.svg&quot;); background-size: cover; background-position: 80% 20%;</attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
