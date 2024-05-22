@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <template
+            id="assets_frontend"
+            inherit_id="website.assets_frontend"
+            name="Slides Frontend Assets"
+        >
+            <xpath expr="//link[last()]" position="after">
+                <link
+                    rel="stylesheet"
+                    type="text/scss"
+                    href="/escodoo_website_slides_custom/static/src/scss/website_slides.scss"
+                    t-ignore="true"
+                />
+            </xpath>
+        </template>
+    </data>
+</odoo>
