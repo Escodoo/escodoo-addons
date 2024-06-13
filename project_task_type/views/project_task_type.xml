@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright TODAY, 2024 Matheus Marques <matheus.marques@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="project_task_form_view">
+        <field name="name">project.task.form (in project_task_type)</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <xpath expr="//form//field[@name='unit_amount']" position="after">
+                <field name="project_task_type" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_account_analytic_line_form_inherit">
+        <field
+            name="name"
+        >analytic.view_account_analytic_line_form.inherit(in project_task_type)</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_line_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="project_task_type" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hr_timesheet_sheet_form">
+        <field name="name">hr_timesheet.sheet.form(in project_task_type)</field>
+        <field name="model">hr_timesheet.sheet</field>
+        <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//notebook/page/field[@name='timesheet_ids']/tree/field[@name='task_id']"
+                position="after"
+            >
+                <field name="project_task_type" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
