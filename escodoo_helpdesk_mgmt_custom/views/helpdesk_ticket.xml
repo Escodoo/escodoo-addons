@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 - TODAY, Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="ticket_view_tree" model="ir.ui.view">
+        <field
+            name="name"
+        >helpdesk.ticket.view.tree (in escodoo_helpdesk_mgmt_custom)</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_tree" />
+        <field name="arch" type="xml">
+            <field name="last_stage_update" position="after">
+                <field
+                    name="last_message_from_partner"
+                    widget="remaining_days"
+                    optional="hide"
+                />
+                <field
+                    name="last_message_from_user"
+                    widget="remaining_days"
+                    optional="hide"
+                />
+                <field name="write_date" widget="remaining_days" optional="hide" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

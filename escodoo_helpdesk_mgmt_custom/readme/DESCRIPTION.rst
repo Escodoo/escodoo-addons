@@ -1,0 +1,2 @@
+- Add `last_message_from_partner` and `last_message_from_user` fields to the helpdesk ticket tree view.
+- Add `tracking=True` for the `team_id`, `project_id` and `task_id` fields.
