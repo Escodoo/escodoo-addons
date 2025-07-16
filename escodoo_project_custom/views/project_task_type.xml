@@ -8,7 +8,7 @@
         <field name="model">project.task.type</field>
         <field name="inherit_id" ref="project.task_type_edit" />
         <field name="arch" type="xml">
-            <field name="is_closed" position="after">
+            <field name="fold" position="after">
                 <field name="is_cancelled" />
             </field>
 
