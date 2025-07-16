@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="view_task_form2_inherited">
+        <field name="name">project.task.form (in escodoo_project_custom)</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//notebook/page[@id='timesheets_tab']//field[@name='timesheet_ids']/tree/field[@name='task_id']"
+                position="attributes"
+            >
+                <attribute name="invisible">0</attribute>
+                <attribute name="groups">project.group_project_manager</attribute>
+                <attribute name="optional">hide</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="project_task_search_view">
+        <field name="name">project.task.search (in escodoo_project_custom)</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form" />
+        <field name="arch" type="xml">
+            <filter name="inactive" position="after">
+
+                <separator />
+                <filter
+                    string="Etapa 01"
+                    name="etapa_01"
+                    domain="[('tag_ids', 'ilike', 'Etapa 01')]"
+                />
+                <filter
+                    string="Etapa 02"
+                    name="etapa_02"
+                    domain="[('tag_ids', 'ilike', 'Etapa 02')]"
+                />
+                <filter
+                    string="Etapa 03"
+                    name="etapa_03"
+                    domain="[('tag_ids', 'ilike', 'Etapa 03')]"
+                />
+                <filter
+                    string="Etapa 04"
+                    name="etapa_04"
+                    domain="[('tag_ids', 'ilike', 'Etapa 04')]"
+                />
+                <filter
+                    string="Etapa 05"
+                    name="etapa_05"
+                    domain="[('tag_ids', 'ilike', 'Etapa 05')]"
+                />
+
+                <separator />
+                <filter
+                    string="Customizações"
+                    name="customizacoes"
+                    domain="[('tag_ids', 'ilike', 'Customizações')]"
+                />
+                <filter
+                    string="Fora do Escopo"
+                    name="fora_do_escopo"
+                    domain="[('tag_ids','ilike','Fora do Escopo')]"
+                />
+                <filter
+                    string="Complemento de Horas"
+                    name="complemento_de_horas"
+                    domain="[('tag_ids','ilike','Complemento de Horas')]"
+                />
+
+            </filter>
+
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_task_tree2_inherited">
+        <field name="name">project.task.tree (in escodoo_project_custom)</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_tree2_inherited" />
+        <field name="arch" type="xml">
+            <field name="planned_hours" position="attributes">
+                <attribute name="optional">show</attribute>
+            </field>
+            <field name="effective_hours" position="attributes">
+                <attribute name="optional">show</attribute>
+            </field>
+            <field name="remaining_hours" position="attributes">
+                <attribute name="optional">show</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_task_kanban">
+        <field name="name">project.task.kanban (in escodoo_project_custom)</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban" />
+        <field name="arch" type="xml">
+            <field name="tag_ids" position="after">
+                <div>
+                    <small>Planned Hours:
+                      <field name="planned_hours" widget="timesheet_uom" />
+                    </small>
+                </div>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_task_kanban_inherited_progress">
+        <field name="name">project.task.kanban (in escodoo_project_custom)</field>
+        <field name="model">project.task</field>
+        <field
+            name="inherit_id"
+            ref="hr_timesheet.view_task_kanban_inherited_progress"
+        />
+        <field name="arch" type="xml">
+            <t name="planned_hours" position="attributes">
+                <attribute name="t-if">record.allow_timesheets.raw_value</attribute>
+            </t>
+        </field>
+    </record>
+
+
+</odoo>
