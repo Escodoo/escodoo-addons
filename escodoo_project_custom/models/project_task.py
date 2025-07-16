@@ -30,7 +30,8 @@ class ProjectTask(models.Model):
         "is_cancelled",
     )
     def _compute_progress_hours(self):
-        super()._compute_progress_hours()
+        res = super()._compute_progress_hours()
         for task in self:
             if task.is_closed and task.progress < 100 and not task.is_cancelled:
                 task.progress = 100
+        return res

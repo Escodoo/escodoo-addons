@@ -5,7 +5,7 @@
     "name": "Escodoo Project Custom",
     "summary": """
         Escodoo Project Custom""",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "license": "AGPL-3",
     "author": "Escodoo",
     "website": "https://github.com/Escodoo/escodoo-addons",
@@ -16,5 +16,4 @@
         "views/project_task_type.xml",
         "views/project_task.xml",
     ],
-    "demo": [],
 }
