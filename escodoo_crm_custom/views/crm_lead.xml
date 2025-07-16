@@ -23,7 +23,7 @@
 
             <field name="tag_ids" position="after">
                 <field
-                    name="lost_reason"
+                    name="lost_reason_id"
                     attrs="{'invisible': [('active', '=', True)]}"
                 />
             </field>
