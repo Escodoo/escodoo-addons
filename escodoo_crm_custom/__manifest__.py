@@ -10,9 +10,10 @@
     "author": "Escodoo,Odoo Community Association (OCA)",
     "website": "https://github.com/Escodoo/escodoo-addons",
     "depends": [
-        "crm",
+        "l10n_br_crm_cnpj_search",
     ],
     "data": [
+        "data/ir_config_parameter_icp.xml",
         "views/crm_lead.xml",
     ],
 }
