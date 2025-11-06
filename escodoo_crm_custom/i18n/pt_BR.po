@@ -258,7 +258,7 @@ msgstr "Perfil do cliente: Engajamento cívico"
 #. module: escodoo_crm_custom
 #: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
 msgid "Customer Profile: Enterprise"
-msgstr "Perfil do cliente: Empresa"
+msgstr "Perfil do cliente: Corporação"
 
 #. module: escodoo_crm_custom
 #: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
@@ -296,7 +296,7 @@ msgstr ""
 #. module: escodoo_crm_custom
 #: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_customer_profile__enterprise
 msgid "Enterprise"
-msgstr "Empresa"
+msgstr "Corporação"
 
 #. module: escodoo_crm_custom
 #: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
@@ -456,10 +456,10 @@ msgstr ""
 "abordagem de vendas.\n"
 "\n"
 "Diretrizes:\n"
-"- Empresa → Grandes corporações ou grupos com operações complexas.\n"
+"- Corporação → Grandes corporações ou grupos com operações complexas.\n"
 "- Startups/Tech → Empresas de tecnologia ou nativas digitais de rápido "
 "crescimento.\n"
-"- Middle Market → Empresas de médio porte estabelecidas com departamentos "
+"- Mercado Médio → Empresas de médio porte estabelecidas com departamentos "
 "estruturados.\n"
 "- Engajamento cívico → ONGs, cooperativas ou organizações com foco público/"
 "social.\n"
