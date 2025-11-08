@@ -92,8 +92,7 @@ class ResPartner(models.Model):
         elif "is_helpdesk_authorized" in vals and not vals.get(
             "is_helpdesk_authorized"
         ):
-            if "helpdesk_authorized_by" not in vals:
-                vals["helpdesk_authorized_by"] = False
+            vals["helpdesk_authorized_by"] = False
 
         result = super().write(vals)
         if "is_helpdesk_authorized" in vals:
