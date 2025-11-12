@@ -10,9 +10,12 @@
     "website": "https://github.com/Escodoo/escodoo-addons",
     "depends": [
         "helpdesk_mgmt",
+        "portal",
+        "sales_team",
     ],
     "data": [
         "security/helpdesk_security.xml",
         "views/helpdesk_ticket_templates.xml",
+        "views/res_partner.xml",
     ],
 }

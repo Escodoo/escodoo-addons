@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_view_form_helpdesk_authorized" model="ir.ui.view">
+        <field name="name">res.partner.view.form.helpdesk.authorized</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <!-- Remove fields from their current position -->
+            <xpath expr="//field[@name='category_id']" position="after">
+            </xpath>
+            <!-- Add Helpdesk page in the notebook -->
+            <xpath expr="//notebook" position="inside">
+                <page
+                    string="Helpdesk"
+                    name="helpdesk"
+                    groups="helpdesk_mgmt.group_helpdesk_manager,sales_team.group_sale_manager"
+                >
+                    <group>
+                        <field name="is_helpdesk_authorized" />
+                        <field
+                            name="helpdesk_authorized_by"
+                            attrs="{'invisible': [('is_helpdesk_authorized', '=', False)], 'required': [('is_helpdesk_authorized', '=', True)]}"
+                        />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
