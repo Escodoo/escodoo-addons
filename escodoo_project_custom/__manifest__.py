@@ -11,6 +11,7 @@
     "website": "https://github.com/Escodoo/escodoo-addons",
     "depends": [
         "hr_timesheet",
+        "sale_project",
     ],
     "data": [
         "views/project_task_type.xml",
