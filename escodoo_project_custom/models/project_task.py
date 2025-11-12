@@ -15,12 +15,12 @@ class ProjectTask(models.Model):
         related_sudo=False,
     )
 
-    @api.onchange("user_id")
-    def _onchange_escodoo_user_id(self):
-        for rec in self:
-            for subtask_id in rec._get_all_subtasks().ids:
-                subtask = self.env["project.task"].browse(subtask_id)
-                subtask.user_id = rec.user_id
+    # @api.onchange("user_id")
+    # def _onchange_escodoo_user_id(self):
+    #     for rec in self:
+    #         for subtask_id in rec._get_all_subtasks().ids:
+    #             subtask = self.env["project.task"].browse(subtask_id)
+    #             subtask.user_id = rec.user_id
 
     @api.depends(
         "effective_hours",
