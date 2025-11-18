@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_budget_simulation_create_template_wizard_form" model="ir.ui.view">
+        <field name="name">budget.simulation.create.template.wizard.form</field>
+        <field name="model">budget.simulation.create.template.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Template from Simulation">
+                <group>
+                    <group>
+                        <field name="simulation_id" />
+                        <field name="name" />
+                    </group>
+                    <group>
+                        <field name="description" />
+                    </group>
+                </group>
+                <footer>
+                    <button
+                        string="Create Template"
+                        name="action_create_template"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
