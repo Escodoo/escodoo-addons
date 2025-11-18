@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem
+        id="menu_budget_simulator"
+        name="Budget Simulator"
+        sequence="100"
+        groups="group_budget_user"
+    />
+
+    <!-- Simulations Menu -->
+    <menuitem
+        id="menu_budget_simulations"
+        name="Simulations"
+        parent="menu_budget_simulator"
+        action="action_budget_simulation"
+        sequence="10"
+    />
+
+    <!-- Master Data Menu -->
+    <menuitem
+        id="menu_budget_master_data"
+        name="Master Data"
+        parent="menu_budget_simulator"
+        sequence="20"
+        groups="group_budget_user"
+    />
+
+    <menuitem
+        id="menu_budget_templates"
+        name="Templates"
+        parent="menu_budget_master_data"
+        action="action_budget_template"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_budget_integrations"
+        name="Integration Catalog"
+        parent="menu_budget_master_data"
+        action="action_budget_integration"
+        sequence="20"
+    />
+
+    <menuitem
+        id="menu_budget_modules"
+        name="Module Catalog"
+        parent="menu_budget_master_data"
+        action="action_budget_module"
+        sequence="30"
+    />
+
+    <menuitem
+        id="menu_budget_lines"
+        name="General Activitie Catalog"
+        parent="menu_budget_master_data"
+        action="action_budget_line"
+        sequence="40"
+    />
+
+    <!-- Reporting Menu -->
+    <menuitem
+        id="menu_budget_reporting"
+        name="Reporting"
+        parent="menu_budget_simulator"
+        sequence="30"
+        groups="group_budget_user"
+    />
+
+    <!-- Configuration Menu -->
+    <menuitem
+        id="menu_budget_configuration"
+        name="Configuration"
+        parent="menu_budget_simulator"
+        sequence="100"
+        groups="group_budget_manager"
+    />
+
+    <!-- Configuration Actions -->
+    <record id="action_budget_configuration_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'escodoo_budget_simulator'}</field>
+    </record>
+
+    <menuitem
+        id="menu_budget_configuration_settings"
+        name="Settings"
+        parent="menu_budget_configuration"
+        action="action_budget_configuration_settings"
+        sequence="10"
+        groups="base.group_system"
+    />
+</odoo>

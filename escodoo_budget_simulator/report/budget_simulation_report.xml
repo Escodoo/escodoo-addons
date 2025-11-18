@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_budget_simulation_report" model="ir.actions.report">
+        <field name="name">Budget Simulation Report</field>
+        <field name="model">budget.simulation</field>
+        <field name="report_type">qweb-pdf</field>
+        <field
+            name="report_name"
+        >escodoo_budget_simulator.budget_simulation_report</field>
+        <field
+            name="report_file"
+        >escodoo_budget_simulator.budget_simulation_report</field>
+        <field name="binding_model_id" ref="model_budget_simulation" />
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="budget_simulation_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>Budget Simulation: <span t-field="o.name" /></h2>
+                            </div>
+                        </div>
+                        <div class="row mt16">
+                            <div class="col-6">
+                                <strong>Partner:</strong> <span
+                                    t-field="o.partner_id"
+                                />
+                            </div>
+                            <div class="col-6">
+                                <strong>Company:</strong> <span
+                                    t-field="o.company_id"
+                                />
+                            </div>
+                        </div>
+                        <div class="row mt16">
+                            <div class="col-6">
+                                <strong>Number of Users:</strong> <span
+                                    t-field="o.users_qty"
+                                />
+                            </div>
+                            <div class="col-6">
+                                <strong>Number of Companies:</strong> <span
+                                    t-field="o.company_qty"
+                                />
+                            </div>
+                        </div>
+                        <div class="row mt16">
+                            <div class="col-6">
+                                <strong>Complexity:</strong> <span
+                                    t-field="o.complexity"
+                                />
+                            </div>
+                            <div class="col-6">
+                                <strong>State:</strong> <span t-field="o.state" />
+                            </div>
+                        </div>
+                        <div class="row mt16" t-if="o.description">
+                            <div class="col-12">
+                                <strong>Description:</strong>
+                                <p t-field="o.description" />
+                            </div>
+                        </div>
+                        <div class="row mt32" t-if="o.module_line_ids">
+                            <div class="col-12">
+                                <h3>Modules</h3>
+                                <table class="table table-condensed table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-start">Name</th>
+                                            <th class="text-start">Description</th>
+                                            <th
+                                                style="width: 100px;"
+                                                class="text-end"
+                                            >Hours</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.module_line_ids" t-as="module">
+                                            <tr>
+                                                <td><span t-field="module.name" /></td>
+                                                <td><span
+                                                        t-field="module.description"
+                                                    /></td>
+                                                <td
+                                                    class="text-end"
+                                                    style="width: 100px;"
+                                                ><span
+                                                        t-field="module.final_hours"
+                                                    /></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt32" t-if="o.integration_line_ids">
+                            <div class="col-12">
+                                <h3>Integrations</h3>
+                                <table class="table table-condensed table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-start">Name</th>
+                                            <th class="text-start">Description</th>
+                                            <th
+                                                style="width: 100px;"
+                                                class="text-end"
+                                            >Hours</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t
+                                            t-foreach="o.integration_line_ids"
+                                            t-as="integration"
+                                        >
+                                            <tr>
+                                                <td><span
+                                                        t-field="integration.name"
+                                                    /></td>
+                                                <td><span
+                                                        t-field="integration.description"
+                                                    /></td>
+                                                <td
+                                                    class="text-end"
+                                                    style="width: 100px;"
+                                                ><span
+                                                        t-field="integration.final_hours"
+                                                    /></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row mt32">
+                            <div class="col-12">
+                                <h3>General Activities</h3>
+                                <table class="table table-condensed table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-start">Name</th>
+                                            <th class="text-start">Description</th>
+                                            <th
+                                                style="width: 100px;"
+                                                class="text-end"
+                                            >Hours</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.line_ids" t-as="line">
+                                            <tr>
+                                                <td><span t-field="line.name" /></td>
+                                                <td><span
+                                                        t-field="line.description"
+                                                    /></td>
+                                                <td
+                                                    class="text-end"
+                                                    style="width: 100px;"
+                                                ><span
+                                                        t-field="line.final_hours"
+                                                    /></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix mt-4" name="budget_total_summary">
+                            <div id="total" class="row" name="total">
+                                <div
+                                    t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ms-auto"
+                                >
+                                    <table
+                                        class="table table-sm table-borderless"
+                                        style="page-break-inside: avoid;"
+                                    >
+                                        <tr class="border-black o_total">
+                                            <td><strong>Total Hours</strong></td>
+                                            <td class="text-end">
+                                                <span t-field="o.total_hours" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt16" t-if="o.notes">
+                            <div class="col-12">
+                                <h3>Notes</h3>
+                                <div t-field="o.notes" t-options="{'widget': 'html'}" />
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

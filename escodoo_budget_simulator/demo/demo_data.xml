@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <!-- Integrations -->
+        <record id="integration_nfe" model="budget.integration">
+            <field name="name">NFe</field>
+            <field name="code">nfe</field>
+            <field name="default_hours">40.0</field>
+            <field
+                name="description"
+            >Electronic Invoice - Integration with SEFAZ for issuing and receiving product invoices.</field>
+        </record>
+
+        <record id="integration_nfse" model="budget.integration">
+            <field name="name">NFS-e</field>
+            <field name="code">nfse</field>
+            <field name="default_hours">30.0</field>
+            <field
+                name="description"
+            >Electronic Service Invoice - Integration with city hall for issuing service invoices.</field>
+        </record>
+
+        <record id="integration_cnab_receivable" model="budget.integration">
+            <field name="name">CNAB Receivables</field>
+            <field name="code">cnab_receivable</field>
+            <field name="default_hours">50.0</field>
+            <field
+                name="description"
+            >CNAB for Receivables - Banking integration for generating CNAB files for bills and payment control.</field>
+        </record>
+
+        <record id="integration_cnab_payable" model="budget.integration">
+            <field name="name">CNAB Payables</field>
+            <field name="code">cnab_payable</field>
+            <field name="default_hours">45.0</field>
+            <field
+                name="description"
+            >CNAB for Payables - Banking integration for generating CNAB files for payments and supplier control.</field>
+        </record>
+
+        <record id="integration_sped" model="budget.integration">
+            <field name="name">SPED</field>
+            <field name="code">sped</field>
+            <field name="default_hours">60.0</field>
+            <field
+                name="description"
+            >SPED - Public Digital Bookkeeping System - Generation of SPED Fiscal, SPED Accounting and EFD-ICMS/IPI files.</field>
+        </record>
+
+        <record id="integration_ecf" model="budget.integration">
+            <field name="name">ECF</field>
+            <field name="code">ecf</field>
+            <field name="default_hours">35.0</field>
+            <field
+                name="description"
+            >ECF - Fiscal Receipt Printer - Integration with fiscal printers and generation of fiscal receipts.</field>
+        </record>
+
+        <record id="integration_sat" model="budget.integration">
+            <field name="name">SAT</field>
+            <field name="code">sat</field>
+            <field name="default_hours">40.0</field>
+            <field
+                name="description"
+            >SAT - Electronic Fiscal Receipt Authenticator and Transmitter - Integration with SAT equipment.</field>
+        </record>
+
+        <record id="integration_mde" model="budget.integration">
+            <field name="name">MDE</field>
+            <field name="code">mde</field>
+            <field name="default_hours">25.0</field>
+            <field
+                name="description"
+            >MDE - Electronic Document Manifest - Management of recipient manifestation of electronic invoices.</field>
+        </record>
+
+        <record id="integration_edi" model="budget.integration">
+            <field name="name">EDI</field>
+            <field name="code">edi</field>
+            <field name="default_hours">30.0</field>
+            <field
+                name="description"
+            >EDI - Electronic Data Interchange - EDI integration for electronic document exchange with business partners.</field>
+        </record>
+
+        <record id="integration_cte" model="budget.integration">
+            <field name="name">CT-e</field>
+            <field name="code">cte</field>
+            <field name="default_hours">45.0</field>
+            <field
+                name="description"
+            >CT-e - Electronic Transport Document - Integration with SEFAZ for issuing and receiving electronic transport documents.</field>
+        </record>
+
+        <record id="integration_mdfe" model="budget.integration">
+            <field name="name">MDF-e</field>
+            <field name="code">mdfe</field>
+            <field name="default_hours">50.0</field>
+            <field
+                name="description"
+            >MDF-e - Electronic Fiscal Document Manifest - Integration with SEFAZ for issuing and managing electronic transport fiscal document manifests.</field>
+        </record>
+
+        <!-- Modules -->
+        <record id="module_sale" model="budget.module">
+            <field name="name">Sales</field>
+            <field name="code">sale</field>
+            <field name="default_hours">20.0</field>
+            <field
+                name="description"
+            >Sales Module - Complete sales process management, including quotations, sales orders, invoices and customer follow-up.</field>
+        </record>
+
+        <record id="module_stock" model="budget.module">
+            <field name="name">Inventory</field>
+            <field name="code">stock</field>
+            <field name="default_hours">25.0</field>
+            <field
+                name="description"
+            >Inventory Module - Complete inventory control, movements, transfers between warehouses and product management.</field>
+        </record>
+
+        <record id="module_account" model="budget.module">
+            <field name="name">Accounting</field>
+            <field name="code">account</field>
+            <field name="default_hours">30.0</field>
+            <field
+                name="description"
+            >Accounting Module - Complete accounting system with chart of accounts, entries, financial reports and bank reconciliation.</field>
+        </record>
+
+        <record id="module_l10n_br_fiscal" model="budget.module">
+            <field name="name">Brazilian Fiscal</field>
+            <field name="code">l10n_br_fiscal</field>
+            <field name="default_hours">35.0</field>
+            <field
+                name="description"
+            >Brazilian Fiscal Module - Fiscal localization for Brazil, including NCM, CFOP, CST, ICMS, IPI, PIS, COFINS and other fiscal obligations.</field>
+        </record>
+
+        <record id="module_project" model="budget.module">
+            <field name="name">Project</field>
+            <field name="code">project</field>
+            <field name="default_hours">15.0</field>
+            <field
+                name="description"
+            >Project Module - Project management, tasks, timesheets and project progress tracking.</field>
+        </record>
+
+        <record id="module_hr" model="budget.module">
+            <field name="name">Human Resources</field>
+            <field name="code">hr</field>
+            <field name="default_hours">20.0</field>
+            <field
+                name="description"
+            >Human Resources Module - Employee management, departments, positions, performance evaluations and organizational structure.</field>
+        </record>
+
+        <record id="module_purchase" model="budget.module">
+            <field name="name">Purchase</field>
+            <field name="code">purchase</field>
+            <field name="default_hours">22.0</field>
+            <field
+                name="description"
+            >Purchase Module - Complete purchase process management, including requisitions, purchase orders, goods receipt and supplier control.</field>
+        </record>
+
+        <record id="module_mrp" model="budget.module">
+            <field name="name">Manufacturing</field>
+            <field name="code">mrp</field>
+            <field name="default_hours">40.0</field>
+            <field
+                name="description"
+            >Manufacturing Module - Production management, manufacturing orders, production routings, bills of materials (BOM) and production control.</field>
+        </record>
+
+        <record id="module_mrp_workorder" model="budget.module">
+            <field name="name">Manufacturing Work Orders</field>
+            <field name="code">mrp_workorder</field>
+            <field name="default_hours">25.0</field>
+            <field
+                name="description"
+            >Manufacturing Work Orders Module - Detailed control of work orders in production, including machine times and operators.</field>
+        </record>
+
+        <record id="module_website" model="budget.module">
+            <field name="name">Website</field>
+            <field name="code">website</field>
+            <field name="default_hours">30.0</field>
+            <field
+                name="description"
+            >Website Module - Creation and management of websites, pages, blogs and web content integrated with Odoo.</field>
+        </record>
+
+        <record id="module_website_sale" model="budget.module">
+            <field name="name">eCommerce</field>
+            <field name="code">website_sale</field>
+            <field name="default_hours">35.0</field>
+            <field
+                name="description"
+            >eCommerce Module - Complete online store integrated with the sales module, with shopping cart, checkout and online product management.</field>
+        </record>
+
+        <record id="module_crm" model="budget.module">
+            <field name="name">CRM</field>
+            <field name="code">crm</field>
+            <field name="default_hours">25.0</field>
+            <field
+                name="description"
+            >CRM Module - Customer relationship management, leads, opportunities, sales pipeline and commercial activities.</field>
+        </record>
+
+        <record id="module_helpdesk" model="budget.module">
+            <field name="name">Helpdesk</field>
+            <field name="code">helpdesk</field>
+            <field name="default_hours">20.0</field>
+            <field
+                name="description"
+            >Helpdesk Module - Customer service system, ticket management, SLA and technical support.</field>
+        </record>
+
+        <record id="module_hr_timesheet" model="budget.module">
+            <field name="name">Timesheets</field>
+            <field name="code">hr_timesheet</field>
+            <field name="default_hours">15.0</field>
+            <field
+                name="description"
+            >Timesheets Module - Control of hours worked, time tracking in projects and activities.</field>
+        </record>
+
+        <record id="module_hr_payroll" model="budget.module">
+            <field name="name">Payroll</field>
+            <field name="code">hr_payroll</field>
+            <field name="default_hours">35.0</field>
+            <field
+                name="description"
+            >Payroll Module - Payroll calculation, benefits, discounts and payslip generation.</field>
+        </record>
+
+        <record id="module_fleet" model="budget.module">
+            <field name="name">Fleet</field>
+            <field name="code">fleet</field>
+            <field name="default_hours">18.0</field>
+            <field
+                name="description"
+            >Fleet Module - Vehicle fleet management, maintenance, fuel and vehicle cost control.</field>
+        </record>
+
+        <record id="module_maintenance" model="budget.module">
+            <field name="name">Maintenance</field>
+            <field name="code">maintenance</field>
+            <field name="default_hours">20.0</field>
+            <field
+                name="description"
+            >Maintenance Module - Preventive and corrective maintenance management of equipment and assets.</field>
+        </record>
+
+        <record id="module_l10n_br_account" model="budget.module">
+            <field name="name">Brazilian Accounting</field>
+            <field name="code">l10n_br_account</field>
+            <field name="default_hours">30.0</field>
+            <field
+                name="description"
+            >Brazilian Accounting Module - Accounting localization for Brazil, including Brazilian chart of accounts and accounting reports.</field>
+        </record>
+
+        <record id="module_l10n_br_nfe" model="budget.module">
+            <field name="name">Brazilian NFe</field>
+            <field name="code">l10n_br_nfe</field>
+            <field name="default_hours">45.0</field>
+            <field
+                name="description"
+            >Brazilian NFe Module - Electronic Invoice issuance and management integrated with the Brazilian fiscal module.</field>
+        </record>
+
+        <!-- Lines -->
+        <record id="line_discovery" model="budget.line">
+            <field name="name">Discovery and Requirements Analysis</field>
+            <field name="code">discovery_analysis</field>
+            <field name="category">discovery</field>
+            <field name="default_hours">40.0</field>
+            <field
+                name="description"
+            >Initial meetings, requirements gathering, and analysis.</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="line_config" model="budget.line">
+            <field name="name">System Configuration</field>
+            <field name="code">system_config</field>
+            <field name="category">config</field>
+            <field name="default_hours">60.0</field>
+            <field name="description">System setup and configuration.</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="line_dev" model="budget.line">
+            <field name="name">Custom Development</field>
+            <field name="code">custom_dev</field>
+            <field name="category">dev</field>
+            <field name="default_hours">80.0</field>
+            <field name="description">Customizations and specific developments.</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="line_migration" model="budget.line">
+            <field name="name">Data Migration</field>
+            <field name="code">data_migration</field>
+            <field name="category">migration</field>
+            <field name="default_hours">50.0</field>
+            <field name="description">Data migration from legacy systems.</field>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="line_training" model="budget.line">
+            <field name="name">User Training</field>
+            <field name="code">user_training</field>
+            <field name="category">train</field>
+            <field name="default_hours">30.0</field>
+            <field name="description">Training sessions for end users.</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="line_support" model="budget.line">
+            <field name="name">Go-Live Support</field>
+            <field name="code">go_live_support</field>
+            <field name="category">support</field>
+            <field name="default_hours">40.0</field>
+            <field name="description">Support during go-live period.</field>
+            <field name="sequence">60</field>
+        </record>
+
+        <!-- Template -->
+        <record id="template_standard_implementation" model="budget.template">
+            <field name="name">Standard Odoo Implementation</field>
+            <field
+                name="description"
+            >Standard template for a typical Odoo implementation with Brazilian fiscal requirements.</field>
+            <field name="complexity">medium</field>
+            <field name="users_qty">10</field>
+            <field name="company_qty">1</field>
+            <field name="state">confirmed</field>
+            <field
+                name="integration_line_ids"
+                eval="[
+                (0, 0, {'integration_id': ref('integration_nfe')}),
+                (0, 0, {'integration_id': ref('integration_nfse')}),
+            ]"
+            />
+            <field
+                name="module_line_ids"
+                eval="[
+                (0, 0, {'module_id': ref('module_sale')}),
+                (0, 0, {'module_id': ref('module_stock')}),
+                (0, 0, {'module_id': ref('module_account')}),
+                (0, 0, {'module_id': ref('module_l10n_br_fiscal')}),
+            ]"
+            />
+        </record>
+
+        <!-- General Activities -->
+        <record id="template_line_discovery" model="budget.template.line">
+            <field name="template_id" ref="template_standard_implementation" />
+            <field name="line_id" ref="line_discovery" />
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="template_line_config" model="budget.template.line">
+            <field name="template_id" ref="template_standard_implementation" />
+            <field name="line_id" ref="line_config" />
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="template_line_dev" model="budget.template.line">
+            <field name="template_id" ref="template_standard_implementation" />
+            <field name="line_id" ref="line_dev" />
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="template_line_migration" model="budget.template.line">
+            <field name="template_id" ref="template_standard_implementation" />
+            <field name="line_id" ref="line_migration" />
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="template_line_train" model="budget.template.line">
+            <field name="template_id" ref="template_standard_implementation" />
+            <field name="line_id" ref="line_training" />
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="template_line_support" model="budget.template.line">
+            <field name="template_id" ref="template_standard_implementation" />
+            <field name="line_id" ref="line_support" />
+            <field name="sequence">60</field>
+        </record>
+
+        <!-- Template 2: E-commerce Multi-Company -->
+        <record id="template_ecommerce_multicompany" model="budget.template">
+            <field name="name">E-commerce Multi-Company Implementation</field>
+            <field
+                name="description"
+            >Template for e-commerce implementations with multiple companies, including online store, payment integrations, and Brazilian fiscal requirements.</field>
+            <field name="complexity">high</field>
+            <field name="users_qty">25</field>
+            <field name="company_qty">3</field>
+            <field name="state">confirmed</field>
+            <field
+                name="integration_line_ids"
+                eval="[
+                (0, 0, {'integration_id': ref('integration_nfe')}),
+                (0, 0, {'integration_id': ref('integration_nfse')}),
+                (0, 0, {'integration_id': ref('integration_cnab_receivable')}),
+                (0, 0, {'integration_id': ref('integration_cte')}),
+                (0, 0, {'integration_id': ref('integration_mdfe')}),
+            ]"
+            />
+            <field
+                name="module_line_ids"
+                eval="[
+                (0, 0, {'module_id': ref('module_sale')}),
+                (0, 0, {'module_id': ref('module_stock')}),
+                (0, 0, {'module_id': ref('module_account')}),
+                (0, 0, {'module_id': ref('module_l10n_br_fiscal')}),
+                (0, 0, {'module_id': ref('module_website')}),
+                (0, 0, {'module_id': ref('module_website_sale')}),
+                (0, 0, {'module_id': ref('module_crm')}),
+            ]"
+            />
+        </record>
+
+        <!-- Template 2 Lines -->
+        <record id="template2_line_discovery" model="budget.template.line">
+            <field name="template_id" ref="template_ecommerce_multicompany" />
+            <field name="line_id" ref="line_discovery" />
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="template2_line_config" model="budget.template.line">
+            <field name="template_id" ref="template_ecommerce_multicompany" />
+            <field name="line_id" ref="line_config" />
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="template2_line_dev" model="budget.template.line">
+            <field name="template_id" ref="template_ecommerce_multicompany" />
+            <field name="line_id" ref="line_dev" />
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="template2_line_migration" model="budget.template.line">
+            <field name="template_id" ref="template_ecommerce_multicompany" />
+            <field name="line_id" ref="line_migration" />
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="template2_line_train" model="budget.template.line">
+            <field name="template_id" ref="template_ecommerce_multicompany" />
+            <field name="line_id" ref="line_training" />
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="template2_line_support" model="budget.template.line">
+            <field name="template_id" ref="template_ecommerce_multicompany" />
+            <field name="line_id" ref="line_support" />
+            <field name="sequence">60</field>
+        </record>
+
+        <!-- Template 3: Manufacturing with Transport -->
+        <record id="template_manufacturing_transport" model="budget.template">
+            <field name="name">Manufacturing with Transport Integration</field>
+            <field
+                name="description"
+            >Template for manufacturing companies with transport operations, including production management, inventory control, and transport document integrations (CT-e, MDF-e).</field>
+            <field name="complexity">high</field>
+            <field name="users_qty">20</field>
+            <field name="company_qty">2</field>
+            <field
+                name="integration_line_ids"
+                eval="[
+                (0, 0, {'integration_id': ref('integration_nfe')}),
+                (0, 0, {'integration_id': ref('integration_cte')}),
+                (0, 0, {'integration_id': ref('integration_mdfe')}),
+                (0, 0, {'integration_id': ref('integration_sped')}),
+            ]"
+            />
+            <field
+                name="module_line_ids"
+                eval="[
+                (0, 0, {'module_id': ref('module_purchase')}),
+                (0, 0, {'module_id': ref('module_stock')}),
+                (0, 0, {'module_id': ref('module_mrp')}),
+                (0, 0, {'module_id': ref('module_mrp_workorder')}),
+                (0, 0, {'module_id': ref('module_account')}),
+                (0, 0, {'module_id': ref('module_l10n_br_fiscal')}),
+                (0, 0, {'module_id': ref('module_hr')}),
+                (0, 0, {'module_id': ref('module_hr_timesheet')}),
+            ]"
+            />
+        </record>
+
+        <!-- Template 3 Lines -->
+        <record id="template3_line_discovery" model="budget.template.line">
+            <field name="template_id" ref="template_manufacturing_transport" />
+            <field name="line_id" ref="line_discovery" />
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="template3_line_config" model="budget.template.line">
+            <field name="template_id" ref="template_manufacturing_transport" />
+            <field name="line_id" ref="line_config" />
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="template3_line_dev" model="budget.template.line">
+            <field name="template_id" ref="template_manufacturing_transport" />
+            <field name="line_id" ref="line_dev" />
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="template3_line_migration" model="budget.template.line">
+            <field name="template_id" ref="template_manufacturing_transport" />
+            <field name="line_id" ref="line_migration" />
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="template3_line_train" model="budget.template.line">
+            <field name="template_id" ref="template_manufacturing_transport" />
+            <field name="line_id" ref="line_training" />
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="template3_line_support" model="budget.template.line">
+            <field name="template_id" ref="template_manufacturing_transport" />
+            <field name="line_id" ref="line_support" />
+            <field name="sequence">60</field>
+        </record>
+
+        <!-- Demo Simulation -->
+        <record id="simulation_demo" model="budget.simulation">
+            <field name="partner_id" ref="base.res_partner_2" />
+            <field name="template_id" ref="template_standard_implementation" />
+            <field name="users_qty">15</field>
+            <field name="company_qty">1</field>
+            <field name="complexity">medium</field>
+            <field
+                name="integration_line_ids"
+                eval="[
+                (0, 0, {'integration_id': ref('integration_nfe')}),
+                (0, 0, {'integration_id': ref('integration_nfse')}),
+                (0, 0, {'integration_id': ref('integration_cnab_receivable')}),
+            ]"
+            />
+            <field
+                name="module_line_ids"
+                eval="[
+                (0, 0, {'module_id': ref('module_sale')}),
+                (0, 0, {'module_id': ref('module_stock')}),
+                (0, 0, {'module_id': ref('module_account')}),
+                (0, 0, {'module_id': ref('module_l10n_br_fiscal')}),
+                (0, 0, {'module_id': ref('module_project')}),
+            ]"
+            />
+            <field name="state">draft</field>
+        </record>
+
+        <!-- Simulation Lines -->
+        <record id="simulation_line_discovery" model="budget.simulation.line">
+            <field name="simulation_id" ref="simulation_demo" />
+            <field name="line_id" ref="line_discovery" />
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="simulation_line_config" model="budget.simulation.line">
+            <field name="simulation_id" ref="simulation_demo" />
+            <field name="line_id" ref="line_config" />
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="simulation_line_dev" model="budget.simulation.line">
+            <field name="simulation_id" ref="simulation_demo" />
+            <field name="line_id" ref="line_dev" />
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="simulation_line_migration" model="budget.simulation.line">
+            <field name="simulation_id" ref="simulation_demo" />
+            <field name="line_id" ref="line_migration" />
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="simulation_line_train" model="budget.simulation.line">
+            <field name="simulation_id" ref="simulation_demo" />
+            <field name="line_id" ref="line_training" />
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="simulation_line_support" model="budget.simulation.line">
+            <field name="simulation_id" ref="simulation_demo" />
+            <field name="line_id" ref="line_support" />
+            <field name="sequence">60</field>
+        </record>
+    </data>
+</odoo>
