@@ -201,7 +201,11 @@
                                     <field name="sequence" widget="handle" />
                                     <field name="module_id" widget="link_to_record" />
                                     <field name="description" />
-                                    <field name="default_hours" sum="Default" />
+                                    <field
+                                        name="default_hours"
+                                        sum="Default"
+                                        readonly="1"
+                                    />
                                     <field name="adjusted_hours" sum="Adjusted" />
                                     <field
                                         name="final_hours"
@@ -243,7 +247,11 @@
                                         widget="link_to_record"
                                     />
                                     <field name="description" />
-                                    <field name="default_hours" sum="Default" />
+                                    <field
+                                        name="default_hours"
+                                        sum="Default"
+                                        readonly="1"
+                                    />
                                     <field name="adjusted_hours" sum="Adjusted" />
                                     <field
                                         name="final_hours"
@@ -284,7 +292,11 @@
                                     <field name="sequence" widget="handle" />
                                     <field name="line_id" widget="link_to_record" />
                                     <field name="description" />
-                                    <field name="default_hours" sum="Base" />
+                                    <field
+                                        name="default_hours"
+                                        sum="Default"
+                                        readonly="1"
+                                    />
                                     <field name="adjusted_hours" sum="Adjusted" />
                                     <field
                                         name="final_hours"
