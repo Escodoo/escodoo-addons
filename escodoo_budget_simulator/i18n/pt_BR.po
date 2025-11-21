@@ -215,7 +215,7 @@ msgstr "Gerente de Orçamento"
 #. module: escodoo_budget_simulator
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_mixin
 msgid "Budget Mixin"
-msgstr "Mistura de orçamento"
+msgstr "Mixin do Orçamento"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_module
@@ -488,7 +488,7 @@ msgstr "Serviço de consultoria (horas)"
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
 msgid "Create Quotation"
-msgstr "Criar orçamento"
+msgstr "Criar Cotação"
 
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_create_template_wizard_form
