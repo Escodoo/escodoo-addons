@@ -369,13 +369,6 @@ class BudgetSimulation(models.Model):
         """
         self.ensure_one()
 
-        # Only update default_hours for lines that don't have adjusted_hours
-        for line in self.line_ids:
-            if not line.adjusted_hours:
-                # If line came from template, keep default_hours
-                # Otherwise, we could apply some default logic here
-                pass
-
         # Trigger recompute
         self._compute_totals()
 
