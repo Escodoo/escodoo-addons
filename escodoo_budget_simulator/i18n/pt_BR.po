@@ -1,0 +1,2271 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* escodoo_budget_simulator
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-21 12:47+0000\n"
+"PO-Revision-Date: 2025-11-21 09:58-0300\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "<strong>Company:</strong>"
+msgstr "<strong>Empresa:</strong>"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "<strong>Complexity:</strong>"
+msgstr "<strong>Complexidade:</strong>"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "<strong>Description:</strong>"
+msgstr "<strong>Descrição:</strong>"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "<strong>Number of Companies:</strong>"
+msgstr "<strong>Número de empresas:</strong>"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "<strong>Number of Users:</strong>"
+msgstr "<strong>Número de usuários:</strong>"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "<strong>Partner:</strong>"
+msgstr "<strong>Parceiro:</strong>"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "<strong>State:</strong>"
+msgstr "<strong>Estado:</strong>"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "<strong>Total Hours</strong>"
+msgstr "<strong>Total de horas</strong>"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "A sale order has already been created from this simulation."
+msgstr "Já foi criada uma ordem de venda a partir desta simulação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_needaction
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_needaction
+msgid "Action Needed"
+msgstr "Ação Necessária"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__active
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__active
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__active
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__active
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__active
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__active
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_search
+msgid "Active"
+msgstr "Ativo"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__line_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__line_id
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
+msgid "Activitie"
+msgstr "Atividade"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Activitie description..."
+msgstr "Descrição das atividades..."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_ids
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_tree
+msgid "Activities"
+msgstr "Atividades"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_exception_decoration
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoração de Atividade Excepcional"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_state
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_state
+msgid "Activity State"
+msgstr "Estado da Atividade"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_type_icon
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícone do Tipo de Atividade"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Add any internal comments, justifications, risks, assumptions..."
+msgstr ""
+"Adicione quaisquer comentários internos, justificativas, riscos, "
+"suposições..."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Adjusted"
+msgstr "Ajustado"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line_mixin__adjusted_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__adjusted_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__adjusted_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__adjusted_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__adjusted_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__adjusted_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__adjusted_hours
+msgid "Adjusted Hours"
+msgstr "Horário ajustado"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid ""
+"All current simulation data (modules, integrations, and lines) will be "
+"deleted and replaced with template data. Do you want to continue?"
+msgstr ""
+"Todos os dados de simulação atuais (módulos, integrações e linhas) serão "
+"apagados e substituídos por dados de modelo. Quer continuar?"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_search
+msgid "Archived"
+msgstr "Arquivado"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid ""
+"Are you sure you want to cancel this simulation? This action cannot be "
+"undone."
+msgstr ""
+"Tem certeza que quer cancelar essa simulação? Não dá pra desfazer essa ação."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Are you sure you want to confirm this budget simulation?"
+msgstr "Tem certeza que quer confirmar essa simulação de orçamento?"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Are you sure you want to confirm this budget template?"
+msgstr "Tem certeza que quer confirmar esse modelo de orçamento?"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_attachment_count
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_attachment_count
+msgid "Attachment Count"
+msgstr "Número de Anexos"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Base"
+msgstr "Base"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_integration
+msgid "Budget Integration Catalog"
+msgstr "Catálogo de integração orçamentária"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_line_mixin
+msgid "Budget Line Mixin"
+msgstr "Linha orçamentária Mixin"
+
+#. module: escodoo_budget_simulator
+#: model:res.groups,name:escodoo_budget_simulator.group_budget_manager
+msgid "Budget Manager"
+msgstr "Gerente de Orçamento"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_mixin
+msgid "Budget Mixin"
+msgstr "Mistura de orçamento"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_module
+msgid "Budget Module Catalog"
+msgstr "Catálogo do Módulo Orçamentário"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_simulation
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#, python-format
+msgid "Budget Simulation"
+msgstr "Simulação orçamentária"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_simulation_integration
+msgid "Budget Simulation Integration"
+msgstr "Integração da simulação orçamentária"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_simulation_line
+msgid "Budget Simulation Line"
+msgstr "Linha de Simulação Orçamentária"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_simulation_module
+msgid "Budget Simulation Module"
+msgstr "Módulo de Simulação Orçamentária"
+
+#. module: escodoo_budget_simulator
+#: model:ir.actions.report,name:escodoo_budget_simulator.action_budget_simulation_report
+msgid "Budget Simulation Report"
+msgstr "Relatório de Simulação Orçamentária"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "Budget Simulation:"
+msgstr "Simulação orçamentária:"
+
+#. module: escodoo_budget_simulator
+#: model:ir.module.category,name:escodoo_budget_simulator.module_category_budget
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_simulator
+msgid "Budget Simulator"
+msgstr "Simulador de Orçamento"
+
+#. module: escodoo_budget_simulator
+#: model:ir.module.category,description:escodoo_budget_simulator.module_category_budget
+msgid "Budget Simulator Module"
+msgstr "Módulo Simulador de Orçamento"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.res_config_settings_view_form
+msgid "Budget Simulator Settings"
+msgstr "Configurações do Simulador de Orçamento"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation_create_template_wizard.py:0
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_template
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+#, python-format
+msgid "Budget Template"
+msgstr "Modelo de Orçamento"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_template_integration
+msgid "Budget Template Integration"
+msgstr "Integração do modelo de orçamento"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_template_line
+msgid "Budget Template Line"
+msgstr "Linha do modelo de orçamento"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_template_module
+msgid "Budget Template Module"
+msgstr "Módulo de modelo de orçamento"
+
+#. module: escodoo_budget_simulator
+#: model:res.groups,name:escodoo_budget_simulator.group_budget_user
+msgid "Budget User"
+msgstr "Usuário do Orçamento"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.actions.act_window,help:escodoo_budget_simulator.action_budget_simulation
+msgid ""
+"Budget simulations help you estimate hours and costs for Odoo "
+"implementations."
+msgstr ""
+"As simulações orçamentárias ajudam você a estimar as horas e os custos para "
+"implementações do Odoo."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_create_template_wizard_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation__state__cancelled
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "Cannot cancel a simulation that has a sale order created."
+msgstr ""
+"Não dá pra cancelar uma simulação que já tem uma ordem de venda criada."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid ""
+"Cannot cancel a simulation that is already cancelled or has a quotation "
+"created."
+msgstr ""
+"Não dá pra cancelar uma simulação que já foi cancelada ou que já tem uma "
+"cotação criada."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid ""
+"Cannot reset to draft: a sale order is currently linked to this simulation."
+msgstr ""
+"Não dá pra voltar pro rascunho: tem uma ordem de venda ligada a essa "
+"simulação agora."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__category
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__category
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__category
+msgid "Category"
+msgstr "Categoria"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__category
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__category
+msgid ""
+"Category of this budget activitie. Automatically populated from the catalog "
+"entry when a activitie is selected. Categories help organize and group "
+"similar activities together."
+msgstr ""
+"Categoria dessa atividade orçamentária. Preenchida automaticamente a partir "
+"da entrada do catálogo quando uma atividade é selecionada. As categorias "
+"ajudam a organizar e agrupar atividades parecidas."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line__category
+msgid ""
+"Category of this budget activitie. Categories help organize and group "
+"similar activities together. This is used for filtering and reporting "
+"purposes."
+msgstr ""
+"Categoria dessa atividade orçamentária. As categorias ajudam a organizar e "
+"agrupar atividades parecidas. Isso é usado para filtrar e criar relatórios."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__code
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__code
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__code
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__code
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__code
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__code
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__code
+msgid "Code"
+msgstr "Código"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__code
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__code
+msgid ""
+"Code of the integration. Automatically populated from the catalog entry when "
+"an integration is selected. This value is persisted and will not change even "
+"if the catalog entry is modified later."
+msgstr ""
+"Código da integração. Preenchido automaticamente a partir da entrada do "
+"catálogo quando uma integração é selecionada. Esse valor é mantido e não vai "
+"mudar mesmo que a entrada do catálogo seja modificada depois."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__code
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__code
+msgid ""
+"Code of the module. Automatically populated from the catalog entry when a "
+"module is selected. This value is persisted and will not change even if the "
+"catalog entry is modified later."
+msgstr ""
+"Código do módulo. Preenchido automaticamente a partir da entrada do catálogo "
+"quando um módulo é selecionado. Esse valor é mantido e não vai mudar mesmo "
+"que a entrada do catálogo seja modificada depois."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__complexity
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__complexity
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__complexity
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Complexity"
+msgstr "Complexidade"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__complexity
+msgid ""
+"Complexity level for this budget. This affects the complexity factor applied "
+"to all lines: Low = 1.00x, Medium = 1.15x, High = 1.30x. The complexity "
+"factor is multiplied with the base hours of each line."
+msgstr ""
+"Nível de complexidade para este orçamento. Isso afeta o fator de "
+"complexidade aplicado a todas as linhas: Baixo = 1,00x, Médio = 1,15x, Alto "
+"= 1,30x. O fator de complexidade é multiplicado pelas horas base de cada "
+"linha."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__complexity
+msgid ""
+"Complexity level for this simulation. This affects the complexity factor "
+"applied to all lines: Low = 1.00x, Medium = 1.15x, High = 1.30x. Can be "
+"loaded from a template or set manually."
+msgstr ""
+"Nível de complexidade para essa simulação. Isso afeta o fator de "
+"complexidade aplicado a todas as linhas: Baixo = 1,00x, Médio = 1,15x, Alto "
+"= 1,30x. Pode ser carregado a partir de um modelo ou definido manualmente."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajuste as Configurações"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_line__category__config
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation_line__category__config
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template_line__category__config
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_configuration
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_search
+msgid "Configuration"
+msgstr "Configuração"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation__state__confirmed
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template__state__confirmed
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "Consulting Service (Hours)"
+msgstr "Serviço de consultoria (horas)"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Create Quotation"
+msgstr "Criar orçamento"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_create_template_wizard_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Create Template"
+msgstr "Criar Modelo"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_create_template_wizard_form
+#, python-format
+msgid "Create Template from Simulation"
+msgstr "Criar modelo a partir da simulação"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_simulation_create_template_wizard
+msgid "Create Template from Simulation Wizard"
+msgstr "Criar modelo a partir do assistente de simulação"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.actions.act_window,help:escodoo_budget_simulator.action_budget_simulation
+msgid "Create your first budget simulation!"
+msgstr "Crie sua primeira simulação de orçamento!"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__create_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__create_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__currency_id
+msgid ""
+"Currency for this budget simulation. Automatically set from the company's "
+"currency."
+msgstr ""
+"Moeda para essa simulação orçamentária. Definida automaticamente a partir da "
+"moeda da empresa."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__state
+msgid ""
+"Current state of the simulation. Draft simulations can be edited and "
+"modified. Confirmed simulations are locked and can be converted to sale "
+"orders. Quotation Created indicates that a sale order has been created from "
+"this simulation. Cancelled simulations are archived and cannot be modified."
+msgstr ""
+"Estado atual da simulação. As simulações preliminares podem ser editadas e "
+"modificadas. As simulações confirmadas são bloqueadas e podem ser "
+"convertidas em pedidos de venda. A indicação “Cotação criada” significa que "
+"foi criado um pedido de venda a partir desta simulação. As simulações "
+"canceladas são arquivadas e não podem ser modificadas."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__state
+msgid ""
+"Current state of the template. Draft templates can be edited and modified. "
+"Confirmed templates are locked and cannot be modified (read-only)."
+msgstr ""
+"Estado atual do modelo. Os modelos preliminares podem ser editados e "
+"modificados. Os modelos confirmados estão bloqueados e não podem ser "
+"modificados (somente leitura)."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__date
+msgid ""
+"Date when this budget simulation was created or last updated. Used for "
+"reporting and filtering purposes."
+msgstr ""
+"Data em que essa simulação orçamentária foi criada ou atualizada pela última "
+"vez. É usada para relatórios e filtragem."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Default"
+msgstr "Padrão"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__default_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__default_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__default_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__default_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__default_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__default_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__default_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__default_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__default_hours
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
+msgid "Default Hours"
+msgstr "Horário padrão"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_res_config_settings__quotation_product_id
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.res_config_settings_view_form
+msgid "Default Product for Quotations"
+msgstr "Produto padrão para cotações"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__complexity
+msgid ""
+"Default complexity level for this template. This value will be applied when "
+"the template is loaded into a simulation, but can be adjusted in the "
+"simulation if needed."
+msgstr ""
+"Nível de complexidade padrão para este modelo. Esse valor vai ser aplicado "
+"quando o modelo for carregado em uma simulação, mas pode ser ajustado na "
+"simulação, se necessário."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__default_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__default_hours
+msgid ""
+"Default hours from the catalog entry. Automatically populated when a line is "
+"selected. This value is persisted and will not change even if the catalog "
+"entry is modified later. To override, use the Adjusted Hours field."
+msgstr ""
+"Horas padrão da entrada do catálogo. Preenchido automaticamente quando uma "
+"linha é selecionada. Esse valor é mantido e não muda mesmo que a entrada do "
+"catálogo seja modificada depois. Para substituir, use o campo Horas "
+"ajustadas."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__default_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__default_hours
+msgid ""
+"Default hours from the catalog entry. Automatically populated when a module "
+"is selected. This value is persisted and will not change even if the catalog "
+"entry is modified later. To override, use the Adjusted Hours field."
+msgstr ""
+"Horas padrão da entrada do catálogo. Preenchido automaticamente quando um "
+"módulo é selecionado. Esse valor é mantido e não vai mudar mesmo que a "
+"entrada do catálogo seja modificada depois. Para substituir, use o campo "
+"Horas ajustadas."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__default_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__default_hours
+msgid ""
+"Default hours from the catalog entry. Automatically populated when an "
+"integration is selected. This value is persisted and will not change even if "
+"the catalog entry is modified later. To override, use the Adjusted Hours "
+"field."
+msgstr ""
+"Horas padrão da entrada do catálogo. Preenchido automaticamente quando uma "
+"integração é selecionada. Esse valor é mantido e não vai mudar mesmo que a "
+"entrada do catálogo seja modificada depois. Para substituir, use o campo "
+"Horas ajustadas."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__company_qty
+msgid ""
+"Default number of companies for this template. This value will be applied "
+"when the template is loaded into a simulation, but can be adjusted in the "
+"simulation if needed."
+msgstr ""
+"Número padrão de empresas para este modelo. Esse valor vai ser aplicado "
+"quando o modelo for carregado em uma simulação, mas pode ser ajustado na "
+"simulação, se necessário."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line__default_hours
+msgid ""
+"Default number of hours for this budget activitie. This value represents the "
+"typical time required to complete this activity. It can be adjusted per "
+"template or simulation as needed. The default hours are used as the base for "
+"calculating final hours with all factors (complexity, users, companies) "
+"applied."
+msgstr ""
+"Número padrão de horas para essa atividade orçamentária. Esse valor mostra o "
+"tempo normal que leva pra terminar essa atividade. Pode ser ajustado por "
+"modelo ou simulação, conforme necessário. As horas padrão são usadas como "
+"base pra calcular as horas finais com todos os fatores (complexidade, "
+"usuários, empresas) aplicados."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_integration__default_hours
+msgid ""
+"Default number of implementation hours for this integration. This value "
+"represents the typical time required to implement and configure this "
+"integration. It can be adjusted per template or simulation as needed. The "
+"default hours are used as the base for calculating final hours with all "
+"factors (complexity, users, companies) applied."
+msgstr ""
+"Número padrão de horas de implementação para essa integração. Esse valor "
+"representa o tempo normal necessário para implementar e configurar essa "
+"integração. Ele pode ser ajustado por modelo ou simulação, conforme "
+"necessário. As horas padrão são usadas como base para calcular as horas "
+"finais com todos os fatores (complexidade, usuários, empresas) aplicados."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_module__default_hours
+msgid ""
+"Default number of implementation hours for this module. This value "
+"represents the typical time required to implement and configure this module. "
+"It can be adjusted per template or simulation as needed. The default hours "
+"are used as the base for calculating final hours with all factors "
+"(complexity, users, companies) applied."
+msgstr ""
+"Número padrão de horas de implementação para este módulo. Esse valor "
+"representa o tempo normal necessário para implementar e configurar este "
+"módulo. Ele pode ser ajustado por modelo ou simulação, conforme necessário. "
+"As horas padrão são usadas como base para calcular as horas finais com todos "
+"os fatores (complexidade, usuários, empresas) aplicados."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__users_qty
+msgid ""
+"Default number of users for this template. This value will be applied when "
+"the template is loaded into a simulation, but can be adjusted in the "
+"simulation if needed."
+msgstr ""
+"Número padrão de usuários para este modelo. Esse valor vai ser aplicado "
+"quando o modelo for carregado em uma simulação, mas pode ser ajustado na "
+"simulação, se necessário."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.res_config_settings_view_form
+msgid ""
+"Default product to use when creating sale orders from confirmed budget "
+"simulations."
+msgstr ""
+"Produto padrão a ser usado ao criar pedidos de venda a partir de simulações "
+"de orçamento confirmadas."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_res_config_settings__quotation_product_id
+msgid ""
+"Default product to use when creating sale orders from confirmed simulations."
+msgstr ""
+"Produto padrão a ser usado ao criar pedidos de venda a partir de simulações "
+"confirmadas."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__description
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__description
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Description"
+msgstr "Descrição"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
+msgid "Description of this activitie..."
+msgstr "Descrição dessa atividade..."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__description
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__description
+msgid ""
+"Description of this budget activitie. Automatically populated from the "
+"catalog entry when a activitie is selected, but can be manually edited if "
+"needed."
+msgstr ""
+"Descrição dessa atividade orçamentária. Preenchida automaticamente a partir "
+"da entrada do catálogo quando uma atividade é selecionada, mas pode ser "
+"editada manualmente, se necessário."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Description of this budget simulation..."
+msgstr "Descrição desta simulação orçamentária..."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__description
+msgid ""
+"Description of this integration in the template. Can be used to document "
+"specific considerations or customizations for this integration in this "
+"template."
+msgstr ""
+"Descrição dessa integração no modelo. Pode ser usada para documentar "
+"considerações específicas ou personalizações para essa integração neste "
+"modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__description
+msgid ""
+"Description of this integration. Automatically populated from the catalog "
+"entry when an integration is selected, but can be manually edited if needed."
+msgstr ""
+"Descrição dessa integração. Preenchida automaticamente a partir da entrada "
+"do catálogo quando uma integração é selecionada, mas pode ser editada "
+"manualmente, se necessário."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
+msgid "Description of this integration..."
+msgstr "Descrição dessa integração..."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__description
+msgid ""
+"Description of this module in the template. Can be used to document specific "
+"considerations or customizations for this module in this template."
+msgstr ""
+"Descrição deste módulo no modelo. Pode ser usado para documentar "
+"considerações específicas ou personalizações para este módulo neste modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__description
+msgid ""
+"Description of this module. Automatically populated from the catalog entry "
+"when a module is selected, but can be manually edited if needed."
+msgstr ""
+"Descrição deste módulo. Preenchida automaticamente a partir da entrada do "
+"catálogo quando um módulo é selecionado, mas pode ser editada manualmente, "
+"se necessário."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
+msgid "Description of this module..."
+msgstr "Descrição deste módulo..."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__description
+msgid ""
+"Detailed description of the budget template or simulation. This field "
+"supports HTML formatting for rich text content."
+msgstr ""
+"Descrição detalhada do modelo ou simulação do orçamento. Esse campo aceita "
+"formatação HTML para conteúdo de texto rico."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Detailed description of this activitie..."
+msgstr "Descrição detalhada desta atividade..."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line__description
+msgid ""
+"Detailed description of this budget activitie. Use this field to document "
+"what this activity involves, its scope, deliverables, or any special "
+"considerations."
+msgstr ""
+"Descrição detalhada dessa atividade orçamentária. Use esse campo para "
+"documentar o que essa atividade envolve, seu escopo, resultados esperados ou "
+"quaisquer considerações especiais."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__description
+msgid ""
+"Detailed description of this budget simulation. Use this field to document "
+"the project scope, requirements, or any special considerations. This field "
+"supports HTML formatting for rich text content."
+msgstr ""
+"Descrição detalhada dessa simulação orçamentária. Use esse campo para "
+"documentar o escopo do projeto, os requisitos ou quaisquer considerações "
+"especiais. Esse campo aceita formatação HTML para conteúdo de texto rico."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__description
+msgid ""
+"Detailed description of this budget template. Use this field to document "
+"what scenarios this template is designed for, what modules and integrations "
+"it includes, or any special considerations. This field supports HTML "
+"formatting for rich text content."
+msgstr ""
+"Descrição detalhada deste modelo de orçamento. Use este campo para "
+"documentar para quais cenários este modelo foi projetado, quais módulos e "
+"integrações ele inclui ou quaisquer considerações especiais. Este campo "
+"suporta formatação HTML para conteúdo de texto rico."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_integration__description
+msgid ""
+"Detailed description of this integration. Use this field to document what "
+"the integration does, its main features, or any special considerations for "
+"implementation."
+msgstr ""
+"Descrição detalhada dessa integração. Use esse campo para documentar o que a "
+"integração faz, suas principais características ou quaisquer considerações "
+"especiais para a implementação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_module__description
+msgid ""
+"Detailed description of this module. Use this field to document what the "
+"module does, its main features, or any special considerations for "
+"implementation."
+msgstr ""
+"Descrição detalhada deste módulo. Use este campo para documentar o que o "
+"módulo faz, suas principais características ou quaisquer considerações "
+"especiais para implementação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_line__category__dev
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation_line__category__dev
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template_line__category__dev
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_search
+msgid "Development"
+msgstr "Desenvolvimento"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_line__category__discovery
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation_line__category__discovery
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template_line__category__discovery
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_search
+msgid "Discovery"
+msgstr "Descoberta"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__display_name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__display_name
+msgid "Display Name"
+msgstr "Nome de Exibição"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_module__name
+msgid ""
+"Display name of the Odoo module (e.g., 'Sales', 'Inventory', 'Brazilian "
+"Fiscal'). This is the name that will appear in selection dropdowns and "
+"reports."
+msgstr ""
+"Mostra o nome do módulo Odoo (por exemplo, “Vendas”, “Estoque”, “Fiscal "
+"Brasileiro”). Esse é o nome que vai aparecer nas listas suspensas de seleção "
+"e nos relatórios."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line__name
+msgid ""
+"Display name of the budget activitie (e.g., 'Discovery Analysis', 'Initial "
+"Configuration', 'User Training'). This is the name that will appear in "
+"selection dropdowns and reports."
+msgstr ""
+"Mostra o nome das atividades do orçamento (por exemplo, “Análise de "
+"descoberta”, “Configuração inicial”, “Treinamento do usuário”). Esse é o "
+"nome que vai aparecer nas listas suspensas de seleção e nos relatórios."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_integration__name
+msgid ""
+"Display name of the integration (e.g., 'NFe', 'NFS-e', 'CNAB Receivables'). "
+"This is the name that will appear in selection dropdowns and reports."
+msgstr ""
+"Mostra o nome da integração (por exemplo, “NFe”, “NFS-e”, “CNAB "
+"Receivables”). Esse é o nome que vai aparecer nas listas suspensas de "
+"seleção e nos relatórios."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation__state__draft
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template__state__draft
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.res_config_settings_view_form
+msgid "Escodoo Budget Simulator"
+msgstr "Simulador de Orçamento Escodoo"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__excluded_integration_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__excluded_integration_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__excluded_integration_ids
+msgid "Excluded Integrations"
+msgstr "Integrações excluídas"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__excluded_module_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__excluded_module_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__excluded_module_ids
+msgid "Excluded Modules"
+msgstr "Módulos excluídos"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line_mixin__final_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__final_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__final_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__final_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__final_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__final_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__final_hours
+msgid "Final Hours"
+msgstr "Últimas horas"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line_mixin__final_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__final_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__final_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__final_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__final_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__final_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__final_hours
+msgid ""
+"Final calculated hours for this line after applying all factors: complexity, "
+"users, and companies. This is calculated as: base_hours × complexity_factor "
+"× users_factor × company_factor. The base hours are either the adjusted "
+"hours (if > 0) or the default hours from the catalog."
+msgstr ""
+"Horas finais calculadas para esta linha depois de aplicar todos os fatores: "
+"complexidade, usuários e empresas. Isso é calculado como: horas_base × "
+"fator_complexidade × fator_usuários × fator_empresa. As horas base são as "
+"horas ajustadas (se > 0) ou as horas padrão do catálogo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_follower_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_partner_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Parceiros)"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__activity_type_icon
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ícone do Font awesome ex. fa-tasks"
+
+#. module: escodoo_budget_simulator
+#: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_line
+#: model:ir.model,name:escodoo_budget_simulator.model_budget_line
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_lines
+msgid "General Activitie Catalog"
+msgstr "Catálogo Geral de Atividades"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__line_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__line_ids
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "General Activities"
+msgstr "Atividades gerais"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "General Information"
+msgstr "Informações Gerais"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__has_message
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__has_message
+msgid "Has Message"
+msgstr "Tem Mensagem"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_mixin__complexity__high
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation__complexity__high
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template__complexity__high
+msgid "High"
+msgstr "Alta"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "High Complexity"
+msgstr "Alta complexidade"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "Hours"
+msgstr "Horas"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__id
+msgid "ID"
+msgstr "ID"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_exception_icon
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_exception_icon
+msgid "Icon"
+msgstr "Ícone"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__activity_exception_icon
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ícone para indicar uma exceção na atividade."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__message_needaction
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Se estiver marcado, há novas mensagens que requerem a sua atenção."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__message_has_error
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se marcada, algumas mensagens têm um erro de entrega."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line__active
+msgid ""
+"If unchecked, this budget activitie will be hidden and cannot be selected in "
+"new budget templates or simulations."
+msgstr ""
+"Se não estiver marcado, essa atividade orçamentária vai ficar escondida e "
+"não vai poder ser selecionada em novos modelos de orçamento ou simulações."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_integration__active
+msgid ""
+"If unchecked, this integration will be hidden and cannot be selected in new "
+"budget templates or simulations."
+msgstr ""
+"Se não estiver marcada, essa integração vai ficar escondida e não vai poder "
+"ser escolhida em novos modelos de orçamento ou simulações."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_module__active
+msgid ""
+"If unchecked, this module will be hidden and cannot be selected in new "
+"budget templates or simulations."
+msgstr ""
+"Se não estiver marcado, esse módulo vai ficar escondido e não vai poder ser "
+"escolhido em novos modelos de orçamento ou simulações."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__active
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__active
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__active
+msgid ""
+"If unchecked, this record will be hidden and cannot be used in new budget "
+"simulations or templates."
+msgstr ""
+"Se não for marcado, esse registro vai ficar escondido e não vai poder ser "
+"usado em novas simulações ou modelos de orçamento."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__integration_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__integration_id
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
+msgid "Integration"
+msgstr "Integração"
+
+#. module: escodoo_budget_simulator
+#: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_integration
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_integrations
+msgid "Integration Catalog"
+msgstr "Catálogo de integração"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.constraint,message:escodoo_budget_simulator.constraint_budget_simulation_integration_unique_simulation_integration
+msgid "Integration already exists in this simulation!"
+msgstr "A integração já está nessa simulação!"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.constraint,message:escodoo_budget_simulator.constraint_budget_template_integration_unique_template_integration
+msgid "Integration already exists in this template!"
+msgstr "A integração já existe neste modelo!"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.constraint,message:escodoo_budget_simulator.constraint_budget_integration_code_unique
+msgid "Integration code must be unique!"
+msgstr "O código de integração precisa ser único!"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__integration_line_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__integration_line_ids
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_tree
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Integrations"
+msgstr "Integrações"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__notes
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Internal Notes"
+msgstr "Notas Internas"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__notes
+msgid ""
+"Internal notes for this budget simulation. These notes are not visible to "
+"the customer and can be used for internal communication, project planning, "
+"or documentation. This field supports HTML formatting for rich text content."
+msgstr ""
+"Notas internas para esta simulação orçamentária. Essas notas não são "
+"visíveis para o cliente e podem ser usadas para comunicação interna, "
+"planejamento de projetos ou documentação. Este campo suporta formatação HTML "
+"para conteúdo de texto rico."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_is_follower
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_is_follower
+msgid "Is Follower"
+msgstr "É Seguidor"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line____last_update
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__write_uid
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__write_uid
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__write_date
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__line_ids
+msgid ""
+"List of general activities included in this simulation. These activities "
+"represent specific tasks (discovery, configuration, training, etc.) that are "
+"not covered by modules or integrations. They can be added manually or loaded "
+"from a template."
+msgstr ""
+"Lista de atividades gerais incluídas nesta simulação. Essas atividades são "
+"tarefas específicas (descoberta, configuração, treinamento, etc.) que não "
+"são cobertas por módulos ou integrações. Elas podem ser adicionadas "
+"manualmente ou carregadas a partir de um modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__line_ids
+msgid ""
+"List of general activities included in this template. These activities "
+"represent specific tasks (discovery, configuration, training, etc.) that are "
+"not covered by modules or integrations. They will be copied to simulations "
+"when the template is loaded."
+msgstr ""
+"Lista de atividades gerais incluídas neste modelo. Essas atividades são "
+"tarefas específicas (descoberta, configuração, treinamento, etc.) que não "
+"são cobertas por módulos ou integrações. Elas serão copiadas para simulações "
+"quando o modelo for carregado."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__integration_line_ids
+msgid ""
+"List of integrations included in this simulation. These integrations can be "
+"added manually or loaded from a template. Each integration can have its "
+"hours adjusted per simulation."
+msgstr ""
+"Lista de integrações incluídas nesta simulação. Essas integrações podem ser "
+"adicionadas manualmente ou carregadas a partir de um modelo. Cada integração "
+"pode ter suas horas ajustadas por simulação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__integration_line_ids
+msgid ""
+"List of integrations included in this template. These integrations will be "
+"copied to simulations when the template is loaded. Each integration can have "
+"its hours adjusted per template."
+msgstr ""
+"Lista de integrações incluídas neste modelo. Essas integrações serão "
+"copiadas para simulações quando o modelo for carregado. Cada integração pode "
+"ter suas horas ajustadas por modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__excluded_integration_ids
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__excluded_integration_ids
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__excluded_integration_ids
+msgid ""
+"List of integrations that are already added to this budget. These "
+"integrations are automatically excluded from the selection dropdown to "
+"prevent duplicates."
+msgstr ""
+"Lista de integrações que já foram adicionadas a este orçamento. Essas "
+"integrações são automaticamente excluídas da lista suspensa de seleção para "
+"evitar duplicatas."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__module_line_ids
+msgid ""
+"List of modules included in this simulation. These modules can be added "
+"manually or loaded from a template. Each module can have its hours adjusted "
+"per simulation."
+msgstr ""
+"Lista de módulos que estão nessa simulação. Esses módulos podem ser "
+"adicionados manualmente ou carregados a partir de um modelo. Cada módulo "
+"pode ter suas horas ajustadas por simulação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__module_line_ids
+msgid ""
+"List of modules included in this template. These modules will be copied to "
+"simulations when the template is loaded. Each module can have its hours "
+"adjusted per template."
+msgstr ""
+"Lista de módulos que estão neste modelo. Esses módulos vão ser copiados para "
+"as simulações quando o modelo for carregado. Cada módulo pode ter suas horas "
+"ajustadas por modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__excluded_module_ids
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__excluded_module_ids
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__excluded_module_ids
+msgid ""
+"List of modules that are already added to this budget. These modules are "
+"automatically excluded from the selection dropdown to prevent duplicates."
+msgstr ""
+"Lista de módulos que já foram adicionados a este orçamento. Esses módulos "
+"são automaticamente excluídos da lista suspensa de seleção para evitar "
+"duplicatas."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Load from Template"
+msgstr "Carregar a partir do modelo"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_mixin__complexity__low
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation__complexity__low
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template__complexity__low
+msgid "Low"
+msgstr "Baixo"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Low Complexity"
+msgstr "Baixa complexidade"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_main_attachment_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Anexo Principal"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line_mixin__adjusted_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__adjusted_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__adjusted_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__adjusted_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__adjusted_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__adjusted_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__adjusted_hours
+msgid ""
+"Manual adjustment of hours for this line. If set to a value greater than 0, "
+"this value will be used instead of the default hours from the catalog. Leave "
+"as 0 to use the default hours from the catalog. The adjusted hours are used "
+"as the base for calculating final hours with all factors applied."
+msgstr ""
+"Ajuste manual das horas para esta linha. Se definido para um valor maior que "
+"0, esse valor será usado em vez das horas padrão do catálogo. Deixe como 0 "
+"para usar as horas padrão do catálogo. As horas ajustadas são usadas como "
+"base para calcular as horas finais com todos os fatores aplicados."
+
+#. module: escodoo_budget_simulator
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_master_data
+msgid "Master Data"
+msgstr "Dados Mestre"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_mixin__complexity__medium
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation__complexity__medium
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template__complexity__medium
+msgid "Medium"
+msgstr "Médio"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Medium Complexity"
+msgstr "Complexidade Média"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_has_error
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_has_error
+msgid "Message Delivery error"
+msgstr "Erro de Entrega de Mensagem"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_ids
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_line__category__migration
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation_line__category__migration
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template_line__category__migration
+msgid "Migration"
+msgstr "Migração"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__module_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__module_id
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
+msgid "Module"
+msgstr "Módulo"
+
+#. module: escodoo_budget_simulator
+#: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_module
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_modules
+msgid "Module Catalog"
+msgstr "Catálogo de Módulos"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.constraint,message:escodoo_budget_simulator.constraint_budget_simulation_module_unique_simulation_module
+msgid "Module already exists in this simulation!"
+msgstr "O módulo já existe nesta simulação!"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.constraint,message:escodoo_budget_simulator.constraint_budget_template_module_unique_template_module
+msgid "Module already exists in this template!"
+msgstr "O módulo já existe neste modelo!"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.constraint,message:escodoo_budget_simulator.constraint_budget_module_code_unique
+msgid "Module code must be unique!"
+msgstr "O código do módulo tem que ser único!"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__module_line_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__module_line_ids
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_tree
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Modules"
+msgstr "Módulos"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__my_activity_date_deadline
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Prazo das Minha Atividade"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__name
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__name
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "Name"
+msgstr "Nome"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__name
+msgid ""
+"Name for the new budget template. This name should be descriptive and help "
+"identify the template's purpose."
+msgstr ""
+"Nome para o novo modelo de orçamento. Esse nome deve ser descritivo e ajudar "
+"a identificar a finalidade do modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__name
+msgid ""
+"Name of the budget template. This name should be descriptive and help "
+"identify the template's purpose (e.g., 'Standard Implementation', 'E-"
+"commerce Setup', 'Manufacturing Configuration')."
+msgstr ""
+"Nome do modelo de orçamento. Esse nome deve ser descritivo e ajudar a "
+"identificar a finalidade do modelo (por exemplo, “Implementação padrão”, "
+"“Configuração de comércio eletrônico”, “Configuração de fabricação”)."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__name
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__name
+msgid ""
+"Name of the integration. Automatically populated from the catalog entry when "
+"an integration is selected. This value is persisted and will not change even "
+"if the catalog entry is modified later."
+msgstr ""
+"Nome da integração. Preenchido automaticamente a partir da entrada do "
+"catálogo quando uma integração é selecionada. Esse valor é mantido e não "
+"muda mesmo que a entrada do catálogo seja modificada depois."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__name
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__name
+msgid ""
+"Name of the module. Automatically populated from the catalog entry when a "
+"module is selected. This value is persisted and will not change even if the "
+"catalog entry is modified later."
+msgstr ""
+"Nome do módulo. Preenchido automaticamente a partir da entrada do catálogo "
+"quando um módulo é selecionado. Esse valor é mantido e não muda mesmo que a "
+"entrada do catálogo seja modificada depois."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__name
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__name
+msgid ""
+"Name of this budget activitie. Automatically populated from the catalog "
+"entry when a activitie is selected, but can be manually edited if needed."
+msgstr ""
+"Nome dessa atividade orçamentária. Preenchido automaticamente a partir da "
+"entrada do catálogo quando uma atividade é selecionada, mas pode ser editado "
+"manualmente, se necessário."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "New"
+msgstr "Novo"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_date_deadline
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Prazo da Próxima Atividade"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_summary
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumo da Próxima Atividade"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_type_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo da Atividade Seguinte"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "No sale order has been created from this simulation."
+msgstr "Nenhuma ordem de venda foi criada a partir desta simulação."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
+msgid "Notes"
+msgstr "Notas"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_needaction_counter
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Ações"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__company_qty
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__company_qty
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__company_qty
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Number of Companies"
+msgstr "Número de empresas"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__users_qty
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__users_qty
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__users_qty
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Number of Users"
+msgstr "Número de usuários"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_has_error_counter
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de erros"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__message_needaction_counter
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensagens que requerem uma ação"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__message_has_error_counter
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Numero de mensagens com um erro de entrega"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
+msgid "Odoo module code (e.g., sale, stock)"
+msgstr "Código do módulo Odoo (por exemplo, vendas, estoque)"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "Only confirmed simulations can be converted to sale orders."
+msgstr ""
+"Só as simulações confirmadas podem ser convertidas em pedidos de venda."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "Only draft simulations can be confirmed."
+msgstr "Só as simulações preliminares podem ser confirmadas."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_template.py:0
+#, python-format
+msgid "Only draft templates can be confirmed."
+msgstr "Só os modelos de rascunho podem ser confirmados."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_template.py:0
+#, python-format
+msgid "Only draft templates can be recalculated."
+msgstr "Só os modelos de rascunho podem ser recalculados."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__template_id
+msgid ""
+"Optional budget template to load data from. Only confirmed templates are "
+"available for selection. When a template is selected, you can use the 'Load "
+"from Template' button to populate this simulation with the template's "
+"modules, integrations, and lines."
+msgstr ""
+"Modelo de orçamento opcional para carregar dados. Só os modelos confirmados "
+"estão disponíveis para seleção. Quando um modelo é selecionado, você pode "
+"usar o botão “Carregar do modelo” para preencher essa simulação com os "
+"módulos, integrações e linhas do modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__description
+msgid ""
+"Optional description for the new template. If not provided, the description "
+"from the simulation will be used."
+msgstr ""
+"Descrição opcional para o novo modelo. Se não for fornecida, será usada a "
+"descrição da simulação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_line__category__other
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation_line__category__other
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template_line__category__other
+msgid "Other"
+msgstr "Outro"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__partner_id
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation_create_template_wizard.py:0
+#, python-format
+msgid "Please select a simulation."
+msgstr "Escolha uma simulação."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "Please select a template first."
+msgstr "Escolha primeiro um modelo."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#, python-format
+msgid "Please set a partner before creating a sale order."
+msgstr "Por favor, defina um parceiro antes de criar um pedido de venda."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Pricing Parameters"
+msgstr "Parâmetros de Preços"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation__state__quotation
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "Quotation Created"
+msgstr "Cotação criada"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Recalculate"
+msgstr "Recalcular"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#: code:addons/escodoo_budget_simulator/models/budget_template.py:0
+#, python-format
+msgid "Recalculated"
+msgstr "Recalculado"
+
+#. module: escodoo_budget_simulator
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_reporting
+msgid "Reporting"
+msgstr "Relatórios"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Reset to Draft"
+msgstr "Reverter a Rascunho"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__activity_user_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__activity_user_id
+msgid "Responsible User"
+msgstr "Utilizador Responsável"
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__sale_order_id
+#, python-format
+msgid "Sale Order"
+msgstr "Pedido de Venda"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_integration__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_line_mixin__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_module__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__sequence
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__sequence
+msgid "Sequence"
+msgstr "Sequência"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line__sequence
+msgid ""
+"Sequence number for ordering budget activities. Lower numbers appear first "
+"in selection dropdowns and lists."
+msgstr ""
+"Número de sequência para ordenar atividades orçamentárias. Os números mais "
+"baixos aparecem primeiro nas listas e menus suspensos de seleção."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_integration__sequence
+msgid ""
+"Sequence number for ordering integrations. Lower numbers appear first in "
+"selection dropdowns and lists."
+msgstr ""
+"Número de sequência para ordenar integrações. Os números mais baixos "
+"aparecem primeiro nas listas suspensas e listas de seleção."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line_mixin__sequence
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__sequence
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__sequence
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__sequence
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__sequence
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__sequence
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__sequence
+msgid ""
+"Sequence number for ordering lines. Lower numbers appear first. Used to "
+"control the display order of lines in lists and reports."
+msgstr ""
+"Número de sequência para ordenar linhas. Os números mais baixos aparecem "
+"primeiro. É usado para controlar a ordem de exibição das linhas em listas e "
+"relatórios."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_module__sequence
+msgid ""
+"Sequence number for ordering modules. Lower numbers appear first in "
+"selection dropdowns and lists."
+msgstr ""
+"Número de sequência para ordenar módulos. Os números mais baixos aparecem "
+"primeiro nas listas e menus suspensos de seleção."
+
+#. module: escodoo_budget_simulator
+#: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_configuration_settings
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_configuration_settings
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__simulation_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_integration__simulation_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_line__simulation_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_module__simulation_id
+msgid "Simulation"
+msgstr "Simulação"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__date
+msgid "Simulation Date"
+msgstr "Data da simulação"
+
+#. module: escodoo_budget_simulator
+#: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_simulation_line
+msgid "Simulation Lines"
+msgstr "Linhas de simulação"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "Simulation date"
+msgstr "Data da simulação"
+
+#. module: escodoo_budget_simulator
+#: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_simulation
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_simulations
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_tree
+msgid "Simulations"
+msgstr "Simulações"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__state
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__state
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
+msgid "State"
+msgstr "Estado"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__activity_state
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estados baseados nas atividades\n"
+"Vencida: Ultrapassada a data planeada\n"
+"Hoje: Data da atividade é a de hoje\n"
+"Planeada: Atividades futuras."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_line__category__support
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation_line__category__support
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template_line__category__support
+msgid "Support"
+msgstr "Suporte"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__template_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_integration__template_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__template_id
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__template_id
+msgid "Template"
+msgstr "Modelo"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__name
+msgid "Template Name"
+msgstr "Nome do modelo"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Template description..."
+msgstr "Descrição do modelo..."
+
+#. module: escodoo_budget_simulator
+#: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_template
+#: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_templates
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_search
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_tree
+msgid "Templates"
+msgstr "Modelos"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__line_id
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__line_id
+msgid ""
+"The budget activitie from the catalog. When selected, the name, category, "
+"default hours, and description are automatically populated from the catalog "
+"entry."
+msgstr ""
+"As atividades orçamentárias do catálogo. Quando selecionadas, o nome, a "
+"categoria, o horário padrão e a descrição são preenchidos automaticamente a "
+"partir da entrada do catálogo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__simulation_id
+msgid "The budget simulation this integration belongs to."
+msgstr "A simulação orçamentária à qual essa integração pertence."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_line__simulation_id
+msgid "The budget simulation this line belongs to."
+msgstr "A simulação orçamentária a que esta linha pertence."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__simulation_id
+msgid "The budget simulation this module belongs to."
+msgstr "A simulação orçamentária a que este módulo pertence."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__simulation_id
+msgid "The budget simulation to create a template from."
+msgstr "A simulação orçamentária para criar um modelo a partir da qual."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__template_id
+msgid "The budget template this integration belongs to."
+msgstr "O modelo de orçamento a que esta integração pertence."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_line__template_id
+msgid "The budget template this line belongs to."
+msgstr "O modelo de orçamento a que esta linha pertence."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__template_id
+msgid "The budget template this module belongs to."
+msgstr "O modelo de orçamento ao qual este módulo pertence."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__company_id
+msgid ""
+"The company for this budget simulation. This determines the currency and "
+"other company-specific settings."
+msgstr ""
+"A empresa para essa simulação orçamentária. Isso define a moeda e outras "
+"configurações específicas da empresa."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__partner_id
+msgid ""
+"The customer/partner for this budget simulation. This partner will be used "
+"when creating a sale order from this simulation."
+msgstr ""
+"O cliente/parceiro para essa simulação de orçamento. Esse parceiro vai ser "
+"usado na hora de criar um pedido de venda a partir dessa simulação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_integration__integration_id
+msgid ""
+"The integration from the catalog. When selected, the name, code, and default "
+"hours are automatically populated from the catalog entry. Each integration "
+"can only be added once per simulation."
+msgstr ""
+"A integração do catálogo. Quando selecionada, o nome, o código e o horário "
+"padrão são preenchidos automaticamente a partir da entrada do catálogo. Cada "
+"integração só pode ser adicionada uma vez por simulação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_integration__integration_id
+msgid ""
+"The integration from the catalog. When selected, the name, code, and default "
+"hours are automatically populated from the catalog entry. Each integration "
+"can only be added once per template."
+msgstr ""
+"A integração do catálogo. Quando selecionada, o nome, o código e o horário "
+"padrão são preenchidos automaticamente a partir da entrada do catálogo. Cada "
+"integração só pode ser adicionada uma vez por modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation_module__module_id
+msgid ""
+"The module from the catalog. When selected, the name, code, and default "
+"hours are automatically populated from the catalog entry. Each module can "
+"only be added once per simulation."
+msgstr ""
+"O módulo do catálogo. Quando você escolhe, o nome, o código e as horas "
+"padrão aparecem automaticamente a partir da entrada do catálogo. Cada módulo "
+"só pode ser adicionado uma vez por simulação."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template_module__module_id
+msgid ""
+"The module from the catalog. When selected, the name, code, and default "
+"hours are automatically populated from the catalog entry. Each module can "
+"only be added once per template."
+msgstr ""
+"O módulo do catálogo. Quando você escolhe, o nome, o código e as horas "
+"padrão aparecem automaticamente a partir da entrada do catálogo. Cada módulo "
+"só pode ser adicionado uma vez por modelo."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__sale_order_id
+msgid ""
+"The sale order created from this simulation. Once a simulation is confirmed, "
+"it can be converted to a sale order using the 'Create Quotation' button. "
+"This field links back to the created sale order."
+msgstr ""
+"A ordem de venda criada a partir desta simulação. Depois que uma simulação é "
+"confirmada, ela pode ser convertida em uma ordem de venda usando o botão "
+"“Criar cotação”. Este campo está vinculado à ordem de venda criada."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__total_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__total_hours
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__total_hours
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Total Hours"
+msgstr "Horas Totais"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "Total Hours:"
+msgstr "Total de horas:"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__total_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__total_hours
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__total_hours
+msgid ""
+"Total calculated hours for this budget. This is the sum of all final hours "
+"from modules, integrations, and general activities. Each line's final hours "
+"already includes all factors (complexity, users, and companies)."
+msgstr ""
+"Total de horas calculadas para este orçamento. É a soma de todas as horas "
+"finais dos módulos, integrações e atividades gerais. As horas finais de cada "
+"linha já incluem todos os fatores (complexidade, usuários e empresas)."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__company_qty
+msgid ""
+"Total number of companies for this budget. This value is used to calculate "
+"the companies factor: 15% per company above 1, with no maximum limit. For "
+"example, 2 companies = +15%, 3 companies = +30%, 4 companies = +45%, etc."
+msgstr ""
+"Número total de empresas para este orçamento. Esse valor é usado para "
+"calcular o fator das empresas: 15% por empresa acima de 1, sem limite "
+"máximo. Por exemplo, 2 empresas = +15%, 3 empresas = +30%, 4 empresas = "
+"+45%, etc."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__company_qty
+msgid ""
+"Total number of companies for this simulation. This value is used to "
+"calculate the companies factor: 15% per company above 1, with no maximum "
+"limit. Can be loaded from a template or set manually."
+msgstr ""
+"Número total de empresas para esta simulação. Esse valor é usado para "
+"calcular o fator das empresas: 15% per empresa acima de 1, sem limite "
+"máximo. Pode ser carregado a partir de um modelo ou definido manualmente."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__users_qty
+msgid ""
+"Total number of users for this budget. This value is used to calculate the "
+"users factor: 1% per user above 5, with a maximum increase of 40%. For "
+"example, 10 users = +5%, 25 users = +20%, 50 users = +40% (maximum)."
+msgstr ""
+"Número total de usuários para este orçamento. Esse valor é usado para "
+"calcular o fator de usuários: 1% p usuário acima de 5, com um aumento máximo "
+"de 40%. Por exemplo, 10 usuários = +5%, 25 usuários = +20%, 50 usuários = "
+"+40% (máximo)."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__users_qty
+msgid ""
+"Total number of users for this simulation. This value is used to calculate "
+"the users factor: 1% per user above 5, with a maximum increase of 40%. Can "
+"be loaded from a template or set manually."
+msgstr ""
+"Número total de usuários para essa simulação. Esse valor é usado para "
+"calcular o fator de usuários: 1% per usuário acima de 5, com um aumento "
+"máximo de 40%. Pode ser carregado a partir de um modelo ou definido "
+"manualmente."
+
+#. module: escodoo_budget_simulator
+#. odoo-python
+#: code:addons/escodoo_budget_simulator/models/budget_simulation.py:0
+#: code:addons/escodoo_budget_simulator/models/budget_template.py:0
+#, python-format
+msgid "Totals have been recalculated."
+msgstr "Os totais foram recalculados."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_line__category__train
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation_line__category__train
+#: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_template_line__category__train
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_search
+msgid "Training"
+msgstr "Treinamento"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__activity_exception_decoration
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de atividade de exceção registada."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
+msgid "Unique code (e.g., discovery_analysis)"
+msgstr "Código único (por exemplo, descoberta_análise)"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
+msgid "Unique code (e.g., nfe, nfse)"
+msgstr "Código único (por exemplo, nfe, nfse)"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line__code
+msgid ""
+"Unique code for this budget activitie (e.g., 'discovery_analysis', "
+"'initial_config', 'training'). This code is used internally to identify the "
+"activitie. If not provided, the system will generate one automatically."
+msgstr ""
+"Código único para esta atividade orçamentária (por exemplo, "
+"“discovery_analysis”, “initial_config”, “training”). Esse código é usado "
+"internamente para identificar a atividade. Se não for fornecido, o sistema "
+"vai gerar um automaticamente."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_integration__code
+msgid ""
+"Unique code for this integration (e.g., 'nfe', 'nfse', 'cnab_receivable'). "
+"This code is used internally to identify the integration and must be unique "
+"across all integrations."
+msgstr ""
+"Código único para essa integração (por exemplo, “nfe”, “nfse”, "
+"“cnab_receivable”). Esse código é usado internamente para identificar a "
+"integração e precisa ser único em todas as integrações."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_module__code
+msgid ""
+"Unique code for this module (e.g., 'sale', 'stock', 'l10n_br_fiscal'). This "
+"code is used internally to identify the module and must be unique across all "
+"modules."
+msgstr ""
+"Código único para este módulo (por exemplo, “venda”, “estoque”, "
+"“l10n_br_fiscal”). Esse código é usado internamente para identificar o "
+"módulo e precisa ser único em todos os módulos."
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__name
+msgid ""
+"Unique name/identifier for this budget simulation. Automatically generated "
+"from a sequence when created. Format: BSIM-XXXX."
+msgstr ""
+"Nome/identificador exclusivo para essa simulação orçamentária. É gerado "
+"automaticamente a partir de uma sequência quando criado. Formato: BSIM-XXXX."
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "View Quotation"
+msgstr "Ver cotação"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__website_message_ids
+#: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__website_message_ids
+msgid "Website Messages"
+msgstr "Mensagens do Website"
+
+#. module: escodoo_budget_simulator
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_simulation__website_message_ids
+#: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_template__website_message_ids
+msgid "Website communication history"
+msgstr "Histórico de comunicação do website"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
+msgid "e.g. Account"
+msgstr "ex.: Conta"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
+msgid "e.g. Discovery Analysis"
+msgstr "ex.: Análise de Descoberta"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
+msgid "e.g. Paypal"
+msgstr "ex.: Paypal"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
+msgid "e.g. SIM-YYYY-0001"
+msgstr "ex.: SIM-AAAA-0001"
+
+#. module: escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
+msgid "e.g. Template name..."
+msgstr "ex.: nome do modelo..."
