@@ -144,7 +144,7 @@ msgstr "Ajustado"
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__adjusted_hours
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__adjusted_hours
 msgid "Adjusted Hours"
-msgstr "Horário ajustado"
+msgstr "Horas Ajustadas"
 
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
@@ -200,7 +200,7 @@ msgstr "Base"
 #. module: escodoo_budget_simulator
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_integration
 msgid "Budget Integration Catalog"
-msgstr "Catálogo de integração orçamentária"
+msgstr "Catálogo de Integração Orçamentária"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_line_mixin
@@ -229,7 +229,7 @@ msgstr "Catálogo do Módulo Orçamentário"
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
 #, python-format
 msgid "Budget Simulation"
-msgstr "Simulação orçamentária"
+msgstr "Simulação Orçamentária"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_simulation_integration
@@ -254,7 +254,7 @@ msgstr "Relatório de Simulação Orçamentária"
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
 msgid "Budget Simulation:"
-msgstr "Simulação orçamentária:"
+msgstr "Simulação Orçamentária:"
 
 #. module: escodoo_budget_simulator
 #: model:ir.module.category,name:escodoo_budget_simulator.module_category_budget
@@ -284,17 +284,17 @@ msgstr "Modelo de Orçamento"
 #. module: escodoo_budget_simulator
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_template_integration
 msgid "Budget Template Integration"
-msgstr "Integração do modelo de orçamento"
+msgstr "Integração do Modelo de Orçamento"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_template_line
 msgid "Budget Template Line"
-msgstr "Linha do modelo de orçamento"
+msgstr "Linha do Modelo de Orçamento"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_template_module
 msgid "Budget Template Module"
-msgstr "Módulo de modelo de orçamento"
+msgstr "Módulo de Modelo de Orçamento"
 
 #. module: escodoo_budget_simulator
 #: model:res.groups,name:escodoo_budget_simulator.group_budget_user
@@ -613,7 +613,7 @@ msgstr "Padrão"
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
 msgid "Default Hours"
-msgstr "Horário padrão"
+msgstr "Horas Padrão"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_res_config_settings__quotation_product_id
@@ -1003,7 +1003,7 @@ msgstr "Simulador de Orçamento Escodoo"
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__excluded_integration_ids
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template__excluded_integration_ids
 msgid "Excluded Integrations"
-msgstr "Integrações excluídas"
+msgstr "Integrações Excluídas"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__excluded_module_ids
@@ -1021,7 +1021,7 @@ msgstr "Módulos excluídos"
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_line__final_hours
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_template_module__final_hours
 msgid "Final Hours"
-msgstr "Últimas horas"
+msgstr "Horas Finais"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_line_mixin__final_hours
@@ -1065,7 +1065,7 @@ msgstr "Ícone do Font awesome ex. fa-tasks"
 #: model:ir.model,name:escodoo_budget_simulator.model_budget_line
 #: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_lines
 msgid "General Activitie Catalog"
-msgstr "Catálogo Geral de Atividades"
+msgstr "Catálogo de Atividades Gerais"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__line_ids
@@ -1074,7 +1074,7 @@ msgstr "Catálogo Geral de Atividades"
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
 msgid "General Activities"
-msgstr "Atividades gerais"
+msgstr "Atividades Gerais"
 
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_integration_form
@@ -1106,7 +1106,7 @@ msgstr "Alta"
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
 msgid "High Complexity"
-msgstr "Alta complexidade"
+msgstr "Alta Complexidade"
 
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.budget_simulation_report
@@ -1412,7 +1412,7 @@ msgstr "Baixo"
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
 msgid "Low Complexity"
-msgstr "Baixa complexidade"
+msgstr "Baixa Complexidade"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_main_attachment_id
@@ -1641,7 +1641,7 @@ msgstr "Número de Ações"
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
 msgid "Number of Companies"
-msgstr "Número de empresas"
+msgstr "Número de Empresas"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_mixin__users_qty
@@ -1650,7 +1650,7 @@ msgstr "Número de empresas"
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
 msgid "Number of Users"
-msgstr "Número de usuários"
+msgstr "Número de Usuários"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__message_has_error_counter
@@ -1769,7 +1769,7 @@ msgstr "Parâmetros de Preços"
 #: model:ir.model.fields.selection,name:escodoo_budget_simulator.selection__budget_simulation__state__quotation
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_search
 msgid "Quotation Created"
-msgstr "Cotação criada"
+msgstr "Cotação Criada"
 
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
@@ -1884,12 +1884,12 @@ msgstr "Simulação"
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__date
 msgid "Simulation Date"
-msgstr "Data da simulação"
+msgstr "Data da Simulação"
 
 #. module: escodoo_budget_simulator
 #: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_simulation_line
 msgid "Simulation Lines"
-msgstr "Linhas de simulação"
+msgstr "Linhas de Simulação"
 
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
@@ -1943,7 +1943,7 @@ msgstr "Modelo"
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation_create_template_wizard__name
 msgid "Template Name"
-msgstr "Nome do modelo"
+msgstr "Nome do Modelo"
 
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
@@ -2091,7 +2091,7 @@ msgstr "Horas Totais"
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
 msgid "Total Hours:"
-msgstr "Total de horas:"
+msgstr "Total de Horas:"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,help:escodoo_budget_simulator.field_budget_mixin__total_hours
@@ -2231,7 +2231,7 @@ msgstr ""
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_simulation_form
 msgid "View Quotation"
-msgstr "Ver cotação"
+msgstr "Ver Cotação"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.fields,field_description:escodoo_budget_simulator.field_budget_simulation__website_message_ids
@@ -2248,7 +2248,7 @@ msgstr "Histórico de comunicação do website"
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_module_form
 msgid "e.g. Account"
-msgstr "ex.: Conta"
+msgstr "ex.: Contabilidade"
 
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_line_form
@@ -2268,4 +2268,4 @@ msgstr "ex.: SIM-AAAA-0001"
 #. module: escodoo_budget_simulator
 #: model_terms:ir.ui.view,arch_db:escodoo_budget_simulator.view_budget_template_form
 msgid "e.g. Template name..."
-msgstr "ex.: nome do modelo..."
+msgstr "ex.: Nome do modelo..."
