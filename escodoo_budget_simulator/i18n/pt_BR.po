@@ -1202,7 +1202,7 @@ msgstr "Integração"
 #: model:ir.actions.act_window,name:escodoo_budget_simulator.action_budget_integration
 #: model:ir.ui.menu,name:escodoo_budget_simulator.menu_budget_integrations
 msgid "Integration Catalog"
-msgstr "Catálogo de integração"
+msgstr "Catálogo de Integração"
 
 #. module: escodoo_budget_simulator
 #: model:ir.model.constraint,message:escodoo_budget_simulator.constraint_budget_simulation_integration_unique_simulation_integration
