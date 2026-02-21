@@ -123,11 +123,13 @@ class BudgetMixin(models.AbstractModel):
             None: Updates total_hours field.
         """
         for rec in self:
-            # Sum final hours (already includes all factors: complexity, users, companies)
+            # Sum final hours (already includes all factors:
+            # complexity, users, companies)
             base_hours = sum(rec.line_ids.mapped("final_hours"))
             integration_hours = sum(rec.integration_line_ids.mapped("final_hours"))
             module_hours = sum(rec.module_line_ids.mapped("final_hours"))
 
             # Total hours is simply the sum of all final_hours
-            # (each final_hours already includes complexity, users, and companies factors)
+            # (each final_hours already includes complexity,
+            # users, and companies factors)
             rec.total_hours = base_hours + integration_hours + module_hours
