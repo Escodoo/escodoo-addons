@@ -35,11 +35,15 @@ class SaleOrder(models.Model):
                 try:
                     self._grant_portal_access(partner)
                 except UserError as e:
-                    # UserError indicates that partner already has access or invalid email
+                    # UserError indicates that partner
+                    # already has access or invalid email
                     # This can happen in race condition cases or if access was
                     # granted between the check and the grant
                     _logger.info(
-                        "Portal access already exists or cannot be granted for partner %s: %s",
+                        (
+                            "Portal access already exists or cannot be granted "
+                            "for partner %s: %s"
+                        ),
                         partner.name,
                         str(e),
                     )
