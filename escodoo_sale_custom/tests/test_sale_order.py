@@ -69,7 +69,8 @@ class TestSaleOrderPortalAccess(SaleCommon, MailCommon):
         )
 
     def test_01_confirm_order_grant_portal_access(self):
-        """Test that confirming a sale order grants portal access to partner without access."""
+        """Test that confirming a sale order grants
+        portal access to partner without access."""
         # Create sale order for partner without portal access
         sale_order = self.env["sale.order"].create(
             {
@@ -289,12 +290,14 @@ class TestSaleOrderPortalAccess(SaleCommon, MailCommon):
             sale_order.action_confirm()
         # Verify order is confirmed
         self.assertEqual(sale_order.state, "sale", "Sale order should be confirmed")
-        # Verify no new user was created for child (commercial partner already has access)
+        # Verify no new user was created for child
+        # (commercial partner already has access)
         self.child_partner.invalidate_recordset()
         self.assertEqual(
             len(self.child_partner.user_ids),
             initial_child_user_count,
-            "No new user should be created if commercial partner already has portal access",
+            "No new user should be created if commercial partner "
+            "already has portal access",
         )
         # Verify no email was sent
         self.assertNotSentEmail()
