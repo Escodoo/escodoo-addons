@@ -58,7 +58,8 @@ class TestCrmLeadBudgetSimulation(TransactionCase):
         self.assertIn("Test opportunity description", simulation.notes or "")
 
     def test_create_simulation_from_opportunity_without_partner(self):
-        """Test creating a simulation from an opportunity without a partner opens wizard."""
+        """Test creating a simulation from an opportunity
+        without a partner opens wizard."""
         # Call action_create_budget_simulation
         action = self.opportunity_without_partner.action_create_budget_simulation()
 
@@ -300,7 +301,8 @@ class TestCrmLeadBudgetSimulation(TransactionCase):
         self.assertIn(simulation, simulations)
 
     def test_action_create_quotation_links_opportunity(self):
-        """Test that creating a quotation from simulation links opportunity to sale order."""
+        """Test that creating a quotation from simulation
+        links opportunity to sale order."""
         # Check if sale_crm module is installed
         if "opportunity_id" not in self.SaleOrder._fields:
             self.skipTest(
@@ -329,7 +331,8 @@ class TestCrmLeadBudgetSimulation(TransactionCase):
             )
 
     def test_action_create_quotation_without_opportunity(self):
-        """Test that creating a quotation from simulation without opportunity works normally."""
+        """Test that creating a quotation from simulation
+        without opportunity works normally."""
         # Create a confirmed simulation without opportunity
         simulation = self.BudgetSimulation.create(
             {
