@@ -34,12 +34,14 @@ class CrmLead(models.Model):
         index=True,
         help=(
             "Indicates the lead’s primary intent regarding Odoo/ERP:\n"
-            "- My company is seeking an ERP: the company is looking to adopt an ERP.\n"
-            "- My company uses Odoo and needs services or improvements: already uses Odoo\
-                 and seeks support/evolution.\n"
-            "- I am an external consultant and want to recommend Odoo: a consultant evaluating\
-                 or proposing Odoo to clients.\n"
-            "- Partnership Opportunity: a potential commercial or strategic partnership."
+            "- My company is seeking an ERP: the company is looking "
+            "to adopt an ERP.\n"
+            "- My company uses Odoo and needs services or improvements: "
+            "already uses Odoo and seeks support/evolution.\n"
+            "- I am an external consultant and want to recommend Odoo: "
+            "a consultant evaluating or proposing Odoo to clients.\n"
+            "- Partnership Opportunity: a potential commercial or "
+            "strategic partnership."
         ),
     )
 
@@ -88,15 +90,20 @@ class CrmLead(models.Model):
         ],
         tracking=True,
         help=(
-            "High-level classification of the customer's business segment or market context. "
-            "This helps align the lead with the ICP and tailor the sales approach.\n\n"
+            "High-level classification of the customer's business segment "
+            "or market context. This helps align the lead with the ICP "
+            "and tailor the sales approach.\n\n"
             "Guidelines:\n"
-            "- Enterprise → Large corporations or groups with complex operations.\n"
-            "- Startups / Tech → Fast-growing technology or digital-native companies.\n"
-            "- Middle Market → Established mid-sized companies with structured departments.\n"
-            "- Civic Engagement → NGOs, cooperatives, or organizations with public/social\
-                 focus.\n"
-            "- Other → When the business type does not fit the categories above."
+            "- Enterprise → Large corporations or groups with complex "
+            "operations.\n"
+            "- Startups / Tech → Fast-growing technology or digital-native "
+            "companies.\n"
+            "- Middle Market → Established mid-sized companies with "
+            "structured departments.\n"
+            "- Civic Engagement → NGOs, cooperatives, or organizations "
+            "with public/social focus.\n"
+            "- Other → When the business type does not fit the categories "
+            "above."
         ),
     )
 
@@ -121,14 +128,15 @@ class CrmLead(models.Model):
         tracking=True,
         index=True,
         help=(
-            "Indicates whether the customer has an internal team dedicated to supporting "
-            "the ERP project. Typically includes a key user, manager, or technical contact "
-            "responsible for coordination and validation.\n\n"
+            "Indicates whether the customer has an internal team dedicated "
+            "to supporting the ERP project. Typically includes a key user, "
+            "manager, or technical contact responsible for coordination "
+            "and validation.\n\n"
             "Guidelines:\n"
-            "- Enable if staff are committed to following the project, testing features, "
-            "and facilitating decision-making.\n"
-            "- Disable if the customer depends entirely on external support or has no "
-            "internal resources allocated."
+            "- Enable if staff are committed to following the project, "
+            "testing features, and facilitating decision-making.\n"
+            "- Disable if the customer depends entirely on external "
+            "support or has no internal resources allocated."
         ),
     )
 
@@ -143,15 +151,17 @@ class CrmLead(models.Model):
         store=True,
         readonly=True,
         help=(
-            "Automatically computed technological maturity based on observable signals:\n"
+            "Automatically computed technological maturity based on "
+            "observable signals:\n"
             "- Uses a management/ERP system.\n"
             "- Has a dedicated internal team for the project.\n"
-            "- The 'Integrations' field contains meaningful content (existing/required\
-                 integrations).\n"
+            "- The 'Integrations' field contains meaningful content "
+            "(existing/required integrations).\n"
             "- Monthly fiscal invoices volume is at least 100.\n\n"
-            "Scoring: +1 per signal (0–4). Mapping → 0–1: Low, 2: Medium, 3–4: High.\n"
-            "This field is read-only and updated by the system; use a manual override\
-                 only if justified."
+            "Scoring: +1 per signal (0–4). Mapping → 0–1: Low, 2: Medium, "
+            "3–4: High.\n"
+            "This field is read-only and updated by the system; use a "
+            "manual override only if justified."
         ),
     )
 
@@ -163,8 +173,9 @@ class CrmLead(models.Model):
         currency_field="company_currency",
         tracking=True,
         help=(
-            "Total gross revenue generated by the company over the last 12 months. "
-            "Used to gauge financial scale and as an input to ICP scoring and project sizing."
+            "Total gross revenue generated by the company over the last "
+            "12 months. Used to gauge financial scale and as an input "
+            "to ICP scoring and project sizing."
         ),
     )
 
@@ -183,9 +194,10 @@ class CrmLead(models.Model):
         string="Average Fiscal Invoices / Month (12m)",
         tracking=True,
         help=(
-            "Average number of fiscal sales invoices (NF-e, NFS-e, etc.) issued per month "
-            "over the last 12 months. Helps estimate operational load, integration needs, "
-            "and technological maturity."
+            "Average number of fiscal sales invoices (NF-e, NFS-e, etc.) "
+            "issued per month over the last 12 months. Helps estimate "
+            "operational load, integration needs, and technological "
+            "maturity."
         ),
     )
 
@@ -227,12 +239,15 @@ class CrmLead(models.Model):
         store=False,
         readonly=True,
         help=(
-            "Difference between expected project revenue and the customer's declared\
-                 budget.\n\n"
+            "Difference between expected project revenue and the "
+            "customer's declared budget.\n\n"
             "Interpretation:\n"
-            "- Positive → expected revenue exceeds the available budget.\n"
-            "- Negative → budget exceeds the current project estimate.\n\n"
-            "A quick indicator of financial alignment or potential gap during negotiations."
+            "- Positive → expected revenue exceeds the available "
+            "budget.\n"
+            "- Negative → budget exceeds the current project "
+            "estimate.\n\n"
+            "A quick indicator of financial alignment or potential "
+            "gap during negotiations."
         ),
     )
 
@@ -258,26 +273,31 @@ class CrmLead(models.Model):
     escodoo_project_primary_pain = fields.Html(
         string="Primary Pains",
         help=(
-            "Key operational or strategic problems the customer expects to address with "
-            "Odoo.\n\n"
+            "Key operational or strategic problems the customer expects "
+            "to address with Odoo.\n\n"
             "Guidelines:\n"
-            "- Focus on the top 1–3 pains driving scope and urgency (e.g., lack of "
-            "integration, manual processes, low visibility, compliance issues).\n"
-            "- Prefer the customer's own words to preserve context and nuance.\n"
-            "- Clarify impact (cost, risk, SLAs) and urgency to support prioritization."
+            "- Focus on the top 1–3 pains driving scope and urgency "
+            "(e.g., lack of integration, manual processes, low "
+            "visibility, compliance issues).\n"
+            "- Prefer the customer's own words to preserve context "
+            "and nuance.\n"
+            "- Clarify impact (cost, risk, SLAs) and urgency to "
+            "support prioritization."
         ),
     )
 
     escodoo_project_secondary_pain = fields.Html(
         string="Secondary Pains",
         help=(
-            "Additional operational or strategic problems that are relevant but not the "
-            "top priority.\n\n"
+            "Additional operational or strategic problems that are "
+            "relevant but not the top priority.\n\n"
             "Guidelines:\n"
-            "- Capture complementary or follow-up issues to tackle after the primary "
-            "pains.\n"
-            "- Keep the customer’s phrasing when possible; note dependencies if any.\n"
-            "- Helps refine the roadmap once primary pains are addressed."
+            "- Capture complementary or follow-up issues to tackle "
+            "after the primary pains.\n"
+            "- Keep the customer’s phrasing when possible; note "
+            "dependencies if any.\n"
+            "- Helps refine the roadmap once primary pains are "
+            "addressed."
         ),
     )
 
@@ -335,8 +355,9 @@ class CrmLead(models.Model):
         compute="_compute_escodoo_icp_score",
         store=True,
         help=(
-            "Computed ICP score based on company size, tech maturity, project budget "
-            "(or expected revenue as fallback), expected revenue, and predictive signals."
+            "Computed ICP score based on company size, tech maturity, "
+            "project budget (or expected revenue as fallback), "
+            "expected revenue, and predictive signals."
         ),
     )
 
@@ -351,17 +372,18 @@ class CrmLead(models.Model):
         compute="_compute_escodoo_icp_score",
         store=True,
         help=(
-            "Automatically suggested ICP classification calculated from measurable lead\
-                 attributes "
-            "(company size, technological maturity, project budget/expected revenue, and\
-                 predictive probability).\n\n"
+            "Automatically suggested ICP classification calculated from "
+            "measurable lead attributes (company size, technological "
+            "maturity, project budget/expected revenue, and predictive "
+            "probability).\n\n"
             "Interpretation:\n"
             "- High Fit → Excellent alignment; strong lead.\n"
-            "- Medium Fit → Partial alignment; may require adjustments or validation.\n"
+            "- Medium Fit → Partial alignment; may require adjustments "
+            "or validation.\n"
             "- Low Fit → Weak alignment; limited potential but possible.\n"
             "- No Fit → Outside target; not recommended to prioritize.\n\n"
-            "This value can be manually overridden via 'ICP Classification' when human\
-                 judgment provides context."
+            "This value can be manually overridden via 'ICP Classification' "
+            "when human judgment provides context."
         ),
     )
 
@@ -428,9 +450,10 @@ class CrmLead(models.Model):
     # =====================================================================
     @api.depends("expected_revenue", "escodoo_project_budget")
     def _compute_escodoo_budget_gap(self):
-        """Compute the difference between expected revenue and project budget.
-
-        If either side is missing, the field is set to False so the view can hide it via attrs.
+        """Compute the difference between expected
+        revenue and project budget.
+        If either side is missing, the field is
+        set to False so the view can hide it via attrs.
         """
         for lead in self:
             er = lead.expected_revenue or 0.0
@@ -452,7 +475,7 @@ class CrmLead(models.Model):
         "escodoo_icp_manual_classification",
         "equity_capital",
     )
-    def _compute_escodoo_icp_score(self):
+    def _compute_escodoo_icp_score(self):  # noqa: C901
         """Compute ICP numeric score and suggested classification.
 
         Components (max ~100; all configurable via ir.config_parameter):
@@ -683,7 +706,7 @@ class CrmLead(models.Model):
         "escodoo_monthly_fiscal_docs",
         "escodoo_user_count",
     )
-    def _compute_escodoo_technological_maturity(self):
+    def _compute_escodoo_technological_maturity(self):  # noqa: C901
         """Compute tech maturity level from observable signals (tunable via\
              ir.config_parameter).
 
@@ -694,8 +717,14 @@ class CrmLead(models.Model):
             "has_dedicated_team":   {"points": 1},
             "has_integrations":     {"points": 1, "html_min_length": 3},
             "monthly_fiscal_docs":  {"points": 1, "min": 300},
-            "user_count":           {"points": 1, "bands": ["21_50","51_100","100_plus"]}
-            }
+            "user_count": {
+                    "points": 1,
+                    "bands": [
+                        "21_50",
+                        "51_100",
+                        "100_plus",
+                    ],
+                },
 
         Meaning:
             - Each rule contributes "points" if its condition is met.
@@ -846,6 +875,7 @@ class CrmLead(models.Model):
             ):
                 raise ValidationError(
                     _(
-                        "Please provide a reason when setting the ICP Manual Classification."
+                        "Please provide a reason when setting the ICP Manual "
+                        "Classification."
                     )
                 )
