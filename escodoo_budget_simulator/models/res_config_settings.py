@@ -11,7 +11,8 @@ class ResConfigSettings(models.TransientModel):
         "product.product",
         string="Default Product for Quotations",
         domain=[("type", "=", "service"), ("sale_ok", "=", True)],
-        help="Default product to use when creating sale orders from confirmed simulations.",
+        help="Default product to use when creating sale orders "
+        "from confirmed simulations.",
     )
 
     @api.model
