@@ -5,11 +5,11 @@ from odoo import models
 
 
 class SaleOrderLine(models.Model):
-
     _inherit = "sale.order.line"
 
     def _timesheet_create_project(self):
-        """Override to add sale order partner as follower of the project and its tasks."""
+        """Override to add sale order partner
+        as follower of the project and its tasks."""
         project = super()._timesheet_create_project()
         if project and self.order_id.partner_id:
             partner_id = self.order_id.partner_id.id

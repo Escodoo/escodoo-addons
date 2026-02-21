@@ -5,7 +5,6 @@ from odoo import api, fields, models
 
 
 class ProjectTask(models.Model):
-
     _inherit = "project.task"
 
     is_cancelled = fields.Boolean(
