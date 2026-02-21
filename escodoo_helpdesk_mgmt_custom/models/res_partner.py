@@ -22,7 +22,10 @@ class ResPartner(models.Model):
     helpdesk_authorized_by = fields.Many2one(
         comodel_name="res.partner",
         string="Create Tickets from Portal Authorized By",
-        help="Partner who authorized this partner to create tickets through the portal.",
+        help=(
+            "Partner who authorized this partner to create tickets "
+            "through the portal."
+        ),
         tracking=True,
     )
 
@@ -64,12 +67,13 @@ class ResPartner(models.Model):
                     lambda u: group_helpdesk_portal in u.groups_id
                 )
                 if users_to_update:
-                    users_to_update.with_context(skip_helpdesk_group_sync=True).write(
-                        {"groups_id": [(3, group_helpdesk_portal.id)]}
-                    )
+                    users_to_update.with_context(
+                        skip_helpdesk_group_sync=True,
+                    ).write({"groups_id": [(3, group_helpdesk_portal.id)]})
 
     def write(self, vals):
-        """Override write to sync portal users group when is_helpdesk_authorized changes."""
+        """Override write to sync portal users
+        group when is_helpdesk_authorized changes."""
         # Validate if partner has portal users before enabling is_helpdesk_authorized
         if "is_helpdesk_authorized" in vals and vals.get("is_helpdesk_authorized"):
             for partner in self:
