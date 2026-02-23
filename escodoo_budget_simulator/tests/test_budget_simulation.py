@@ -172,7 +172,7 @@ class TestBudgetSimulation(TransactionCase):
         # Refresh to ensure we have the latest data
         simulation.refresh()
         line1 = simulation.line_ids.filtered(
-            lambda l: l.name == "Discovery and Requirements Analysis"
+            lambda line: line.name == "Discovery and Requirements Analysis"
         )
         self.assertTrue(line1, "Line 'Discovery and Requirements Analysis' not found")
         self.assertEqual(line1.default_hours, 40.0)

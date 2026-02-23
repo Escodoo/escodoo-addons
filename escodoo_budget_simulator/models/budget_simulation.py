@@ -293,7 +293,8 @@ class BudgetSimulation(models.Model):
 
         # Clear existing data and load integrations from template
         # (5, 0, 0) removes all existing records
-        # Use adjusted_hours from template if > 0, otherwise leave empty to use default_hours
+        # Use adjusted_hours from template if > 0, otherwise
+        # leave empty to use default_hours
         integration_lines = [(5, 0, 0)]
         for template_integration in template.integration_line_ids:
             integration_lines.append(
@@ -313,7 +314,8 @@ class BudgetSimulation(models.Model):
         self.integration_line_ids = integration_lines
 
         # Clear existing data and load modules from template
-        # Use adjusted_hours from template if > 0, otherwise leave empty to use default_hours
+        # Use adjusted_hours from template if > 0, otherwise
+        # leave empty to use default_hours
         module_lines = [(5, 0, 0)]
         for template_module in template.module_line_ids:
             module_lines.append(
@@ -428,8 +430,8 @@ class BudgetSimulation(models.Model):
             else:
                 raise UserError(
                     _(
-                        "Cannot reset to draft: a sale order is currently linked to this "
-                        "simulation."
+                        "Cannot reset to draft: a sale order is currently linked "
+                        "to this simulation."
                     )
                 )
         if self.state in ("confirmed", "quotation", "cancelled"):
