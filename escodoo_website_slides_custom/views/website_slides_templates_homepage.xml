@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <odoo>
     <data>
-
         <!-- Inherit the original template -->
         <template id="courses_home_inherit" inherit_id="website_slides.courses_home">
             <!-- Modify the background image of the banner -->
@@ -24,6 +23,5 @@
                 >background-image: url(&quot;/escodoo_website_slides_custom/static/src/img/banner_default_all.svg&quot;); background-size: cover; background-position: 80% 20%;</attribute>
             </xpath>
         </template>
-
     </data>
 </odoo>
