@@ -18,7 +18,8 @@
                         <field name="is_helpdesk_authorized" />
                         <field
                             name="helpdesk_authorized_by"
-                            attrs="{'invisible': [('is_helpdesk_authorized', '=', False)], 'required': [('is_helpdesk_authorized', '=', True)]}"
+                            invisible="not is_helpdesk_authorized"
+                            required="is_helpdesk_authorized"
                         />
                     </group>
                 </page>
