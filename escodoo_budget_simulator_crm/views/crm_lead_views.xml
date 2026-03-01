@@ -14,7 +14,7 @@
                     icon="fa-calculator"
                     context="{'default_opportunity_id': id, 'default_partner_id': partner_id}"
                     groups="escodoo_budget_simulator.group_budget_user"
-                    attrs="{'invisible': [('type', '!=', 'opportunity')]}"
+                    invisible="type != 'opportunity'"
                 >
                     <field
                         name="simulation_count"
@@ -33,7 +33,7 @@
                     class="oe_highlight"
                     icon="fa-calculator"
                     groups="escodoo_budget_simulator.group_budget_user"
-                    attrs="{'invisible': [('type', '!=', 'opportunity')]}"
+                    invisible="type != 'opportunity'"
                 />
             </xpath>
         </field>

@@ -5,7 +5,7 @@
     "name": "Escodoo Budget Simulator CRM",
     "summary": """
         Integration between Budget Simulator and CRM Opportunities""",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "license": "AGPL-3",
     "author": "Escodoo",
     "website": "https://github.com/Escodoo/escodoo-addons",
