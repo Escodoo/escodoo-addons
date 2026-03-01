@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo noupdate="1">
-
     <!-- ICP scoring configuration for Escodoo CRM -->
     <data>
-
         <!-- Size points -->
         <record id="param_escodoo_icp_size_pts" model="ir.config_parameter">
             <field name="key">escodoo_icp.size_pts</field>
@@ -134,7 +132,5 @@
             <field name="key">escodoo_icp.tech_maturity_levels</field>
             <field name="value">[["high",4],["medium",2],["low",0]]</field>
         </record>
-
     </data>
-
 </odoo>
