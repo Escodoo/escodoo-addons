@@ -27,36 +27,32 @@
                         </div>
                         <div class="row mt16">
                             <div class="col-6">
-                                <strong>Partner:</strong> <span
-                                    t-field="o.partner_id"
-                                />
+                                <strong>Partner:</strong>
+                                <span t-field="o.partner_id" />
                             </div>
                             <div class="col-6">
-                                <strong>Company:</strong> <span
-                                    t-field="o.company_id"
-                                />
+                                <strong>Company:</strong>
+                                <span t-field="o.company_id" />
                             </div>
                         </div>
                         <div class="row mt16">
                             <div class="col-6">
-                                <strong>Number of Users:</strong> <span
-                                    t-field="o.users_qty"
-                                />
+                                <strong>Number of Users:</strong>
+                                <span t-field="o.users_qty" />
                             </div>
                             <div class="col-6">
-                                <strong>Number of Companies:</strong> <span
-                                    t-field="o.company_qty"
-                                />
+                                <strong>Number of Companies:</strong>
+                                <span t-field="o.company_qty" />
                             </div>
                         </div>
                         <div class="row mt16">
                             <div class="col-6">
-                                <strong>Complexity:</strong> <span
-                                    t-field="o.complexity"
-                                />
+                                <strong>Complexity:</strong>
+                                <span t-field="o.complexity" />
                             </div>
                             <div class="col-6">
-                                <strong>State:</strong> <span t-field="o.state" />
+                                <strong>State:</strong>
+                                <span t-field="o.state" />
                             </div>
                         </div>
                         <div class="row mt16" t-if="o.description">
@@ -82,16 +78,22 @@
                                     <tbody>
                                         <t t-foreach="o.module_line_ids" t-as="module">
                                             <tr>
-                                                <td><span t-field="module.name" /></td>
-                                                <td><span
+                                                <td>
+                                                    <span t-field="module.name" />
+                                                </td>
+                                                <td>
+                                                    <span
                                                         t-field="module.description"
-                                                    /></td>
+                                                    />
+                                                </td>
                                                 <td
                                                     class="text-end"
                                                     style="width: 100px;"
-                                                ><span
+                                                >
+                                                    <span
                                                         t-field="module.final_hours"
-                                                    /></td>
+                                                    />
+                                                </td>
                                             </tr>
                                         </t>
                                     </tbody>
@@ -118,18 +120,22 @@
                                             t-as="integration"
                                         >
                                             <tr>
-                                                <td><span
-                                                        t-field="integration.name"
-                                                    /></td>
-                                                <td><span
+                                                <td>
+                                                    <span t-field="integration.name" />
+                                                </td>
+                                                <td>
+                                                    <span
                                                         t-field="integration.description"
-                                                    /></td>
+                                                    />
+                                                </td>
                                                 <td
                                                     class="text-end"
                                                     style="width: 100px;"
-                                                ><span
+                                                >
+                                                    <span
                                                         t-field="integration.final_hours"
-                                                    /></td>
+                                                    />
+                                                </td>
                                             </tr>
                                         </t>
                                     </tbody>
@@ -154,16 +160,18 @@
                                     <tbody>
                                         <t t-foreach="o.line_ids" t-as="line">
                                             <tr>
-                                                <td><span t-field="line.name" /></td>
-                                                <td><span
-                                                        t-field="line.description"
-                                                    /></td>
+                                                <td>
+                                                    <span t-field="line.name" />
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.description" />
+                                                </td>
                                                 <td
                                                     class="text-end"
                                                     style="width: 100px;"
-                                                ><span
-                                                        t-field="line.final_hours"
-                                                    /></td>
+                                                >
+                                                    <span t-field="line.final_hours" />
+                                                </td>
                                             </tr>
                                         </t>
                                     </tbody>
@@ -180,7 +188,9 @@
                                         style="page-break-inside: avoid;"
                                     >
                                         <tr class="border-black o_total">
-                                            <td><strong>Total Hours</strong></td>
+                                            <td>
+                                                <strong>Total Hours</strong>
+                                            </td>
                                             <td class="text-end">
                                                 <span t-field="o.total_hours" />
                                             </td>

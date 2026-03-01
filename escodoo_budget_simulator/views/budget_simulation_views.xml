@@ -147,11 +147,13 @@
                     <!-- Main header more organized -->
                     <div class="oe_title">
                         <label for="name" />
-                        <h1><field
+                        <h1>
+                            <field
                                 name="name"
                                 placeholder="e.g. SIM-YYYY-0001"
                                 required="1"
-                            /></h1>
+                            />
+                        </h1>
                     </div>
 
                     <group>
