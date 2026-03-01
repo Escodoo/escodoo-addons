@@ -6,8 +6,7 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <!-- Remove fields from their current position -->
-            <xpath expr="//field[@name='category_id']" position="after">
-            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after" />
             <!-- Add Helpdesk page in the notebook -->
             <xpath expr="//notebook" position="inside">
                 <page
