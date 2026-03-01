@@ -4,7 +4,7 @@
         <field name="name">budget.template.tree</field>
         <field name="model">budget.template</field>
         <field name="arch" type="xml">
-            <tree
+            <list
                 string="Templates"
                 decoration-info="state == 'draft'"
                 decoration-success="state == 'confirmed'"
@@ -20,7 +20,7 @@
                     decoration-info="state == 'draft'"
                     decoration-success="state == 'confirmed'"
                 />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -36,7 +36,7 @@
                         type="object"
                         icon="fa-refresh"
                         class="btn-secondary"
-                        attrs="{'invisible': [('state', '!=', 'draft')]}"
+                        invisible="state != 'draft'"
                     />
 
                     <button
@@ -46,7 +46,7 @@
                         class="oe_highlight"
                         icon="fa-check"
                         confirm="Are you sure you want to confirm this budget template?"
-                        attrs="{'invisible': [('state', '!=', 'draft')]}"
+                        invisible="state != 'draft'"
                     />
 
                     <button
@@ -54,7 +54,7 @@
                         string="Reset to Draft"
                         type="object"
                         icon="fa-undo"
-                        attrs="{'invisible': [('state', '!=', 'confirmed')]}"
+                        invisible="state != 'confirmed'"
                     />
 
                     <field
@@ -69,7 +69,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
 
                     <!-- Button box with total hours -->
@@ -118,7 +118,7 @@
                         </page>
                         <page string="Modules" name="modules">
                             <field name="module_line_ids" nolabel="1">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="module_id" widget="link_to_record" />
                                     <field name="description" />
@@ -129,7 +129,7 @@
                                         readonly="1"
                                         sum="Total Hours"
                                     />
-                                </tree>
+                                </list>
                                 <form>
                                     <sheet>
                                         <group>
@@ -157,7 +157,7 @@
                         </page>
                         <page string="Integrations" name="integrations">
                             <field name="integration_line_ids" nolabel="1">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field
                                         name="integration_id"
@@ -171,7 +171,7 @@
                                         readonly="1"
                                         sum="Total Hours"
                                     />
-                                </tree>
+                                </list>
                                 <form>
                                     <sheet>
                                         <group>
@@ -200,7 +200,7 @@
 
                         <page string="General Activities" name="template_lines">
                             <field name="line_ids" nolabel="1">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="line_id" widget="link_to_record" />
                                     <field name="description" />
@@ -211,7 +211,7 @@
                                         readonly="1"
                                         sum="Total Hours"
                                     />
-                                </tree>
+                                </list>
                                 <form>
                                     <sheet>
                                         <group>
@@ -307,7 +307,7 @@
     <record id="action_budget_template" model="ir.actions.act_window">
         <field name="name">Templates</field>
         <field name="res_model">budget.template</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="context">{'search_default_active': 1}</field>
     </record>
 </odoo>

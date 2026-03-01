@@ -520,7 +520,7 @@ class BudgetSimulation(models.Model):
             if module_line.final_hours > 0:
                 description = module_line.name
                 if module_line.description:
-                    description += "\n%s" % module_line.description
+                    description += f"\n{module_line.description}"
                 # Use new() to trigger onchanges, then convert to write values
                 sol = self.env["sale.order.line"].new(
                     {
@@ -541,7 +541,7 @@ class BudgetSimulation(models.Model):
             if integration_line.final_hours > 0:
                 description = integration_line.name
                 if integration_line.description:
-                    description += "\n%s" % integration_line.description
+                    description += f"\n{integration_line.description}"
                 # Use new() to trigger onchanges, then convert to write values
                 sol = self.env["sale.order.line"].new(
                     {
@@ -562,7 +562,7 @@ class BudgetSimulation(models.Model):
             if line.final_hours > 0:
                 description = line.name
                 if line.description:
-                    description += "\n%s" % line.description
+                    description += f"\n{line.description}"
                 # Use new() to trigger onchanges, then convert to write values
                 sol = self.env["sale.order.line"].new(
                     {

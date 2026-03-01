@@ -4,12 +4,12 @@
         <field name="name">budget.module.tree</field>
         <field name="model">budget.module</field>
         <field name="arch" type="xml">
-            <tree string="Modules" decoration-muted="active == False">
+            <list string="Modules" decoration-muted="active == False">
                 <field name="name" />
                 <field name="code" />
                 <field name="default_hours" />
                 <field name="active" invisible="1" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -23,7 +23,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
 
                     <!-- Main header -->
@@ -87,7 +87,7 @@
     <record id="action_budget_module" model="ir.actions.act_window">
         <field name="name">Module Catalog</field>
         <field name="res_model">budget.module</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="context">{'search_default_active': 1}</field>
     </record>
 </odoo>

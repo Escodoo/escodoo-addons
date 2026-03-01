@@ -4,14 +4,14 @@
         <field name="name">budget.line.tree</field>
         <field name="model">budget.line</field>
         <field name="arch" type="xml">
-            <tree string="Activities" decoration-muted="active == False">
+            <list string="Activities" decoration-muted="active == False">
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="code" />
                 <field name="category" />
                 <field name="default_hours" />
                 <field name="active" invisible="1" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -25,7 +25,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
 
                     <!-- Main header -->
@@ -113,7 +113,7 @@
     <record id="action_budget_line" model="ir.actions.act_window">
         <field name="name">General Activitie Catalog</field>
         <field name="res_model">budget.line</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="context">{'search_default_active': 1}</field>
     </record>
 </odoo>

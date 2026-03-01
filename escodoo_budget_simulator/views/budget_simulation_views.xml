@@ -4,7 +4,7 @@
         <field name="name">budget.simulation.tree</field>
         <field name="model">budget.simulation</field>
         <field name="arch" type="xml">
-            <tree
+            <list
                 string="Simulations"
                 decoration-info="state == 'draft'"
                 decoration-success="state == 'confirmed'"
@@ -26,15 +26,15 @@
                     decoration-warning="state == 'quotation'"
                     decoration-muted="state == 'cancelled'"
                 />
-            </tree>
+            </list>
         </field>
     </record>
 
     <record id="action_budget_simulation_line" model="ir.actions.act_window">
         <field name="name">Simulation Lines</field>
         <field name="res_model">budget.simulation.line</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[('simulation_id', '=', active_id)]</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('simulation_id', '=', id)]</field>
     </record>
 
     <record id="view_budget_simulation_form" model="ir.ui.view">
@@ -51,7 +51,7 @@
                         class="oe_highlight"
                         icon="fa-download"
                         confirm="All current simulation data (modules, integrations, and lines) will be deleted and replaced with template data. Do you want to continue?"
-                        attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('template_id', '=', False)]}"
+                        invisible="state != 'draft' or not template_id"
                     />
 
                     <button
@@ -68,7 +68,7 @@
                         type="object"
                         icon="fa-refresh"
                         class="btn-secondary"
-                        attrs="{'invisible': [('state', '!=', 'draft')]}"
+                        invisible="state != 'draft'"
                     />
 
                     <button
@@ -78,7 +78,7 @@
                         class="oe_highlight"
                         icon="fa-check"
                         confirm="Are you sure you want to confirm this budget simulation?"
-                        attrs="{'invisible': [('state', '!=', 'draft')]}"
+                        invisible="state != 'draft'"
                     />
 
                     <button
@@ -86,7 +86,7 @@
                         string="Reset to Draft"
                         type="object"
                         icon="fa-undo"
-                        attrs="{'invisible': ['|', ('state', 'not in', ['confirmed', 'quotation', 'cancelled']), ('sale_order_id', '!=', False)]}"
+                        invisible="state not in ['confirmed', 'quotation', 'cancelled'] or sale_order_id"
                     />
 
                     <button
@@ -95,7 +95,7 @@
                         type="object"
                         class="oe_highlight"
                         icon="fa-shopping-cart"
-                        attrs="{'invisible': ['|', ('state', '!=', 'confirmed'), ('sale_order_id', '!=', False)]}"
+                        invisible="state != 'confirmed' or sale_order_id"
                     />
 
                     <button
@@ -103,7 +103,7 @@
                         string="View Quotation"
                         type="object"
                         icon="fa-shopping-cart"
-                        attrs="{'invisible': [('sale_order_id', '=', False)]}"
+                        invisible="not sale_order_id"
                     />
 
                     <button
@@ -113,7 +113,7 @@
                         icon="fa-times"
                         class="btn-secondary"
                         confirm="Are you sure you want to cancel this simulation? This action cannot be undone."
-                        attrs="{'invisible': ['|', ('state', 'in', ['quotation', 'cancelled']), ('sale_order_id', '!=', False)]}"
+                        invisible="state in ['quotation', 'cancelled'] or sale_order_id"
                     />
 
                     <field
@@ -129,7 +129,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
 
                     <!-- Button box with more visible statistics -->
@@ -175,7 +175,7 @@
                                 name="sale_order_id"
                                 readonly="1"
                                 options="{'no_create': True}"
-                                attrs="{'invisible': [('sale_order_id', '=', False)]}"
+                                invisible="not sale_order_id"
                             />
                         </group>
                         <group string="Pricing Parameters">
@@ -199,7 +199,7 @@
                         <!-- Page 1: Modules and Integrations (better layout) -->
                         <page string="Modules" name="modules">
                             <field name="module_line_ids" nolabel="1">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="module_id" widget="link_to_record" />
                                     <field name="description" />
@@ -210,7 +210,7 @@
                                         readonly="1"
                                         sum="Total Hours"
                                     />
-                                </tree>
+                                </list>
                                 <form>
                                     <sheet>
                                         <group>
@@ -238,7 +238,7 @@
                         </page>
                         <page string="Integrations" name="integrations">
                             <field name="integration_line_ids" nolabel="1">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field
                                         name="integration_id"
@@ -252,7 +252,7 @@
                                         readonly="1"
                                         sum="Total Hours"
                                     />
-                                </tree>
+                                </list>
                                 <form>
                                     <sheet>
                                         <group>
@@ -282,7 +282,7 @@
                         <!-- Page 2: General Activities -->
                         <page string="General Activities">
                             <field name="line_ids" nolabel="1">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="line_id" widget="link_to_record" />
                                     <field name="description" />
@@ -293,7 +293,7 @@
                                         readonly="1"
                                         sum="Total Hours"
                                     />
-                                </tree>
+                                </list>
 
                                 <form>
                                     <sheet>
@@ -373,11 +373,7 @@
                 </sheet>
 
                 <!-- Chatter with more natural position -->
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" />
-                    <field name="activity_ids" />
-                    <field name="message_ids" />
-                </div>
+                <chatter />
             </form>
         </field>
     </record>
@@ -449,7 +445,7 @@
     <record id="action_budget_simulation" model="ir.actions.act_window">
         <field name="name">Simulations</field>
         <field name="res_model">budget.simulation</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
