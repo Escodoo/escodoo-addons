@@ -1,136 +1,131 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo noupdate="1">
     <!-- ICP scoring configuration for Escodoo CRM -->
-    <data>
-        <!-- Size points -->
-        <record id="param_escodoo_icp_size_pts" model="ir.config_parameter">
-            <field name="key">escodoo_icp.size_pts</field>
-            <field name="value">
+    <!-- Size points -->
+    <record id="param_escodoo_icp_size_pts" model="ir.config_parameter">
+        <field name="key">escodoo_icp.size_pts</field>
+        <field name="value">
                 {"micro":0,"small":5,"medium_small":10,"medium":18,"medium_large":22,"large":25}
             </field>
-        </record>
+    </record>
 
-        <!-- Technological maturity -->
-        <record id="param_escodoo_icp_tech_pts" model="ir.config_parameter">
-            <field name="key">escodoo_icp.tech_pts</field>
-            <field name="value">
+    <!-- Technological maturity -->
+    <record id="param_escodoo_icp_tech_pts" model="ir.config_parameter">
+        <field name="key">escodoo_icp.tech_pts</field>
+        <field name="value">
                 {"low":0,"medium":7,"high":15}
             </field>
-        </record>
+    </record>
 
-        <!-- Primary interest -->
-        <record id="param_escodoo_icp_interest_pts" model="ir.config_parameter">
-            <field name="key">escodoo_icp.interest_pts</field>
-            <field name="value">
+    <!-- Primary interest -->
+    <record id="param_escodoo_icp_interest_pts" model="ir.config_parameter">
+        <field name="key">escodoo_icp.interest_pts</field>
+        <field name="value">
                 {"seeking_erp":10,"using_odoo":15,"external_consultant":6,"partnership_opportunity":6}
             </field>
-        </record>
+    </record>
 
-        <!-- Estimated Odoo users -->
-        <record id="param_escodoo_icp_users_pts" model="ir.config_parameter">
-            <field name="key">escodoo_icp.users_pts</field>
-            <field name="value">
+    <!-- Estimated Odoo users -->
+    <record id="param_escodoo_icp_users_pts" model="ir.config_parameter">
+        <field name="key">escodoo_icp.users_pts</field>
+        <field name="value">
                 {"1_5":-5,"6_10":0,"11_20":4,"21_50":7,"51_100":9,"100_plus":10}
             </field>
-        </record>
+    </record>
 
-        <!-- Customer profile -->
-        <record id="param_escodoo_icp_profile_pts" model="ir.config_parameter">
-            <field name="key">escodoo_icp.profile_pts</field>
-            <field name="value">
+    <!-- Customer profile -->
+    <record id="param_escodoo_icp_profile_pts" model="ir.config_parameter">
+        <field name="key">escodoo_icp.profile_pts</field>
+        <field name="value">
                 {"middle_market":10,"enterprise":9,"startups_tech":8,"civic_engagement":6,"other":4}
             </field>
-        </record>
+    </record>
 
-        <!-- Budget bands -->
-        <record id="param_escodoo_icp_budget_bands" model="ir.config_parameter">
-            <field name="key">escodoo_icp.budget_bands</field>
-            <field name="value">
+    <!-- Budget bands -->
+    <record id="param_escodoo_icp_budget_bands" model="ir.config_parameter">
+        <field name="key">escodoo_icp.budget_bands</field>
+        <field name="value">
                 [[300000,25],[150000,22],[50000,15],[10000,8],[1,2]]
             </field>
-        </record>
+    </record>
 
-        <!-- Expected revenue bands -->
-        <record id="param_escodoo_icp_expected_rev_bands" model="ir.config_parameter">
-            <field name="key">escodoo_icp.expected_rev_bands</field>
-            <field name="value">
+    <!-- Expected revenue bands -->
+    <record id="param_escodoo_icp_expected_rev_bands" model="ir.config_parameter">
+        <field name="key">escodoo_icp.expected_rev_bands</field>
+        <field name="value">
                 [[300000,10],[150000,8],[50000,6],[20000,3],[5000,1]]
             </field>
-        </record>
+    </record>
 
-        <!-- Urgency rules (months range) -->
-        <record id="param_escodoo_icp_urgency_rules" model="ir.config_parameter">
-            <field name="key">escodoo_icp.urgency_rules</field>
-            <field name="value">
+    <!-- Urgency rules (months range) -->
+    <record id="param_escodoo_icp_urgency_rules" model="ir.config_parameter">
+        <field name="key">escodoo_icp.urgency_rules</field>
+        <field name="value">
                 [[4,6,10],[0,3,6],[7,12,6]]
             </field>
-        </record>
+    </record>
 
-        <!-- Organizational signals -->
-        <record id="param_escodoo_icp_org_pts" model="ir.config_parameter">
-            <field name="key">escodoo_icp.org_pts</field>
-            <field name="value">
+    <!-- Organizational signals -->
+    <record id="param_escodoo_icp_org_pts" model="ir.config_parameter">
+        <field name="key">escodoo_icp.org_pts</field>
+        <field name="value">
                 {"has_dedicated_team":2,"has_management_system":2}
             </field>
-        </record>
+    </record>
 
-        <!-- Max probability contribution -->
-        <record id="param_escodoo_icp_max_prob_pts" model="ir.config_parameter">
-            <field name="key">escodoo_icp.max_prob_pts</field>
-            <field name="value">15</field>
-        </record>
+    <!-- Max probability contribution -->
+    <record id="param_escodoo_icp_max_prob_pts" model="ir.config_parameter">
+        <field name="key">escodoo_icp.max_prob_pts</field>
+        <field name="value">15</field>
+    </record>
 
-        <!-- Suggestion thresholds -->
-        <record
-            id="param_escodoo_icp_suggestion_thresholds"
-            model="ir.config_parameter"
-        >
-            <field name="key">escodoo_icp.suggestion_thresholds</field>
-            <field name="value">
+    <!-- Suggestion thresholds -->
+    <record id="param_escodoo_icp_suggestion_thresholds" model="ir.config_parameter">
+        <field name="key">escodoo_icp.suggestion_thresholds</field>
+        <field name="value">
                 {"high_fit":75,"medium_fit":50,"low_fit":30}
             </field>
-        </record>
+    </record>
 
-        <!-- Technological maturity auto signals -->
-        <record id="param_escodoo_icp_tech_signals" model="ir.config_parameter">
-            <field name="key">escodoo_icp.tech_signals</field>
-            <field name="value">
+    <!-- Technological maturity auto signals -->
+    <record id="param_escodoo_icp_tech_signals" model="ir.config_parameter">
+        <field name="key">escodoo_icp.tech_signals</field>
+        <field name="value">
                 {"min_monthly_fiscal_docs":300,
                  "min_user_bucket_for_signal":["21_50","51_100","100_plus"],
                  "mapping":{"high_min":4,"medium_min":2}}
             </field>
-        </record>
+    </record>
 
-        <!-- Equity capital contribution (bands: [min_threshold, points]) -->
-        <record id="param_escodoo_icp_equity_bands" model="ir.config_parameter">
-            <field name="key">escodoo_icp.equity_bands</field>
-            <field name="value">[[1000000,10],[500000,8],[100000,5],[10000,2]]</field>
-        </record>
+    <!-- Equity capital contribution (bands: [min_threshold, points]) -->
+    <record id="param_escodoo_icp_equity_bands" model="ir.config_parameter">
+        <field name="key">escodoo_icp.equity_bands</field>
+        <field name="value">[[1000000,10],[500000,8],[100000,5],[10000,2]]</field>
+    </record>
 
-        <!-- Whether equity should reinforce the budget base (uses max of budget, expected_revenue, equity) -->
-        <record
-            id="param_escodoo_icp_use_equity_in_budget_base"
-            model="ir.config_parameter"
-        >
-            <field name="key">escodoo_icp.use_equity_in_budget_base</field>
-            <field name="value">false</field>
-        </record>
+    <!-- Whether equity should reinforce the budget base (uses max of budget, expected_revenue, equity) -->
+    <record
+        id="param_escodoo_icp_use_equity_in_budget_base"
+        model="ir.config_parameter"
+    >
+        <field name="key">escodoo_icp.use_equity_in_budget_base</field>
+        <field name="value">false</field>
+    </record>
 
-        <!-- Tech maturity (auto) — tunables for _compute_escodoo_technological_maturity -->
-        <record id="param_escodoo_icp_tech_maturity_rules" model="ir.config_parameter">
-            <field name="key">escodoo_icp.tech_maturity_rules</field>
-            <field name="value">
+    <!-- Tech maturity (auto) — tunables for _compute_escodoo_technological_maturity -->
+    <record id="param_escodoo_icp_tech_maturity_rules" model="ir.config_parameter">
+        <field name="key">escodoo_icp.tech_maturity_rules</field>
+        <field name="value">
             {"has_management_system":{"points":1},
             "has_dedicated_team":{"points":1},
             "has_integrations":{"points":1,"html_min_length":3},
             "monthly_fiscal_docs":{"points":1,"min":300},
             "user_count":{"points":1,"bands":["21_50","51_100","100_plus"]}}
             </field>
-        </record>
+    </record>
 
-        <record id="param_escodoo_icp_tech_maturity_levels" model="ir.config_parameter">
-            <field name="key">escodoo_icp.tech_maturity_levels</field>
-            <field name="value">[["high",4],["medium",2],["low",0]]</field>
-        </record>
-    </data>
+    <record id="param_escodoo_icp_tech_maturity_levels" model="ir.config_parameter">
+        <field name="key">escodoo_icp.tech_maturity_levels</field>
+        <field name="value">[["high",4],["medium",2],["low",0]]</field>
+    </record>
 </odoo>

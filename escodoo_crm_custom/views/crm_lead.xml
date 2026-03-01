@@ -8,10 +8,7 @@
         <field name="arch" type="xml">
             <!-- Show lost reason after tags when inactive -->
             <field name="tag_ids" position="after">
-                <field
-                    name="lost_reason_id"
-                    attrs="{'invisible': [('active', '=', True)]}"
-                />
+                <field name="lost_reason_id" invisible="active" />
             </field>
 
             <!-- Insert our pages before the standard 'extra' tab -->
@@ -38,7 +35,7 @@
                             <field
                                 name="escodoo_budget_gap"
                                 readonly="1"
-                                attrs="{'invisible': ['|', ('escodoo_project_budget','=',False), ('expected_revenue','=',False)]}"
+                                invisible="not escodoo_project_budget or not expected_revenue"
                             />
                         </group>
 
@@ -47,8 +44,8 @@
                             <field name="escodoo_has_management_system" />
                             <field
                                 name="escodoo_management_system_name"
-                                attrs="{'invisible': [('escodoo_has_management_system','=',False)],
-                             'required':  [('escodoo_has_management_system','=',True)]}"
+                                invisible="not escodoo_has_management_system"
+                                required="escodoo_has_management_system"
                             />
                             <field name="escodoo_has_dedicated_team" />
                             <field name="escodoo_technological_maturity" />
@@ -58,13 +55,13 @@
                             <field name="escodoo_icp_manual_classification" />
                             <field
                                 name="escodoo_icp_manual_classification_reason"
-                                attrs="{'invisible': [('escodoo_icp_manual_classification','=',False)],
-                             'required':  [('escodoo_icp_manual_classification','!=',False)]}"
+                                invisible="not escodoo_icp_manual_classification"
+                                required="escodoo_icp_manual_classification"
                             />
                             <field
                                 name="escodoo_icp_classification"
                                 readonly="1"
-                                attrs="{'invisible': [('escodoo_icp_classification','=',False)]}"
+                                invisible="not escodoo_icp_classification"
                             />
                             <field name="escodoo_icp_score" readonly="1" />
                         </group>
