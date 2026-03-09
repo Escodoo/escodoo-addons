@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="sequence_budget_simulation" model="ir.sequence">
+        <field name="name">Budget Simulation Sequence</field>
+        <field name="code">budget.simulation</field>
+        <field name="prefix">BUD-</field>
+        <field name="padding">5</field>
+        <field name="number_increment">1</field>
+        <field name="number_next">1</field>
+    </record>
+</odoo>
