@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- ===== Lead Form ===== -->
+    <record model="ir.ui.view" id="crm_lead_form_view_leads">
+        <field name="name">crm.lead.form.leads (in escodoo_crm_custom)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+            <!-- Show lost reason after tags when inactive -->
+            <field name="tag_ids" position="after">
+                <field name="lost_reason_id" invisible="active" />
+            </field>
+
+            <!-- Insert our pages before the standard 'extra' tab -->
+            <xpath expr="//page[@name='extra']" position="before">
+                <page name="escodoo_company_details_page" string="Company Details">
+                    <group name="escodoo_company_details">
+                        <!-- Left column -->
+                        <group string="Profile &amp; Size">
+                            <field name="escodoo_primary_interest" />
+                            <field name="escodoo_customer_profile" />
+                            <field name="escodoo_company_size" />
+                            <field name="escodoo_user_count" />
+                        </group>
+
+                        <group string="Financial Indicators">
+                            <field name="escodoo_annual_revenue" />
+                            <field name="escodoo_average_ticket" />
+                            <field name="escodoo_monthly_fiscal_docs" />
+                        </group>
+
+                        <group string="Budget &amp; Forecast">
+                            <field name="escodoo_project_budget" />
+                            <field name="expected_revenue" />
+                            <field
+                                name="escodoo_budget_gap"
+                                readonly="1"
+                                invisible="not escodoo_project_budget or not expected_revenue"
+                            />
+                        </group>
+
+                        <!-- Right column -->
+                        <group string="Systems &amp; Team">
+                            <field name="escodoo_has_management_system" />
+                            <field
+                                name="escodoo_management_system_name"
+                                invisible="not escodoo_has_management_system"
+                                required="escodoo_has_management_system"
+                            />
+                            <field name="escodoo_has_dedicated_team" />
+                            <field name="escodoo_technological_maturity" />
+                        </group>
+
+                        <group string="ICP Classification">
+                            <field name="escodoo_icp_manual_classification" />
+                            <field
+                                name="escodoo_icp_manual_classification_reason"
+                                invisible="not escodoo_icp_manual_classification"
+                                required="escodoo_icp_manual_classification"
+                            />
+                            <field
+                                name="escodoo_icp_classification"
+                                readonly="1"
+                                invisible="not escodoo_icp_classification"
+                            />
+                            <field name="escodoo_icp_score" readonly="1" />
+                        </group>
+                    </group>
+                </page>
+
+                <page name="escodoo_project_details_page" string="Project Details">
+                    <group name="escodoo_project_detail">
+                        <group string="Planning">
+                            <field name="escodoo_project_release_date" />
+                        </group>
+
+                        <group colspan="2">
+                            <field
+                                name="escodoo_project_description"
+                                widget="html"
+                                options="{'toolbar': true}"
+                            />
+                            <field
+                                name="escodoo_project_primary_pain"
+                                widget="html"
+                                options="{'toolbar': true}"
+                            />
+                            <field
+                                name="escodoo_project_secondary_pain"
+                                widget="html"
+                                options="{'toolbar': true}"
+                            />
+                            <field
+                                name="escodoo_project_integration"
+                                widget="html"
+                                options="{'toolbar': true}"
+                            />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ===== Search View Inheritance: add filters & group-bys ===== -->
+    <record id="escodoo_view_crm_case_opportunities_filter_icp" model="ir.ui.view">
+        <field name="name">crm.lead.search.opportunity.icp (escodoo)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter" />
+        <field name="arch" type="xml">
+            <!-- Add filters at the end of the <search> -->
+            <xpath expr="//search" position="inside">
+                <!-- Activities -->
+                <separator string="Activities" />
+                <filter
+                    string="Overdue Activities"
+                    name="activities_overdue"
+                    domain="[('activity_state', '=', 'overdue')]"
+                />
+                <filter
+                    string="Activities Due Today"
+                    name="activities_today"
+                    domain="[('activity_state', '=', 'today')]"
+                />
+                <filter
+                    string="Next 7 Days"
+                    name="next_activity_7days"
+                    domain="[('activity_date_deadline', '&gt;', context_today().strftime('%Y-%m-%d')),
+                         ('activity_date_deadline', '&lt;=', (context_today() + relativedelta(days=7)).strftime('%Y-%m-%d'))]"
+                />
+                <filter
+                    string="No Activities"
+                    name="no_activities"
+                    domain="[('activity_ids', '=', False)]"
+                />
+
+                <!-- ICP Suggested -->
+                <separator string="ICP (Suggested)" />
+                <filter
+                    string="ICP: High Fit"
+                    name="icp_sugg_high"
+                    domain="[('escodoo_icp_classification', '=', 'high_fit')]"
+                />
+                <filter
+                    string="ICP: Medium Fit"
+                    name="icp_sugg_med"
+                    domain="[('escodoo_icp_classification', '=', 'medium_fit')]"
+                />
+                <filter
+                    string="ICP: Low Fit"
+                    name="icp_sugg_low"
+                    domain="[('escodoo_icp_classification', '=', 'low_fit')]"
+                />
+                <filter
+                    string="ICP: No Fit"
+                    name="icp_sugg_none"
+                    domain="[('escodoo_icp_classification', '=', 'no_fit')]"
+                />
+
+                <!-- Technological Maturity (Auto) -->
+                <separator string="Technological Maturity (Auto)" />
+                <filter
+                    string="Tech Maturity: High"
+                    name="tech_high"
+                    domain="[('escodoo_technological_maturity', '=', 'high')]"
+                />
+                <filter
+                    string="Tech Maturity: Medium"
+                    name="tech_medium"
+                    domain="[('escodoo_technological_maturity', '=', 'medium')]"
+                />
+                <filter
+                    string="Tech Maturity: Low"
+                    name="tech_low"
+                    domain="[('escodoo_technological_maturity', '=', 'low')]"
+                />
+
+                <!-- Expected Revenue -->
+                <separator string="Expected Revenue" />
+                <filter
+                    string="Known Expected Revenue"
+                    name="expected_known"
+                    domain="[('expected_revenue', '!=', False)]"
+                />
+                <filter
+                    string="Unknown Expected Revenue"
+                    name="expected_unknown"
+                    domain="[('expected_revenue', '=', False)]"
+                />
+                <filter
+                    string="≥ 150k"
+                    name="expected_150k"
+                    domain="[('expected_revenue', '&gt;=', 150000)]"
+                />
+                <filter
+                    string="50k–149k"
+                    name="expected_50_149"
+                    domain="[('expected_revenue', '&gt;=', 50000), ('expected_revenue', '&lt;', 150000)]"
+                />
+                <filter
+                    string="20k–49k"
+                    name="expected_20_49"
+                    domain="[('expected_revenue', '&gt;=', 20000), ('expected_revenue', '&lt;', 50000)]"
+                />
+                <filter
+                    string="&lt; 20k"
+                    name="expected_lt20"
+                    domain="[('expected_revenue', '&gt;', 0), ('expected_revenue', '&lt;', 20000)]"
+                />
+
+                <!-- Project Budget -->
+                <separator string="Project Budget" />
+                <filter
+                    string="Known Budget"
+                    name="budget_known"
+                    domain="[('escodoo_project_budget', '!=', False)]"
+                />
+                <filter
+                    string="Unknown Budget"
+                    name="budget_unknown"
+                    domain="[('escodoo_project_budget', '=', False)]"
+                />
+                <filter
+                    string="≥ 150k"
+                    name="budget_150k"
+                    domain="[('escodoo_project_budget', '&gt;=', 150000)]"
+                />
+                <filter
+                    string="50k–149k"
+                    name="budget_50_149"
+                    domain="[('escodoo_project_budget', '&gt;=', 50000), ('escodoo_project_budget', '&lt;', 150000)]"
+                />
+                <filter
+                    string="20k–49k"
+                    name="budget_20_49"
+                    domain="[('escodoo_project_budget', '&gt;=', 20000), ('escodoo_project_budget', '&lt;', 50000)]"
+                />
+                <filter
+                    string="&lt; 20k"
+                    name="budget_lt20"
+                    domain="[('escodoo_project_budget', '&gt;', 0), ('escodoo_project_budget', '&lt;', 20000)]"
+                />
+
+                <!-- Org Signals -->
+                <separator string="Org Signals" />
+                <filter
+                    string="Has ERP/System"
+                    name="sig_has_erp"
+                    domain="[('escodoo_has_management_system', '=', True)]"
+                />
+                <filter
+                    string="No ERP/System"
+                    name="sig_no_erp"
+                    domain="[('escodoo_has_management_system', '=', False)]"
+                />
+                <filter
+                    string="Has Dedicated Team"
+                    name="sig_has_team"
+                    domain="[('escodoo_has_dedicated_team', '=', True)]"
+                />
+                <filter
+                    string="No Dedicated Team"
+                    name="sig_no_team"
+                    domain="[('escodoo_has_dedicated_team', '=', False)]"
+                />
+
+                <!-- Primary Interest -->
+                <separator string="Primary Interest" />
+                <filter
+                    string="Seeking ERP"
+                    name="interest_seeking_erp"
+                    domain="[('escodoo_primary_interest', '=', 'seeking_erp')]"
+                />
+                <filter
+                    string="Using Odoo"
+                    name="interest_using_odoo"
+                    domain="[('escodoo_primary_interest', '=', 'using_odoo')]"
+                />
+                <filter
+                    string="External Consultant"
+                    name="interest_external_consultant"
+                    domain="[('escodoo_primary_interest', '=', 'external_consultant')]"
+                />
+                <filter
+                    string="Partnership Opportunity"
+                    name="interest_partnership_opportunity"
+                    domain="[('escodoo_primary_interest', '=', 'partnership_opportunity')]"
+                />
+
+                <!-- Org Profile -->
+                <separator string="Segmentation" />
+                <filter
+                    string="Customer Profile: Enterprise"
+                    name="cust_prof_ent"
+                    domain="[('escodoo_customer_profile', '=', 'enterprise')]"
+                />
+                <filter
+                    string="Customer Profile: Startups/Tech"
+                    name="cust_prof_tech"
+                    domain="[('escodoo_customer_profile', '=', 'startups_tech')]"
+                />
+                <filter
+                    string="Customer Profile: Middle Market"
+                    name="cust_prof_mid"
+                    domain="[('escodoo_customer_profile', '=', 'middle_market')]"
+                />
+                <filter
+                    string="Customer Profile: Civic Engagement"
+                    name="cust_prof_civic"
+                    domain="[('escodoo_customer_profile', '=', 'civic_engagement')]"
+                />
+            </xpath>
+
+            <!-- Add Group By options inside the existing group (no @string selector) -->
+            <xpath expr="//search/group" position="inside">
+                <separator string="Escodoo Group By" />
+                <filter
+                    string="ICP Suggested"
+                    name="grp_icp_sugg"
+                    context="{'group_by': 'escodoo_icp_classification'}"
+                />
+                <filter
+                    string="Tech Maturity"
+                    name="grp_tech"
+                    context="{'group_by': 'escodoo_technological_maturity'}"
+                />
+                <filter
+                    string="Customer Profile"
+                    name="grp_cust_prof"
+                    context="{'group_by': 'escodoo_customer_profile'}"
+                />
+                <filter
+                    string="Company Size"
+                    name="grp_size"
+                    context="{'group_by': 'escodoo_company_size'}"
+                />
+                <filter
+                    string="Primary Interest"
+                    name="grp_interest"
+                    context="{'group_by': 'escodoo_primary_interest'}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ===== Kanban Inheritance: show ICP badge ===== -->
+    <record id="escodoo_crm_lead_kanban_icp" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.icp.suggested (escodoo)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads" />
+        <field name="arch" type="xml">
+            <!-- Make ICP fields available in the kanban dataset -->
+            <xpath expr="//kanban" position="inside">
+                <field name="escodoo_icp_classification" />
+                <field name="escodoo_icp_score" />
+            </xpath>
+
+            <!-- Insert ICP badge before the first subtitle block -->
+            <xpath
+                expr="//t[@t-name='kanban-box']//div[hasclass('o_kanban_record_subtitle')][1]"
+                position="before"
+            >
+                <div class="o_kanban_record_subtitle">
+                    <t
+                        t-if="record.escodoo_icp_classification and record.escodoo_icp_classification.raw_value"
+                    >
+                        <span
+                            t-att-class="{
+                    'badge': true,
+                    'rounded-pill': true,
+                    'bg-success': record.escodoo_icp_classification.raw_value === 'high_fit',
+                    'bg-primary': record.escodoo_icp_classification.raw_value === 'medium_fit',
+                    'bg-warning': record.escodoo_icp_classification.raw_value === 'low_fit',
+                    'text-dark': record.escodoo_icp_classification.raw_value === 'low_fit',
+                    'bg-secondary': ['no_fit', undefined, null].includes(record.escodoo_icp_classification.raw_value)
+                  }"
+                            t-att-title="'Automatically suggested ICP based on profile and maturity signals.'"
+                        >
+                            <t t-esc="record.escodoo_icp_classification.value" />
+                            <t
+                                t-if="record.escodoo_icp_score and record.escodoo_icp_score.raw_value !== false"
+                            >
+                (<t t-esc="record.escodoo_icp_score.raw_value" />)
+              </t>
+                        </span>
+                    </t>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

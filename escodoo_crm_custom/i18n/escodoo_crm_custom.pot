@@ -1,0 +1,727 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* escodoo_crm_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-29 01:49+0000\n"
+"PO-Revision-Date: 2025-10-29 01:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__medium_large
+msgid "100-250 employees"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_user_count__11_20
+msgid "11–20 users"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_user_count__1_5
+msgid "1–5 users"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__medium_small
+msgid "20-50 employees"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "20k–49k"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_user_count__21_50
+msgid "21–50 users"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__small
+msgid "5-20 employees"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__medium
+msgid "50-100 employees"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "50k–149k"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_user_count__51_100
+msgid "51–100 users"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_user_count__6_10
+msgid "6–10 users"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "< 20k"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Activities"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Activities Due Today"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_project_secondary_pain
+msgid ""
+"Additional operational or strategic problems that are relevant but not the top priority.\n"
+"\n"
+"Guidelines:\n"
+"- Capture complementary or follow-up issues to tackle after the primary pains.\n"
+"- Keep the customer’s phrasing when possible; note dependencies if any.\n"
+"- Helps refine the roadmap once primary pains are addressed."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_annual_revenue
+msgid "Annual Revenue (12m)"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_company_size
+msgid "Approximate number of employees."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_technological_maturity
+msgid ""
+"Automatically computed technological maturity based on observable signals:\n"
+"- Uses a management/ERP system.\n"
+"- Has a dedicated internal team for the project.\n"
+"- The 'Integrations' field contains meaningful content (existing/required                 integrations).\n"
+"- Monthly fiscal invoices volume is at least 100.\n"
+"\n"
+"Scoring: +1 per signal (0–4). Mapping → 0–1: Low, 2: Medium, 3–4: High.\n"
+"This field is read-only and updated by the system; use a manual override                 only if justified."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_icp_classification
+msgid ""
+"Automatically suggested ICP classification calculated from measurable lead                 attributes (company size, technological maturity, project budget/expected revenue, and                 predictive probability).\n"
+"\n"
+"Interpretation:\n"
+"- High Fit → Excellent alignment; strong lead.\n"
+"- Medium Fit → Partial alignment; may require adjustments or validation.\n"
+"- Low Fit → Weak alignment; limited potential but possible.\n"
+"- No Fit → Outside target; not recommended to prioritize.\n"
+"\n"
+"This value can be manually overridden via 'ICP Classification' when human                 judgment provides context."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_monthly_fiscal_docs
+msgid "Average Fiscal Invoices / Month (12m)"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_average_ticket
+msgid "Average Invoice Value (12m)"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_monthly_fiscal_docs
+msgid ""
+"Average number of fiscal sales invoices (NF-e, NFS-e, etc.) issued per month"
+" over the last 12 months. Helps estimate operational load, integration "
+"needs, and technological maturity."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_average_ticket
+msgid ""
+"Average value of posted sales invoices during the last 12 months. Helps "
+"understand transaction profile and throughput, informing                 "
+"complexity estimates."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
+msgid "Budget & Forecast"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_budget_gap
+msgid "Budget Gap (Expected − Budget)"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_customer_profile__civic_engagement
+msgid "Civic Engagement"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
+msgid "Company Details"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_company_size
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Company Size"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_icp_score
+msgid ""
+"Computed ICP score based on company size, tech maturity, project budget (or "
+"expected revenue as fallback), expected revenue, and predictive signals."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_customer_profile
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Customer Profile"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Customer Profile: Civic Engagement"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Customer Profile: Enterprise"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Customer Profile: Middle Market"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Customer Profile: Startups/Tech"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_budget_gap
+msgid ""
+"Difference between expected project revenue and the customer's declared                 budget.\n"
+"\n"
+"Interpretation:\n"
+"- Positive → expected revenue exceeds the available budget.\n"
+"- Negative → budget exceeds the current project estimate.\n"
+"\n"
+"A quick indicator of financial alignment or potential gap during negotiations."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_customer_profile__enterprise
+msgid "Enterprise"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Escodoo Group By"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_user_count
+msgid "Estimated Odoo Users"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_project_budget
+msgid ""
+"Estimated amount the customer is willing or able to invest in the                 Odoo project.\n"
+"\n"
+"Guidelines:\n"
+"- Capture the declared/expected investment range (implementation,                 customization, total cost).\n"
+"- If not exact, estimate based on company size, modules in scope, or                 negotiation context.\n"
+"- Used to assess feasibility and contributes to the ICP score."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_user_count
+msgid ""
+"Estimated number of active Odoo users in the company. Helps with "
+"scoping/effort estimation and infrastructure sizing. Used only for internal "
+"planning — not related to licensing."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_project_integration
+msgid ""
+"Existing or planned integrations between Odoo and other systems.\n"
+"\n"
+"Guidelines:\n"
+"- List external platforms/APIs that must exchange data with Odoo (e-commerce, logistics, finance, legacy ERP, etc.).\n"
+"- Indicate status (existing vs. to-be-developed), direction of data flow, and frequency/triggers when applicable.\n"
+"- Helps estimate technical complexity, sequencing, and project scope."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Expected Revenue"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "External Consultant"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__micro
+msgid "Fewer than 5 employees"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
+msgid "Financial Indicators"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_icp_manual_classification_reason
+msgid ""
+"Free-text justification for setting a manual ICP classification.\n"
+"\n"
+"Use this to capture the business rationale (e.g., special partnership, board sponsorship, strategic account, atypical timing/budget)."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_description
+msgid "General Description"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Has Dedicated Team"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Has ERP/System"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_has_management_system
+msgid "Has Management/ERP System?"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_has_dedicated_team
+msgid "Has a Dedicated Team"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_technological_maturity__high
+msgid "High"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_icp_classification__high_fit
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_icp_manual_classification__high_fit
+msgid "High Fit"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_customer_profile
+msgid ""
+"High-level classification of the customer's business segment or market context. This helps align the lead with the ICP and tailor the sales approach.\n"
+"\n"
+"Guidelines:\n"
+"- Enterprise → Large corporations or groups with complex operations.\n"
+"- Startups / Tech → Fast-growing technology or digital-native companies.\n"
+"- Middle Market → Established mid-sized companies with structured departments.\n"
+"- Civic Engagement → NGOs, cooperatives, or organizations with public/social                 focus.\n"
+"- Other → When the business type does not fit the categories above."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_project_description
+msgid ""
+"High-level overview of the project: business goals, functional scope, and expected outcomes.\n"
+"\n"
+"Guidelines:\n"
+"- Summarize objectives and covered areas (e.g., Sales, Inventory, Accounting).\n"
+"- Indicate whether it is an implementation, migration, or improvement initiative.\n"
+"- Mention key stakeholders, constraints, or special considerations when relevant.\n"
+"- Helps consultants and account managers with quick context."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_primary_interest__external_consultant
+msgid "I am an external consultant and want to recommend Odoo"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "ICP (Suggested)"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_icp_classification
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
+msgid "ICP Classification"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_icp_manual_classification
+msgid "ICP Manual Classification"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_icp_manual_classification_reason
+msgid "ICP Manual Reason"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_icp_score
+msgid "ICP Score"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "ICP Suggested"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "ICP: High Fit"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "ICP: Low Fit"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "ICP: Medium Fit"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "ICP: No Fit"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_primary_interest
+msgid ""
+"Indicates the lead’s primary intent regarding Odoo/ERP:\n"
+"- My company is seeking an ERP: the company is looking to adopt an ERP.\n"
+"- My company uses Odoo and needs services or improvements: already uses Odoo                 and seeks support/evolution.\n"
+"- I am an external consultant and want to recommend Odoo: a consultant evaluating                 or proposing Odoo to clients.\n"
+"- Partnership Opportunity: a potential commercial or strategic partnership."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_has_management_system
+msgid ""
+"Indicates whether the company currently uses any management/ERP system."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_has_dedicated_team
+msgid ""
+"Indicates whether the customer has an internal team dedicated to supporting the ERP project. Typically includes a key user, manager, or technical contact responsible for coordination and validation.\n"
+"\n"
+"Guidelines:\n"
+"- Enable if staff are committed to following the project, testing features, and facilitating decision-making.\n"
+"- Disable if the customer depends entirely on external support or has no internal resources allocated."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_integration
+msgid "Integrations"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_project_primary_pain
+msgid ""
+"Key operational or strategic problems the customer expects to address with Odoo.\n"
+"\n"
+"Guidelines:\n"
+"- Focus on the top 1–3 pains driving scope and urgency (e.g., lack of integration, manual processes, low visibility, compliance issues).\n"
+"- Prefer the customer's own words to preserve context and nuance.\n"
+"- Clarify impact (cost, risk, SLAs) and urgency to support prioritization."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Known Budget"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Known Expected Revenue"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model,name:escodoo_crm_custom.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_technological_maturity__low
+msgid "Low"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_icp_classification__low_fit
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_icp_manual_classification__low_fit
+msgid "Low Fit"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_management_system_name
+msgid "Management System Name"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_icp_manual_classification
+msgid ""
+"Manual ICP classification assigned by the sales team. Use this to override                 the automatic ICP suggestion when additional qualitative insight is available.\n"
+"\n"
+"Guidelines:\n"
+"- High Fit → Ideal profile (clear alignment in size, maturity, budget)\n"
+"- Medium Fit → Partial alignment or requires adaptation\n"
+"- Low Fit → Weak alignment but potentially viable\n"
+"- No Fit → Outside target or not a viable opportunity"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_technological_maturity__medium
+msgid "Medium"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_icp_classification__medium_fit
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_icp_manual_classification__medium_fit
+msgid "Medium Fit"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_customer_profile__middle_market
+msgid "Middle Market"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_user_count__100_plus
+msgid "More than 100 users"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_company_size__large
+msgid "More than 250 employees"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_primary_interest__seeking_erp
+msgid "My company is seeking an ERP"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_primary_interest__using_odoo
+msgid "My company uses Odoo and needs services or improvements"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_management_system_name
+msgid "Name of the current management/ERP system in use (if any)."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Next 7 Days"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "No Activities"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "No Dedicated Team"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "No ERP/System"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_icp_classification__no_fit
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_icp_manual_classification__no_fit
+msgid "No Fit"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Org Signals"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_customer_profile__other
+msgid "Other"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Overdue Activities"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_primary_interest__partnership_opportunity
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Partnership Opportunity"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_project_release_date
+msgid ""
+"Planned or desired go-live date for the Odoo project.\n"
+"\n"
+"Guidelines:\n"
+"- Record when the customer expects the system to be operational.\n"
+"- Helps align the implementation schedule and assess urgency.\n"
+"- If unknown, provide an estimated quarter or month based on context."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
+msgid "Planning"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#. odoo-python
+#: code:addons/escodoo_crm_custom/models/crm_lead.py:0
+#, python-format
+msgid "Please provide a reason when setting the ICP Manual Classification."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_primary_interest
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Primary Interest"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_primary_pain
+msgid "Primary Pains"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
+msgid "Profile & Size"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_budget
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Project Budget"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
+msgid "Project Details"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_secondary_pain
+msgid "Secondary Pains"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Seeking ERP"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Segmentation"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields.selection,name:escodoo_crm_custom.selection__crm_lead__escodoo_customer_profile__startups_tech
+msgid "Startups / Tech"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.crm_lead_form_view_leads
+msgid "Systems & Team"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_project_release_date
+msgid "Target Go-live Date"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Tech Maturity"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Tech Maturity: High"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Tech Maturity: Low"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Tech Maturity: Medium"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,field_description:escodoo_crm_custom.field_crm_lead__escodoo_technological_maturity
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Technological Maturity (Auto)"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model:ir.model.fields,help:escodoo_crm_custom.field_crm_lead__escodoo_annual_revenue
+msgid ""
+"Total gross revenue generated by the company over the last 12 months. Used "
+"to gauge financial scale and as an input to ICP scoring and project sizing."
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Unknown Budget"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Unknown Expected Revenue"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "Using Odoo"
+msgstr ""
+
+#. module: escodoo_crm_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_crm_custom.escodoo_view_crm_case_opportunities_filter_icp
+msgid "≥ 150k"
+msgstr ""
