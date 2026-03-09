@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_crm_lead_form_budget_simulator" model="ir.ui.view">
+        <field name="name">crm.lead.form.budget.simulator</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+            <!-- Add button box with simulation count (only visible for opportunities) -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    name="action_view_simulations"
+                    icon="fa-calculator"
+                    context="{'default_opportunity_id': id, 'default_partner_id': partner_id}"
+                    groups="escodoo_budget_simulator.group_budget_user"
+                    invisible="type != 'opportunity'"
+                >
+                    <field
+                        name="simulation_count"
+                        widget="statinfo"
+                        string="Simulations"
+                    />
+                </button>
+            </xpath>
+
+            <!-- Add button to create simulation (only visible for opportunities) -->
+            <xpath expr="//header" position="inside">
+                <button
+                    name="action_create_budget_simulation"
+                    string="Create Budget Simulation"
+                    type="object"
+                    class="oe_highlight"
+                    icon="fa-calculator"
+                    groups="escodoo_budget_simulator.group_budget_user"
+                    invisible="type != 'opportunity'"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

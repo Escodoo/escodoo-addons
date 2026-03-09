@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
+<title>Escodoo Budget Simulator CRM</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
+
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: gray; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic, pre.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="escodoo-budget-simulator-crm">
+<h1 class="title">Escodoo Budget Simulator CRM</h1>
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! This file is generated by oca-gen-addon-readme !!
+!! changes will be overwritten.                   !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! source digest: sha256:2ddb5a61437aba46ea2b375ffaa7ac386f9b65e5e7211ed95eeb5215ea04bb15
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/Escodoo/escodoo-addons/tree/18.0/escodoo_budget_simulator_crm"><img alt="Escodoo/escodoo-addons" src="https://img.shields.io/badge/github-Escodoo%2Fescodoo--addons-lightgray.png?logo=github" /></a></p>
+<p>This module provides integration between the Escodoo Budget Simulator
+and CRM Opportunities, allowing sales teams to create budget simulations
+directly from CRM opportunities and link them throughout the sales
+process.</p>
+<div class="section" id="main-features">
+<h1>Main Features</h1>
+<ul class="simple">
+<li><strong>Create Simulations from Opportunities</strong>: Create budget simulations
+directly from CRM opportunities with a single click</li>
+<li><strong>Partner Management</strong>: Wizard to handle partner assignment when
+creating simulations from opportunities without a partner</li>
+<li><strong>Automatic Linking</strong>: Automatically link opportunities to simulations
+and sale orders</li>
+<li><strong>Opportunity Tracking</strong>: View all budget simulations linked to an
+opportunity from the opportunity form</li>
+<li><strong>Sales Order Integration</strong>: When creating a sale order from a
+simulation, automatically link it to the associated opportunity</li>
+</ul>
+</div>
+<div class="section" id="benefits">
+<h1>Benefits</h1>
+<ul class="simple">
+<li>Streamline the sales process by creating budgets directly from
+opportunities</li>
+<li>Maintain traceability between opportunities, simulations, and sale
+orders</li>
+<li>Reduce manual data entry by automatically populating partner
+information</li>
+<li>Track all budget simulations related to an opportunity in one place</li>
+<li>Seamless integration with the existing CRM workflow</li>
+</ul>
+</div>
+<div class="section" id="dependencies">
+<h1>Dependencies</h1>
+<p>This module requires:</p>
+<ul class="simple">
+<li><tt class="docutils literal">escodoo_budget_simulator</tt>: The base Budget Simulator module</li>
+<li><tt class="docutils literal">crm</tt>: CRM module for opportunities management</li>
+<li><tt class="docutils literal">sale_crm</tt>: Integration between Sales and CRM modules</li>
+</ul>
+</div>
+<div class="section" id="workflow">
+<h1>Workflow</h1>
+<ol class="arabic simple">
+<li>Sales team creates or works with a CRM opportunity</li>
+<li>From the opportunity, click “Create Budget Simulation”</li>
+<li>If the opportunity has a partner, the simulation is created
+immediately</li>
+<li>If the opportunity doesn’t have a partner, a wizard opens to:<ul>
+<li>Create a new customer from the opportunity data</li>
+<li>Link to an existing customer</li>
+</ul>
+</li>
+<li>The simulation is created and linked to the opportunity</li>
+<li>When creating a sale order from the simulation, it’s automatically
+linked to the opportunity</li>
+<li>All simulations linked to an opportunity can be viewed from the
+opportunity form</li>
+</ol>
+<p><strong>Table of contents</strong></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#configuration" id="toc-entry-1">Configuration</a></li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#toc-entry-1">Configuration</a></h2>
+<p>This guide explains how to configure the Escodoo Budget Simulator CRM
+integration module.</p>
+</div>
+</div>
+<div class="section" id="installation">
+<h1>Installation</h1>
+<ol class="arabic simple">
+<li>Ensure that the base module <tt class="docutils literal">escodoo_budget_simulator</tt> is installed</li>
+<li>Ensure that the <tt class="docutils literal">crm</tt> and <tt class="docutils literal">sale_crm</tt> modules are installed</li>
+<li>Go to the <strong>Apps</strong> menu</li>
+<li>Remove the “Apps” filter if necessary</li>
+<li>Search for “Escodoo Budget Simulator CRM”</li>
+<li>Click <strong>Install</strong></li>
+</ol>
+<p>The module will automatically install the necessary dependencies:</p>
+<ul class="simple">
+<li><tt class="docutils literal">escodoo_budget_simulator</tt> (base Budget Simulator module)</li>
+<li><tt class="docutils literal">crm</tt> (CRM module)</li>
+<li><tt class="docutils literal">sale_crm</tt> (Sales-CRM integration)</li>
+</ul>
+</div>
+<div class="section" id="no-additional-configuration-required">
+<h1>No Additional Configuration Required</h1>
+<p>This module extends the functionality of the Budget Simulator and CRM
+modules without requiring additional configuration. Once installed, the
+integration features are immediately available:</p>
+<ul class="simple">
+<li><strong>Create Budget Simulation</strong> button appears on CRM opportunity forms</li>
+<li><strong>Simulations Count</strong> button shows the number of linked simulations</li>
+<li><strong>Opportunity</strong> field is available in budget simulation forms</li>
+<li>Automatic linking between opportunities, simulations, and sale orders</li>
+</ul>
+</div>
+<div class="section" id="access-rights">
+<h1>Access Rights</h1>
+<p>The module uses the same access rights as the base Budget Simulator
+module:</p>
+<ul class="simple">
+<li><strong>Budget User</strong>: Can create simulations from opportunities</li>
+<li><strong>Budget Manager</strong>: Full access to all simulation features</li>
+</ul>
+<p>CRM access rights apply normally:</p>
+<ul class="simple">
+<li>Users can access opportunities based on their CRM permissions</li>
+<li>Sales team members can create simulations from their opportunities</li>
+</ul>
+</div>
+<div class="section" id="integration-points">
+<h1>Integration Points</h1>
+<p>The module adds the following integration points:</p>
+<ol class="arabic simple">
+<li><strong>CRM Opportunity Form</strong>:<ul>
+<li>“Create Budget Simulation” button in the header</li>
+<li>“Simulations Count” statistical button showing linked simulations</li>
+<li>“View Simulations” action to see all linked simulations</li>
+</ul>
+</li>
+<li><strong>Budget Simulation Form</strong>:<ul>
+<li>“Opportunity” field in the General Information section</li>
+<li>Field is automatically populated when creating from an opportunity</li>
+<li>Field is read-only in confirmed, quotation, and cancelled states</li>
+</ul>
+</li>
+<li><strong>Wizard for Partner Selection</strong>:<ul>
+<li>Opens when creating a simulation from an opportunity without a
+partner</li>
+<li>Options to create a new customer or link to an existing one</li>
+<li>Ensures the simulation always has a valid partner</li>
+</ul>
+</li>
+<li><strong>Sale Order Creation</strong>:<ul>
+<li>When creating a sale order from a simulation with an opportunity</li>
+<li>The sale order is automatically linked to the opportunity</li>
+<li>Uses the <tt class="docutils literal">sale_crm</tt> module’s opportunity linking functionality</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="tips">
+<h1>Tips</h1>
+<ul class="simple">
+<li>The integration works seamlessly with the existing Budget Simulator
+workflow</li>
+<li>Simulations created from opportunities maintain the link throughout
+the sales process</li>
+<li>Use the opportunity’s description field to provide context for the
+simulation</li>
+<li>The partner selected in the wizard is also linked to the opportunity
+(if using “Create” or “Link” options)</li>
+<li>All simulations linked to an opportunity can be viewed from the
+opportunity’s “View Simulations” button</li>
+</ul>
+<div class="section" id="usage">
+<h2>Usage</h2>
+<p>This guide explains how to use the Escodoo Budget Simulator CRM
+integration to create budget simulations from CRM opportunities.</p>
+</div>
+</div>
+<div class="section" id="creating-a-budget-simulation-from-an-opportunity">
+<h1>Creating a Budget Simulation from an Opportunity</h1>
+<p><strong>Method 1: Opportunity with Partner</strong></p>
+<p>If the opportunity already has a partner assigned:</p>
+<ol class="arabic simple">
+<li>Open the CRM opportunity</li>
+<li>Click the <strong>Create Budget Simulation</strong> button in the header</li>
+<li>The simulation is created immediately with:<ul>
+<li>Partner automatically populated from the opportunity</li>
+<li>Opportunity automatically linked</li>
+<li>Description copied from the opportunity (if available)</li>
+</ul>
+</li>
+<li>The simulation form opens automatically</li>
+<li>Continue with the normal simulation workflow:<ul>
+<li>Load from template (optional)</li>
+<li>Add modules, integrations, and lines</li>
+<li>Adjust complexity, users, and companies</li>
+<li>Recalculate and confirm</li>
+</ul>
+</li>
+</ol>
+<p><strong>Method 2: Opportunity without Partner</strong></p>
+<p>If the opportunity doesn’t have a partner:</p>
+<ol class="arabic simple">
+<li>Open the CRM opportunity</li>
+<li>Click the <strong>Create Budget Simulation</strong> button in the header</li>
+<li>A wizard opens with two options:<ul>
+<li><strong>Create a new customer</strong>: Creates a new partner from the
+opportunity data</li>
+<li><strong>Link to an existing customer</strong>: Allows selecting an existing
+partner</li>
+</ul>
+</li>
+<li>Select the desired option:<ul>
+<li>If “Create a new customer”: The partner is created and linked to
+the opportunity</li>
+<li>If “Link to an existing customer”: Select a partner from the
+dropdown</li>
+</ul>
+</li>
+<li>Click <strong>Confirm</strong></li>
+<li>The simulation is created with:<ul>
+<li>Partner populated (new or selected)</li>
+<li>Opportunity automatically linked</li>
+<li>Description copied from the opportunity (if available)</li>
+</ul>
+</li>
+<li>The simulation form opens automatically</li>
+<li>Continue with the normal simulation workflow</li>
+</ol>
+</div>
+<div class="section" id="viewing-simulations-linked-to-an-opportunity">
+<h1>Viewing Simulations Linked to an Opportunity</h1>
+<ol class="arabic simple">
+<li>Open the CRM opportunity</li>
+<li>Click the <strong>Simulations Count</strong> button (shows the number of linked
+simulations)</li>
+<li>A filtered list of all simulations linked to this opportunity opens</li>
+<li>You can:<ul>
+<li>View existing simulations</li>
+<li>Create new simulations (with opportunity pre-filled)</li>
+<li>Access any simulation directly</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="working-with-linked-simulations">
+<h1>Working with Linked Simulations</h1>
+<p>When a simulation is linked to an opportunity:</p>
+<ul class="simple">
+<li>The <strong>Opportunity</strong> field appears in the General Information section</li>
+<li>The field shows the linked opportunity</li>
+<li>The field is read-only in confirmed, quotation, and cancelled states</li>
+<li>You can search and filter simulations by opportunity</li>
+</ul>
+</div>
+<div class="section" id="creating-sale-orders-from-linked-simulations">
+<h1>Creating Sale Orders from Linked Simulations</h1>
+<p>When creating a sale order from a simulation that has an opportunity:</p>
+<ol class="arabic simple">
+<li>Confirm the simulation (if not already confirmed)</li>
+<li>Click <strong>Create Quotation</strong> button</li>
+<li>The sale order is created with:<ul>
+<li>All simulation lines converted to order lines</li>
+<li>Opportunity automatically linked to the sale order</li>
+<li>Partner from the simulation</li>
+</ul>
+</li>
+<li>The sale order opens automatically</li>
+<li>The opportunity now shows the linked sale order</li>
+</ol>
+<p><strong>Note</strong>: The opportunity linking uses the <tt class="docutils literal">sale_crm</tt> module’s
+functionality, so the sale order will appear in the opportunity’s
+“Quotations” section.</p>
+</div>
+<div class="section" id="workflow-example">
+<h1>Workflow Example</h1>
+<ol class="arabic simple">
+<li><strong>Sales team creates opportunity</strong>:<ul>
+<li>Lead is converted to opportunity</li>
+<li>Opportunity details are filled in</li>
+</ul>
+</li>
+<li><strong>Create budget simulation</strong>:<ul>
+<li>From opportunity, click “Create Budget Simulation”</li>
+<li>Handle partner if needed (create or link)</li>
+<li>Simulation opens with opportunity linked</li>
+</ul>
+</li>
+<li><strong>Build the simulation</strong>:<ul>
+<li>Load from template or build from scratch</li>
+<li>Add modules, integrations, and lines</li>
+<li>Adjust complexity, users, companies</li>
+<li>Recalculate and confirm</li>
+</ul>
+</li>
+<li><strong>Create quotation</strong>:<ul>
+<li>From confirmed simulation, click “Create Quotation”</li>
+<li>Sale order is created and linked to opportunity</li>
+<li>Opportunity now shows the quotation</li>
+</ul>
+</li>
+<li><strong>Track progress</strong>:<ul>
+<li>View all simulations from the opportunity</li>
+<li>See the linked sale order in the opportunity</li>
+<li>Maintain full traceability</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="tips-1">
+<h1>Tips</h1>
+<ul class="simple">
+<li>Always create simulations from opportunities to maintain the link</li>
+<li>Use the opportunity’s description to provide context for the
+simulation</li>
+<li>The partner selected in the wizard is also linked to the opportunity</li>
+<li>All simulations for an opportunity can be viewed from the opportunity
+form</li>
+<li>Sale orders created from simulations are automatically linked to
+opportunities</li>
+<li>Use the opportunity field in simulation search to filter by
+opportunity</li>
+<li>The integration works seamlessly with the existing Budget Simulator
+workflow</li>
+</ul>
+<div class="section" id="bug-tracker">
+<h2>Bug Tracker</h2>
+<p>Bugs are tracked on <a class="reference external" href="https://github.com/Escodoo/escodoo-addons/issues">GitHub Issues</a>.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us to smash it by providing a detailed and welcomed
+<a class="reference external" href="https://github.com/Escodoo/escodoo-addons/issues/new?body=module:%20escodoo_budget_simulator_crm%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<p>Do not contact contributors directly about support or help with technical issues.</p>
+</div>
+<div class="section" id="credits">
+<h2>Credits</h2>
+</div>
+</div>
+<div class="section" id="authors">
+<h1>Authors</h1>
+<ul class="simple">
+<li>Escodoo</li>
+</ul>
+</div>
+<div class="section" id="contributors">
+<h1>Contributors</h1>
+<ul class="simple">
+<li><a class="reference external" href="https://escodoo.com.br">ESCODOO</a>:<ul>
+<li>Marcel Savegnago <a class="reference external" href="mailto:marcel.savegnago&#64;escodoo.com.br">marcel.savegnago&#64;escodoo.com.br</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="maintainers">
+<h1>Maintainers</h1>
+<p>This module is part of the <a class="reference external" href="https://github.com/Escodoo/escodoo-addons/tree/18.0/escodoo_budget_simulator_crm">Escodoo/escodoo-addons</a> project on GitHub.</p>
+<p>You are welcome to contribute.</p>
+</div>
+</div>
+</body>
+</html>

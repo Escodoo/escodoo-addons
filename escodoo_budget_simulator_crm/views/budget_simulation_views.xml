@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_budget_simulation_form_crm" model="ir.ui.view">
+        <field name="name">budget.simulation.form.crm</field>
+        <field name="model">budget.simulation</field>
+        <field
+            name="inherit_id"
+            ref="escodoo_budget_simulator.view_budget_simulation_form"
+        />
+        <field name="arch" type="xml">
+            <!-- Add opportunity field in General Information group -->
+            <xpath expr="//group[./field[@name='partner_id']]" position="inside">
+                <field name="opportunity_id" options="{'no_create': True}" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_budget_simulation_tree_crm" model="ir.ui.view">
+        <field name="name">budget.simulation.tree.crm</field>
+        <field name="model">budget.simulation</field>
+        <field
+            name="inherit_id"
+            ref="escodoo_budget_simulator.view_budget_simulation_tree"
+        />
+        <field name="arch" type="xml">
+            <!-- Add opportunity field in tree view -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="opportunity_id" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_budget_simulation_search_crm" model="ir.ui.view">
+        <field name="name">budget.simulation.search.crm</field>
+        <field name="model">budget.simulation</field>
+        <field
+            name="inherit_id"
+            ref="escodoo_budget_simulator.view_budget_simulation_search"
+        />
+        <field name="arch" type="xml">
+            <!-- Add opportunity field in search view -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="opportunity_id" />
+            </xpath>
+
+            <!-- Add filter for opportunity -->
+            <xpath expr="//filter[@name='confirmed']" position="after">
+                <filter
+                    string="With Opportunity"
+                    name="with_opportunity"
+                    domain="[('opportunity_id', '!=', False)]"
+                />
+                <filter
+                    string="Without Opportunity"
+                    name="without_opportunity"
+                    domain="[('opportunity_id', '=', False)]"
+                />
+            </xpath>
+
+            <!-- Add group by opportunity -->
+            <xpath expr="//filter[@name='group_partner']" position="after">
+                <filter
+                    string="Opportunity"
+                    name="group_opportunity"
+                    context="{'group_by': 'opportunity_id'}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
