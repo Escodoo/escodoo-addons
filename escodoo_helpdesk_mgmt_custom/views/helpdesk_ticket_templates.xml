@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="portal_ticket_new_button"
+        inherit_id="helpdesk_mgmt.portal_ticket_new_button"
+        priority="40"
+    >
+        <xpath expr="//form" position="attributes">
+            <attribute
+                name="groups"
+            >helpdesk_mgmt.group_helpdesk_user_own,escodoo_helpdesk_mgmt_custom.group_helpdesk_mgmt_portal_create_ticket</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="portal_my_tickets"
+        inherit_id="helpdesk_mgmt.portal_my_tickets"
+        priority="40"
+    >
+        <xpath expr="//form" position="attributes">
+            <attribute
+                name="groups"
+            >helpdesk_mgmt.group_helpdesk_user_own,escodoo_helpdesk_mgmt_custom.group_helpdesk_mgmt_portal_create_ticket</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="portal_helpdesk_ticket_page"
+        inherit_id="helpdesk_mgmt.portal_helpdesk_ticket_page"
+        priority="40"
+    >
+        <xpath expr="//div[@name='ticket_close_buttons']/t" position="attributes">
+            <attribute
+                name="groups"
+            >helpdesk_mgmt.group_helpdesk_user_own,escodoo_helpdesk_mgmt_custom.group_helpdesk_mgmt_portal_create_ticket</attribute>
+        </xpath>
+    </template>
+</odoo>

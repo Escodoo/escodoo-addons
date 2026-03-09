@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* escodoo_helpdesk_mgmt_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-08 19:32+0000\n"
+"PO-Revision-Date: 2025-11-08 16:35-0300\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model,name:escodoo_helpdesk_mgmt_custom.model_res_partner
+msgid "Contact"
+msgstr "Contato"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_res_partner__is_helpdesk_authorized
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_res_users__is_helpdesk_authorized
+msgid "Create Tickets from Portal"
+msgstr "Criar Chamados a partir do Portal"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_res_partner__helpdesk_authorized_by
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_res_users__helpdesk_authorized_by
+msgid "Create Tickets from Portal Authorized By"
+msgstr "Criar Chamados a partir do Portal Autorizado Por"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.res_partner_view_form_helpdesk_authorized
+msgid "Helpdesk"
+msgstr "Central de Ajuda"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:res.groups,name:escodoo_helpdesk_mgmt_custom.group_helpdesk_mgmt_portal_create_ticket
+msgid "Helpdesk Mgmt Portal Create Ticket"
+msgstr "Portal da Central de Ajuda Criar Chamado"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model,name:escodoo_helpdesk_mgmt_custom.model_helpdesk_ticket
+msgid "Helpdesk Ticket"
+msgstr "Chamado da Central de Ajuda"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,help:escodoo_helpdesk_mgmt_custom.field_res_partner__is_helpdesk_authorized
+#: model:ir.model.fields,help:escodoo_helpdesk_mgmt_custom.field_res_users__is_helpdesk_authorized
+msgid ""
+"If checked, portal users linked to this partner will be automatically added "
+"to the group that has the right to create tickets through the portal."
+msgstr ""
+"Se estiver marcado, os usuários do portal ligados a este parceiro serão "
+"automaticamente adicionados ao grupo que tem o direito de criar chamados "
+"através do portal."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,help:escodoo_helpdesk_mgmt_custom.field_res_partner__helpdesk_authorized_by
+#: model:ir.model.fields,help:escodoo_helpdesk_mgmt_custom.field_res_users__helpdesk_authorized_by
+msgid ""
+"Partner who authorized this partner to create tickets through the portal."
+msgstr ""
+"Parceiro que autorizou este parceiro a criar chamados através do portal."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model,name:escodoo_helpdesk_mgmt_custom.model_portal_wizard_user
+msgid "Portal User Config"
+msgstr "Configuração do Utilizador do Portal"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#. odoo-python
+#: code:addons/escodoo_helpdesk_mgmt_custom/models/res_partner.py:0
+#, python-format
+msgid ""
+"This partner must have at least one portal user to be authorized to create "
+"tickets through the portal."
+msgstr ""
+"Esse parceiro precisa ter pelo menos um usuário do portal autorizado a "
+"criar chamados por meio do portal."
+
+#~ msgid "Authorized By"
+#~ msgstr "Autorizado Por"
+
+#~ msgid "Helpdesk Authorized"
+#~ msgstr "Helpdesk Autorizado"
+
+#~ msgid "User"
+#~ msgstr "Usuário"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="group_helpdesk_mgmt_portal_create_ticket" model="res.groups">
+        <field name="name">Helpdesk Mgmt Portal Create Ticket</field>
+        <field name="category_id" ref="helpdesk_mgmt.module_helpdesk_category" />
+        <field
+            name="users"
+            eval="[
+            Command.link(ref('base.user_root')),
+            Command.link(ref('base.user_admin'))
+        ]"
+        />
+    </record>
+</odoo>
