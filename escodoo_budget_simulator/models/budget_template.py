@@ -30,13 +30,11 @@ class BudgetTemplate(models.Model):
     name = fields.Char(
         required=True,
         tracking=True,
-        states={"confirmed": [("readonly", True)]},
         help="Name of the budget template. This name should be descriptive "
         "and help identify the template's purpose (e.g., 'Standard "
         "Implementation', 'E-commerce Setup', 'Manufacturing Configuration').",
     )
     description = fields.Html(
-        states={"confirmed": [("readonly", True)]},
         help="Detailed description of this budget template. Use this field to "
         "document what scenarios this template is designed for, what modules "
         "and integrations it includes, or any special considerations. "
@@ -44,21 +42,18 @@ class BudgetTemplate(models.Model):
     )
     users_qty = fields.Integer(
         tracking=True,
-        states={"confirmed": [("readonly", True)]},
         help="Default number of users for this template. This value will be "
         "applied when the template is loaded into a simulation, but can be "
         "adjusted in the simulation if needed.",
     )
     company_qty = fields.Integer(
         tracking=True,
-        states={"confirmed": [("readonly", True)]},
         help="Default number of companies for this template. This value will "
         "be applied when the template is loaded into a simulation, but can be "
         "adjusted in the simulation if needed.",
     )
     complexity = fields.Selection(
         tracking=True,
-        states={"confirmed": [("readonly", True)]},
         help="Default complexity level for this template. This value will be "
         "applied when the template is loaded into a simulation, but can be "
         "adjusted in the simulation if needed.",
@@ -68,7 +63,6 @@ class BudgetTemplate(models.Model):
         "template_id",
         string="Integrations",
         copy=True,
-        states={"confirmed": [("readonly", True)]},
         help="List of integrations included in this template. These "
         "integrations will be copied to simulations when the template is loaded. "
         "Each integration can have its hours adjusted per template.",
@@ -78,7 +72,6 @@ class BudgetTemplate(models.Model):
         "template_id",
         string="Modules",
         copy=True,
-        states={"confirmed": [("readonly", True)]},
         help="List of modules included in this template. These modules will "
         "be copied to simulations when the template is loaded. Each module "
         "can have its hours adjusted per template.",
@@ -87,7 +80,6 @@ class BudgetTemplate(models.Model):
         "budget.template.line",
         "template_id",
         string="General Activities",
-        states={"confirmed": [("readonly", True)]},
         help="List of general activities included in this template. These "
         "activities represent specific tasks (discovery, configuration, "
         "training, etc.) that are not covered by modules or integrations. "

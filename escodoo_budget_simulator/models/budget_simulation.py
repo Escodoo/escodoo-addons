@@ -44,11 +44,6 @@ class BudgetSimulation(models.Model):
         string="Partner",
         required=True,
         tracking=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="The customer/partner for this budget simulation. This partner "
         "will be used when creating a sale order from this simulation.",
     )
@@ -57,11 +52,6 @@ class BudgetSimulation(models.Model):
         string="Company",
         default=lambda self: self.env.company,
         required=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="The company for this budget simulation. This determines the "
         "currency and other company-specific settings.",
     )
@@ -79,22 +69,12 @@ class BudgetSimulation(models.Model):
         string="Template",
         tracking=True,
         domain=[("state", "=", "confirmed")],
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="Optional budget template to load data from. Only confirmed "
         "templates are available for selection. When a template is selected, "
         "you can use the 'Load from Template' button to populate this "
         "simulation with the template's modules, integrations, and lines.",
     )
     description = fields.Html(
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="Detailed description of this budget simulation. Use this field "
         "to document the project scope, requirements, or any special "
         "considerations. This field supports HTML formatting for rich text "
@@ -106,11 +86,6 @@ class BudgetSimulation(models.Model):
         required=True,
         default=fields.Date.today,
         tracking=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="Date when this budget simulation was created or last updated. "
         "Used for reporting and filtering purposes.",
     )
@@ -118,11 +93,6 @@ class BudgetSimulation(models.Model):
     users_qty = fields.Integer(
         required=True,
         tracking=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="Total number of users for this simulation. This value is used "
         "to calculate the users factor: 1% per user above 5, with a maximum "
         "increase of 40%. Can be loaded from a template or set manually.",
@@ -130,11 +100,6 @@ class BudgetSimulation(models.Model):
     company_qty = fields.Integer(
         required=True,
         tracking=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="Total number of companies for this simulation. This value is "
         "used to calculate the companies factor: 15% per company above 1, with "
         "no maximum limit. Can be loaded from a template or set manually.",
@@ -142,11 +107,6 @@ class BudgetSimulation(models.Model):
     complexity = fields.Selection(
         required=True,
         tracking=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="Complexity level for this simulation. This affects the complexity "
         "factor applied to all lines: Low = 1.00x, Medium = 1.15x, High = 1.30x. "
         "Can be loaded from a template or set manually.",
@@ -156,11 +116,6 @@ class BudgetSimulation(models.Model):
         "simulation_id",
         string="Integrations",
         copy=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="List of integrations included in this simulation. These "
         "integrations can be added manually or loaded from a template. Each "
         "integration can have its hours adjusted per simulation.",
@@ -170,11 +125,6 @@ class BudgetSimulation(models.Model):
         "simulation_id",
         string="Modules",
         copy=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="List of modules included in this simulation. These modules can "
         "be added manually or loaded from a template. Each module can have its "
         "hours adjusted per simulation.",
@@ -184,11 +134,6 @@ class BudgetSimulation(models.Model):
         "simulation_id",
         string="General Activities",
         copy=True,
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="List of general activities included in this simulation. These "
         "activities represent specific tasks (discovery, configuration, "
         "training, etc.) that are not covered by modules or integrations. "
@@ -212,11 +157,6 @@ class BudgetSimulation(models.Model):
     )
     notes = fields.Html(
         string="Internal Notes",
-        states={
-            "confirmed": [("readonly", True)],
-            "quotation": [("readonly", True)],
-            "cancelled": [("readonly", True)],
-        },
         help="Internal notes for this budget simulation. These notes are not "
         "visible to the customer and can be used for internal communication, "
         "project planning, or documentation. This field supports HTML "

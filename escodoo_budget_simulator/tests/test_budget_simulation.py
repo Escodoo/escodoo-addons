@@ -169,8 +169,8 @@ class TestBudgetSimulation(TransactionCase):
         self.assertEqual(len(simulation.line_ids), 2)
 
         # Check line data
-        # Refresh to ensure we have the latest data
-        simulation.refresh()
+        # In Odoo 18, invalidate the cache before reading computed/related data again.
+        simulation.invalidate_recordset()
         line1 = simulation.line_ids.filtered(
             lambda line: line.name == "Discovery and Requirements Analysis"
         )
