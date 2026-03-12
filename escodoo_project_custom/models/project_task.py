@@ -24,7 +24,7 @@ class ProjectTask(models.Model):
     @api.depends(
         "effective_hours",
         "subtask_effective_hours",
-        "planned_hours",
+        "allocated_hours",
         "is_closed",
         "is_cancelled",
     )
