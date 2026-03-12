@@ -356,10 +356,7 @@
             </xpath>
 
             <!-- Insert ICP badge before the first subtitle block -->
-            <xpath
-                expr="//t[@t-name='kanban-box']//div[hasclass('o_kanban_record_subtitle')][1]"
-                position="before"
-            >
+            <xpath expr="//field[@name='name']" position="after">
                 <div class="o_kanban_record_subtitle">
                     <t
                         t-if="record.escodoo_icp_classification and record.escodoo_icp_classification.raw_value"
