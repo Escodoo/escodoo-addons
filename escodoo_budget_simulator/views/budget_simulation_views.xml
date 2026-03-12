@@ -152,6 +152,7 @@
                                 name="name"
                                 placeholder="e.g. SIM-YYYY-0001"
                                 required="1"
+                                readonly="state != 'draft'"
                             />
                         </h1>
                     </div>
@@ -159,17 +160,27 @@
                     <group>
                         <group string="General Information">
                             <field name="active" invisible="1" />
-                            <field name="partner_id" options="{'no_create': True}" />
-                            <field name="template_id" options="{'no_create': True}" />
+                            <field
+                                name="partner_id"
+                                options="{'no_create': True}"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="template_id"
+                                options="{'no_create': True}"
+                                readonly="state != 'draft'"
+                            />
                             <field
                                 name="company_id"
                                 groups="base.group_multi_company"
                                 options="{'no_create': True}"
+                                readonly="state != 'draft'"
                             />
                             <field
                                 name="date"
                                 default_focus="1"
                                 placeholder="Simulation date"
+                                readonly="state != 'draft'"
                             />
                             <field
                                 name="sale_order_id"
@@ -179,12 +190,21 @@
                             />
                         </group>
                         <group string="Pricing Parameters">
-                            <field name="users_qty" string="Number of Users" />
-                            <field name="company_qty" string="Number of Companies" />
+                            <field
+                                name="users_qty"
+                                string="Number of Users"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="company_qty"
+                                string="Number of Companies"
+                                readonly="state != 'draft'"
+                            />
                             <field
                                 name="complexity"
                                 widget="radio"
                                 options="{'horizontal': True}"
+                                readonly="state != 'draft'"
                             />
                         </group>
                     </group>
@@ -194,11 +214,16 @@
                             <field
                                 name="description"
                                 placeholder="Description of this budget simulation..."
+                                readonly="state != 'draft'"
                             />
                         </page>
                         <!-- Page 1: Modules and Integrations (better layout) -->
                         <page string="Modules" name="modules">
-                            <field name="module_line_ids" nolabel="1">
+                            <field
+                                name="module_line_ids"
+                                nolabel="1"
+                                readonly="state != 'draft'"
+                            >
                                 <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="module_id" widget="link_to_record" />
@@ -237,7 +262,11 @@
                             </field>
                         </page>
                         <page string="Integrations" name="integrations">
-                            <field name="integration_line_ids" nolabel="1">
+                            <field
+                                name="integration_line_ids"
+                                nolabel="1"
+                                readonly="state != 'draft'"
+                            >
                                 <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field
@@ -281,7 +310,11 @@
 
                         <!-- Page 2: General Activities -->
                         <page string="General Activities">
-                            <field name="line_ids" nolabel="1">
+                            <field
+                                name="line_ids"
+                                nolabel="1"
+                                readonly="state != 'draft'"
+                            >
                                 <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="line_id" widget="link_to_record" />
@@ -334,6 +367,7 @@
                             <field
                                 name="notes"
                                 placeholder="Add any internal comments, justifications, risks, assumptions..."
+                                readonly="state != 'draft'"
                             />
                         </page>
                     </notebook>

@@ -92,6 +92,7 @@
                                 name="name"
                                 placeholder="e.g. Template name..."
                                 required="1"
+                                readonly="state != 'draft'"
                             />
                         </h1>
                     </div>
@@ -103,9 +104,18 @@
                                 name="complexity"
                                 widget="radio"
                                 options="{'horizontal': True}"
+                                readonly="state != 'draft'"
                             />
-                            <field name="users_qty" string="Number of Users" />
-                            <field name="company_qty" string="Number of Companies" />
+                            <field
+                                name="users_qty"
+                                string="Number of Users"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="company_qty"
+                                string="Number of Companies"
+                                readonly="state != 'draft'"
+                            />
                         </group>
                     </group>
 
@@ -114,10 +124,15 @@
                             <field
                                 name="description"
                                 placeholder="Template description..."
+                                readonly="state != 'draft'"
                             />
                         </page>
                         <page string="Modules" name="modules">
-                            <field name="module_line_ids" nolabel="1">
+                            <field
+                                name="module_line_ids"
+                                nolabel="1"
+                                readonly="state != 'draft'"
+                            >
                                 <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="module_id" widget="link_to_record" />
@@ -156,7 +171,11 @@
                             </field>
                         </page>
                         <page string="Integrations" name="integrations">
-                            <field name="integration_line_ids" nolabel="1">
+                            <field
+                                name="integration_line_ids"
+                                nolabel="1"
+                                readonly="state != 'draft'"
+                            >
                                 <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field
@@ -199,7 +218,11 @@
                         </page>
 
                         <page string="General Activities" name="template_lines">
-                            <field name="line_ids" nolabel="1">
+                            <field
+                                name="line_ids"
+                                nolabel="1"
+                                readonly="state != 'draft'"
+                            >
                                 <list editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="line_id" widget="link_to_record" />

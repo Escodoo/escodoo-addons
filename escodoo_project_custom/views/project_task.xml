@@ -8,7 +8,7 @@
         <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
         <field name="arch" type="xml">
             <xpath
-                expr="//notebook/page[@id='timesheets_tab']//field[@name='timesheet_ids']/tree/field[@name='task_id']"
+                expr="//field[@name='timesheet_ids']/list/field[@name='task_id']"
                 position="attributes"
             >
                 <attribute name="invisible">0</attribute>
@@ -76,7 +76,7 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="hr_timesheet.view_task_tree2_inherited" />
         <field name="arch" type="xml">
-            <field name="planned_hours" position="attributes">
+            <field name="allocated_hours" position="attributes">
                 <attribute name="optional">show</attribute>
             </field>
             <field name="effective_hours" position="attributes">
@@ -95,8 +95,8 @@
         <field name="arch" type="xml">
             <field name="tag_ids" position="after">
                 <div>
-                    <small>Planned Hours:
-                      <field name="planned_hours" widget="timesheet_uom" />
+                    <small>Allocated Hours:
+                      <field name="allocated_hours" widget="timesheet_uom" />
                     </small>
                 </div>
             </field>
@@ -111,7 +111,7 @@
             ref="hr_timesheet.view_task_kanban_inherited_progress"
         />
         <field name="arch" type="xml">
-            <t name="planned_hours" position="attributes">
+            <t name="allocated_hours" position="attributes">
                 <attribute name="t-if">record.allow_timesheets.raw_value</attribute>
             </t>
         </field>
