@@ -17,7 +17,7 @@
         inherit_id="helpdesk_mgmt.portal_my_tickets"
         priority="40"
     >
-        <xpath expr="//form" position="attributes">
+        <xpath expr="//t[@t-call='portal.portal_layout']" position="attributes">
             <attribute
                 name="groups"
             >helpdesk_mgmt.group_helpdesk_user_own,escodoo_helpdesk_mgmt_custom.group_helpdesk_mgmt_portal_create_ticket</attribute>
