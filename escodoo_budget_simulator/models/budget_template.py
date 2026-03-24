@@ -87,6 +87,7 @@ class BudgetTemplate(models.Model):
         "budget.template.line",
         "template_id",
         string="General Activities",
+        copy=True,
         states={"confirmed": [("readonly", True)]},
         help="List of general activities included in this template. These "
         "activities represent specific tasks (discovery, configuration, "
