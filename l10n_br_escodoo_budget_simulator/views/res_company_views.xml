@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="l10n_br_escodoo_budget_simulator_res_company_form" model="ir.ui.view">
+        <field name="name">res.company.form.budget.simulator.fiscal</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="l10n_br_sale.l10n_br_sale_res_company_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//notebook/page[@name='fiscal']/notebook/page[@name='l10n_br_sale']"
+                position="after"
+            >
+                <page name="budget_simulator" string="Budget Simulator">
+                    <group>
+                        <field
+                            name="budget_simulation_fiscal_operation_id"
+                            options="{'no_create': True}"
+                        />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

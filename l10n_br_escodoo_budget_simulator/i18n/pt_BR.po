@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_br_escodoo_budget_simulator
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-31 01:07+0000\n"
+"PO-Revision-Date: 2026-03-31 01:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_br_escodoo_budget_simulator
+#: model:ir.model,name:l10n_br_escodoo_budget_simulator.model_budget_simulation
+msgid "Budget Simulation"
+msgstr "Simulação Orçamentária"
+
+#. module: l10n_br_escodoo_budget_simulator
+#: model:ir.model.fields,field_description:l10n_br_escodoo_budget_simulator.field_res_company__budget_simulation_fiscal_operation_id
+msgid "Budget Simulation Fiscal Operation"
+msgstr "Operação Fiscal da Simulação Orçamentária"
+
+#. module: l10n_br_escodoo_budget_simulator
+#: model_terms:ir.ui.view,arch_db:l10n_br_escodoo_budget_simulator.l10n_br_escodoo_budget_simulator_res_company_form
+msgid "Budget Simulator"
+msgstr "Simulador de Orçamento"
+
+#. module: l10n_br_escodoo_budget_simulator
+#: model:ir.model,name:l10n_br_escodoo_budget_simulator.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: l10n_br_escodoo_budget_simulator
+#: model:ir.model.fields,help:l10n_br_escodoo_budget_simulator.field_res_company__budget_simulation_fiscal_operation_id
+msgid ""
+"Fiscal operation applied to sale orders created from budget simulations. If "
+"empty, the Standard Sales Fiscal Operation is used."
+msgstr ""
