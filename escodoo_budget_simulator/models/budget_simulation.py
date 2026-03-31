@@ -4,6 +4,8 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
+from odoo.addons.l10n_br_fiscal.constants.fiscal import PRODUCT_FISCAL_TYPE_SERVICE
+
 
 class BudgetSimulation(models.Model):
     """Budget Simulation.
@@ -620,7 +622,9 @@ class BudgetSimulation(models.Model):
             [
                 ("type", "=", "service"),
                 ("sale_ok", "=", True),
-                ("name", "ilike", "hour"),
+                "|",
+                ("product_tmpl_id.name", "ilike", "horas"),
+                ("product_tmpl_id.name", "ilike", "hour"),
             ],
             limit=1,
         )
@@ -632,6 +636,7 @@ class BudgetSimulation(models.Model):
                     "type": "service",
                     "sale_ok": True,
                     "purchase_ok": False,
+                    "fiscal_type": PRODUCT_FISCAL_TYPE_SERVICE,
                 }
             )
             product = product_template.product_variant_id
