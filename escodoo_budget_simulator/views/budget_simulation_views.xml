@@ -175,10 +175,26 @@
                                 options="{'no_create': True}"
                                 attrs="{'invisible': [('sale_order_id', '=', False)]}"
                             />
+                            <field
+                                name="support_contract_sale_order_id"
+                                readonly="1"
+                                options="{'no_create': True}"
+                                attrs="{'invisible': [('support_contract_sale_order_id', '=', False)]}"
+                            />
+                            <field
+                                name="migration_contract_sale_order_id"
+                                readonly="1"
+                                options="{'no_create': True}"
+                                attrs="{'invisible': [('migration_contract_sale_order_id', '=', False)]}"
+                            />
                         </group>
                         <group string="Pricing Parameters">
                             <field name="users_qty" string="Number of Users" />
                             <field name="company_qty" string="Number of Companies" />
+                            <field name="project_cost_percent" />
+                            <field name="project_cost_amount" readonly="1" />
+                            <field name="generate_support_contract_quotation" />
+                            <field name="generate_migration_contract_quotation" />
                             <field
                                 name="complexity"
                                 widget="radio"
