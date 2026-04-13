@@ -51,6 +51,52 @@ class TestBudgetSimulationQuotationFiscal(TransactionCase):
             "escodoo_budget_simulator.default_quotation_product_id",
             str(tmpl.product_variant_id.id),
         )
+        support_tmpl = (
+            cls.env["product.template"]
+            .with_company(cls.company)
+            .create(
+                {
+                    "name": "Budget Simulator Support Contract Product",
+                    "type": "service",
+                    "sale_ok": True,
+                    "purchase_ok": False,
+                    "fiscal_type": PRODUCT_FISCAL_TYPE_SERVICE,
+                }
+            )
+        )
+        cls.env["ir.config_parameter"].sudo().set_param(
+            "escodoo_budget_simulator.support_maintenance_contract_product_id",
+            str(support_tmpl.product_variant_id.id),
+        )
+        migration_tmpl = (
+            cls.env["product.template"]
+            .with_company(cls.company)
+            .create(
+                {
+                    "name": "Budget Simulator Migration Contract Product",
+                    "type": "service",
+                    "sale_ok": True,
+                    "purchase_ok": False,
+                    "fiscal_type": PRODUCT_FISCAL_TYPE_SERVICE,
+                }
+            )
+        )
+        cls.env["ir.config_parameter"].sudo().set_param(
+            "escodoo_budget_simulator.migration_contract_product_id",
+            str(migration_tmpl.product_variant_id.id),
+        )
+        cls.env["ir.config_parameter"].sudo().set_param(
+            "escodoo_budget_simulator.default_project_cost_percent",
+            "12.5",
+        )
+        cls.env["ir.config_parameter"].sudo().set_param(
+            "escodoo_budget_simulator.support_maintenance_contract_fixed_amount",
+            "2000.0",
+        )
+        cls.env["ir.config_parameter"].sudo().set_param(
+            "escodoo_budget_simulator.migration_contract_fixed_amount",
+            "1500.0",
+        )
 
     def test_quotation_from_simulation_sets_fiscal_operation_and_line(self):
         """Sale order and lines get fiscal_operation_id;
@@ -116,3 +162,60 @@ class TestBudgetSimulationQuotationFiscal(TransactionCase):
 
         order = simulation.sale_order_id
         self.assertEqual(order.fiscal_operation_id, other_fo)
+
+    def test_support_contract_quotation_inherits_fiscal_operation(self):
+        self.company.write(
+            {
+                "sale_fiscal_operation_id": self.fo_venda.id,
+                "budget_simulation_fiscal_operation_id": False,
+            }
+        )
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "company_id": self.company.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "generate_support_contract_quotation": True,
+                "module_line_ids": [(0, 0, {"module_id": self.module_sale.id})],
+            }
+        )
+        simulation.action_confirm()
+        simulation.action_create_quotation()
+
+        self.assertTrue(simulation.sale_order_id)
+        self.assertTrue(simulation.support_contract_sale_order_id)
+        self.assertEqual(simulation.sale_order_id.fiscal_operation_id, self.fo_venda)
+        self.assertEqual(
+            simulation.support_contract_sale_order_id.fiscal_operation_id, self.fo_venda
+        )
+
+    def test_migration_contract_quotation_inherits_fiscal_operation(self):
+        self.company.write(
+            {
+                "sale_fiscal_operation_id": self.fo_venda.id,
+                "budget_simulation_fiscal_operation_id": False,
+            }
+        )
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "company_id": self.company.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "generate_migration_contract_quotation": True,
+                "module_line_ids": [(0, 0, {"module_id": self.module_sale.id})],
+            }
+        )
+        simulation.action_confirm()
+        simulation.action_create_quotation()
+
+        self.assertTrue(simulation.sale_order_id)
+        self.assertTrue(simulation.migration_contract_sale_order_id)
+        self.assertEqual(simulation.sale_order_id.fiscal_operation_id, self.fo_venda)
+        self.assertEqual(
+            simulation.migration_contract_sale_order_id.fiscal_operation_id,
+            self.fo_venda,
+        )
