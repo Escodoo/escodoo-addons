@@ -10,7 +10,8 @@ class BudgetTemplateLine(models.Model):
     This model represents a general activity within a budget template.
     Each line references a budget activitie from the catalog and can have its
     hours adjusted per template. The final hours are calculated based on
-    the template's complexity, number of users, and number of companies.
+    the template's complexity and optional Python formula on the catalog
+    activity.
     """
 
     _name = "budget.template.line"
@@ -135,38 +136,28 @@ class BudgetTemplateLine(models.Model):
         "template_id.complexity",
         "template_id.users_qty",
         "template_id.company_qty",
+        "line_id.hours_formula",
     )
     def _compute_final_hours(self):
         """Compute final hours for this template line.
 
-        This method calculates the final hours by:
-        1. Getting the base hours (adjusted or default)
-        2. Applying the complexity factor from the template
-        3. Applying the users factor from the template
-        4. Applying the companies factor from the template
-        5. Multiplying all factors together
+        Uses base hours (adjusted or default), the template complexity factor,
+        and optionally the catalog activity's Python hours formula.
 
         Returns:
             None: Updates final_hours field.
         """
         for rec in self:
-            if not rec.template_id:
+            if not rec.template_id or not rec.line_id:
                 rec.final_hours = 0.0
                 continue
 
-            # Base hours (adjusted or default)
+            tmpl = rec.template_id
             base_hours = rec._get_base_hours()
-
-            # Apply complexity factor
-            complexity_factor = rec._get_complexity_factor(rec.template_id.complexity)
-
-            # Users factor: 1% per user above 5, max +40%
-            users_factor = rec._get_users_factor(rec.template_id.users_qty)
-
-            # Companies factor: 15% per company above 1
-            company_factor = rec._get_company_factor(rec.template_id.company_qty)
-
-            # Apply all factors
-            rec.final_hours = (
-                base_hours * complexity_factor * users_factor * company_factor
+            rec.final_hours = rec._finalize_line_hours(
+                tmpl.complexity,
+                tmpl.users_qty,
+                tmpl.company_qty,
+                base_hours,
+                rec.line_id.hours_formula,
             )

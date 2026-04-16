@@ -10,7 +10,8 @@ class BudgetSimulationLine(models.Model):
     This model represents a general activity within a budget simulation.
     Each line references a budget activitie from the catalog and can have its
     hours adjusted per simulation. The final hours are calculated based on
-    the simulation's complexity, number of users, and number of companies.
+    the simulation's complexity and optional Python formula on the catalog
+    activity.
     """
 
     _name = "budget.simulation.line"
@@ -124,38 +125,28 @@ class BudgetSimulationLine(models.Model):
         "simulation_id.complexity",
         "simulation_id.users_qty",
         "simulation_id.company_qty",
+        "line_id.hours_formula",
     )
     def _compute_final_hours(self):
         """Compute final hours for this simulation line.
 
-        This method calculates the final hours by:
-        1. Getting the base hours (adjusted or default)
-        2. Applying the complexity factor from the simulation
-        3. Applying the users factor from the simulation
-        4. Applying the companies factor from the simulation
-        5. Multiplying all factors together
+        Uses base hours (adjusted or default), the simulation complexity factor,
+        and optionally the catalog activity's Python hours formula.
 
         Returns:
             None: Updates final_hours field.
         """
         for rec in self:
-            if not rec.simulation_id:
+            if not rec.simulation_id or not rec.line_id:
                 rec.final_hours = 0.0
                 continue
 
-            # Base hours (adjusted or default)
+            sim = rec.simulation_id
             base_hours = rec._get_base_hours()
-
-            # Apply complexity factor
-            complexity_factor = rec._get_complexity_factor(rec.simulation_id.complexity)
-
-            # Users factor: 1% per user above 5, max +40%
-            users_factor = rec._get_users_factor(rec.simulation_id.users_qty)
-
-            # Companies factor: 15% per company above 1
-            company_factor = rec._get_company_factor(rec.simulation_id.company_qty)
-
-            # Apply all factors
-            rec.final_hours = (
-                base_hours * complexity_factor * users_factor * company_factor
+            rec.final_hours = rec._finalize_line_hours(
+                sim.complexity,
+                sim.users_qty,
+                sim.company_qty,
+                base_hours,
+                rec.line_id.hours_formula,
             )

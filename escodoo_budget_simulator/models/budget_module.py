@@ -38,8 +38,18 @@ class BudgetModule(models.Model):
         help="Default number of implementation hours for this module. This "
         "value represents the typical time required to implement and configure "
         "this module. It can be adjusted per template or simulation as needed. "
-        "The default hours are used as the base for calculating final hours "
-        "with all factors (complexity, users, companies) applied.",
+        "Final line hours use the complexity factor on this base, or a Python "
+        "hours formula when defined below.",
+    )
+    hours_formula = fields.Text(
+        string="Hours formula (Python)",
+        help="Optional Python expression evaluated to obtain final hours for "
+        "this catalog item on a budget line. If empty, hours are "
+        "base_hours × complexity_factor. If set, the expression must evaluate "
+        "to a number (the line's final hours). Available names: base_hours, "
+        "complexity, complexity_factor, default_hours (base × complexity), "
+        "users_qty, company_qty, users_factor, company_factor, min, max, int, "
+        "float, round.",
     )
     active = fields.Boolean(
         default=True,

@@ -9,8 +9,8 @@ class BudgetMixin(models.AbstractModel):
 
     This mixin provides common fields and methods for budget models.
     It centralizes the shared logic between budget templates and simulations,
-    including complexity factors, user and company quantities, and total hours
-    calculation.
+    including complexity factors, informational user and company quantities,
+    and total hours calculation.
 
     Subclasses should define:
     - module_line_ids (One2many to budget.template.module or budget.simulation.module)
@@ -35,18 +35,18 @@ class BudgetMixin(models.AbstractModel):
     users_qty = fields.Integer(
         string="Number of Users",
         default=5,
-        help="Total number of users for this budget. This value is used to "
-        "calculate the users factor: 1% per user above 5, with a maximum "
-        "increase of 40%. For example, 10 users = +5%, 25 users = +20%, "
-        "50 users = +40% (maximum).",
+        help="Total number of users for this budget (informational only). "
+        "It is not applied automatically to hour calculations; it can be used "
+        "inside optional Python formulas on catalog items (variables "
+        "users_qty and users_factor).",
     )
     company_qty = fields.Integer(
         string="Number of Companies",
         default=1,
-        help="Total number of companies for this budget. This value is used "
-        "to calculate the companies factor: 15% per company above 1, with "
-        "no maximum limit. For example, 2 companies = +15%, 3 companies = +30%, "
-        "4 companies = +45%, etc.",
+        help="Total number of companies/branches for this budget "
+        "(informational only). It is not applied automatically to hour "
+        "calculations; it can be used inside optional Python formulas on "
+        "catalog items (variables company_qty and company_factor).",
     )
     complexity = fields.Selection(
         [
@@ -57,7 +57,8 @@ class BudgetMixin(models.AbstractModel):
         default="medium",
         help="Complexity level for this budget. This affects the complexity "
         "factor applied to all lines: Low = 1.00x, Medium = 1.15x, High = 1.30x. "
-        "The complexity factor is multiplied with the base hours of each line.",
+        "The complexity factor is multiplied with the base hours of each line "
+        "unless a catalog Python formula overrides the calculation.",
     )
     excluded_module_ids = fields.Many2many(
         "budget.module",
@@ -81,8 +82,9 @@ class BudgetMixin(models.AbstractModel):
         digits=(16, 2),
         help="Total calculated hours for this budget. This is the sum of all "
         "final hours from modules, integrations, and general activities. Each "
-        "line's final hours already includes all factors (complexity, users, "
-        "and companies).",
+        "line's final hours apply the complexity factor and optionally a Python "
+        "formula from the catalog; user and company counts are informational "
+        "unless referenced in a formula.",
     )
 
     # Methods
@@ -116,20 +118,14 @@ class BudgetMixin(models.AbstractModel):
         - Integration lines (integration_line_ids)
         - Module lines (module_line_ids)
 
-        Note that each line's final_hours already includes all factors
-        (complexity, users, and companies), so we simply sum them.
+        Each line's final_hours already reflects complexity scaling and any
+        catalog Python formula, so we simply sum them.
 
         Returns:
             None: Updates total_hours field.
         """
         for rec in self:
-            # Sum final hours (already includes all factors:
-            # complexity, users, companies)
             base_hours = sum(rec.line_ids.mapped("final_hours"))
             integration_hours = sum(rec.integration_line_ids.mapped("final_hours"))
             module_hours = sum(rec.module_line_ids.mapped("final_hours"))
-
-            # Total hours is simply the sum of all final_hours
-            # (each final_hours already includes complexity,
-            # users, and companies factors)
             rec.total_hours = base_hours + integration_hours + module_hours

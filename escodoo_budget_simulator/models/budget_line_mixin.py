@@ -1,15 +1,17 @@
 # Copyright 2024 - TODAY, Escodoo
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import _, fields, models
+from odoo.exceptions import UserError
+from odoo.tools.safe_eval import safe_eval
 
 
 class BudgetLineMixin(models.AbstractModel):
     """Mixin for budget line models (modules, integrations, and lines).
 
     This mixin provides common fields and methods for budget line models.
-    It centralizes the calculation logic for final hours, including complexity,
-    users, and companies factors.
+    It centralizes the calculation logic for final hours, including complexity
+    and an optional Python formula defined on the catalog (master) record.
 
     Subclasses should define:
     - parent_id field (template_id or simulation_id)
@@ -36,17 +38,17 @@ class BudgetLineMixin(models.AbstractModel):
         "greater than 0, this value will be used instead of the default hours "
         "from the catalog. Leave as 0 to use the default hours from the catalog. "
         "The adjusted hours are used as the base for calculating final hours "
-        "with all factors applied.",
+        "with the complexity factor and optional catalog formula applied.",
     )
     final_hours = fields.Float(
         compute="_compute_final_hours",
         store=True,
         digits=(16, 2),
-        help="Final calculated hours for this line after applying all factors: "
-        "complexity, users, and companies. This is calculated as: "
-        "base_hours × complexity_factor × users_factor × company_factor. "
-        "The base hours are either the adjusted hours (if > 0) or the default "
-        "hours from the catalog.",
+        help="Final calculated hours for this line. By default this is "
+        "base_hours × complexity_factor, where base hours are the adjusted "
+        "hours (if > 0) or the default hours from the catalog. If the catalog "
+        "defines a Python hours formula, that expression is evaluated instead "
+        "and its numeric result is used as the final hours.",
     )
 
     # Methods
@@ -82,12 +84,8 @@ class BudgetLineMixin(models.AbstractModel):
     def _get_users_factor(users_qty):
         """Get users factor: 1% per user above 5, max +40%.
 
-        The factor increases by 1% for each user above 5, with a maximum
-        increase of 40%. For example:
-        - 5 users or less: 1.00x (no increase)
-        - 10 users: 1.05x (+5%)
-        - 25 users: 1.20x (+20%)
-        - 50 users or more: 1.40x (+40%, maximum)
+        Not applied automatically to final hours; exposed for optional use inside
+        catalog ``hours_formula`` expressions (``users_factor``).
 
         Args:
             users_qty (int): Total number of users.
@@ -105,13 +103,8 @@ class BudgetLineMixin(models.AbstractModel):
     def _get_company_factor(company_qty):
         """Get company factor: 15% per company above 1, no maximum.
 
-        The factor increases by 15% for each company above 1, with no
-        maximum limit. For example:
-        - 1 company: 1.00x (no increase)
-        - 2 companies: 1.15x (+15%)
-        - 3 companies: 1.30x (+30%)
-        - 4 companies: 1.45x (+45%)
-        - And so on...
+        Not applied automatically to final hours; exposed for optional use inside
+        catalog ``hours_formula`` expressions (``company_factor``).
 
         Args:
             company_qty (int): Total number of companies.
@@ -124,3 +117,102 @@ class BudgetLineMixin(models.AbstractModel):
             additional_companies = company_qty - 1
             company_factor = 1.0 + (additional_companies * 0.15)
         return company_factor
+
+    def _eval_hours_formula(self, formula, eval_locals):
+        """Evaluate a catalog hours formula with safe_eval.
+
+        The expression must evaluate to a number (final hours for the line).
+
+        Args:
+            formula (str): Python expression.
+            eval_locals (dict): Names available in the expression.
+
+        Returns:
+            float: Evaluated final hours.
+
+        Raises:
+            UserError: If evaluation fails or the result is not numeric.
+        """
+        self.ensure_one()
+        line_label = getattr(self, "name", None) or ""
+        if not line_label:
+            line_label = f"{self._name},{self.id}"
+        try:
+            result = safe_eval(
+                formula.strip(),
+                None,
+                eval_locals,
+                mode="eval",
+                nocopy=True,
+            )
+        except Exception as err:
+            # from None: avoid chaining safe_eval errors (e.g. ZeroDivisionError)
+            # so test runners and logs do not treat the cause as an uncaught ERROR.
+            raise UserError(
+                _(
+                    "Invalid hours formula for line %(name)s: %(error)s\n\n"
+                    "Formula:\n%(formula)s"
+                )
+                % {
+                    "name": line_label,
+                    "error": str(err),
+                    "formula": formula.strip()[:500],
+                }
+            ) from None
+
+        try:
+            return float(result)
+        except (TypeError, ValueError):
+            raise UserError(
+                _(
+                    "Hours formula for line %(name)s must evaluate to a number; "
+                    "got %(value)r.\n\nFormula:\n%(formula)s"
+                )
+                % {
+                    "name": line_label,
+                    "value": result,
+                    "formula": formula.strip()[:500],
+                }
+            ) from None
+
+    def _finalize_line_hours(
+        self, complexity, users_qty, company_qty, base_hours, hours_formula
+    ):
+        """Apply default scaling and optional catalog formula.
+
+        When ``hours_formula`` is empty, returns base_hours × complexity_factor.
+        Otherwise evaluates the formula; its result is the final hours.
+
+        Args:
+            complexity (str): low / medium / high.
+            users_qty (int): informational count (available in formula).
+            company_qty (int): informational count (available in formula).
+            base_hours (float): adjusted or default hours.
+            hours_formula (str or bool): optional expression from catalog.
+
+        Returns:
+            float: Final hours for the line.
+        """
+        complexity_factor = self._get_complexity_factor(complexity)
+        default_hours = base_hours * complexity_factor
+        if not hours_formula or not str(hours_formula).strip():
+            return default_hours
+
+        users_factor = self._get_users_factor(users_qty)
+        company_factor = self._get_company_factor(company_qty)
+        eval_locals = {
+            "base_hours": base_hours,
+            "complexity": complexity,
+            "complexity_factor": complexity_factor,
+            "default_hours": default_hours,
+            "users_qty": users_qty,
+            "company_qty": company_qty,
+            "users_factor": users_factor,
+            "company_factor": company_factor,
+            "min": min,
+            "max": max,
+            "int": int,
+            "float": float,
+            "round": round,
+        }
+        return self._eval_hours_formula(hours_formula, eval_locals)
