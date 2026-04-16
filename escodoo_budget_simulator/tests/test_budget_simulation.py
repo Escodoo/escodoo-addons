@@ -237,9 +237,8 @@ class TestBudgetSimulation(TransactionCase):
         # final_hours = 100 * 1.30 * 1.00 * 1.00 = 130.0
         self.assertAlmostEqual(sim_high.total_hours, 130.0, places=2)
 
-    def test_users_factor(self):
-        """Test users factor calculation"""
-        # 10 users: 5 base + 5 additional = 1.05 factor
+    def test_users_qty_informational_without_formula(self):
+        """Users count does not change hours unless a catalog formula uses it."""
         sim = self.BudgetSimulation.create(
             {
                 "partner_id": self.partner.id,
@@ -255,10 +254,8 @@ class TestBudgetSimulation(TransactionCase):
             }
         )
         sim._compute_totals()
-        # final_hours = 100 * 1.00 * 1.05 * 1.00 = 105.0
-        self.assertAlmostEqual(sim.total_hours, 105.0, places=2)
+        self.assertAlmostEqual(sim.total_hours, 100.0, places=2)
 
-        # 25 users: max factor 1.40 (40% limit)
         sim2 = self.BudgetSimulation.create(
             {
                 "partner_id": self.partner.id,
@@ -274,8 +271,7 @@ class TestBudgetSimulation(TransactionCase):
             }
         )
         sim2._compute_totals()
-        # final_hours = 100 * 1.00 * 1.20 * 1.00 = 120.0 (20 users above 5 = 20% = 1.20)
-        self.assertAlmostEqual(sim2.total_hours, 120.0, places=2)
+        self.assertAlmostEqual(sim2.total_hours, 100.0, places=2)
 
     def test_integrations_and_modules_hours(self):
         """Test that integration and module hours are included"""
@@ -302,10 +298,10 @@ class TestBudgetSimulation(TransactionCase):
             }
         )
         simulation._compute_totals()
-        # All with low complexity (1.00), 5 users (1.00), 1 company (1.00)
-        # Line: 100 * 1.00 * 1.00 * 1.00 = 100.0
-        # Integrations: (40 + 30) * 1.00 * 1.00 * 1.00 = 70.0
-        # Modules: (20 + 25) * 1.00 * 1.00 * 1.00 = 45.0
+        # All with low complexity (1.00)
+        # Line: 100 * 1.00 = 100.0
+        # Integrations: (40 + 30) * 1.00 = 70.0
+        # Modules: (20 + 25) * 1.00 = 45.0
         # Total: 100 + 70 + 45 = 215.0
         self.assertAlmostEqual(simulation.total_hours, 215.0, places=2)
 
@@ -326,8 +322,8 @@ class TestBudgetSimulation(TransactionCase):
                 "adjusted_hours": 150.0,
             }
         )
-        # Adjusted hours override base, then factors applied
-        # final_hours = 150 * 1.00 * 1.00 * 1.00 = 150.0
+        # Adjusted hours override base, then complexity factor applied
+        # final_hours = 150 * 1.00 = 150.0
         self.assertAlmostEqual(line.final_hours, 150.0, places=2)
 
     def test_state_transitions(self):
@@ -426,9 +422,8 @@ class TestBudgetSimulation(TransactionCase):
         with self.assertRaises(UserError):
             simulation.action_load_from_template()
 
-    def test_companies_factor(self):
-        """Test companies factor calculation"""
-        # 3 companies: 1 base + 2 additional = 1.30 factor (2 * 0.15)
+    def test_company_qty_informational_without_formula(self):
+        """Company count does not change hours unless a catalog formula uses it."""
         sim = self.BudgetSimulation.create(
             {
                 "partner_id": self.partner.id,
@@ -444,10 +439,8 @@ class TestBudgetSimulation(TransactionCase):
             }
         )
         sim._compute_totals()
-        # final_hours = 100 * 1.00 * 1.00 * 1.30 = 130.0
-        self.assertAlmostEqual(sim.total_hours, 130.0, places=2)
+        self.assertAlmostEqual(sim.total_hours, 100.0, places=2)
 
-        # 16 companies: 1 base + 15 additional = 1 + (15 * 0.15) = 3.25 (no max limit)
         sim2 = self.BudgetSimulation.create(
             {
                 "partner_id": self.partner.id,
@@ -463,17 +456,16 @@ class TestBudgetSimulation(TransactionCase):
             }
         )
         sim2._compute_totals()
-        # final_hours = 100 * 1.00 * 1.00 * 3.25 = 325.0
-        self.assertAlmostEqual(sim2.total_hours, 325.0, places=2)
+        self.assertAlmostEqual(sim2.total_hours, 100.0, places=2)
 
-    def test_all_factors_combined(self):
-        """Test all factors combined (complexity, users, companies)"""
+    def test_complexity_only_without_user_company_factors(self):
+        """Only complexity scales base hours when no catalog formula is set."""
         simulation = self.BudgetSimulation.create(
             {
                 "partner_id": self.partner.id,
-                "users_qty": 10,  # 5 additional = 1.05 (min(5 * 0.01, 0.40))
-                "company_qty": 3,  # 2 additional = 1.30 (1 + 2 * 0.15)
-                "complexity": "medium",  # 1.15
+                "users_qty": 10,
+                "company_qty": 3,
+                "complexity": "medium",
             }
         )
         self.BudgetSimulationLine.create(
@@ -483,5 +475,85 @@ class TestBudgetSimulation(TransactionCase):
             }
         )
         simulation._compute_totals()
-        # final_hours = 100 * 1.15 * 1.05 * 1.30 = 156.975
-        self.assertAlmostEqual(simulation.total_hours, 156.98, places=2)
+        self.assertAlmostEqual(simulation.total_hours, 115.0, places=2)
+
+    def test_catalog_hours_formula(self):
+        """Catalog Python formula defines final hours when set."""
+        self.line_test.write(
+            {"hours_formula": "default_hours + users_qty + company_qty"}
+        )
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 10,
+                "company_qty": 2,
+                "complexity": "low",
+            }
+        )
+        self.BudgetSimulationLine.create(
+            {
+                "simulation_id": simulation.id,
+                "line_id": self.line_test.id,
+            }
+        )
+        simulation._compute_totals()
+        # default_hours = 100 * 1.0; formula = 100 + 10 + 2
+        self.assertAlmostEqual(simulation.total_hours, 112.0, places=2)
+
+    def test_integration_catalog_hours_formula(self):
+        """Integration catalog hours_formula drives final_hours on simulation lines."""
+        self.integration_nfe.write({"hours_formula": "base_hours + users_qty"})
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 10,
+                "company_qty": 1,
+                "complexity": "low",
+                "integration_line_ids": [
+                    (0, 0, {"integration_id": self.integration_nfe.id}),
+                ],
+            }
+        )
+        simulation._compute_totals()
+        int_line = simulation.integration_line_ids[0]
+        self.assertAlmostEqual(int_line.final_hours, 50.0, places=2)
+        self.assertAlmostEqual(simulation.total_hours, 50.0, places=2)
+
+    def test_module_catalog_hours_formula(self):
+        """Module catalog hours_formula drives final_hours on simulation lines."""
+        self.module_sale.write({"hours_formula": "base_hours * company_factor"})
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 3,
+                "complexity": "low",
+                "module_line_ids": [
+                    (0, 0, {"module_id": self.module_sale.id}),
+                ],
+            }
+        )
+        simulation._compute_totals()
+        mod_line = simulation.module_line_ids[0]
+        self.assertAlmostEqual(mod_line.final_hours, 26.0, places=2)
+        self.assertAlmostEqual(simulation.total_hours, 26.0, places=2)
+
+    def test_catalog_hours_formula_with_users_factor(self):
+        """Formula may use users_factor so users_qty affects hours only then."""
+        self.line_test.write({"hours_formula": "base_hours * users_factor"})
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 10,
+                "company_qty": 1,
+                "complexity": "low",
+            }
+        )
+        self.BudgetSimulationLine.create(
+            {
+                "simulation_id": simulation.id,
+                "line_id": self.line_test.id,
+            }
+        )
+        simulation._compute_totals()
+        self.assertAlmostEqual(simulation.total_hours, 105.0, places=2)

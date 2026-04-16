@@ -59,6 +59,14 @@
                                 placeholder="Description of this activitie..."
                             />
                         </page>
+                        <page
+                            string="Hours formula"
+                            groups="escodoo_budget_simulator.group_budget_manager"
+                        >
+                            <group>
+                                <field name="hours_formula" widget="text" />
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
