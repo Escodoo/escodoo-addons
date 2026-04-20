@@ -17,6 +17,12 @@
         "sales_team",
         "sale",
     ],
+    "icon": "/escodoo_budget_simulator/static/description/icon.png",
+    "assets": {
+        "web.assets_backend": [
+            "escodoo_budget_simulator/static/src/scss/settings_sidebar.scss",
+        ],
+    },
     "data": [
         "security/budget_security.xml",
         "security/ir.model.access.csv",

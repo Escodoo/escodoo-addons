@@ -13,8 +13,9 @@ class BudgetSimulation(models.Model):
     Budget simulations are detailed cost estimates for Odoo implementation
     projects. They can be created from scratch or loaded from a template.
     Each simulation contains modules, integrations, and general activities with
-    calculated hours based on complexity, number of users, and number of
-    companies.
+    calculated hours based on complexity and optional Python formulas on
+    catalog items. User and company counts are kept for reference and for use
+    inside those formulas when needed.
 
     Simulations can be in four states:
     - Draft: Can be edited and modified
@@ -125,9 +126,10 @@ class BudgetSimulation(models.Model):
             "quotation": [("readonly", True)],
             "cancelled": [("readonly", True)],
         },
-        help="Total number of users for this simulation. This value is used "
-        "to calculate the users factor: 1% per user above 5, with a maximum "
-        "increase of 40%. Can be loaded from a template or set manually.",
+        help="Total number of users for this simulation (informational). Not "
+        "applied automatically to line hours; available as users_qty / "
+        "users_factor in optional catalog Python formulas. Can be loaded from "
+        "a template or set manually.",
     )
     company_qty = fields.Integer(
         required=True,
@@ -137,9 +139,10 @@ class BudgetSimulation(models.Model):
             "quotation": [("readonly", True)],
             "cancelled": [("readonly", True)],
         },
-        help="Total number of companies for this simulation. This value is "
-        "used to calculate the companies factor: 15% per company above 1, with "
-        "no maximum limit. Can be loaded from a template or set manually.",
+        help="Total number of companies (branches) for this simulation "
+        "(informational). Not applied automatically to line hours; available as "
+        "company_qty / company_factor in optional catalog Python formulas. Can "
+        "be loaded from a template or set manually.",
     )
     complexity = fields.Selection(
         required=True,
@@ -150,8 +153,9 @@ class BudgetSimulation(models.Model):
             "cancelled": [("readonly", True)],
         },
         help="Complexity level for this simulation. This affects the complexity "
-        "factor applied to all lines: Low = 1.00x, Medium = 1.15x, High = 1.30x. "
-        "Can be loaded from a template or set manually.",
+        "factor applied to all lines: Low = 1.00x, Medium = 1.15x, High = 1.30x, "
+        "unless a catalog line defines a Python hours formula. Can be loaded "
+        "from a template or set manually.",
     )
     integration_line_ids = fields.One2many(
         "budget.simulation.integration",
