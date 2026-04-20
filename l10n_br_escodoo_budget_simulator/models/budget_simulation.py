@@ -9,8 +9,12 @@ class BudgetSimulation(models.Model):
 
     def action_create_quotation(self):
         res = super().action_create_quotation()
-        sale_order = self.sale_order_id
-        if not sale_order:
+        sale_orders = (
+            self.sale_order_id
+            | self.support_contract_sale_order_id
+            | self.migration_contract_sale_order_id
+        ).exists()
+        if not sale_orders:
             return res
         company = self.company_id
         fiscal_operation = (
@@ -22,8 +26,9 @@ class BudgetSimulation(models.Model):
         order_vals = {"fiscal_operation_id": fiscal_operation.id}
         if fiscal_operation.fiscal_position_id:
             order_vals["fiscal_position_id"] = fiscal_operation.fiscal_position_id.id
-        sale_order.write(order_vals)
-        lines = sale_order.order_line.filtered(lambda line: not line.display_type)
-        if lines:
-            lines.write({"fiscal_operation_id": fiscal_operation.id})
+        sale_orders.write(order_vals)
+        lines = sale_orders.mapped("order_line").filtered(
+            lambda line: not line.display_type
+        )
+        lines.write({"fiscal_operation_id": fiscal_operation.id})
         return res
