@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="website.default_website" model="website">
+        <field name="name">Escodoo</field>
+        <field
+            name="logo"
+            type="base64"
+            file="escodoo_website/static/src/binary/ir_attachment/brand_logo.png"
+        />
+        <field
+            name="favicon"
+            type="base64"
+            file="escodoo_website/static/src/binary/ir_attachment/brand_favicon.svg"
+        />
+        <field name="social_linkedin">https://www.linkedin.com/company/escodoo</field>
+        <field name="social_github">https://github.com/Escodoo</field>
+        <field name="social_youtube">https://www.youtube.com/@escodoo</field>
+        <field name="social_instagram">https://www.instagram.com/escodoo/</field>
+        <field name="social_facebook" />
+        <field name="social_twitter" />
+        <field name="social_tiktok" />
+    </record>
+    <record id="mailing_list_newsletter" model="mailing.list">
+        <field name="name">Escodoo — Odoo Community and OCA</field>
+        <field name="is_public" eval="True" />
+    </record>
+    <record id="utm_source_diagnostic" model="utm.source">
+        <field name="name">Website — free diagnostic</field>
+    </record>
+    <record id="utm_source_contact" model="utm.source">
+        <field name="name">Website — contact form</field>
+    </record>
+    <record id="utm_source_quote" model="utm.source">
+        <field name="name">Website — implementation quote</field>
+    </record>
+    <record id="utm_source_consulting" model="utm.source">
+        <field name="name">Website — consulting and development</field>
+    </record>
+    <record id="utm_source_maintenance" model="utm.source">
+        <field name="name">Website — maintenance contract</field>
+    </record>
+    <record id="utm_source_hosting" model="utm.source">
+        <field name="name">Website — migration and hosting</field>
+    </record>
+    <record id="utm_source_demo" model="utm.source">
+        <field name="name">Website — demo environment</field>
+    </record>
+    <record id="utm_source_feature_map" model="utm.source">
+        <field name="name">Website — feature map PDF</field>
+    </record>
+    <record id="utm_source_second_opinion" model="utm.source">
+        <field name="name">Website — second opinion</field>
+    </record>
+    <!-- website_crm opens contact_name, email_from, partner_name, phone, name,
+         description, team_id and user_id to the form builder. The attribution
+         fields are not on that list, so a lead created from the site cannot say
+         which page produced it. Every form here posts them as hidden values, so
+         they are opened here as well.
+
+         The nested noupdate="0" is deliberate: the whitelist lives in a column
+         rather than in a record, so a module update has to run the call again
+         to repair a database where the field was reset. -->
+    <data noupdate="0">
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>crm.lead</value>
+            <value eval="['medium_id', 'source_id']" />
+        </function>
+    </data>
+</odoo>

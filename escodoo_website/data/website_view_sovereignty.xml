@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- The page that disarms the larger buyer's objections. None of these are
+         addressed anywhere on the live site, and they are exactly what a legal
+         or risk reviewer asks before signing. -->
+    <record id="sovereignty" model="ir.ui.view">
+        <field name="name">Escodoo - Sovereignty and portability</field>
+        <field name="key">escodoo_website.sovereignty</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Sovereignty and portability" t-name="escodoo_website.sovereignty">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_sovereignty" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1
+                                        class="display-3-fs"
+                                    >Sovereignty and portability</h1>
+                                    <p class="lead">
+                                        Changing supplier should be a commercial
+                                        decision, not a technical drama. This page
+                                        exists so you can check that before you need
+                                        it.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Ownership"
+                            >
+                                <div class="container">
+                                    <h2>Who owns what</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">The platform</h3>
+                                            <p>
+                                                Odoo Community is free software under
+                                                the LGPL. Nobody can revoke your right
+                                                to keep running it, and no subscription
+                                                lapse can turn your system off.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">The community modules</h3>
+                                            <p>
+                                                Free software maintained in public
+                                                repositories by the Odoo Community
+                                                Association, under AGPL or LGPL. They
+                                                are not ours to withhold.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Your custom modules</h3>
+                                            <p>
+                                                Everything we build specifically for
+                                                you is delivered as source, in a
+                                                repository you have access to, from the
+                                                first commit. Not at the end of the
+                                                project, and not on request.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Your data</h3>
+                                            <p>
+                                                Yours, in a standard PostgreSQL
+                                                database. A full dump is available to
+                                                you at any time, without asking us
+                                                first and without a fee.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Exit plan"
+                            >
+                                <div class="container">
+                                    <h2
+                                    >The exit plan, written down before you need it</h2>
+                                    <p class="lead">
+                                        A supplier who will not describe how you leave
+                                        is telling you something.
+                                    </p>
+                                    <ol class="mt-3">
+                                        <li>
+                                            You already have the repository, so there is
+                                            nothing to hand over that you do not hold.
+                                        </li>
+                                        <li>
+                                            The deployment recipe is in the repository
+                                            too — the container definition, the module
+                                            list and the configuration. Another team
+                                            can stand up an identical environment
+                                            without us.
+                                        </li>
+                                        <li>
+                                            A database dump plus the file store is the
+                                            whole system. There is no proprietary
+                                            format and no encrypted layer we control.
+                                        </li>
+                                        <li>
+                                            We document the parts that are genuinely
+                                            unusual about your installation, and we
+                                            will brief the incoming team.
+                                        </li>
+                                        <li>
+                                            The notice period is in the contract, in
+                                            both directions.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="LGPD"
+                            >
+                                <div class="container">
+                                    <h2>Data protection and residency</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Where the data lives</h3>
+                                            <p>
+                                                You choose. Brazilian region, another
+                                                region, or your own data centre. On a
+                                                vendor cloud the region is chosen for
+                                                you, which is the detail that decides
+                                                public sector and regulated deals.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Access control and audit</h3>
+                                            <p>
+                                                Record level rules, single sign-on
+                                                through OpenID Connect or SAML, and an
+                                                audit trail of data changes through the
+                                                community
+                                                <code>auditlog</code>
+                                                module. Neither Odoo edition ships an
+                                                audit log of its own.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">
+                                                LGPD consent and data subject requests
+                                            </h3>
+                                            <p>
+                                                The community
+                                                <code>privacy_consent</code>
+                                                module registers consent and handles
+                                                subject requests, which is what an
+                                                audit under the Brazilian data
+                                                protection law asks to see.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Our own access</h3>
+                                            <p>
+                                                Named accounts, no shared credentials,
+                                                and access that can be revoked by you
+                                                without breaking the system. We will
+                                                sign your confidentiality agreement.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Due diligence"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2>For your due diligence</h2>
+                                            <p>
+                                                Ask us for these and we will send them
+                                                without negotiation: the module list
+                                                with its licences, the repository
+                                                structure, the backup and recovery
+                                                procedure, the incident history of your
+                                                environment, and the names of the
+                                                people who would work on your account.
+                                            </p>
+                                            <p class="mb-0">
+                                                Our public work is on
+                                                <a
+                                                href="https://github.com/Escodoo"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >GitHub</a>
+                                                and our contribution record is on
+                                                <a href="/oca">the OCA page</a>
+                                                , with a link to the public dataset.
+                                                Verify us before you trust us.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Reviewing a supplier, including us?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'We will go through this list with your legal or IT reviewer on a call, and answer the questions this page does not cover.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

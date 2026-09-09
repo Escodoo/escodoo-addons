@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="implementation" model="ir.ui.view">
+        <field name="name">Escodoo - Odoo implementation</field>
+        <field name="key">escodoo_website.implementation</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Odoo implementation" t-name="escodoo_website.implementation">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_implementation"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Odoo implementation with a predictable path
+                                    </h1>
+                                    <p class="lead">
+                                        Structured architecture, community good
+                                        practice, and a delivery plan with durations,
+                                        named deliverables and stated responsibilities
+                                        on both sides.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Method"
+                            >
+                                <div class="container">
+                                    <h2>The six phases</h2>
+                                    <p class="lead">
+                                        Each phase closes with something you can hold,
+                                        and you can stop between phases. That is the
+                                        only guarantee that genuinely protects a buyer.
+                                    </p>
+                                    <div class="mt-4">
+                                        <t t-call="escodoo_website.diagram_method" />
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="What we need from you"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2
+                                                class="h4"
+                                            >What we need from your team</h2>
+                                            <p>
+                                                The single largest difference between a
+                                                project that lands on time and one that
+                                                does not.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    A decision maker who can settle a
+                                                    process disagreement in the same
+                                                    week
+                                                </li>
+                                                <li>
+                                                    One key user per area with real hours
+                                                    reserved, not hours in addition to a
+                                                    full job
+                                                </li>
+                                                <li>
+                                                    Access to your current data, however
+                                                    messy it is
+                                                </li>
+                                                <li>
+                                                    Someone who owns the product and tax
+                                                    records, because that is where
+                                                    projects stall
+                                                </li>
+                                                <li>
+                                                    Willingness to change a process when
+                                                    the standard is better than your
+                                                    habit
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">What we commit to</h2>
+                                            <ul>
+                                                <li>
+                                                    A named team, with the same people
+                                                    through the project
+                                                </li>
+                                                <li>
+                                                    Code review on every merge and
+                                                    automated tests on what we build
+                                                </li>
+                                                <li>
+                                                    Your repository, accessible to you
+                                                    from the first week
+                                                </li>
+                                                <li>
+                                                    Standard and community modules first;
+                                                    we do not sell development for
+                                                    something that already exists
+                                                </li>
+                                                <li>
+                                                    A weekly report short enough that you
+                                                    will actually read it
+                                                </li>
+                                                <li>
+                                                    Presence through your first fiscal
+                                                    and accounting close
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Duration and cost"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2>How long, and how much</h2>
+                                            <p>
+                                                A focused project on one operation with a
+                                                simple fiscal profile is a matter of
+                                                weeks per phase. A multi-company
+                                                industrial operation issuing documents in
+                                                several states is a matter of months.
+                                                Anyone who quotes a duration before
+                                                discovery is guessing, and the guess is
+                                                always padded.
+                                            </p>
+                                            <p class="mb-0">
+                                                What drives the number, what the contract
+                                                models are and a benchmark you can check
+                                                us against are on the
+                                                <a
+                                                href="/investimento"
+                                            >investment page</a>
+                                                . We would rather send you there than
+                                                write a number here that turns out to be
+                                                wrong for your case.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Start with the discovery phase alone'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'You do not have to buy an implementation to find out whether Odoo fits. Discovery is a deliverable in its own right, and it is yours to use with anyone.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- The weakest page on the live site: six cards of press release language
+         and not one technical specific, which is counterintuitive for a top ten
+         community contributor. Near total rewrite. -->
+    <record id="consulting" model="ir.ui.view">
+        <field name="name">Escodoo - Consulting and development</field>
+        <field name="key">escodoo_website.consulting</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Consulting and development" t-name="escodoo_website.consulting">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_consulting" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Development that survives the next upgrade
+                                    </h1>
+                                    <p class="lead">
+                                        Code review on every merge, automated tests,
+                                        continuous integration, and a policy of pushing
+                                        generic work upstream so the community maintains
+                                        it instead of you.
+                                    </p>
+                                </div>
+                            </section>
+                            <!-- The rule that costs us revenue and wins us
+                                 contracts, stated first. -->
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Build or reuse"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2 class="h4">
+                                            First we check whether it already exists
+                                        </h2>
+                                        <p>
+                                            Reviewing hundreds of community
+                                            contributions a year means we usually know
+                                            whether a requirement is already solved.
+                                            When it is, we install and configure the
+                                            module rather than quoting development for
+                                            it.
+                                        </p>
+                                        <p class="mb-0">
+                                            This costs us billable hours on purpose. A
+                                            client who discovers a year later that they
+                                            paid to rebuild something that shipped for
+                                            free does not stay a client.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Engineering standard"
+                            >
+                                <div class="container">
+                                    <h2>The engineering standard</h2>
+                                    <p class="lead">
+                                        The same process we use on the community
+                                        repositories, applied to your private code.
+                                    </p>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Review before merge</h3>
+                                            <p>
+                                                No engineer merges their own work. Every
+                                                change is read by someone else before it
+                                                can reach your system.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Automated tests</h3>
+                                            <p>
+                                                Business logic ships with tests. It is
+                                                what lets us upgrade your custom modules
+                                                later without discovering the breakage in
+                                                production.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Continuous integration</h3>
+                                            <p>
+                                                Every commit runs the linters and the
+                                                test suite. A red build does not get
+                                                deployed, regardless of the deadline.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Your repository, from day one</h3>
+                                            <p>
+                                                Source in a repository you have access
+                                                to, with readable history. Not a zip file
+                                                at the end of the project.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Extension, not modification</h3>
+                                            <p>
+                                                We inherit and extend rather than editing
+                                                the core. That is the difference between
+                                                a system you can upgrade and one you
+                                                cannot.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Upstream where it belongs</h3>
+                                            <p>
+                                                If what we built for you is generic, we
+                                                offer to contribute it. You keep your
+                                                competitive logic private and stop paying
+                                                to maintain the plumbing.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="What we build"
+                            >
+                                <div class="container">
+                                    <h2>What we are usually asked to build</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Integrations</h3>
+                                            <ul>
+                                                <li>
+                                                    Bank exchange for collection and
+                                                    payment
+                                                </li>
+                                                <li>
+                                                    Marketplaces and online sales
+                                                    channels
+                                                </li>
+                                                <li>
+                                                    Carriers, freight quotation and
+                                                    tracking
+                                                </li>
+                                                <li>
+                                                    Payroll providers, posting the
+                                                    accounting entries
+                                                </li>
+                                                <li>
+                                                    Industrial equipment, scales and
+                                                    collection devices
+                                                </li>
+                                                <li>
+                                                    Legacy systems that have to stay alive
+                                                    for a while
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Business logic</h3>
+                                            <ul>
+                                                <li>
+                                                    Pricing and commission rules specific
+                                                    to your market
+                                                </li>
+                                                <li>
+                                                    Approval chains that match how your
+                                                    company actually decides
+                                                </li>
+                                                <li>
+                                                    Documents and labels your customers or
+                                                    auditors require
+                                                </li>
+                                                <li>
+                                                    Operational reports the standard views
+                                                    do not answer
+                                                </li>
+                                                <li>
+                                                    Automations that remove a recurring
+                                                    manual step
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 mb-0">
+                                        We also review other people's code as a service.
+                                        If you inherited a customised Odoo and want to
+                                        know what is in it, that is a
+                                        <a href="/segunda-opiniao">second opinion</a>
+                                        or a
+                                        <a href="/padronizacao-odoo">standardisation</a>
+                                        job.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="How to contract"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2>How to contract it</h2>
+                                            <p>
+                                                Hour packages, bought in blocks and
+                                                consumed against a backlog you prioritise.
+                                                Each item is estimated before it starts,
+                                                and you approve the estimate. Consumption
+                                                is reported monthly with what was
+                                                delivered against it.
+                                            </p>
+                                            <p class="mb-0">
+                                                Small, well defined items can be quoted
+                                                individually at a fixed price. Large
+                                                initiatives are broken into phases, which
+                                                is slower to sell and much better for both
+                                                sides.
+                                                <a
+                                                href="/investimento"
+                                            >The contract models in detail</a>
+                                                .
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Have a requirement in mind?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Describe it and we will tell you whether a community module already solves it. That answer is free, and it is often the whole answer.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- The highest lifetime value offer on the site. The live page gives a buyer
+         nothing they could take to an internal approval, and closes with a call
+         to action sentence and no button. -->
+    <record id="maintenance" model="ir.ui.view">
+        <field name="name">Escodoo - Support and maintenance</field>
+        <field name="key">escodoo_website.maintenance</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Support and maintenance" t-name="escodoo_website.maintenance">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_maintenance" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Support and maintenance for Odoo
+                                    </h1>
+                                    <p class="lead">
+                                        Go live is not the finish line. A response time
+                                        per severity, formal channels, and the version
+                                        upgrade already included in the fee.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Plans"
+                            >
+                                <div class="container">
+                                    <h2>The plans</h2>
+                                    <div class="escodoo-plans mt-4">
+                                        <div class="escodoo-plan">
+                                            <h3 class="escodoo-plan-name">Essential</h3>
+                                            <p class="escodoo-plan-meta">
+                                                Business hours, corrective support
+                                            </p>
+                                            <ul class="escodoo-plan-items">
+                                                <li>
+                                                    Ticket channel with a response time
+                                                    per severity
+                                                </li>
+                                                <li>Correction of faults and errors</li>
+                                                <li>
+                                                    Configuration questions and guidance
+                                                </li>
+                                                <li>Security patch application</li>
+                                                <li>Monthly report</li>
+                                            </ul>
+                                        </div>
+                                        <div class="escodoo-plan escodoo-plan-featured">
+                                            <h3 class="escodoo-plan-name">Managed</h3>
+                                            <p class="escodoo-plan-meta">
+                                                Everything in Essential, plus evolution
+                                            </p>
+                                            <ul class="escodoo-plan-items">
+                                                <li>
+                                                    An hour package for improvements each
+                                                    month
+                                                </li>
+                                                <li>
+                                                    Version upgrade included, spread
+                                                    across the fee
+                                                </li>
+                                                <li>
+                                                    A named account engineer who knows
+                                                    your installation
+                                                </li>
+                                                <li>
+                                                    Quarterly review of the backlog and
+                                                    the technical debt
+                                                </li>
+                                                <li
+                                                >Training refreshers for new staff</li>
+                                            </ul>
+                                        </div>
+                                        <div class="escodoo-plan">
+                                            <h3
+                                                class="escodoo-plan-name"
+                                            >Sustaining</h3>
+                                            <p class="escodoo-plan-meta">
+                                                For an Odoo somebody else implemented
+                                            </p>
+                                            <ul class="escodoo-plan-items">
+                                                <li>
+                                                    Everything in Managed, after a
+                                                    takeover assessment
+                                                </li>
+                                                <li>
+                                                    Responsibility for custom code we did
+                                                    not write
+                                                </li>
+                                                <li>
+                                                    Gradual
+                                                    <a
+                                                    href="/padronizacao-odoo"
+                                                >standardisation</a>
+                                                    of what is worth replacing
+                                                </li>
+                                                <li>
+                                                    Documentation of what was never
+                                                    documented
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="mt-4 text-muted">
+                                        Pricing is a function of the number of users, the
+                                        module footprint and how much non-standard code
+                                        the installation carries. The mechanism is on the
+                                        <a href="/investimento">investment page</a>
+                                        .
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Response times"
+                            >
+                                <div class="container">
+                                    <h2>Response times, by severity</h2>
+                                    <p class="lead">
+                                        Response means a person engaged on your problem,
+                                        not an automated acknowledgement.
+                                    </p>
+                                    <div class="table-responsive mt-3">
+                                        <table class="table escodoo-compare">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Severity</th>
+                                                    <th scope="col">What it means</th>
+                                                    <th scope="col">Response</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Critical</th>
+                                                    <td>
+                                                        The operation is stopped. Nobody
+                                                        can invoice, ship or produce.
+                                                    </td>
+                                                    <td>Within one business hour</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">High</th>
+                                                    <td>
+                                                        A core process is degraded, or
+                                                        fiscal documents are being
+                                                        rejected.
+                                                    </td>
+                                                    <td>Within four business hours</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Normal</th>
+                                                    <td>
+                                                        Something is wrong but there is a
+                                                        workaround.
+                                                    </td>
+                                                    <td>Within one business day</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Low</th>
+                                                    <td>
+                                                        A question, a small improvement or
+                                                        a cosmetic issue.
+                                                    </td>
+                                                    <td>Within three business days</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <p class="mb-0 text-muted">
+                                        Severity is assigned by impact on your operation,
+                                        not by how the ticket was worded. If we disagree
+                                        with your classification we call you rather than
+                                        silently downgrading it.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Channels"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">How to reach us</h2>
+                                            <p>
+                                                One formal channel that creates a ticket,
+                                                and one fast channel for when the
+                                                operation is stopped. Both are recorded,
+                                                because a support history nobody can read
+                                                is not a support history.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    The ticket portal, which is where the
+                                                    record lives
+                                                </li>
+                                                <li>
+                                                    E-mail, which opens a ticket
+                                                    automatically
+                                                </li>
+                                                <li>
+                                                    WhatsApp and phone for critical
+                                                    severity, logged afterwards
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">What is not included</h2>
+                                            <p>
+                                                Saying this plainly avoids the argument
+                                                nine months in.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    New projects and new modules, which
+                                                    are
+                                                    <a
+                                                    href="/consultoria-e-desenvolvimento"
+                                                >development</a>
+                                                </li>
+                                                <li>
+                                                    End user training beyond refreshers,
+                                                    which is
+                                                    <a href="/academia">Academy</a>
+                                                </li>
+                                                <li>
+                                                    Infrastructure, unless you also take
+                                                    <a
+                                                    href="/hospedagem-odoo"
+                                                >hosting</a>
+                                                </li>
+                                                <li>
+                                                    Third party systems we did not build
+                                                    and do not control
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Running Odoo without a support contract?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us the version, the user count and roughly how customised it is. We come back with a plan and a price.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="hosting" model="ir.ui.view">
+        <field name="name">Escodoo - Hosting and infrastructure</field>
+        <field name="key">escodoo_website.hosting</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Hosting and infrastructure" t-name="escodoo_website.hosting">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_hosting" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Hosting and infrastructure for Odoo
+                                    </h1>
+                                    <p class="lead">
+                                        Managed hosting with monitoring, stated backup
+                                        retention and a recovery objective in writing.
+                                        In a region you choose.
+                                    </p>
+                                </div>
+                            </section>
+                            <!-- The live page says "infrastructure of global level"
+                                 without naming anything, which weakens exactly the
+                                 reader who cares about latency and residency. -->
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Specifics"
+                            >
+                                <div class="container">
+                                    <h2>The specifics, since they are the point</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Where it runs</h3>
+                                            <p>
+                                                Containerised deployment on a major cloud
+                                                provider, in a Brazilian region by
+                                                default. Another region, or your own data
+                                                centre, on request — the deployment recipe
+                                                is portable by design.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Backups</h3>
+                                            <p>
+                                                Daily automated database and file store
+                                                backups, retained off-site, with a
+                                                restore tested periodically rather than
+                                                assumed to work.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Monitoring</h3>
+                                            <p>
+                                                Availability, response time, disk, queue
+                                                depth and failed jobs, watched around the
+                                                clock with alerting to an on-call
+                                                engineer.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Environments</h3>
+                                            <p>
+                                                Production plus a staging copy on
+                                                request, so a change can be validated on
+                                                your real data before it reaches the
+                                                people using it.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Security</h3>
+                                            <p>
+                                                Encryption in transit, restricted network
+                                                access, named accounts with no shared
+                                                credentials, and patching as part of the
+                                                service rather than as a project.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">The uptime target</h3>
+                                            <p>
+                                                Agreed in the contract with the
+                                                measurement window and the exclusions
+                                                written down. A number without a
+                                                measurement method is marketing.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Why us"
+                            >
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7">
+                                            <h2>Why take hosting from the same team</h2>
+                                            <p>
+                                                When the application team and the
+                                                infrastructure team are different
+                                                companies, every slow page becomes a
+                                                debate about whose fault it is. Here it
+                                                is one number to call, and the person who
+                                                answers can read the code and the server
+                                                metrics in the same session.
+                                            </p>
+                                            <p class="mb-0">
+                                                And because the deployment recipe lives in
+                                                your repository, taking hosting from us
+                                                does not lock you in. Another team can
+                                                stand up an identical environment
+                                                elsewhere.
+                                                <a
+                                                href="/soberania-e-portabilidade"
+                                            >How that works</a>
+                                                .
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <img
+                                                src="/web/image/escodoo_website.service_hosting"
+                                                alt="Managed Odoo infrastructure"
+                                                class="img img-fluid rounded"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Moving your Odoo to managed hosting?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us the current setup, the database size and the user count. We come back with a sizing, a price and a migration window.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- The most mature page on the live site and the most executive in tone.
+         Kept almost as it is; what it never says is how long, in what format,
+         and how the deliverable connects to an ERP project afterwards. -->
+    <record id="process_architecture" model="ir.ui.view">
+        <field name="name">Escodoo - Process architecture</field>
+        <field name="key">escodoo_website.process_architecture</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Process architecture"
+                t-name="escodoo_website.process_architecture"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_process_architecture"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Process architecture</h1>
+                                    <p class="lead">
+                                        Process before technology. An ERP installed on
+                                        top of a process nobody agrees on just makes the
+                                        disagreement faster and more expensive.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="What it is"
+                            >
+                                <div class="container">
+                                    <h2>What the work covers</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Mapping what happens today</h3>
+                                            <p>
+                                                The process as it actually runs, including
+                                                the spreadsheet somebody maintains at home
+                                                and the approval that happens by message.
+                                                Not the process in the manual.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Finding where value is lost</h3>
+                                            <p>
+                                                Rework, waiting, double entry, decisions
+                                                taken without data. Named, located and
+                                                where possible quantified.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Redesign</h3>
+                                            <p>
+                                                The process as it should run, designed
+                                                against what the platform does well
+                                                rather than against what your current
+                                                system forced you into.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Responsibility</h3>
+                                            <p>
+                                                Who executes, who approves, who is
+                                                consulted and who is informed, for every
+                                                step. Most process failures are
+                                                accountability failures wearing a
+                                                technical costume.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Indicators</h3>
+                                            <p>
+                                                What to measure, where the number comes
+                                                from, who looks at it and what they are
+                                                expected to do when it moves.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Governance</h3>
+                                            <p>
+                                                How the process is kept alive after the
+                                                consultants leave, which is the part
+                                                almost every engagement skips.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Deliverables"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">What you receive</h2>
+                                            <ul>
+                                                <li>
+                                                    Current and future state process
+                                                    diagrams, in a format your team can
+                                                    edit
+                                                </li>
+                                                <li>
+                                                    A responsibility matrix per process
+                                                    step
+                                                </li>
+                                                <li>
+                                                    An indicator sheet with sources and
+                                                    owners
+                                                </li>
+                                                <li>
+                                                    A prioritised list of changes,
+                                                    separated into process changes and
+                                                    system changes
+                                                </li>
+                                                <li>
+                                                    A short executive summary that can go
+                                                    to a board without translation
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">How long, and what next</h2>
+                                            <p>
+                                                A single process area is a matter of
+                                                weeks. A full operation is longer, and we
+                                                would rather scope it by area so you see
+                                                value before the end.
+                                            </p>
+                                            <p class="mb-0">
+                                                The deliverable stands alone. If you then
+                                                want the system built on top of it, it
+                                                becomes the discovery phase of an
+                                                <a
+                                                href="/implantacao-odoo"
+                                            >implementation</a>
+                                                and you do not pay for that phase twice.
+                                                If you take it to another supplier, it
+                                                still works — it is your document.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Not sure the problem is the software?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Often it is not. Describe the process that hurts most and we will tell you whether this is the right engagement.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- Lowest friction entry point on the site, and it inherits the strongest
+         angle on the live site: the one abandoned after a single paragraph on
+         the journey page. -->
+    <record id="second_opinion" model="ir.ui.view">
+        <field name="name">Escodoo - Second opinion</field>
+        <field name="key">escodoo_website.second_opinion</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Second opinion" t-name="escodoo_website.second_opinion">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_second_opinion"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        A second opinion on your Odoo
+                                    </h1>
+                                    <p class="lead">
+                                        We review another supplier's proposal, or audit
+                                        an Odoo somebody else implemented. Fixed scope,
+                                        fixed price, and no obligation to change
+                                        anything.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Two versions"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">Before you sign</h2>
+                                            <p>
+                                                You have a proposal in front of you and no
+                                                way to judge it. We read it and tell you
+                                                what is missing, what is over-specified,
+                                                which requirements are already solved by
+                                                existing modules, and which line items
+                                                you should ask about.
+                                            </p>
+                                            <p class="mb-0">
+                                                We do not tell you to hire us instead.
+                                                That would make this worthless.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h2
+                                                class="h4"
+                                            >After you already have Odoo</h2>
+                                            <p>
+                                                Your system works, mostly, and you have no
+                                                idea whether it is well built. We audit
+                                                the installation and tell you what state
+                                                it is in, what risk it carries at the next
+                                                upgrade, and what would improve it most
+                                                per unit of money.
+                                            </p>
+                                            <p class="mb-0">
+                                                If your current supplier is doing a good
+                                                job, we will say so in writing.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- The sharpest content on the page: questions a client
+                                 can ask their existing supplier tonight. -->
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Checklist"
+                            >
+                                <div class="container">
+                                    <h2
+                                    >Check your current partnership yourself, for free</h2>
+                                    <p class="lead">
+                                        Six questions. If you cannot answer three of them,
+                                        that is worth a conversation.
+                                    </p>
+                                    <ol class="mt-3">
+                                        <li>
+                                            Can you open the repository with your custom
+                                            code right now, without asking anyone?
+                                        </li>
+                                        <li>
+                                            Does anyone review the code before it reaches
+                                            your production system?
+                                        </li>
+                                        <li>
+                                            Do you know which of your modules are
+                                            standard, which are community and which are
+                                            proprietary custom?
+                                        </li>
+                                        <li>
+                                            Do you know what your next version upgrade
+                                            will cost, and why?
+                                        </li>
+                                        <li>
+                                            Could another supplier take over your system
+                                            without rebuilding it?
+                                        </li>
+                                        <li>
+                                            When you ask for something, do you get an
+                                            estimate before the work starts?
+                                        </li>
+                                    </ol>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-form-layout">
+                                        <div>
+                                            <h2>Request a second opinion</h2>
+                                            <p>
+                                                Tell us whether you have a proposal to
+                                                review or a system to audit, and we come
+                                                back with the scope and the price.
+                                            </p>
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_second_opinion_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_second_opinion'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Second opinion request'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Request the review'"
+                                                />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'What do you want reviewed, and what is worrying you?'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <t t-call="escodoo_website.trust_block" />
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="academy" model="ir.ui.view">
+        <field name="name">Escodoo - Escodoo Academy</field>
+        <field name="key">escodoo_website.academy</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Escodoo Academy" t-name="escodoo_website.academy">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_academy" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Escodoo Academy</h1>
+                                    <p class="lead">
+                                        Training for the people who will build, configure
+                                        and operate Odoo. Taught by the engineers who
+                                        maintain the modules, which is a different thing
+                                        from reading the documentation aloud.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Tracks"
+                            >
+                                <div class="container">
+                                    <h2>Three tracks</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Developers</h3>
+                                            <p>
+                                                The Odoo framework, module structure,
+                                                extension without modification, tests,
+                                                and how to contribute to a community
+                                                repository. The last part is what makes
+                                                a developer employable beyond one
+                                                company.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Functional consultants</h3>
+                                            <p>
+                                                Process design in Odoo, configuration
+                                                depth per application, the Brazilian
+                                                fiscal model, and how to tell the
+                                                difference between a requirement and a
+                                                habit.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Operational teams</h3>
+                                            <p>
+                                                Your own people, on your own data, in
+                                                your own configuration. Generic training
+                                                on a demo database is the reason people
+                                                go back to spreadsheets.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Formats"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">Formats</h2>
+                                            <ul>
+                                                <li>
+                                                    Self-paced courses in our online
+                                                    catalogue
+                                                </li>
+                                                <li>
+                                                    Live remote sessions with exercises
+                                                    and a real environment
+                                                </li>
+                                                <li>
+                                                    In-company training, on your
+                                                    configuration
+                                                </li>
+                                                <li>
+                                                    Mentoring for an internal team taking
+                                                    over an Odoo
+                                                </li>
+                                            </ul>
+                                            <p class="mb-0">
+                                                <a
+                                                    href="/slides"
+                                                    class="btn btn-primary"
+                                                >Browse the course catalogue</a>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">Why we run this at all</h2>
+                                            <p>
+                                                Brazil has far more Odoo projects than
+                                                Odoo engineers, and the shortage is the
+                                                main reason projects fail. Training
+                                                people who may end up working for our
+                                                clients, our competitors or on their own
+                                                is still better for us than a market
+                                                where Odoo has a reputation for failing.
+                                            </p>
+                                            <p class="mb-0">
+                                                It is the same logic as contributing
+                                                upstream, applied to people instead of
+                                                code.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t t-set="cta_title" t-value="'Training a team?'" />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us who needs training, how many they are and what they will be doing with Odoo. We build the programme around that.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

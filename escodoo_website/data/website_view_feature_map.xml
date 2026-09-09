@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- The best asset on the live site and the only one that asks nothing of
+         the reader. The assessment now comes from records, so the search stops
+         serving an empty state, and the page finally captures a contact. -->
+    <record id="feature_map" model="ir.ui.view">
+        <field name="name">Escodoo - Feature map</field>
+        <field name="key">escodoo_website.feature_map</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Feature map" t-name="escodoo_website.feature_map">
+                <t t-call="website.layout">
+                    <t
+                        t-set="summary"
+                        t-value="request.env['escodoo.website.feature']._get_coverage_summary()"
+                    />
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_feature_map" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Feature map</h1>
+                                    <p class="lead">
+                                        Capability by capability, what Odoo covers on
+                                        its own, what the community ecosystem adds and
+                                        what only Enterprise has. Assessed for Odoo
+                                        18.0, with the module named wherever the
+                                        community closes a gap.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Counters"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-metrics">
+                                        <div class="escodoo-metric">
+                                            <span class="escodoo-metric-value">
+                                                <t t-out="summary['total']" />
+                                            </span>
+                                            <span
+                                                class="escodoo-metric-label"
+                                            >capabilities assessed</span>
+                                        </div>
+                                        <div class="escodoo-metric">
+                                            <span class="escodoo-metric-value">
+                                                <t t-out="summary['closed_by_oca']" />
+                                            </span>
+                                            <span
+                                                class="escodoo-metric-label"
+                                            >where the community ecosystem improves on plain Community</span>
+                                        </div>
+                                        <div class="escodoo-metric">
+                                            <span class="escodoo-metric-value">
+                                                <t
+                                                    t-out="summary['matching_enterprise']"
+                                                />
+                                            </span>
+                                            <span
+                                                class="escodoo-metric-label"
+                                            >where Community + OCA reaches Enterprise or beyond</span>
+                                        </div>
+                                        <div class="escodoo-metric">
+                                            <span class="escodoo-metric-value">
+                                                <t t-out="summary['categories']" />
+                                            </span>
+                                            <span
+                                                class="escodoo-metric-label"
+                                            >business areas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="How to read it"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2 class="h5">How to read this</h2>
+                                        <p class="mb-0">
+                                            A capability marked as not covered is not
+                                            a defect we are hiding — it is a decision
+                                            you need to take before you sign anything.
+                                            Brazilian payroll, Studio and the offline
+                                            mobile app are the honest gaps, and they
+                                            are the rows we point at first in a
+                                            conversation.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Feature table"
+                            >
+                                <div class="container">
+                                    <t t-call="escodoo_website.feature_table">
+                                        <t t-set="segment_xmlid" t-value="False" />
+                                    </t>
+                                </div>
+                            </section>
+                            <!-- The live page captures nothing. This is the one
+                                 form on the site worth gating, because the asset
+                                 is genuinely worth an e-mail. -->
+                            <section
+                                class="s_text_block pt48 pb64 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="PDF form"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-form-layout">
+                                        <div>
+                                            <h2>Get the full map as a PDF</h2>
+                                            <p class="lead">
+                                                The same assessment, in a document you
+                                                can circulate internally and take to a
+                                                decision meeting.
+                                            </p>
+                                            <p>
+                                                Tell us which capabilities you actually
+                                                need and we will mark the ones that
+                                                matter for your operation, including
+                                                the modules involved and where the
+                                                genuine gaps are.
+                                            </p>
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_feature_map_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_feature_map'"
+                                                />
+                                                <t
+                                                    t-set="success_page"
+                                                    t-value="'/mapa-de-funcionalidades/obrigado'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Feature map PDF request'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Send me the map'"
+                                                />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'Which capabilities matter most to you?'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <t t-call="escodoo_website.trust_block" />
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Not sure which rows apply to you?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Thirty minutes on your operation is usually enough to turn this table into a short list.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

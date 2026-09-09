@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="editions" model="ir.ui.view">
+        <field name="name">Escodoo - Odoo editions</field>
+        <field name="key">escodoo_website.editions</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Odoo editions" t-name="escodoo_website.editions">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_editions" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Community, Community + OCA, or Enterprise
+                                    </h1>
+                                    <p class="lead">
+                                        Almost every comparison you will find puts
+                                        plain Community against Enterprise and leaves
+                                        the community ecosystem out of the table. It
+                                        is the honest-looking way to make Community
+                                        lose every row. Here is the table with all
+                                        three columns.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt32 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Three columns"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4 mb-4">
+                                            <h2 class="h4">Community, on its own</h2>
+                                            <p>
+                                                The free software edition, installed
+                                                as it comes. Complete for sales,
+                                                purchasing, stock, manufacturing,
+                                                projects and invoicing. Thin on
+                                                accounting depth, and with no
+                                                Brazilian fiscal documents at all.
+                                            </p>
+                                            <p class="text-muted">
+                                                Where it fits: a small operation with
+                                                a simple fiscal profile, or a company
+                                                testing the ground before committing.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h2 class="h4">Community + OCA</h2>
+                                            <p>
+                                                The same edition plus the modules
+                                                maintained by the Odoo Community
+                                                Association: full accounting, the
+                                                Brazilian fiscal localisation, audit
+                                                trail, approvals, field service, RMA,
+                                                multi-level planning. All free
+                                                software, all versioned, all yours.
+                                            </p>
+                                            <p class="text-muted">
+                                                Where it fits: an operation that needs
+                                                real depth and needs the code to stay
+                                                readable, auditable and portable.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h2 class="h4">Enterprise</h2>
+                                            <p>
+                                                The commercial edition. Adds Studio,
+                                                the native mobile app, the live
+                                                spreadsheet, marketing automation,
+                                                appointments and a support agreement
+                                                signed by the vendor, against a
+                                                licence per user per month.
+                                            </p>
+                                            <p class="text-muted">
+                                                Where it fits: the four cases named
+                                                below. We implement Enterprise too,
+                                                and we recommend it when it is the
+                                                right answer.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Naming the cases where the recommendation loses is
+                                 what makes the rest of the page credible. It is
+                                 also precisely what the competing comparison
+                                 pages avoid doing. -->
+                            <section
+                                class="s_text_block pt32 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Honest block"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2
+                                            class="h4"
+                                        >When Enterprise is the answer</h2>
+                                        <p>
+                                            Choose Enterprise when you need Odoo
+                                            Studio so business users can change
+                                            screens without a developer, when you need
+                                            the native mobile app working offline,
+                                            when a contract signed by Odoo S.A.
+                                            matters to your risk committee, or when
+                                            you want the newest assisted features on
+                                            the day they ship.
+                                        </p>
+                                        <p class="mb-0">
+                                            Choose Community + OCA when the code that
+                                            runs your operation has to be readable,
+                                            auditable and portable between suppliers,
+                                            and when the Brazilian fiscal engine
+                                            matters more to you than a drag and drop
+                                            editor.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt32 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Coverage chart"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <t
+                                                t-call="escodoo_website.diagram_editions"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt32 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Comparison table"
+                            >
+                                <div class="container">
+                                    <h2>The table, row by row</h2>
+                                    <p class="lead">
+                                        Where the community ecosystem closes a gap, the
+                                        module is named and its repository is linked.
+                                        You do not have to take our word for it.
+                                    </p>
+                                    <t t-call="escodoo_website.feature_table">
+                                        <t t-set="segment_xmlid" t-value="False" />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt32 pb64 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Cost"
+                            >
+                                <div class="container">
+                                    <h2>What each edition costs you</h2>
+                                    <p class="lead">
+                                        Zero licensing does not mean zero cost.
+                                        Community trades a licence fee for service,
+                                        and pretending otherwise is how projects go
+                                        wrong.
+                                    </p>
+                                    <t
+                                        t-call="escodoo_website.diagram_cost_structure"
+                                    />
+                                    <p class="mt-4">
+                                        <a
+                                            href="/investimento"
+                                            class="btn btn-primary"
+                                        >See the investment ranges</a>
+                                        <a
+                                            href="/soberania-e-portabilidade"
+                                            class="btn btn-link"
+                                        >And what sovereignty is worth</a>
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Which edition fits your case?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Send us your operation and your fiscal profile. We answer with an edition, a reason and the modules involved — not with a proposal.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

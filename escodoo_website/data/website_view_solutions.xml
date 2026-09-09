@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Pages named after the buyer's situation rather than after what we sell.
+         None of these exist on the live site, even though the quote form already
+         lists three of them as options a visitor can choose. -->
+    <record id="rescue" model="ir.ui.view">
+        <field name="name">Escodoo - Rescue a failing Odoo project</field>
+        <field name="key">escodoo_website.rescue</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Rescue a failing Odoo project" t-name="escodoo_website.rescue">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_rescue" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Your Odoo project stalled. It is recoverable.
+                                    </h1>
+                                    <p class="lead">
+                                        We take over projects in progress, with full or
+                                        partial recovery of your data and your
+                                        configuration. In most cases the work already
+                                        done is worth keeping — what failed was the
+                                        method, not the platform.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Symptoms"
+                            >
+                                <div class="container">
+                                    <h2>The symptoms we hear most</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                The go-live date has moved three times
+                                                and nobody can say what is actually
+                                                left.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                Your team went back to the spreadsheets
+                                                because the system is slower than the
+                                                old way.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                Fiscal documents are being rejected and
+                                                the answer is always that it is being
+                                                looked into.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                Nobody knows what was customised,
+                                                because there is no repository you can
+                                                read.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                The supplier stopped replying, or the
+                                                one person who understood the project
+                                                left.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                Every small change costs more than it
+                                                should, and takes longer than it should.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Assessment"
+                            >
+                                <div class="container">
+                                    <h2>It starts with an assessment, not a project</h2>
+                                    <p class="lead">
+                                        Fixed scope, fixed price, one to two weeks. You
+                                        get a document, and you are free to act on it
+                                        with anyone.
+                                    </p>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">What we look at</h3>
+                                            <ul>
+                                                <li>
+                                                    The installed module list, split
+                                                    into standard, community and
+                                                    proprietary custom
+                                                </li>
+                                                <li>
+                                                    The quality of the custom code and
+                                                    how much of it duplicates something
+                                                    that already exists
+                                                </li>
+                                                <li>
+                                                    Data integrity, especially the
+                                                    accounting and fiscal records
+                                                </li>
+                                                <li>
+                                                    Which processes are genuinely in
+                                                    the system and which are still
+                                                    outside it
+                                                </li>
+                                                <li>
+                                                    The upgrade risk your current
+                                                    installation carries
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">What you receive</h3>
+                                            <ul>
+                                                <li>
+                                                    A written state of the installation,
+                                                    in language a director can read
+                                                </li>
+                                                <li>
+                                                    What is worth keeping, what should
+                                                    be replaced by a community module
+                                                    and what should be deleted
+                                                </li>
+                                                <li>
+                                                    A recovery plan with phases,
+                                                    durations and a range per phase
+                                                </li>
+                                                <li>
+                                                    An honest verdict on whether
+                                                    restarting is cheaper than
+                                                    recovering, when it is
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Handover"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2>How the handover works</h2>
+                                            <p>
+                                                We do not need the previous supplier's
+                                                cooperation, and we do not badmouth
+                                                them either. A database dump and access
+                                                to the server is enough to start. If
+                                                there is a repository, we ask for it; if
+                                                there is not, we reconstruct the module
+                                                list from the running instance and put
+                                                it under version control, which is
+                                                usually the first thing that was
+                                                missing.
+                                            </p>
+                                            <p class="mb-0">
+                                                If you are still deciding whether to
+                                                change supplier at all, start with a
+                                                <a
+                                                href="/segunda-opiniao"
+                                            >second opinion</a>
+                                                instead. It is smaller, cheaper and
+                                                commits you to nothing.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Tell us where the project is stuck'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'A thirty minute conversation is usually enough for us to tell you whether this is recoverable and roughly what it would take.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="version_upgrade" model="ir.ui.view">
+        <field name="name">Escodoo - Odoo version upgrade</field>
+        <field name="key">escodoo_website.version_upgrade</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Odoo version upgrade" t-name="escodoo_website.version_upgrade">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_version_upgrade"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Upgrade without trauma</h1>
+                                    <p class="lead">
+                                        Whoever upgrades best is whoever wrote the
+                                        migration scripts upstream. We maintain
+                                        community modules across versions, which means
+                                        we have already migrated most of what is in
+                                        your installation.
+                                    </p>
+                                </div>
+                            </section>
+                            <!-- The single biggest objection to adopting open
+                                 source is fear of an expensive upgrade. This
+                                 mechanism already differentiates on the live site
+                                 and it deserves to be the loudest thing here. -->
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Cost model"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2 class="h4">
+                                            The upgrade cost is spread, not charged as a
+                                            shock
+                                        </h2>
+                                        <p class="mb-0">
+                                            On our maintenance contracts the version
+                                            upgrade is included in the monthly fee. You
+                                            are not presented with a large invoice every
+                                            few years, which is the mechanism that keeps
+                                            companies stranded on old versions until a
+                                            regulatory deadline forces the issue.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Why upgrade"
+                            >
+                                <div class="container">
+                                    <h2>Why it is no longer optional</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">The tax reform</h3>
+                                            <p>
+                                                IBS and CBS land on the current versions
+                                                first. If you are on an older Odoo, a
+                                                regulatory date has just become an
+                                                upgrade date.
+                                                <a
+                                                href="/reforma-tributaria-odoo"
+                                            >What that means for you</a>
+                                                .
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Security and support</h3>
+                                            <p>
+                                                Community modules receive fixes on the
+                                                supported versions. Behind that window,
+                                                every fix becomes bespoke work you pay
+                                                for alone.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Compounding drift</h3>
+                                            <p>
+                                                Each version you skip makes the next
+                                                upgrade harder, not linearly. Three
+                                                versions behind is a different kind of
+                                                project from one version behind.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Diagnostic"
+                            >
+                                <div class="container">
+                                    <h2>Start with a pre-upgrade diagnostic</h2>
+                                    <p class="lead">
+                                        Fixed scope and fixed price. The estimate for
+                                        the upgrade itself is driven by one number: how
+                                        many of your modules are not standard.
+                                    </p>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">The diagnostic tells you</h3>
+                                            <ul>
+                                                <li>
+                                                    Your installed modules split into
+                                                    standard, community and proprietary
+                                                    custom
+                                                </li>
+                                                <li>
+                                                    Which custom modules can be dropped
+                                                    because the standard or a community
+                                                    module now does it
+                                                </li>
+                                                <li>
+                                                    Which need rewriting, and roughly
+                                                    how much
+                                                </li>
+                                                <li>
+                                                    The data conversion risks specific
+                                                    to your version jump
+                                                </li>
+                                                <li>
+                                                    A duration, a range and a proposed
+                                                    cut-over window
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">How the upgrade runs</h3>
+                                            <ol>
+                                                <li>
+                                                    A copy of production is upgraded in
+                                                    an isolated environment
+                                                </li>
+                                                <li>
+                                                    Custom modules are ported, reviewed
+                                                    and tested
+                                                </li>
+                                                <li>
+                                                    Your key users validate their own
+                                                    processes on their own data
+                                                </li>
+                                                <li>
+                                                    A rehearsal of the cut-over,
+                                                    measured, so the real window is a
+                                                    known quantity
+                                                </li>
+                                                <li>
+                                                    Cut-over with a documented rollback,
+                                                    and us on the operation afterwards
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3">
+                                        This is also the moment to reduce what you carry
+                                        forward.
+                                        <a href="/padronizacao-odoo">Standardisation</a>
+                                        during an upgrade is far cheaper than
+                                        standardisation as its own project.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Which version are you on?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us the version and roughly how customised the installation is. We come back with the shape of the project and a range.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="migrate_to_odoo" model="ir.ui.view">
+        <field name="name">Escodoo - Move from Totvs, SAP or a legacy ERP</field>
+        <field name="key">escodoo_website.migrate_to_odoo</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Move from another ERP" t-name="escodoo_website.migrate_to_odoo">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_migrate_to_odoo"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Moving off Totvs, SAP or a legacy system
+                                    </h1>
+                                    <p class="lead">
+                                        When to change, what carries over, what does
+                                        not, and how long it really takes. Including the
+                                        parts other suppliers leave out of the first
+                                        conversation.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Signals"
+                            >
+                                <div class="container">
+                                    <h2>The signals that it is time</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                The annual fee grows and the system does
+                                                not, while every change is quoted
+                                                separately.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                Your operation runs on spreadsheets that
+                                                sit alongside the ERP because the ERP
+                                                cannot do it.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                You cannot get your own data out without
+                                                paying for a report.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                Modules you do not use are still on the
+                                                invoice, and cancelling one is a
+                                                negotiation.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                Nobody can explain what the
+                                                customisations do, because the code is
+                                                not yours to read.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <p>
+                                                Growth or a new business line needs a
+                                                capability the vendor will not build.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="What migrates"
+                            >
+                                <div class="container">
+                                    <h2>What migrates, and at what fidelity</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Migrates cleanly</h3>
+                                            <ul>
+                                                <li
+                                                >Customers, suppliers and contacts</li>
+                                                <li>
+                                                    Products, with their fiscal
+                                                    classification
+                                                </li>
+                                                <li>Stock balances by location</li>
+                                                <li>Open receivables and payables</li>
+                                                <li>Chart of accounts and balances</li>
+                                                <li>Open sales and purchase orders</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Migrates with limits</h3>
+                                            <ul>
+                                                <li>
+                                                    Sales history, usually summarised
+                                                    rather than document by document
+                                                </li>
+                                                <li>
+                                                    Production history, depending on how
+                                                    the old system recorded it
+                                                </li>
+                                                <li>
+                                                    Attachments, when the old system
+                                                    lets you extract them
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Stays where it is</h3>
+                                            <ul>
+                                                <li>
+                                                    Issued fiscal documents. They remain
+                                                    legally valid in the old system, and
+                                                    you keep read access for the
+                                                    retention period.
+                                                </li>
+                                                <li>
+                                                    Closed accounting periods, which are
+                                                    brought in as balances, not as
+                                                    entries.
+                                                </li>
+                                                <li>
+                                                    Payroll history, which belongs with
+                                                    the payroll provider.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 mb-0">
+                                        Anyone promising to migrate ten years of fiscal
+                                        documents into a new ERP either has not done it
+                                        or is not telling you what it will cost.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Risks"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2>The risks, said out loud</h2>
+                                            <p>
+                                                Running two systems in parallel doubles
+                                                the work for your team during the
+                                                overlap, and a team that is already at
+                                                capacity will quietly stop using one of
+                                                them. We prefer a clean cut at a period
+                                                boundary, with the old system kept
+                                                readable.
+                                            </p>
+                                            <p>
+                                                Data quality in the old system is
+                                                usually worse than anyone expects.
+                                                Cleaning it is part of the project, not
+                                                a surprise halfway through, and it is
+                                                the phase most likely to slip.
+                                            </p>
+                                            <p class="mb-0">
+                                                Your contract with the current vendor may
+                                                have a notice period, an early
+                                                termination clause or a data extraction
+                                                fee. Read it before you set a date, and
+                                                tell us what it says.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Which system are you leaving?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us the current system, your head count and your fiscal profile. We come back with what migrates, what does not, and a realistic timeline.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="standardisation" model="ir.ui.view">
+        <field name="name">Escodoo - Standardise your customisations</field>
+        <field name="key">escodoo_website.standardisation</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Standardise your customisations"
+                t-name="escodoo_website.standardisation"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_standardisation"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Replace proprietary customisation with community
+                                        modules
+                                    </h1>
+                                    <p class="lead">
+                                        Every line of custom code in your Odoo is a line
+                                        somebody has to carry to the next version. The
+                                        cheapest custom module is the one you delete
+                                        because a reviewed community module already does
+                                        it.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Why"
+                            >
+                                <div class="container">
+                                    <h2>Why customisation costs more than it looks</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">You pay for it twice</h3>
+                                            <p>
+                                                Once to build it, then again at every
+                                                upgrade, forever. A community module is
+                                                maintained by the community across
+                                                versions at no cost to you.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Nobody else reviews it</h3>
+                                            <p>
+                                                Code that lives only in your repository
+                                                has been read by one team. Code in a
+                                                community repository has been read by
+                                                dozens of people who did not want it to
+                                                break their own clients.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >It locks you to a supplier</h3>
+                                            <p>
+                                                A heavily customised installation is
+                                                expensive for anyone else to take over,
+                                                which is exactly why some suppliers are
+                                                relaxed about creating one.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="How it works"
+                            >
+                                <div class="container">
+                                    <h2>Measured before and after</h2>
+                                    <p class="lead">
+                                        This is the service where the numbers are the
+                                        product. We publish them to you at the start and
+                                        at the end.
+                                    </p>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">What we measure</h3>
+                                            <ul>
+                                                <li
+                                                >Lines of proprietary custom code</li>
+                                                <li>
+                                                    Number of modules outside the
+                                                    standard and community set
+                                                </li>
+                                                <li>
+                                                    Models and views overridden, and how
+                                                    deeply
+                                                </li>
+                                                <li>
+                                                    Test coverage on what stays custom
+                                                </li>
+                                                <li>
+                                                    An upgrade risk score you can track
+                                                    over time
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">What we do about it</h3>
+                                            <ul>
+                                                <li>
+                                                    Replace with an existing community
+                                                    module where one covers it
+                                                </li>
+                                                <li>
+                                                    Delete what nobody uses, which is
+                                                    always more than expected
+                                                </li>
+                                                <li>
+                                                    Rewrite what has to stay, properly,
+                                                    with tests
+                                                </li>
+                                                <li>
+                                                    Contribute genuinely generic work
+                                                    upstream, so the community maintains
+                                                    it from then on
+                                                </li>
+                                                <li>
+                                                    Document the rest, so the next team
+                                                    is not guessing
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="When"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2>The cheapest time to do this</h2>
+                                            <p class="mb-0">
+                                                Together with a
+                                                <a
+                                                href="/migracao-de-versao-odoo"
+                                            >version upgrade</a>
+                                                . The custom modules have to be touched
+                                                anyway, so deciding which ones deserve
+                                                to survive costs almost nothing extra.
+                                                Doing it as a standalone project is
+                                                still worth it, but it is the more
+                                                expensive route, and we will tell you
+                                                that before you buy it.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'How customised is your Odoo?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Send us the installed module list, or give us read access. We come back with the numbers and what they mean for your next upgrade.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- A direct competitor already owns "who builds the localisation", with a
+         landing page carrying the transition timeline and the actual upstream
+         work. Competing on that ground is playing on their field, so this page
+         takes the two angles that are still open: a small fixed-scope readiness
+         audit, and the reform as the trigger for a version upgrade. -->
+    <record id="tax_reform" model="ir.ui.view">
+        <field name="name">Escodoo - Brazilian tax reform readiness</field>
+        <field name="key">escodoo_website.tax_reform</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Tax reform readiness" t-name="escodoo_website.tax_reform">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_tax_reform" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Tax reform: get your records ready first
+                                    </h1>
+                                    <p class="lead">
+                                        The new taxes are being built into the
+                                        localisation upstream. What is not being built
+                                        for you is the state of your own product and tax
+                                        records, and that is where the transition
+                                        actually breaks.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Audit"
+                            >
+                                <div class="container">
+                                    <h2>Tax reform readiness audit</h2>
+                                    <p class="lead">
+                                        Fixed scope, fixed price, a report you can act
+                                        on. It is a small product, not a project.
+                                    </p>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">What we check</h3>
+                                            <ul>
+                                                <li>
+                                                    Product records: NCM completeness and
+                                                    plausibility, item by item
+                                                </li>
+                                                <li>
+                                                    Fiscal operations: CFOP and CST usage
+                                                    against what you actually do
+                                                </li>
+                                                <li>
+                                                    Tax rules configured versus tax rules
+                                                    applied in practice
+                                                </li>
+                                                <li>
+                                                    Which of your operations change under
+                                                    the new model, and which do not
+                                                </li>
+                                                <li>
+                                                    Your Odoo version, and whether it can
+                                                    receive the new taxes at all
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">What you receive</h3>
+                                            <ul>
+                                                <li>
+                                                    A gap list, prioritised by fiscal risk
+                                                    rather than by effort
+                                                </li>
+                                                <li>
+                                                    The old to new mapping for your
+                                                    operations
+                                                </li>
+                                                <li>
+                                                    A remediation plan with an order and a
+                                                    range
+                                                </li>
+                                                <li>
+                                                    A clear statement of whether you need
+                                                    a version upgrade before anything else
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- The bridge nobody is using: a regulatory deadline
+                                 that converts directly into an upgrade decision. -->
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Upgrade trigger"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2 class="h4">
+                                            If you are on an old version, this is an
+                                            upgrade deadline
+                                        </h2>
+                                        <p>
+                                            The new taxes arrive on the current Odoo
+                                            versions first. Back-porting a fiscal change
+                                            of this size to a version that is several
+                                            releases behind is not a patch, it is a
+                                            bespoke project with no community behind it.
+                                        </p>
+                                        <p class="mb-0">
+                                            The transition runs from the 2026 test rate
+                                            to the end of the old system in 2033, so
+                                            there is time — but the version decision is
+                                            the one with a real queue in front of it.
+                                            <a
+                                            href="/migracao-de-versao-odoo"
+                                        >How the upgrade works</a>
+                                            .
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Why not a rewrite"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2
+                                            >Why this is not a rewrite of your system</h2>
+                                            <p>
+                                                The fiscal tax model in the community
+                                                localisation is generic by design: taxes,
+                                                operations and their mappings are
+                                                records, not code. New taxes therefore
+                                                enter as new records with new rules, and
+                                                the engine that calculates them does not
+                                                have to be rebuilt.
+                                            </p>
+                                            <p>
+                                                That is a structural argument, not a
+                                                marketing one, and it is why we are
+                                                comfortable saying the platform will
+                                                handle it. What we are not comfortable
+                                                saying is that your configuration will
+                                                handle it, because that depends on the
+                                                state of your records — which is what the
+                                                audit is for.
+                                            </p>
+                                            <p class="mb-0">
+                                                The upstream work is public. You can
+                                                watch it happen in
+                                                <a
+                                                href="https://github.com/OCA/l10n-brazil"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >the localisation repository</a>
+                                                , which is a level of transparency no
+                                                proprietary vendor can offer you.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Book the readiness audit'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us your Odoo version, how many products you carry and which states you operate in. We come back with a scope and a price.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

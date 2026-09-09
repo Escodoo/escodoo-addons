@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- The company is almost anonymous on its own site today: the culture
+         pillars are well written but there is no size, no team, no history and
+         no face. The pillars are carried over; everything else is new. -->
+    <record id="aboutus" model="ir.ui.view">
+        <field name="name">Escodoo - About Escodoo</field>
+        <field name="key">escodoo_website.aboutus</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="About Escodoo" t-name="escodoo_website.aboutus">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_aboutus" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Engineers who maintain what they sell
+                                    </h1>
+                                    <p class="lead">
+                                        Working with Odoo since 2015, from Ribeirão
+                                        Preto, across Brazil, and inside the global
+                                        community that maintains the platform.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="What we do"
+                            >
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7">
+                                            <h2>What we do, and for whom</h2>
+                                            <p>
+                                                We implement, develop and sustain Odoo
+                                                Community with the community module
+                                                ecosystem and the Brazilian fiscal
+                                                localisation. Most of our clients run
+                                                Community rather than Enterprise, which
+                                                is unusual in this market and entirely
+                                                deliberate.
+                                            </p>
+                                            <p>
+                                                We are engineers first. The same people
+                                                who answer your support ticket are the
+                                                people who maintain modules that
+                                                thousands of companies install, which is
+                                                why we can say what a platform will and
+                                                will not do without checking with anyone.
+                                            </p>
+                                            <p class="mb-0">
+                                                We work remotely across Brazil, and we
+                                                are increasingly asked to work
+                                                <a href="/internacional">outside it</a>
+                                                by other members of the community.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <img
+                                                src="/web/image/escodoo_website.about_team"
+                                                alt="The Escodoo team"
+                                                class="img img-fluid rounded"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Stated openly because its absence generates
+                                 unqualified leads on both sides. -->
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Fit"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2 class="h4">Who we work well with</h2>
+                                        <p>
+                                            Companies from roughly twenty to three
+                                            hundred users, with a real operation, a
+                                            decision maker involved and some appetite for
+                                            changing a process when the standard is
+                                            better than the habit.
+                                        </p>
+                                        <p class="mb-0">
+                                            Below that size, the vendor's own packaged
+                                            offer is usually a better fit and we will
+                                            tell you so on the first call. We are also
+                                            the wrong choice for anyone who wants the
+                                            cheapest possible quote — that is not the
+                                            trade we are making.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Team"
+                            >
+                                <div class="container">
+                                    <h2>The team</h2>
+                                    <p class="lead">
+                                        Verify us before you trust us. Our work is public.
+                                    </p>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Marcel Savegnago</h3>
+                                            <p class="text-muted">
+                                                Founder. Ninth in the world in the 2025
+                                                community contributor index, with 794
+                                                reviews on other people's contributions.
+                                            </p>
+                                            <p class="mb-0">
+                                                <a
+                                                    href="https://github.com/marcelsavegnago"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >github.com/marcelsavegnago</a>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Antônio Neto</h3>
+                                            <p class="text-muted">
+                                                Twentieth in the world in the same index.
+                                                Concentrated on the Brazilian fiscal
+                                                localisation.
+                                            </p>
+                                            <p class="mb-0">
+                                                <a
+                                                    href="https://github.com/antoniospneto"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >github.com/antoniospneto</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        The rest of the team is on
+                                        <a
+                                        href="https://github.com/Escodoo"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >our organisation page</a>
+                                        , and the ranking is in
+                                        <a
+                                        href="https://github.com/OCA-contributors/monthly-statistics/blob/main/2025/contributors_12_YTD.csv"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >a public dataset</a>
+                                        anyone can read. The index ranks individuals, so
+                                        we say two of our engineers are in the top
+                                        twenty, and never that the company is ninth.
+                                    </p>
+                                    <p class="mb-0">
+                                        <a
+                                            href="/oca"
+                                            class="btn btn-primary"
+                                        >What we do inside the community</a>
+                                        <a
+                                            href="/jobs"
+                                            class="btn btn-link"
+                                        >Work with us</a>
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Culture"
+                            >
+                                <div class="container">
+                                    <h2>How we work</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.culture_technical"
+                                                alt="Technical"
+                                                class="img img-fluid mb-3"
+                                                style="max-height: 96px;"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">Technical</h3>
+                                            <p>
+                                                Sound architecture, sustainable code, no
+                                                technical debt handed to you quietly. We
+                                                extend rather than modify, we test what we
+                                                build, and nobody merges their own work.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.culture_commercial"
+                                                alt="Commercial"
+                                                class="img img-fluid mb-3"
+                                                style="max-height: 96px;"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">Commercial</h3>
+                                            <p>
+                                                Predictability and governance, of
+                                                delivery, of cost and of operation. We
+                                                would rather lose a deal by saying a
+                                                number early than win it and argue about
+                                                scope later.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.culture_support"
+                                                alt="Consulting and support"
+                                                class="img img-fluid mb-3"
+                                                style="max-height: 96px;"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">Consulting and support</h3>
+                                            <p>
+                                                Process before technology, and long term
+                                                continuity. Go live is not the finish
+                                                line; it is the point at which the real
+                                                questions start arriving.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Details"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">Where we are</h2>
+                                            <p class="mb-0">
+                                                Escodoo
+                                                <br />Ribeirão Preto, São Paulo, Brazil
+                                                <br />
+                                                <a
+                                                href="mailto:contato@escodoo.com.br"
+                                            >contato@escodoo.com.br</a>
+                                                <br />
+                                                <a
+                                                href="tel:+5516988727010"
+                                            >+55 16 98872-7010</a>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.about_office"
+                                                alt="Escodoo"
+                                                class="img img-fluid rounded"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- Portuguese in this phase; an English site is roadmap. The offer abroad
+         is deliberately not new implementations. -->
+    <record id="international" model="ir.ui.view">
+        <field name="name">Escodoo - International services</field>
+        <field name="key">escodoo_website.international</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="International services" t-name="escodoo_website.international">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_international"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Working outside Brazil</h1>
+                                    <p class="lead">
+                                        The same team that reviews the community's code
+                                        writes yours. Four service lines, no new
+                                        implementations, and no claim to a local presence
+                                        we do not have.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Lines"
+                            >
+                                <div class="container">
+                                    <h2>What we offer abroad</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">
+                                                1. Development to community standard
+                                            </h3>
+                                            <p>
+                                                Module development for partners and end
+                                                clients, delivered the way the community
+                                                repositories require it: reviewed, tested,
+                                                documented, and contributed upstream when
+                                                it is generic.
+                                            </p>
+                                            <p class="mb-0 text-muted">
+                                                Typically a scoped package of work, quoted
+                                                per module.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">
+                                                2. Sustaining and application management
+                                            </h3>
+                                            <p>
+                                                Taking responsibility for an existing
+                                                installation: corrective support, security
+                                                patching, version upgrades and the slow
+                                                work of reducing what it carries.
+                                            </p>
+                                            <p class="mb-0 text-muted">
+                                                Monthly, with a response time per
+                                                severity.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">
+                                                3. Standardisation and de-customisation
+                                            </h3>
+                                            <p>
+                                                Replacing proprietary customisation with
+                                                community modules, measured before and
+                                                after. The service that turns our review
+                                                experience directly into a client outcome.
+                                            </p>
+                                            <p class="mb-0 text-muted">
+                                                Fixed scope assessment first, then phased.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">4. Migration and upgrade</h3>
+                                            <p>
+                                                Version upgrades, including the awkward
+                                                ones several releases behind. We maintain
+                                                community modules across versions, so we
+                                                have already migrated most of what is in a
+                                                typical installation.
+                                            </p>
+                                            <p class="mb-0 text-muted">
+                                                Pre-upgrade diagnostic first, then a
+                                                project with a rehearsed cut-over.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Why not implementations"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2 class="h4">
+                                            Why we do not sell implementations abroad
+                                        </h2>
+                                        <p>
+                                            An implementation needs somebody who
+                                            understands the local tax rules, the local
+                                            accounting practice and the local business
+                                            habits. We have that for Brazil and we do not
+                                            have it anywhere else, so selling it would be
+                                            dishonest.
+                                        </p>
+                                        <p class="mb-0">
+                                            What travels well is engineering: code,
+                                            reviews, upgrades and the discipline of
+                                            reducing what an installation carries. That is
+                                            what we offer, usually as a subcontractor to a
+                                            local partner who owns the client
+                                            relationship.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Who we work with"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2>Who this is for</h2>
+                                            <p>
+                                                Mainly other members of the community —
+                                                integrators in Europe who already know our
+                                                names from the reviews on their own pull
+                                                requests, and who need engineering capacity
+                                                that will not embarrass them in front of a
+                                                client.
+                                            </p>
+                                            <p>
+                                                Also companies running Odoo in a market
+                                                without heavy tax localisation
+                                                requirements, where the work is genuinely
+                                                about the platform rather than about local
+                                                compliance.
+                                            </p>
+                                            <p class="mb-0">
+                                                We work in Portuguese, English and Spanish,
+                                                in a timezone that overlaps most of the
+                                                European working day.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Need engineering capacity on an Odoo project?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us what the work is and who owns the client. We answer with a capacity, a rate and a start date.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- Good coverage on the live site. Four fixes: the fiscal contradiction is
+         resolved, the price question gets an answer instead of a process,
+         structured data is added, and it finally has a call to action. -->
+    <record id="faq" model="ir.ui.view">
+        <field name="name">Escodoo - Frequently asked questions</field>
+        <field name="key">escodoo_website.faq</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Frequently asked questions" t-name="escodoo_website.faq">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_faq" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1
+                                        class="display-3-fs"
+                                    >Frequently asked questions</h1>
+                                    <p class="lead">
+                                        Including the ones with uncomfortable answers.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64 escodoo-faq"
+                                data-snippet="s_text_block"
+                                data-name="Questions"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <div class="escodoo-faq-group">
+                                                <h2
+                                                    class="h4"
+                                                >Editions and licensing</h2>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Is Odoo Community really free?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        The software is, under the LGPL.
+                                                        The work of implementing and
+                                                        maintaining it is not. Community
+                                                        trades a licence fee for service
+                                                        cost, and on a small team that is
+                                                        not growing, Enterprise can be the
+                                                        cheaper answer.
+                                                        <a
+                                                        href="/investimento"
+                                                    >How the numbers compare</a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        What do I lose by not taking
+                                                        Enterprise?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Studio, the native mobile app, the
+                                                        live spreadsheet, marketing
+                                                        automation, online appointments,
+                                                        the shop floor tablet screen, and
+                                                        a support contract signed by Odoo
+                                                        S.A. Those are real losses and we
+                                                        list them
+                                                        <a
+                                                        href="/edicoes-odoo"
+                                                    >row by row</a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Do you implement Enterprise too?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Yes, and we recommend it when it
+                                                        is the right answer. We are not
+                                                        interested in selling you the
+                                                        edition that suits our
+                                                        positioning.
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Can I move from Community to
+                                                        Enterprise later, or back?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Community to Enterprise is
+                                                        straightforward. The other
+                                                        direction means replacing the
+                                                        Enterprise-only apps you adopted
+                                                        with community equivalents, which
+                                                        is a project. Worth knowing before
+                                                        you choose, not after.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- The contradiction the live site
+                                                 carries on its most critical
+                                                 topic, resolved in one place. -->
+                                            <div class="escodoo-faq-group">
+                                                <h2
+                                                    class="h4"
+                                                >Brazilian tax and fiscal</h2>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Does Odoo handle Brazilian fiscal
+                                                        documents?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        NF-e, CT-e and MDF-e are issued
+                                                        natively by the community
+                                                        localisation, with the taxes
+                                                        calculated inside Odoo and no
+                                                        external paid tax service
+                                                        required. NFS-e depends on your
+                                                        municipality. SPED, ECD and ECF are
+                                                        generated from the accounting data
+                                                        and validated in a specialist tool.
+                                                        Payroll is not solved by any Odoo
+                                                        edition. That is the complete
+                                                        answer, and it is the same answer
+                                                        on
+                                                        <a
+                                                        href="/odoo-brasil"
+                                                    >every page of this site</a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Will I need to buy a separate tax
+                                                        product?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        For the documents above, no. Some
+                                                        companies still keep a specialist
+                                                        tool for fiscal file validation and
+                                                        their accountant's workflow, which
+                                                        is a reasonable choice rather than
+                                                        a gap.
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        What about the tax reform?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Being built upstream, in public,
+                                                        for a transition running to 2033,
+                                                        and arriving on the current
+                                                        versions first. If you are on an
+                                                        older Odoo, that is now an upgrade
+                                                        decision.
+                                                        <a
+                                                        href="/reforma-tributaria-odoo"
+                                                    >Start with a readiness audit</a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Can Odoo run my payroll?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        No, and neither can Enterprise. We
+                                                        integrate a specialist payroll
+                                                        provider and post the accounting
+                                                        entries. Anyone telling you
+                                                        otherwise has not run a Brazilian
+                                                        payroll.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- The word "premises" appears more than
+                                                 ten times in the live commercial
+                                                 block, which turns every price
+                                                 question into a process answer. -->
+                                            <div class="escodoo-faq-group">
+                                                <h2 class="h4">Cost and contracting</h2>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        How much does an implementation
+                                                        cost?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        It depends on process complexity,
+                                                        your fiscal profile, integrations
+                                                        and how much data you migrate — not
+                                                        primarily on head count. Comparable
+                                                        companies invest around one percent
+                                                        of annual revenue in their
+                                                        management platform.
+                                                        <a
+                                                        href="/investimento"
+                                                    >The full breakdown, with a benchmark you can check us against</a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Will you quote a fixed price for
+                                                        the whole project?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Not before discovery. Anyone who
+                                                        does is either padding the number
+                                                        heavily or planning to argue about
+                                                        scope later. We quote discovery at
+                                                        a fixed price, and each phase after
+                                                        it separately.
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        What should I budget after go live?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Fifteen to twenty five percent of
+                                                        the implementation cost per year
+                                                        for evolution and support. A
+                                                        project budgeted with nothing
+                                                        reserved for the year after go live
+                                                        will stall twelve months in.
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Is there a minimum engagement?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        For implementations, effectively
+                                                        yes: below roughly twenty users the
+                                                        economics rarely work in your
+                                                        favour and we will say so. The
+                                                        small fixed-scope services — second
+                                                        opinion, readiness audit,
+                                                        pre-upgrade diagnostic — have no
+                                                        minimum.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="escodoo-faq-group">
+                                                <h2 class="h4">Delivery and support</h2>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        How long does an implementation
+                                                        take?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        A focused operation with a simple
+                                                        fiscal profile is weeks per phase.
+                                                        A multi-company industrial
+                                                        operation issuing documents across
+                                                        several states is months. The
+                                                        biggest variable is your team's
+                                                        availability, not ours.
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Do I get the source code?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Yes, in a repository you can access
+                                                        from the first week, not as a zip
+                                                        file at the end.
+                                                        <a
+                                                        href="/soberania-e-portabilidade"
+                                                    >Including the exit plan</a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        What is your support response
+                                                        time?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        One business hour for a stopped
+                                                        operation, four for a degraded core
+                                                        process, one business day for
+                                                        normal, three for low. Response
+                                                        means a person engaged, not an
+                                                        automated acknowledgement.
+                                                        <a
+                                                        href="/manutencao-odoo"
+                                                    >The plans in full</a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Can you take over an Odoo somebody
+                                                        else implemented?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Yes, and it is how a large share of
+                                                        our clients arrive. It starts with
+                                                        an assessment: either a
+                                                        <a
+                                                        href="/segunda-opiniao"
+                                                    >second opinion</a>
+                                                        or a
+                                                        <a
+                                                        href="/resgate-de-projeto-odoo"
+                                                    >rescue</a>
+                                                        , depending on how bad it is.
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        What happens if we stop working
+                                                        together?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        You already hold the repository,
+                                                        the deployment recipe and your
+                                                        data, so nothing has to be handed
+                                                        over. There is a notice period in
+                                                        the contract, in both directions.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="escodoo-faq-group">
+                                                <h2 class="h4">The community</h2>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Are community modules safe to run
+                                                        in production?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        The ones we deploy are. They live in
+                                                        public repositories with a review
+                                                        process, automated tests and named
+                                                        maintainers — and we are among the
+                                                        people doing the reviewing. We
+                                                        choose which ones to install, and
+                                                        that judgement is a large part of
+                                                        what you are paying for.
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Who maintains them if the author
+                                                        disappears?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        The association, through the
+                                                        repository maintainers. That is
+                                                        precisely the difference from a
+                                                        module sitting in one supplier's
+                                                        private repository.
+                                                    </p>
+                                                </div>
+                                                <div class="escodoo-faq-item">
+                                                    <p class="escodoo-faq-question">
+                                                        Are you an official Odoo partner?
+                                                    </p>
+                                                    <p class="escodoo-faq-answer">
+                                                        Our credential is the contribution
+                                                        record, which is public and
+                                                        checkable: two of our engineers rank
+                                                        in the global top twenty of the 2025
+                                                        community contributor index.
+                                                        <a
+                                                        href="/oca"
+                                                    >With a link to the dataset</a>
+                                                        .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Question not answered here?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Ask it directly. If the answer is that Odoo does not do what you need, we will tell you that too.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- Structured data so the answers can surface in search, which is the whole
+         point of maintaining a page this long. -->
+    <template
+        id="faq_structured_data"
+        inherit_id="escodoo_website.faq"
+        name="Escodoo FAQ structured data"
+    >
+        <xpath expr="//div[@id='wrap']" position="before">
+            <script type="application/ld+json">
+                {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                {
+                "@type": "Question",
+                "name": "Is Odoo Community really free?",
+                "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The software is, under the LGPL. The work of implementing and maintaining it is not. Community trades a licence fee for service cost."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "Does Odoo handle Brazilian fiscal documents?",
+                "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "NF-e, CT-e and MDF-e are issued natively by the community localisation, with taxes calculated inside Odoo. NFS-e depends on the municipality. SPED, ECD and ECF are generated from the accounting data and validated in a specialist tool. Payroll is not solved by any Odoo edition."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "How much does an Odoo implementation cost?",
+                "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on process complexity, fiscal profile, integrations and data migration rather than primarily on head count. Comparable companies invest around one percent of annual revenue in their management platform."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "Do I get the source code of my Odoo customisations?",
+                "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, in a repository accessible from the first week of the project, together with the deployment recipe."
+                }
+                },
+                {
+                "@type": "Question",
+                "name": "Can Escodoo take over an Odoo somebody else implemented?",
+                "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. It starts with a fixed scope assessment, either a second opinion or a project rescue depending on the state of the installation."
+                }
+                }
+                ]
+                }
+            </script>
+        </xpath>
+    </template>
+</odoo>

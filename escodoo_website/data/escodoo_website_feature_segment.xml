@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="segment_manufacturing" model="escodoo.website.feature.segment">
+        <field name="name">Industry and manufacturing</field>
+        <field name="sequence">10</field>
+        <field name="page_url">/odoo-erp-para-manufatura</field>
+    </record>
+    <record id="segment_trade" model="escodoo.website.feature.segment">
+        <field name="name">Trade and distribution</field>
+        <field name="sequence">20</field>
+        <field name="page_url">/odoo-erp-para-comercio-e-distribuicao</field>
+    </record>
+    <record id="segment_services" model="escodoo.website.feature.segment">
+        <field name="name">Professional services</field>
+        <field name="sequence">30</field>
+        <field name="page_url">/odoo-erp-para-prestacao-de-servicos</field>
+    </record>
+    <record id="segment_field_service" model="escodoo.website.feature.segment">
+        <field name="name">Field service</field>
+        <field name="sequence">40</field>
+        <field name="page_url">/odoo-erp-para-servico-de-campo</field>
+    </record>
+    <record id="segment_maintenance" model="escodoo.website.feature.segment">
+        <field name="name">Maintenance</field>
+        <field name="sequence">50</field>
+        <field name="page_url">/odoo-erp-para-manutencao</field>
+    </record>
+    <record id="segment_repair" model="escodoo.website.feature.segment">
+        <field name="name">Repair centres</field>
+        <field name="sequence">60</field>
+        <field name="page_url">/odoo-erp-para-assistencia-tecnica</field>
+    </record>
+    <record id="segment_projects" model="escodoo.website.feature.segment">
+        <field name="name">Project management</field>
+        <field name="sequence">70</field>
+        <field name="page_url">/odoo-erp-para-gestao-de-projetos</field>
+    </record>
+</odoo>

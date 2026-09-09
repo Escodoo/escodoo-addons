@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The single largest gap on the live site: a buyer of ERP asks who else like
+     me did this and had it work, and twenty three audited pages answer it
+     nowhere.
+
+     Client names, logos and testimonials are not available yet, so the cases are
+     published with a real profile and without identification. The metric values
+     are held behind an explicit pending block rather than filled with plausible
+     numbers: a positioning built on a verifiable claim cannot afford an
+     unverified one. Search this file for escodoo-pending to find every figure
+     that needs client authorisation before publication. -->
+<odoo>
+    <record id="cases" model="ir.ui.view">
+        <field name="name">Escodoo - Results</field>
+        <field name="key">escodoo_website.cases</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Results" t-name="escodoo_website.cases">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_cases" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Results</h1>
+                                    <p class="lead">
+                                        Measured in the client's own system, published
+                                        with their agreement, and without identifying
+                                        them.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Policy"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2 class="h5">Why these are anonymous</h2>
+                                        <p class="mb-0">
+                                            An ERP holds a company's costs, margins and
+                                            supplier terms. Most of our clients would
+                                            rather not have that discussed publicly, and
+                                            we would rather publish a real profile with
+                                            real numbers than a logo with a compliment.
+                                            When a client agrees to be named, we name
+                                            them.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Case list"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4 mb-4">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Metalworking industry, 80 users, inland São Paulo'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'From three disconnected systems to one operation'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Production, stock and invoicing on the same records, with traceability from the customer order to the fiscal document.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/industria-metalmecanica'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Wholesale distributor, 45 users, three warehouses'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'Picking that stopped depending on who was on shift'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Multi warehouse replenishment, barcode-guided picking and a delivery promise the sales team can make on the call.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/distribuidora'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Technical services provider, 30 users, field teams'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'Every hour in the field turned into an invoice'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Scheduling, worksheets with evidence, and billing generated from the timesheet rather than from memory.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/servicos-tecnicos'"
+                                                />
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Want to talk to a client instead of reading about one?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'At the proposal stage we introduce you to a client in a comparable operation, so you can ask them what we are like to work with.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <template id="case_metrics_pending" name="Escodoo case metrics pending">
+        <div class="escodoo-honest">
+            <h3 class="h5">Numbers being confirmed</h3>
+            <p>
+                We are collecting the client's written authorisation for the
+                figures below before publishing them. Until then we would rather
+                show you which metrics were measured than show you numbers you
+                cannot check.
+            </p>
+            <ul class="mb-0">
+                <li t-foreach="metric_labels" t-as="metric_label">
+                    <span class="escodoo-pending" t-out="metric_label" />
+                </li>
+            </ul>
+        </div>
+    </template>
+
+    <record id="case_manufacturing" model="ir.ui.view">
+        <field name="name">Escodoo - Case: metalworking industry</field>
+        <field name="key">escodoo_website.case_manufacturing</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Case: metalworking industry"
+                t-name="escodoo_website.case_manufacturing"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_case_manufacturing"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <p class="escodoo-case-profile">
+                                        Metalworking industry, 80 users, inland São
+                                        Paulo
+                                    </p>
+                                    <h1 class="display-3-fs">
+                                        From three disconnected systems to one operation
+                                    </h1>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Before"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">The situation before</h2>
+                                            <p>
+                                                A legacy system for invoicing, a separate
+                                                package for stock, and production planned
+                                                in a spreadsheet rebuilt every week by
+                                                one person. The three did not agree, and
+                                                reconciling them was somebody's job.
+                                            </p>
+                                            <p class="mb-0">
+                                                Cost per product came from a table
+                                                updated once a year, so pricing decisions
+                                                were being taken on numbers nobody
+                                                trusted.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">Why they called us</h2>
+                                            <p>
+                                                The legacy vendor had quoted a large
+                                                figure for a module they needed and would
+                                                not commit to a date. They wanted to know
+                                                whether Odoo could cover the fiscal side
+                                                natively, because that was the risk that
+                                                worried the board.
+                                            </p>
+                                            <p class="mb-0">
+                                                They also wanted the code to be theirs
+                                                this time.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Scope"
+                            >
+                                <div class="container">
+                                    <h2>What was delivered</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Modules</h3>
+                                            <ul>
+                                                <li>
+                                                    Sales, purchasing, stock and
+                                                    manufacturing on standard Odoo
+                                                </li>
+                                                <li>
+                                                    The community Brazilian localisation
+                                                    for the fiscal engine and NF-e
+                                                </li>
+                                                <li>
+                                                    Multi-level material planning from the
+                                                    community manufacturing suite
+                                                </li>
+                                                <li>
+                                                    Order types, so commercial and
+                                                    industrial flows stopped sharing one
+                                                    document
+                                                </li>
+                                                <li>
+                                                    Community financial reports and a
+                                                    report builder for the cost analysis
+                                                </li>
+                                                <li>
+                                                    Two custom modules for genuinely
+                                                    specific logic, both with tests
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">How it ran</h3>
+                                            <ul>
+                                                <li>
+                                                    Discovery first, delivered as a
+                                                    document they could have taken
+                                                    elsewhere
+                                                </li>
+                                                <li>
+                                                    Phased delivery, with the fiscal
+                                                    documents validated before anything
+                                                    else was configured
+                                                </li>
+                                                <li>
+                                                    Data migration as balances and open
+                                                    items, with history left readable in
+                                                    the old system
+                                                </li>
+                                                <li>
+                                                    Key user training on their own data
+                                                    before go live
+                                                </li>
+                                                <li>
+                                                    Us on the operation through the first
+                                                    fiscal and accounting close
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Results"
+                            >
+                                <div class="container">
+                                    <h2>What changed</h2>
+                                    <p class="lead">
+                                        Production, stock and invoicing became one chain
+                                        of records. A customer order now traces through
+                                        to its production order, its material
+                                        consumption and its fiscal document without
+                                        anyone reconciling anything.
+                                    </p>
+                                    <div class="mt-4">
+                                        <t
+                                            t-call="escodoo_website.case_metrics_pending"
+                                        >
+                                            <t
+                                                t-set="metric_labels"
+                                                t-value="[
+                                                    'On-time delivery, before and after',
+                                                    'Hours per week spent reconciling the three systems',
+                                                    'Time to answer a traceability request',
+                                                    'Difference between standard and actual product cost',
+                                                    'Elapsed project time from discovery to go live',
+                                                ]"
+                                            />
+                                        </t>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Recognise your own operation here?'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="case_distribution" model="ir.ui.view">
+        <field name="name">Escodoo - Case: wholesale distributor</field>
+        <field name="key">escodoo_website.case_distribution</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Case: wholesale distributor"
+                t-name="escodoo_website.case_distribution"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_case_distribution"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <p class="escodoo-case-profile">
+                                        Wholesale distributor, 45 users, three warehouses
+                                    </p>
+                                    <h1 class="display-3-fs">
+                                        Picking that stopped depending on who was on
+                                        shift
+                                    </h1>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Before"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">The situation before</h2>
+                                            <p>
+                                                Three warehouses managed as though they
+                                                were one, with stock figures that were
+                                                right often enough to be trusted and wrong
+                                                often enough to hurt. Negative stock was
+                                                permitted, so every count produced
+                                                differences nobody could explain.
+                                            </p>
+                                            <p class="mb-0">
+                                                Picking was paper-based and accuracy
+                                                depended on which picker was working.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">Why they called us</h2>
+                                            <p>
+                                                They were already on Odoo, implemented by
+                                                someone else two versions earlier, and
+                                                stuck. Nobody knew what had been
+                                                customised because there was no
+                                                repository they could read.
+                                            </p>
+                                            <p class="mb-0">
+                                                It started as a
+                                                <a
+                                                href="/segunda-opiniao"
+                                            >second opinion</a>
+                                                and became a
+                                                <a
+                                                href="/padronizacao-odoo"
+                                            >standardisation</a>
+                                                and upgrade project.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Scope"
+                            >
+                                <div class="container">
+                                    <h2>What was delivered</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Modules</h3>
+                                            <ul>
+                                                <li>
+                                                    Barcode scanning on warehouse
+                                                    operations, from the community
+                                                    barcode suite
+                                                </li>
+                                                <li>
+                                                    Negative stock blocked, which changed
+                                                    the count conversation immediately
+                                                </li>
+                                                <li>
+                                                    Storage strategies and dynamic routing
+                                                    from the community warehouse suite
+                                                </li>
+                                                <li>
+                                                    Available to promise, so the sales
+                                                    team could commit dates
+                                                </li>
+                                                <li>
+                                                    Physical inventory with counting
+                                                    sheets
+                                                </li>
+                                                <li>
+                                                    The community localisation for CT-e
+                                                    and the bank slip exchange
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">And what was removed</h3>
+                                            <ul>
+                                                <li>
+                                                    Custom modules replaced by community
+                                                    equivalents that do the same thing and
+                                                    are maintained for free
+                                                </li>
+                                                <li>
+                                                    Custom modules deleted because nobody
+                                                    had used them in two years
+                                                </li>
+                                                <li>
+                                                    Core modifications rewritten as proper
+                                                    extensions, which is what made the
+                                                    upgrade possible at all
+                                                </li>
+                                                <li>
+                                                    Everything that remained put under
+                                                    version control in a repository they
+                                                    own
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Results"
+                            >
+                                <div class="container">
+                                    <h2>What changed</h2>
+                                    <p class="lead">
+                                        The warehouse stopped being an opinion. A new
+                                        picker is now productive in days rather than
+                                        months, and the sales team can promise a delivery
+                                        date on the call without walking to the
+                                        warehouse.
+                                    </p>
+                                    <div class="mt-4">
+                                        <t
+                                            t-call="escodoo_website.case_metrics_pending"
+                                        >
+                                            <t
+                                                t-set="metric_labels"
+                                                t-value="[
+                                                    'Stock accuracy against the physical count, before and after',
+                                                    'Picking errors per thousand lines',
+                                                    'Lines of proprietary custom code removed',
+                                                    'Custom modules replaced by community modules',
+                                                    'Elapsed time for the standardisation and upgrade',
+                                                ]"
+                                            />
+                                        </t>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Inherited an Odoo nobody understands?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'That is the most common way our clients arrive. It usually starts with a second opinion, which commits you to nothing.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="case_services" model="ir.ui.view">
+        <field name="name">Escodoo - Case: technical services provider</field>
+        <field name="key">escodoo_website.case_services</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Case: technical services provider"
+                t-name="escodoo_website.case_services"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_case_services"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <p class="escodoo-case-profile">
+                                        Technical services provider, 30 users, field
+                                        teams
+                                    </p>
+                                    <h1 class="display-3-fs">
+                                        Every hour in the field turned into an invoice
+                                    </h1>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Before"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">The situation before</h2>
+                                            <p>
+                                                Visits were scheduled by phone every
+                                                morning. Technicians recorded hours and
+                                                parts on paper, which was transcribed at
+                                                the end of the month by somebody who had
+                                                not been there.
+                                            </p>
+                                            <p class="mb-0">
+                                                Contract renewals were noticed when a
+                                                client stopped paying, and van stock was a
+                                                warehouse nobody had ever counted.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h2 class="h4">Why they called us</h2>
+                                            <p>
+                                                They suspected they were under-billing and
+                                                could not prove it. They had looked at a
+                                                commercial field service product and found
+                                                the licence cost per technician hard to
+                                                justify at their margin.
+                                            </p>
+                                            <p class="mb-0">
+                                                The community field service suite was the
+                                                reason they chose Odoo Community rather
+                                                than Enterprise.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Scope"
+                            >
+                                <div class="container">
+                                    <h2>What was delivered</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Modules</h3>
+                                            <ul>
+                                                <li>
+                                                    The community field service suite for
+                                                    orders, routes and recurring visits
+                                                </li>
+                                                <li>
+                                                    Van stock and parts consumption tied to
+                                                    the field order
+                                                </li>
+                                                <li>
+                                                    Billing generated from the field order
+                                                    rather than re-entered
+                                                </li>
+                                                <li>
+                                                    The community contract module for
+                                                    recurring service agreements and their
+                                                    renewals
+                                                </li>
+                                                <li>
+                                                    The community helpdesk for the request
+                                                    queue, with timesheets attached
+                                                </li>
+                                                <li>
+                                                    NFS-e for the municipality, checked
+                                                    before the project was quoted
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">The honest gap</h3>
+                                            <p>
+                                                Their technicians work in places with no
+                                                signal, and the community stack has no
+                                                offline mobile app. We said so before the
+                                                contract was signed.
+                                            </p>
+                                            <p class="mb-0">
+                                                The answer was a responsive web view plus
+                                                a printed worksheet for the routes that
+                                                genuinely lose connectivity, and a
+                                                decision to revisit it later. That is a
+                                                real limitation, not a solved problem, and
+                                                it is on the
+                                                <a
+                                                href="/mapa-de-funcionalidades"
+                                            >feature map</a>
+                                                as one.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Results"
+                            >
+                                <div class="container">
+                                    <h2>What changed</h2>
+                                    <p class="lead">
+                                        The invoice is now produced from the work that was
+                                        recorded at the client's site, with the arrival
+                                        time, the parts used and a signature attached. The
+                                        under-billing they suspected turned out to be
+                                        real.
+                                    </p>
+                                    <div class="mt-4">
+                                        <t
+                                            t-call="escodoo_website.case_metrics_pending"
+                                        >
+                                            <t
+                                                t-set="metric_labels"
+                                                t-value="[
+                                                    'Billable hours recovered per month',
+                                                    'Days from visit completed to invoice issued',
+                                                    'Visits per technician per day',
+                                                    'Contract renewals missed, before and after',
+                                                    'Elapsed project time from discovery to go live',
+                                                ]"
+                                            />
+                                        </t>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Suspect you are under-billing your field work?'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- The website module owns "/", so the home page is a source view that
+         data/website_theme_apply.xml writes onto the live website.homepage. -->
+    <record id="homepage" model="ir.ui.view">
+        <field name="name">Escodoo - Home</field>
+        <field name="key">escodoo_website.homepage</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Home" t-name="website.homepage">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_home" class="oe_structure">
+                            <!-- Thesis. Selling Community on price validates the
+                                 framing used by whoever has more cost scale;
+                                 sovereignty is defensible, price is not. -->
+                            <section
+                                class="s_text_block pt96 pb64 o_cc o_cc1 escodoo-hero"
+                                data-snippet="s_text_block"
+                                data-name="Hero"
+                            >
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7">
+                                            <h1
+                                                class="display-2-fs escodoo-hero-title"
+                                            >The Odoo you control</h1>
+                                            <p class="lead escodoo-hero-lead">
+                                                Community + OCA is not the cheap
+                                                Odoo. It is the edition whose code
+                                                you can read, audit and take with
+                                                you. Brazil is seven years into a
+                                                tax transition — control is worth
+                                                more than convenience.
+                                            </p>
+                                            <t t-call="escodoo_website.cta_pair" />
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <img
+                                                src="/web/image/escodoo_website.hero_home"
+                                                alt="Odoo Community and the OCA ecosystem"
+                                                class="img img-fluid rounded"
+                                                loading="eager"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Proof, then seal. The ratio is the argument:
+                                 review capacity is the scarcest resource in the
+                                 community and nobody publishes it. -->
+                            <section
+                                class="s_text_block pt64 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Proof"
+                            >
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <h2>
+                                                We reviewed 794 community
+                                                contributions in 2025
+                                            </h2>
+                                            <p class="lead">
+                                                The code that reaches your ERP
+                                                passed through us before it became
+                                                standard. That is a different claim
+                                                from having written a lot of code,
+                                                and it is the one that matters when
+                                                the code runs your invoicing.
+                                            </p>
+                                            <div class="escodoo-seal mt-4">
+                                                <div class="escodoo-seal-figure">
+                                                    <img
+                                                        src="/web/image/escodoo_website.oca_contributor_badge"
+                                                        alt="OCA contributor badge"
+                                                        class="img img-fluid"
+                                                        loading="lazy"
+                                                    />
+                                                </div>
+                                                <div class="escodoo-seal-body">
+                                                    <p class="escodoo-seal-claim">
+                                                        Two of our engineers rank
+                                                        among the twenty largest
+                                                        contributors to the OCA
+                                                        worldwide.
+                                                    </p>
+                                                    <p class="escodoo-seal-source">
+                                                        <a
+                                                        href="https://github.com/OCA-contributors/monthly-statistics/blob/main/2025/contributors_12_YTD.csv"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >Check the public ranking</a>
+                                                        — the dataset is open and the
+                                                        generator that produces it is
+                                                        open source.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mt-4 mt-lg-0">
+                                            <t
+                                                t-call="escodoo_website.diagram_curation"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Edition teaser. The full three column comparison
+                                 lives on /edicoes-odoo. -->
+                            <section
+                                class="s_text_block pt64 pb64 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Editions"
+                            >
+                                <div class="container">
+                                    <h2 class="text-center">
+                                        Community, Community + OCA, or Enterprise
+                                    </h2>
+                                    <p
+                                        class="lead text-center mx-auto escodoo-hero-lead"
+                                    >
+                                        Most comparisons you will read put plain
+                                        Community against Enterprise and leave the
+                                        community ecosystem out of the table. That
+                                        middle column is the whole decision.
+                                    </p>
+                                    <div class="row justify-content-center mt-4">
+                                        <div class="col-lg-8">
+                                            <t
+                                                t-call="escodoo_website.diagram_editions"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <a
+                                            href="/edicoes-odoo"
+                                            class="btn btn-primary"
+                                        >Compare the three editions</a>
+                                        <a
+                                            href="/mapa-de-funcionalidades"
+                                            class="btn btn-link"
+                                        >See the feature map</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Solutions, named after the visitor's situation
+                                 rather than after what we sell. -->
+                            <section
+                                class="s_text_block pt64 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Solutions"
+                            >
+                                <div class="container">
+                                    <h2>Where are you right now?</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/implantacao-odoo"
+                                                >We are choosing an ERP</a>
+                                            </h3>
+                                            <p>
+                                                Implementation with a stated method,
+                                                deliverables per phase and an
+                                                investment range you can take to a
+                                                board.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/resgate-de-projeto-odoo"
+                                                >Our Odoo project stalled</a>
+                                            </h3>
+                                            <p>
+                                                We take over projects in progress,
+                                                recovering your data and your
+                                                configuration. It is usually
+                                                recoverable.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/migrar-para-odoo"
+                                                >We want to leave our current ERP</a>
+                                            </h3>
+                                            <p>
+                                                Moving off Totvs, SAP or a legacy
+                                                system: what carries over, what does
+                                                not, and how long it really takes.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/migracao-de-versao-odoo"
+                                                >We are stuck on an old version</a>
+                                            </h3>
+                                            <p>
+                                                Upgrades run by the people who wrote
+                                                migration scripts upstream, with the
+                                                cost spread instead of charged as a
+                                                shock.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/padronizacao-odoo"
+                                                >Our Odoo is too customised</a>
+                                            </h3>
+                                            <p>
+                                                Replace proprietary customisation
+                                                with community modules, measured
+                                                before and after.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/segunda-opiniao"
+                                                >We are unsure about our supplier</a>
+                                            </h3>
+                                            <p>
+                                                A second opinion on a proposal or on
+                                                an Odoo somebody else implemented. No
+                                                commitment to change anything.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Tax reform. Brazilian buyers now expect this on
+                                 the home page; both large local incumbents put
+                                 it there. -->
+                            <section
+                                class="s_text_block pt48 pb48 o_cc o_cc3"
+                                data-snippet="s_text_block"
+                                data-name="Tax reform"
+                            >
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-8">
+                                            <h2 class="h3">
+                                                Tax reform: the deadline is a version
+                                                decision
+                                            </h2>
+                                            <p class="mb-lg-0">
+                                                IBS and CBS land first on the newer
+                                                Odoo releases. If you are running an
+                                                older version, a regulatory date has
+                                                just turned into an upgrade date.
+                                                Start with a readiness audit of your
+                                                product and tax records.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 text-lg-end">
+                                            <a
+                                                href="/reforma-tributaria-odoo"
+                                                class="btn btn-primary"
+                                            >See the readiness audit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Services. -->
+                            <section
+                                class="s_text_block pt64 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Services"
+                            >
+                                <div class="container">
+                                    <h2>What we do</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.service_implementation"
+                                                alt="Implementation"
+                                                class="img img-fluid rounded mb-3"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/implantacao-odoo"
+                                                >Implementation</a>
+                                            </h3>
+                                            <p>
+                                                Six phases, each closing with a named
+                                                deliverable, up to an assisted go
+                                                live through your first close.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.service_consulting"
+                                                alt="Consulting and development"
+                                                class="img img-fluid rounded mb-3"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/consultoria-e-desenvolvimento"
+                                                >Consulting and development</a>
+                                            </h3>
+                                            <p>
+                                                Code review on every merge, automated
+                                                tests, continuous integration, and
+                                                generic work pushed upstream.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.service_support"
+                                                alt="Support and maintenance"
+                                                class="img img-fluid rounded mb-3"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/manutencao-odoo"
+                                                >Support and maintenance</a>
+                                            </h3>
+                                            <p>
+                                                Plans with a numeric response time
+                                                per severity, formal channels and the
+                                                upgrade cost already included.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.service_hosting"
+                                                alt="Hosting and infrastructure"
+                                                class="img img-fluid rounded mb-3"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/hospedagem-odoo"
+                                                >Hosting and infrastructure</a>
+                                            </h3>
+                                            <p>
+                                                Managed hosting with monitoring,
+                                                stated backup retention and a
+                                                recovery objective in writing.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.service_process"
+                                                alt="Process architecture"
+                                                class="img img-fluid rounded mb-3"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">
+                                                <a
+                                                    href="/arquitetura-de-processos"
+                                                >Process architecture</a>
+                                            </h3>
+                                            <p>
+                                                Process before technology. Mapping,
+                                                redesign and governance, with or
+                                                without an ERP project attached.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <img
+                                                src="/web/image/escodoo_website.service_infrastructure"
+                                                alt="Escodoo Academy"
+                                                class="img img-fluid rounded mb-3"
+                                                loading="lazy"
+                                            />
+                                            <h3 class="h5">
+                                                <a href="/academia">Escodoo Academy</a>
+                                            </h3>
+                                            <p>
+                                                Training for developers, functional
+                                                consultants and the teams who will
+                                                operate the system every day.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Industries. -->
+                            <section
+                                class="s_text_block pt48 pb64 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Industries"
+                            >
+                                <div class="container">
+                                    <h2>Operations we know well</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-md-6 col-lg-4 mb-2">
+                                            <a
+                                                href="/odoo-erp-para-manufatura"
+                                            >Industry and manufacturing</a>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 mb-2">
+                                            <a
+                                                href="/odoo-erp-para-comercio-e-distribuicao"
+                                            >Trade and distribution</a>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 mb-2">
+                                            <a
+                                                href="/odoo-erp-para-prestacao-de-servicos"
+                                            >Professional services</a>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 mb-2">
+                                            <a
+                                                href="/odoo-erp-para-servico-de-campo"
+                                            >Field service</a>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 mb-2">
+                                            <a
+                                                href="/odoo-erp-para-manutencao"
+                                            >Maintenance</a>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 mb-2">
+                                            <a
+                                                href="/odoo-erp-para-assistencia-tecnica"
+                                            >Repair centres</a>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 mb-2">
+                                            <a
+                                                href="/odoo-erp-para-gestao-de-projetos"
+                                            >Project management</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Evidence. Twenty three audited pages on the live
+                                 site carry no case, logo, testimonial or
+                                 number. -->
+                            <section
+                                class="s_text_block pt64 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Results"
+                            >
+                                <div class="container">
+                                    <h2>Results, with the numbers</h2>
+                                    <p class="lead">
+                                        Measured in the client's own system,
+                                        published with their agreement and without
+                                        identification.
+                                    </p>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Metalworking industry, 80 users, inland São Paulo'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'From three disconnected systems to one operation'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Production, stock and invoicing on the same records, with traceability from the order to the fiscal document.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/industria-metalmecanica'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Wholesale distributor, 45 users, three warehouses'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'Picking that stopped depending on who was on shift'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Multi warehouse replenishment, guided picking and a delivery promise the sales team can actually make.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/distribuidora'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Technical services provider, 30 users, field teams'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'Every hour in the field turned into an invoice'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Scheduling, worksheets with evidence and billing from the timesheet instead of from a spreadsheet.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/servicos-tecnicos'"
+                                                />
+                                            </t>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a
+                                            href="/cases"
+                                            class="btn btn-outline-secondary"
+                                        >See all results</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Newsletter. -->
+                            <t
+                                t-set="newsletter_list_id"
+                                t-value="website.escodoo_newsletter_list_id()"
+                            />
+                            <section
+                                class="s_newsletter_block s_newsletter_list pt48 pb48 o_cc o_cc2"
+                                data-snippet="s_newsletter_block"
+                                data-name="Newsletter Block"
+                                t-att-data-list-id="newsletter_list_id"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8 text-center">
+                                            <h2 class="h4">
+                                                What is new in the Odoo community,
+                                                once a month
+                                            </h2>
+                                            <p>
+                                                Community modules worth knowing about,
+                                                Brazilian localisation changes and
+                                                what the tax reform actually requires
+                                                from your system.
+                                            </p>
+                                            <div
+                                                class="s_newsletter_subscribe_form s_newsletter_list js_subscribe"
+                                                data-snippet="s_newsletter_subscribe_form"
+                                                data-name="Newsletter Form"
+                                                data-vxml="001"
+                                                t-att-data-list-id="newsletter_list_id"
+                                            >
+                                                <div class="js_subscribed_wrap d-none">
+                                                    <p
+                                                        class="h4-fs text-center text-success"
+                                                    >
+                                                        <i
+                                                        class="fa fa-check-circle-o"
+                                                        role="img"
+                                                    />
+                                                        Thanks for registering!
+                                                    </p>
+                                                </div>
+                                                <div class="js_subscribe_wrap">
+                                                    <div class="input-group">
+                                                        <input
+                                                            type="email"
+                                                            name="email"
+                                                            class="js_subscribe_value form-control"
+                                                            placeholder="your.email@company.com.br"
+                                                        />
+                                                        <a
+                                                            role="button"
+                                                            href="#"
+                                                            class="btn btn-primary js_subscribe_btn o_submit"
+                                                        >Subscribe</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Let us look at your operation first'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Thirty minutes, no proposal attached. We tell you what Odoo already solves, what needs building and what is not worth doing.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

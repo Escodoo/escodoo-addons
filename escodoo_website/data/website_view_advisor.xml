@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Good page, good format, kept at its URL. Two upgrades: the claims become
+         checkable, and the axis widens beyond freelancer versus firm, because the
+         market also compares against an official partner and against a
+         traditional local ERP consultancy. -->
+    <record id="advisor" model="ir.ui.view">
+        <field name="name">Escodoo - Who should run your project</field>
+        <field name="key">escodoo_website.advisor</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Who should run your project" t-name="escodoo_website.advisor">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_advisor" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Who should run your Odoo project
+                                    </h1>
+                                    <p class="lead">
+                                        A freelancer, a specialised firm, an official
+                                        partner or the consultancy that already sells
+                                        you another ERP. There is a right answer per
+                                        situation, and it is not always us.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Comparison"
+                            >
+                                <div class="container">
+                                    <div class="table-responsive">
+                                        <table class="table escodoo-compare">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Criterion</th>
+                                                    <th scope="col">Freelancer</th>
+                                                    <th
+                                                        scope="col"
+                                                        class="escodoo-compare-highlight"
+                                                    >Specialised firm</th>
+                                                    <th
+                                                        scope="col"
+                                                    >Official partner</th>
+                                                    <th
+                                                        scope="col"
+                                                    >Traditional ERP consultancy</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Entry cost</th>
+                                                    <td>Lowest</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >Medium</td>
+                                                    <td
+                                                    >Medium to high, plus licences</td>
+                                                    <td>Highest</td>
+                                                </tr>
+                                                <tr>
+                                                    <th
+                                                        scope="row"
+                                                    >Cover during holidays or illness</th>
+                                                    <td
+                                                        class="escodoo-compare-risk"
+                                                    >None. The project stops.</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >Another engineer picks it up</td>
+                                                    <td>Yes</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th
+                                                        scope="row"
+                                                    >Who owns the code</th>
+                                                    <td>Usually undefined</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >You, in a repository you access from day one</td>
+                                                    <td>You, usually</td>
+                                                    <td
+                                                        class="escodoo-compare-risk"
+                                                    >Often the consultancy</td>
+                                                </tr>
+                                                <tr>
+                                                    <th
+                                                        scope="row"
+                                                    >Code review before merge</th>
+                                                    <td
+                                                        class="escodoo-compare-risk"
+                                                    >Nobody reviews a single developer</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >Yes, on every merge</td>
+                                                    <td>Varies</td>
+                                                    <td>Varies</td>
+                                                </tr>
+                                                <tr>
+                                                    <th
+                                                        scope="row"
+                                                    >Brazilian fiscal depth</th>
+                                                    <td>Varies wildly</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >Maintains the localisation upstream</td>
+                                                    <td
+                                                    >Usually via a paid tax service</td>
+                                                    <td>Deep, on their own product</td>
+                                                </tr>
+                                                <tr>
+                                                    <th
+                                                        scope="row"
+                                                    >Upstream contribution</th>
+                                                    <td>Rare</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >Yes, which is why you pay less to maintain it</td>
+                                                    <td>Sometimes</td>
+                                                    <td>No</td>
+                                                </tr>
+                                                <tr>
+                                                    <th
+                                                        scope="row"
+                                                    >Contract and invoicing</th>
+                                                    <td
+                                                        class="escodoo-compare-risk"
+                                                    >Frequently informal</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >Formal, with a notice period both ways</td>
+                                                    <td>Formal</td>
+                                                    <td>Formal</td>
+                                                </tr>
+                                                <tr>
+                                                    <th
+                                                        scope="row"
+                                                    >If the supplier disappears mid go live</th>
+                                                    <td
+                                                        class="escodoo-compare-risk"
+                                                    >You restart the project</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >You hold the repository and the deployment recipe</td>
+                                                    <td
+                                                    >Another partner can take over</td>
+                                                    <td
+                                                        class="escodoo-compare-risk"
+                                                    >Locked to their product</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Best fit</th>
+                                                    <td
+                                                    >A small, well defined change on a system that already works</td>
+                                                    <td
+                                                        class="escodoo-compare-highlight"
+                                                    >A real operation, twenty users and up, that will keep evolving</td>
+                                                    <td
+                                                    >A company that wants the vendor contract and Enterprise features</td>
+                                                    <td
+                                                    >A company that has already decided on that vendor's product</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="When not us"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2
+                                            class="h4"
+                                        >When a freelancer is the right call</h2>
+                                        <p class="mb-0">
+                                            If you already run Odoo, the system is
+                                            stable, and you need one report changed or
+                                            one field added, hiring a firm for it is
+                                            expensive and slow. Hire a good freelancer,
+                                            ask for the code in your repository, and
+                                            keep our number for the day the change is
+                                            no longer small. We would rather tell you
+                                            this than sell you a contract you do not
+                                            need.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Questions to ask"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2
+                                            >Six questions to ask any supplier, including us</h2>
+                                            <ol>
+                                                <li>
+                                                    Who reviews the code before it
+                                                    reaches my system, and can I see a
+                                                    review?
+                                                </li>
+                                                <li>
+                                                    Will the source live in a repository
+                                                    I have access to from the first
+                                                    week?
+                                                </li>
+                                                <li>
+                                                    What of my requirements is already
+                                                    solved by an existing module, and
+                                                    what are you proposing to build?
+                                                </li>
+                                                <li>
+                                                    How much will the next version
+                                                    upgrade cost me, and how did you
+                                                    arrive at that number?
+                                                </li>
+                                                <li>
+                                                    Who specifically works on my
+                                                    account, and what happens when that
+                                                    person is away?
+                                                </li>
+                                                <li>
+                                                    If I want to leave in two years,
+                                                    what do I need from you and what
+                                                    will it cost?
+                                                </li>
+                                            </ol>
+                                            <p class="mb-0">
+                                                A supplier who answers all six clearly
+                                                is probably fine. One who is vague on
+                                                the last two is the one that costs you
+                                                money later.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Comparing suppliers right now?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'We review other suppliers proposals as a paid, fixed scope service, with no obligation to change anything.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- The two-speed call to action lives in the header on every page. The
+         shipped header_call_to_action is disabled in the hook because it only
+         holds one button and its label cannot be changed without patching the
+         shipped arch. -->
+    <template
+        id="header_call_to_action_pair"
+        inherit_id="website.layout"
+        name="Escodoo header call to action"
+        priority="20"
+    >
+        <xpath expr="//header//ul[hasclass('navbar-nav')]" position="after">
+            <div class="escodoo-header-cta ms-lg-3">
+                <a
+                    href="/diagnostico-gratuito"
+                    class="btn btn-sm btn-outline-secondary escodoo-header-cta-secondary"
+                >
+                    Free diagnostic
+                </a>
+                <a href="/contactus" class="btn btn-sm btn-primary">
+                    Talk to a specialist
+                </a>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Structured data. The company is invisible to search engines today: no
+         organisation markup anywhere on the live site. -->
+    <template
+        id="organization_structured_data"
+        inherit_id="website.layout"
+        name="Escodoo organisation structured data"
+        priority="25"
+    >
+        <xpath expr="//head" position="inside">
+            <script type="application/ld+json">
+                {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Escodoo",
+                "url": "https://escodoo.com.br",
+                "email": "contato@escodoo.com.br",
+                "telephone": "+55 16 98872-7010",
+                "foundingDate": "2015",
+                "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Ribeirão Preto",
+                "addressRegion": "SP",
+                "addressCountry": "BR"
+                },
+                "sameAs": [
+                "https://github.com/Escodoo",
+                "https://www.linkedin.com/company/escodoo"
+                ],
+                "knowsAbout": [
+                "Odoo",
+                "Odoo Community Association",
+                "Brazilian fiscal localisation",
+                "ERP implementation"
+                ]
+                }
+            </script>
+        </xpath>
+    </template>
+</odoo>

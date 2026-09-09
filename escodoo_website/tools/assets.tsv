@@ -1,0 +1,20 @@
+# Asset catalogue for tools/download_assets.sh
+# target_stem<TAB>source_path_on_escodoo.com.br
+brand_logo	/web/image/website/1/logo/Escodoo
+brand_favicon	/web/image/website/1/favicon
+oca_contributor_badge	/web/image/30385-41f90787/Contributor%20Badge%20Medium.png
+hero_home	/web/image/32471-b2ff1f3b/Gemini_Generated_Image_tpi3fltpi3fltpi3.png
+service_implementation	/web/image/32525-977a2f12/implanta%C3%A7%C3%A3o.png
+service_consulting	/web/image/32527-a0746564/ChatGPT%20Image%2022%20de%20abr.%20de%202026%2C%2010_53_16.png
+service_infrastructure	/web/image/32529-8a34aa9e/infraestrutura.png
+service_support	/web/image/32530-0553e61f/manuten%C3%A7%C3%A3o%20e%20suporte.png
+service_hosting	/web/image/32531-2d3b75ad/infra.png
+service_process	/web/image/32536-eed1c318/ChatGPT%20Image%2022%20de%20abr.%20de%202026%2C%2011_23_15.png
+editions_odoo	/web/image/32546-eb33c4cf/versoes%20odoo.png
+oca_ecosystem	/web/image/32550-44c915e2/oca.png
+culture_technical	/web/image/24706-d73137b8/tecnico.svg
+culture_commercial	/web/image/24707-11c8b8eb/comercial.svg
+culture_support	/web/image/24708-8dd04486/consultoria%20e%20suporte.svg
+about_team	/web/image/30551-d5f3f444/8633788f-693d-494d-b09f-cf305090f670.png
+about_office	/web/image/30688-4d4f78fa/ChatGPT%20Image%2025%20de%20fev.%20de%202026%2C%2017_34_26.png
+about_culture	/web/image/30689-060036e5/ChatGPT%20Image%2025%20de%20fev.%20de%202026%2C%2018_42_13.png
