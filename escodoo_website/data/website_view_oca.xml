@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- The live page at this URL explains the OCA as an institution and never
+         says what Escodoo does inside it, with an empty ranking block where the
+         rarest credential the company owns should be. The focus inverts. -->
+    <record id="oca" model="ir.ui.view">
+        <field name="name">Escodoo - Our contribution to the OCA</field>
+        <field name="key">escodoo_website.oca</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Our contribution to the OCA" t-name="escodoo_website.oca">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_oca" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        What we do inside the OCA
+                                    </h1>
+                                    <p class="lead">
+                                        Not how much code we write. How much of the
+                                        community's code we review before it becomes
+                                        the standard everyone else installs.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt32 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Ranking"
+                            >
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <h2
+                                            >Two engineers in the global top twenty</h2>
+                                            <p>
+                                                The Odoo Community Association
+                                                publishes a contributor index built
+                                                from pull requests, reviews and
+                                                merges across every repository. In
+                                                2025, Marcel Savegnago ranked ninth in
+                                                the world and Antônio Neto ranked
+                                                twentieth.
+                                            </p>
+                                            <p>
+                                                The index ranks people, not companies,
+                                                so we do not claim to be the ninth
+                                                company in the world. Two of our
+                                                engineers are in the top twenty, and
+                                                the dataset is public.
+                                            </p>
+                                            <p>
+                                                <a
+                                                    href="https://github.com/OCA-contributors/monthly-statistics/blob/main/2025/contributors_12_YTD.csv"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    class="btn btn-primary"
+                                                >Open the public dataset</a>
+                                                <a
+                                                    href="https://github.com/OCA-contributors/contributors-statistics-generator"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    class="btn btn-link"
+                                                >And the generator that produces it</a>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mt-4 mt-lg-0">
+                                            <t
+                                                t-call="escodoo_website.diagram_curation"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- The bridge from a contribution claim to an economic
+                                 argument. Without it, "we are in the top ten" is
+                                 vanity that a buyer cannot use. -->
+                            <section
+                                class="s_text_block pt32 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Why it matters"
+                            >
+                                <div class="container">
+                                    <h2>Why that should matter to you</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                A module upstream is a module you do
+                                                not pay to maintain
+                                            </h3>
+                                            <p>
+                                                When we push generic work into a
+                                                community repository, the community
+                                                maintains it across versions. When a
+                                                supplier keeps it in a private
+                                                repository, you pay to carry it
+                                                forward at every upgrade.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                It survives us
+                                            </h3>
+                                            <p>
+                                                Code that became the community
+                                                standard does not depend on Escodoo
+                                                still existing, still being cheap, or
+                                                still being pleasant to work with.
+                                                That is the point.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                Reviewing is how you learn the whole
+                                                platform
+                                            </h3>
+                                            <p>
+                                                Eight hundred reviews a year means
+                                                reading other people's accounting,
+                                                warehouse and manufacturing code. It
+                                                is the fastest way to know what
+                                                already exists, which is what stops us
+                                                selling you development you do not
+                                                need.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt32 pb48"
+                                data-snippet="s_text_block"
+                                data-name="What we maintain"
+                            >
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <h2>What we maintain and contribute to</h2>
+                                            <p>
+                                                Our work concentrates on the Brazilian
+                                                fiscal localisation and on the
+                                                horizontal repositories every project
+                                                depends on.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                    href="https://github.com/OCA/l10n-brazil"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >l10n-brazil</a>
+                                                    — the fiscal engine, NF-e, NFS-e,
+                                                    CT-e, MDF-e and the bank slip
+                                                    exchange
+                                                </li>
+                                                <li>
+                                                    <a
+                                                    href="https://github.com/OCA/server-tools"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >server-tools</a>
+                                                    and
+                                                    <a
+                                                    href="https://github.com/OCA/server-ux"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >server-ux</a>
+                                                    — audit trail and generic approvals
+                                                </li>
+                                                <li>
+                                                    <a
+                                                    href="https://github.com/OCA/helpdesk"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >helpdesk</a>
+                                                    — the ticket suite we run ourselves
+                                                </li>
+                                                <li>
+                                                    <a
+                                                    href="https://github.com/OCA/field-service"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >field-service</a>
+                                                    ,
+                                                    <a
+                                                    href="https://github.com/OCA/maintenance"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >maintenance</a>
+                                                    and
+                                                    <a
+                                                    href="https://github.com/OCA/repair"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >repair</a>
+                                                    — the service operations suites
+                                                </li>
+                                                <li>
+                                                    <a
+                                                    href="https://github.com/Escodoo"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >Our own repositories</a>
+                                                    — the modules we keep public
+                                                    outside the community scope
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mt-4 mt-lg-0">
+                                            <img
+                                                src="/web/image/escodoo_website.oca_ecosystem"
+                                                alt="The OCA ecosystem"
+                                                class="img img-fluid rounded"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt32 pb48"
+                                data-snippet="s_text_block"
+                                data-name="What the OCA is"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <h2
+                                                class="h4"
+                                            >And what the OCA is, briefly</h2>
+                                            <p>
+                                                The Odoo Community Association is a
+                                                non-profit that maintains thousands of
+                                                free software modules for Odoo,
+                                                organised in public repositories with
+                                                a review process, automated tests and
+                                                maintainers per repository. It is not
+                                                a marketplace and nothing is sold
+                                                there.
+                                            </p>
+                                            <p>
+                                                It is the reason Community + OCA is a
+                                                serious option rather than a hobby: the
+                                                depth that Enterprise sells as apps
+                                                exists there as reviewed, versioned,
+                                                free software.
+                                            </p>
+                                            <p class="mb-0">
+                                                <a
+                                                    href="https://odoo-community.org"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >odoo-community.org</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Want the same review standard on your code?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Every merge on a client project goes through the process we use upstream: review, tests and continuous integration.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

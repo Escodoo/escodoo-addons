@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- The "what is Odoo" pillar. The live page embeds the whole feature map,
+         duplicating an entire URL, and repeats the implementation block that
+         belongs on /implantacao-odoo. Both are removed; the market positioning
+         quadrant stays, because it is the only competitor comparison on the
+         site and it is a strong asset. -->
+    <record id="odoo" model="ir.ui.view">
+        <field name="name">Escodoo - What Odoo is</field>
+        <field name="key">escodoo_website.odoo</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="What Odoo is" t-name="escodoo_website.odoo">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_odoo" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">What Odoo is</h1>
+                                    <p class="lead">
+                                        An integrated management platform with more
+                                        than eighty applications on a single database:
+                                        sales, purchasing, stock, manufacturing,
+                                        accounting, projects, human resources, website
+                                        and support. One data model instead of six
+                                        systems trying to agree with each other.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Why it is different"
+                            >
+                                <div class="container">
+                                    <h2
+                                    >What makes it different from the alternatives</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >One database, not an interface</h3>
+                                            <p>
+                                                A sales order, its stock reservation,
+                                                its production order, its fiscal
+                                                document and its accounting entry are
+                                                the same chain of records. Nothing is
+                                                reconciled overnight by a job that
+                                                sometimes fails.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Modular adoption</h3>
+                                            <p>
+                                                You install what you need and add the
+                                                rest later, without a migration. A
+                                                company that starts with sales and
+                                                stock can add manufacturing two years
+                                                on and keep its history.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Open source at the core</h3>
+                                            <p>
+                                                The platform is free software. You can
+                                                read the code that runs your operation,
+                                                have it audited and extend it without
+                                                anyone's permission. That is not a
+                                                detail; it is the reason this page
+                                                exists.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- The quadrant. Inline SVG so the labels are
+                                 translatable and the shapes follow the theme. -->
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Market position"
+                            >
+                                <div class="container">
+                                    <h2>Where Odoo sits in the market</h2>
+                                    <p class="lead">
+                                        The trade-off nobody draws honestly: functional
+                                        breadth against how much the project costs you
+                                        to run.
+                                    </p>
+                                    <div class="row justify-content-center mt-4">
+                                        <div class="col-lg-9">
+                                            <figure class="escodoo-diagram">
+                                                <svg
+                                                    viewBox="0 0 640 460"
+                                                    role="img"
+                                                    aria-labelledby="escodoo_quadrant_title"
+                                                    class="escodoo-diagram-svg"
+                                                >
+                                                    <title
+                                                        id="escodoo_quadrant_title"
+                                                    >Functional breadth against total project cost</title>
+                                                    <rect
+                                                        x="70"
+                                                        y="30"
+                                                        width="540"
+                                                        height="340"
+                                                        rx="6"
+                                                        class="escodoo-bar-track"
+                                                    />
+                                                    <line
+                                                        x1="340"
+                                                        y1="30"
+                                                        x2="340"
+                                                        y2="370"
+                                                        stroke="currentColor"
+                                                        stroke-opacity="0.2"
+                                                    />
+                                                    <line
+                                                        x1="70"
+                                                        y1="200"
+                                                        x2="610"
+                                                        y2="200"
+                                                        stroke="currentColor"
+                                                        stroke-opacity="0.2"
+                                                    />
+                                                    <text
+                                                        x="70"
+                                                        y="400"
+                                                        class="escodoo-bar-label"
+                                                    >Lower total cost</text>
+                                                    <text
+                                                        x="610"
+                                                        y="400"
+                                                        text-anchor="end"
+                                                        class="escodoo-bar-label"
+                                                    >Higher total cost</text>
+                                                    <text
+                                                        x="10"
+                                                        y="46"
+                                                        class="escodoo-bar-label"
+                                                    >Broad</text>
+                                                    <text
+                                                        x="10"
+                                                        y="366"
+                                                        class="escodoo-bar-label"
+                                                    >Narrow</text>
+                                                    <circle
+                                                        cx="200"
+                                                        cy="110"
+                                                        r="14"
+                                                        class="escodoo-bar-strong"
+                                                    />
+                                                    <text
+                                                        x="222"
+                                                        y="106"
+                                                        class="escodoo-bar-value"
+                                                    >Odoo Community + OCA</text>
+                                                    <text
+                                                        x="222"
+                                                        y="126"
+                                                        class="escodoo-bar-caption"
+                                                    >Broad, and the code is yours</text>
+                                                    <circle
+                                                        cx="330"
+                                                        cy="80"
+                                                        r="11"
+                                                        class="escodoo-bar-neutral"
+                                                    />
+                                                    <text
+                                                        x="350"
+                                                        y="76"
+                                                        class="escodoo-bar-label"
+                                                    >Odoo Enterprise</text>
+                                                    <circle
+                                                        cx="540"
+                                                        cy="70"
+                                                        r="11"
+                                                        class="escodoo-bar-soft"
+                                                    />
+                                                    <text
+                                                        x="470"
+                                                        y="52"
+                                                        class="escodoo-bar-label"
+                                                    >Large traditional ERP</text>
+                                                    <circle
+                                                        cx="180"
+                                                        cy="300"
+                                                        r="11"
+                                                        class="escodoo-bar-soft"
+                                                    />
+                                                    <text
+                                                        x="200"
+                                                        y="296"
+                                                        class="escodoo-bar-label"
+                                                    >Niche local systems</text>
+                                                    <circle
+                                                        cx="110"
+                                                        cy="345"
+                                                        r="9"
+                                                        class="escodoo-bar-soft"
+                                                    />
+                                                    <text
+                                                        x="128"
+                                                        y="341"
+                                                        class="escodoo-bar-label"
+                                                    >Spreadsheets and chat</text>
+                                                    <text
+                                                        x="70"
+                                                        y="440"
+                                                        class="escodoo-bar-caption"
+                                                    >Total cost includes licences, services and the price of leaving.</text>
+                                                </svg>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Next steps"
+                            >
+                                <div class="container">
+                                    <h2>Where to go from here</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-3">
+                                            <h3 class="h6">
+                                                <a
+                                                    href="/mapa-de-funcionalidades"
+                                                >Does Odoo cover what I need?</a>
+                                            </h3>
+                                            <p>
+                                                The capability assessment, area by
+                                                area, with the honest gaps marked.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <h3 class="h6">
+                                                <a
+                                                    href="/edicoes-odoo"
+                                                >Which edition should I choose?</a>
+                                            </h3>
+                                            <p>
+                                                Community, Community + OCA and
+                                                Enterprise in one table, including
+                                                where Enterprise wins.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <h3 class="h6">
+                                                <a
+                                                    href="/odoo-brasil"
+                                                >Does it work for Brazilian tax?</a>
+                                            </h3>
+                                            <p>
+                                                What the localisation actually covers,
+                                                stated once and without contradicting
+                                                itself.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- The localisation and fiscal pillar. Two fixes to the live page: one
+         single defensible position on fiscal coverage, and the four-step method
+         removed, because the same process is described in six steps on the
+         implementation page and in seven in the FAQ. -->
+    <record id="odoo_brasil" model="ir.ui.view">
+        <field name="name">Escodoo - Odoo in Brazil</field>
+        <field name="key">escodoo_website.odoo_brasil</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Odoo in Brazil" t-name="escodoo_website.odoo_brasil">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_odoo_brasil" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Odoo in Brazil</h1>
+                                    <p class="lead">
+                                        The question every Brazilian buyer asks first,
+                                        answered once and without hedging: yes, Odoo
+                                        issues Brazilian fiscal documents natively, and
+                                        here is exactly which ones and under what
+                                        conditions.
+                                    </p>
+                                </div>
+                            </section>
+                            <!-- The live site says the localisation is complete in
+                                 one place and says fiscal requirements are outside
+                                 the core in another. A lead who reads both finds a
+                                 contradiction on the most critical point in this
+                                 market. -->
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Fiscal position"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2
+                                            class="h4"
+                                        >Our position on fiscal coverage</h2>
+                                        <p>
+                                            The Brazilian localisation maintained by
+                                            the community issues NF-e, CT-e and MDF-e
+                                            natively, calculates the taxes inside Odoo
+                                            and exchanges bank slips through CNAB. No
+                                            external paid tax service is required for
+                                            those.
+                                        </p>
+                                        <p>
+                                            NFS-e depends on the municipality. The
+                                            national standard is supported; some city
+                                            systems still need a dedicated adapter, and
+                                            we check yours before quoting rather than
+                                            after.
+                                        </p>
+                                        <p class="mb-0">
+                                            SPED, ECD and ECF are generated from the
+                                            accounting data and validated in a
+                                            specialist tool, usually together with your
+                                            accounting firm. Brazilian payroll is not
+                                            solved by any Odoo edition, and we integrate
+                                            a specialist provider for it. Those are the
+                                            limits, and they are on the
+                                            <a
+                                            href="/mapa-de-funcionalidades"
+                                        >feature map</a>
+                                            row by row.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Contribute not consume"
+                            >
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7">
+                                            <h2
+                                            >We contribute, we do not merely consume</h2>
+                                            <p class="lead">
+                                                The difference between an integrator who
+                                                installs the Brazilian localisation and
+                                                one who helps build it is what happens
+                                                the day something does not work.
+                                            </p>
+                                            <p>
+                                                When a fiscal rule changes, or a state
+                                                rejects a document for a reason nobody
+                                                documented, we do not open a ticket and
+                                                wait. We read the code, fix it and push
+                                                the fix upstream, where it becomes the
+                                                standard for everyone — including our
+                                                competitors, which is the point of the
+                                                arrangement.
+                                            </p>
+                                            <p class="mb-0">
+                                                <a
+                                                    href="/oca"
+                                                    class="btn btn-primary"
+                                                >See our contribution record</a>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <img
+                                                src="/web/image/escodoo_website.editions_odoo"
+                                                alt="Odoo versions and the Brazilian localisation"
+                                                class="img img-fluid rounded"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Fiscal features"
+                            >
+                                <div class="container">
+                                    <h2>The Brazilian fiscal rows, in detail</h2>
+                                    <t t-call="escodoo_website.feature_table">
+                                        <t t-set="segment_xmlid" t-value="False" />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Tax reform"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2>And the tax reform</h2>
+                                            <p>
+                                                IBS and CBS are being built upstream, in
+                                                the open, for a transition that runs
+                                                through 2033. The reason it is not a
+                                                rewrite is structural: the fiscal tax
+                                                model in the localisation is generic by
+                                                design, so new taxes enter as new
+                                                records rather than as surgery on the
+                                                engine.
+                                            </p>
+                                            <p class="mb-0">
+                                                <a
+                                                    href="/reforma-tributaria-odoo"
+                                                    class="btn btn-primary"
+                                                >What this means for your system</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Want your fiscal profile checked before you commit?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us which documents you issue, in which states and under which tax regime. We tell you what is native, what needs an adapter and what stays outside.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

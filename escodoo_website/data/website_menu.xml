@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Six top level entries. The live menu has nine, including one that
+     duplicates another and one that is a form rather than a destination.
+
+     "Solutions" and "Services" are deliberately different axes: solutions are
+     named after the buyer's situation, services after what we do. A reader who
+     knows their problem but not the vocabulary finds themselves in the first
+     one. The last entry is the high commitment call to action, so it is a link
+     rather than a dropdown. -->
+<odoo noupdate="1">
+    <record id="menu_solutions" model="website.menu">
+        <field name="name">Solutions</field>
+        <field name="url">#</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">20</field>
+    </record>
+    <record id="menu_implementation" model="website.menu">
+        <field name="name">Implement Odoo from scratch</field>
+        <field name="url">/implantacao-odoo</field>
+        <field name="parent_id" ref="menu_solutions" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">21</field>
+    </record>
+    <record id="menu_rescue" model="website.menu">
+        <field name="name">Rescue a failing project</field>
+        <field name="url">/resgate-de-projeto-odoo</field>
+        <field name="parent_id" ref="menu_solutions" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">22</field>
+    </record>
+    <record id="menu_version_upgrade" model="website.menu">
+        <field name="name">Upgrade Odoo version</field>
+        <field name="url">/migracao-de-versao-odoo</field>
+        <field name="parent_id" ref="menu_solutions" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">23</field>
+    </record>
+    <record id="menu_migrate_to_odoo" model="website.menu">
+        <field name="name">Leave Totvs, SAP or a legacy ERP</field>
+        <field name="url">/migrar-para-odoo</field>
+        <field name="parent_id" ref="menu_solutions" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">24</field>
+    </record>
+    <record id="menu_standardisation" model="website.menu">
+        <field name="name">Standardise customisations</field>
+        <field name="url">/padronizacao-odoo</field>
+        <field name="parent_id" ref="menu_solutions" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">25</field>
+    </record>
+    <record id="menu_tax_reform" model="website.menu">
+        <field name="name">Prepare for the tax reform</field>
+        <field name="url">/reforma-tributaria-odoo</field>
+        <field name="parent_id" ref="menu_solutions" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">26</field>
+    </record>
+
+    <record id="menu_services" model="website.menu">
+        <field name="name">Services</field>
+        <field name="url">#</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">30</field>
+    </record>
+    <record id="menu_consulting" model="website.menu">
+        <field name="name">Consulting and development</field>
+        <field name="url">/consultoria-e-desenvolvimento</field>
+        <field name="parent_id" ref="menu_services" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">31</field>
+    </record>
+    <record id="menu_maintenance" model="website.menu">
+        <field name="name">Support and maintenance</field>
+        <field name="url">/manutencao-odoo</field>
+        <field name="parent_id" ref="menu_services" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">32</field>
+    </record>
+    <record id="menu_hosting" model="website.menu">
+        <field name="name">Hosting and infrastructure</field>
+        <field name="url">/hospedagem-odoo</field>
+        <field name="parent_id" ref="menu_services" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">33</field>
+    </record>
+    <record id="menu_process_architecture" model="website.menu">
+        <field name="name">Process architecture</field>
+        <field name="url">/arquitetura-de-processos</field>
+        <field name="parent_id" ref="menu_services" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">34</field>
+    </record>
+    <record id="menu_second_opinion" model="website.menu">
+        <field name="name">Second opinion</field>
+        <field name="url">/segunda-opiniao</field>
+        <field name="parent_id" ref="menu_services" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">35</field>
+    </record>
+    <record id="menu_academy" model="website.menu">
+        <field name="name">Escodoo Academy</field>
+        <field name="url">/academia</field>
+        <field name="parent_id" ref="menu_services" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">36</field>
+    </record>
+
+    <record id="menu_industries" model="website.menu">
+        <field name="name">Industries</field>
+        <field name="url">#</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">40</field>
+    </record>
+    <record id="menu_segment_manufacturing" model="website.menu">
+        <field name="name">Industry and manufacturing</field>
+        <field name="url">/odoo-erp-para-manufatura</field>
+        <field name="parent_id" ref="menu_industries" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">41</field>
+    </record>
+    <record id="menu_segment_trade" model="website.menu">
+        <field name="name">Trade and distribution</field>
+        <field name="url">/odoo-erp-para-comercio-e-distribuicao</field>
+        <field name="parent_id" ref="menu_industries" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">42</field>
+    </record>
+    <record id="menu_segment_services" model="website.menu">
+        <field name="name">Professional services</field>
+        <field name="url">/odoo-erp-para-prestacao-de-servicos</field>
+        <field name="parent_id" ref="menu_industries" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">43</field>
+    </record>
+    <record id="menu_segment_field_service" model="website.menu">
+        <field name="name">Field service</field>
+        <field name="url">/odoo-erp-para-servico-de-campo</field>
+        <field name="parent_id" ref="menu_industries" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">44</field>
+    </record>
+    <record id="menu_segment_maintenance" model="website.menu">
+        <field name="name">Maintenance</field>
+        <field name="url">/odoo-erp-para-manutencao</field>
+        <field name="parent_id" ref="menu_industries" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">45</field>
+    </record>
+    <record id="menu_segment_repair" model="website.menu">
+        <field name="name">Repair centres</field>
+        <field name="url">/odoo-erp-para-assistencia-tecnica</field>
+        <field name="parent_id" ref="menu_industries" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">46</field>
+    </record>
+    <record id="menu_segment_projects" model="website.menu">
+        <field name="name">Project management</field>
+        <field name="url">/odoo-erp-para-gestao-de-projetos</field>
+        <field name="parent_id" ref="menu_industries" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">47</field>
+    </record>
+
+    <!-- The differentiating block. It is in the menu rather than buried in a
+         footer because the whole positioning depends on a reader being able to
+         find the argument. -->
+    <record id="menu_community" model="website.menu">
+        <field name="name">Community + OCA</field>
+        <field name="url">#</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">50</field>
+    </record>
+    <record id="menu_editions" model="website.menu">
+        <field name="name">Community, Community + OCA or Enterprise</field>
+        <field name="url">/edicoes-odoo</field>
+        <field name="parent_id" ref="menu_community" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">51</field>
+    </record>
+    <record id="menu_oca" model="website.menu">
+        <field name="name">Our contribution to the OCA</field>
+        <field name="url">/oca</field>
+        <field name="parent_id" ref="menu_community" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">52</field>
+    </record>
+    <record id="menu_feature_map" model="website.menu">
+        <field name="name">Feature map</field>
+        <field name="url">/mapa-de-funcionalidades</field>
+        <field name="parent_id" ref="menu_community" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">53</field>
+    </record>
+    <record id="menu_investment" model="website.menu">
+        <field name="name">Investment and total cost</field>
+        <field name="url">/investimento</field>
+        <field name="parent_id" ref="menu_community" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">54</field>
+    </record>
+    <record id="menu_sovereignty" model="website.menu">
+        <field name="name">Sovereignty and portability</field>
+        <field name="url">/soberania-e-portabilidade</field>
+        <field name="parent_id" ref="menu_community" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">55</field>
+    </record>
+    <record id="menu_odoo" model="website.menu">
+        <field name="name">What Odoo is</field>
+        <field name="url">/odoo</field>
+        <field name="parent_id" ref="menu_community" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">56</field>
+    </record>
+    <record id="menu_odoo_brasil" model="website.menu">
+        <field name="name">Odoo in Brazil</field>
+        <field name="url">/odoo-brasil</field>
+        <field name="parent_id" ref="menu_community" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">57</field>
+    </record>
+    <record id="menu_advisor" model="website.menu">
+        <field name="name">Who should run your project</field>
+        <field name="url">/freelancer-odoo-ou-empresa-especializada</field>
+        <field name="parent_id" ref="menu_community" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">58</field>
+    </record>
+
+    <record id="menu_company" model="website.menu">
+        <field name="name">Company</field>
+        <field name="url">#</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">60</field>
+    </record>
+    <record id="menu_aboutus" model="website.menu">
+        <field name="name">About Escodoo</field>
+        <field name="url">/aboutus</field>
+        <field name="parent_id" ref="menu_company" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">61</field>
+    </record>
+    <record id="menu_cases" model="website.menu">
+        <field name="name">Results</field>
+        <field name="url">/cases</field>
+        <field name="parent_id" ref="menu_company" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">62</field>
+    </record>
+    <record id="menu_faq" model="website.menu">
+        <field name="name">Frequently asked questions</field>
+        <field name="url">/faq</field>
+        <field name="parent_id" ref="menu_company" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">63</field>
+    </record>
+    <record id="menu_international" model="website.menu">
+        <field name="name">International services</field>
+        <field name="url">/internacional</field>
+        <field name="parent_id" ref="menu_company" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">64</field>
+    </record>
+    <!-- Owned by their own Odoo apps; the menu only points at them. -->
+    <record id="menu_blog" model="website.menu">
+        <field name="name">Blog</field>
+        <field name="url">/blog</field>
+        <field name="parent_id" ref="menu_company" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">65</field>
+    </record>
+    <record id="menu_jobs" model="website.menu">
+        <field name="name">Work with us</field>
+        <field name="url">/jobs</field>
+        <field name="parent_id" ref="menu_company" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">66</field>
+    </record>
+
+    <record id="menu_contact" model="website.menu">
+        <field name="name">Talk to a specialist</field>
+        <field name="url">/contactus</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="website_id" ref="website.default_website" />
+        <field name="sequence" type="int">70</field>
+    </record>
+</odoo>

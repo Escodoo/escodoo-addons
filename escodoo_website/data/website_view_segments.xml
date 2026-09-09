@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The largest block of content on the live site, and the one with the largest
+     gap: seven bottom of funnel pages without a single piece of evidence. The
+     pain-first structure works and is preserved. What is added is the named
+     modules pulled from escodoo.website.feature, the typical indicators, an
+     anonymous case, an intermediate call to action, and an explicit statement of
+     who each page is for — because maintenance, repair, field service and
+     professional services currently share almost interchangeable blocks. -->
+<odoo>
+    <record id="segment_manufacturing_page" model="ir.ui.view">
+        <field name="name">Escodoo - ERP for industry and manufacturing</field>
+        <field name="key">escodoo_website.segment_manufacturing_page</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="ERP for manufacturing"
+                t-name="escodoo_website.segment_manufacturing_page"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_segment_manufacturing"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        ERP for industry and manufacturing
+                                    </h1>
+                                    <p class="lead">
+                                        You know what you sold. You are less sure what it
+                                        cost you, when it will be ready, and whether the
+                                        material is on the shelf. That gap is where the
+                                        margin goes.
+                                    </p>
+                                    <p class="escodoo-audience">
+                                        This page is for companies that transform
+                                        material into product, with a bill of material
+                                        and a shop floor.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Pain"
+                            >
+                                <div class="container">
+                                    <h2>What usually hurts</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Planning lives in a spreadsheet</h3>
+                                            <p>
+                                                Someone rebuilds the production plan every
+                                                Monday from stock, orders and memory. When
+                                                that person is on holiday, the factory
+                                                improvises.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Material arrives late or twice</h3>
+                                            <p>
+                                                Purchasing buys against a forecast nobody
+                                                trusts, so you carry stock you do not need
+                                                and stop the line for a part that costs
+                                                almost nothing.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Nobody knows the real cost</h3>
+                                            <p>
+                                                The price list is based on last year plus a
+                                                feeling. Scrap, rework and machine time are
+                                                not in it, which means some of your best
+                                                selling products lose money.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Traceability is a filing cabinet</h3>
+                                            <p>
+                                                A customer complaint arrives and finding
+                                                which batch, which supplier and which
+                                                operator takes two days of somebody's week.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a
+                                            href="/diagnostico-gratuito"
+                                            class="btn btn-outline-secondary"
+                                        >Talk it through in thirty minutes</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Features"
+                            >
+                                <div class="container">
+                                    <t t-call="escodoo_website.segment_features">
+                                        <t
+                                            t-set="segment_xmlid"
+                                            t-value="'escodoo_website.segment_manufacturing'"
+                                        />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Indicators"
+                            >
+                                <div class="container">
+                                    <h2>What you start being able to measure</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >On-time delivery against the promised date</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Real cost per product against the standard</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Scrap and rework rate per production line</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Inventory turns and stock cover in days</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Line stoppages caused by missing material</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Lead time from order to shipment</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Case"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Metalworking industry, 80 users, inland São Paulo'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'From three disconnected systems to one operation'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Production, stock and invoicing on the same records, with traceability from the customer order to the fiscal document, and a cost per product the commercial team can actually price against.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/industria-metalmecanica'"
+                                                />
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Closing"
+                            >
+                                <div class="container text-center">
+                                    <p class="lead mb-0">
+                                        We do not just deliver screens and forms. We
+                                        structure operations.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="segment_trade_page" model="ir.ui.view">
+        <field name="name">Escodoo - ERP for trade and distribution</field>
+        <field name="key">escodoo_website.segment_trade_page</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="ERP for trade and distribution"
+                t-name="escodoo_website.segment_trade_page"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_segment_trade"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        ERP for trade and distribution
+                                    </h1>
+                                    <p class="lead">
+                                        Your margin is thin and your working capital is
+                                        sitting on a shelf. Everything depends on buying
+                                        the right quantity and shipping without mistakes,
+                                        which is exactly what nobody can see clearly.
+                                    </p>
+                                    <p class="escodoo-audience">
+                                        This page is for companies that buy to resell,
+                                        across one or several warehouses and channels.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Pain"
+                            >
+                                <div class="container">
+                                    <h2>What usually hurts</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Stock says one thing, the shelf says another</h3>
+                                            <p>
+                                                Sales promises what is not there and
+                                                refuses what is. Every count finds
+                                                differences nobody can explain, because
+                                                negative stock was allowed all along.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Purchasing buys by instinct</h3>
+                                            <p>
+                                                Fast movers run out, slow movers occupy
+                                                the warehouse and the cash. Nobody has
+                                                the coverage number in front of them when
+                                                the decision is made.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Picking depends on who is on shift</h3>
+                                            <p>
+                                                The experienced picker is fast and
+                                                accurate. The new one is neither, and the
+                                                cost of that shows up as a customer
+                                                complaint two days later.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Nobody knows the margin per order</h3>
+                                            <p>
+                                                Freight, discount, tax and payment terms
+                                                all move it, and none of them are in the
+                                                report the sales team looks at.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a
+                                            href="/diagnostico-gratuito"
+                                            class="btn btn-outline-secondary"
+                                        >Talk it through in thirty minutes</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Features"
+                            >
+                                <div class="container">
+                                    <t t-call="escodoo_website.segment_features">
+                                        <t
+                                            t-set="segment_xmlid"
+                                            t-value="'escodoo_website.segment_trade'"
+                                        />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Indicators"
+                            >
+                                <div class="container">
+                                    <h2>What you start being able to measure</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Stock accuracy against the physical count</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Order fill rate and stockout frequency</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Picking errors per thousand lines</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Inventory turns per product family</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Margin per order, after freight and tax</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Days from order received to dispatch</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Case"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Wholesale distributor, 45 users, three warehouses'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'Picking that stopped depending on who was on shift'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Multi warehouse replenishment, barcode-guided picking and a delivery promise the sales team can make without checking with the warehouse first.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/distribuidora'"
+                                                />
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Closing"
+                            >
+                                <div class="container text-center">
+                                    <p class="lead mb-0">
+                                        We do not just deliver screens and forms. We
+                                        structure operations.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="segment_services_page" model="ir.ui.view">
+        <field name="name">Escodoo - ERP for service companies</field>
+        <field name="key">escodoo_website.segment_services_page</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="ERP for service companies"
+                t-name="escodoo_website.segment_services_page"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_segment_services"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        ERP for service companies
+                                    </h1>
+                                    <p class="lead">
+                                        You sell your team's time and you are not sure
+                                        where it went. Contracts renew late, hours are
+                                        billed from memory, and the profitable clients
+                                        are not necessarily the ones you think.
+                                    </p>
+                                    <p class="escodoo-audience">
+                                        This page is for companies that sell hours,
+                                        projects or contracts rather than equipment.
+                                    </p>
+                                    <div class="escodoo-siblings">
+                                        <span
+                                        >Looking for something more specific?</span>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-servico-de-campo"
+                                                >Your team travels to the client</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-gestao-de-projetos"
+                                                >You deliver long projects</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-assistencia-tecnica"
+                                                >Equipment arrives at your bench</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Pain"
+                            >
+                                <div class="container">
+                                    <h2>What usually hurts</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Hours are recorded after the fact</h3>
+                                            <p>
+                                                On Friday, from memory, into a spreadsheet.
+                                                Whatever is billed from that is wrong in
+                                                one direction or the other, and usually
+                                                against you.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Contracts renew by accident</h3>
+                                            <p>
+                                                Nobody owns the renewal date, the price
+                                                adjustment or the scope creep that
+                                                happened during the year.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Requests arrive everywhere</h3>
+                                            <p>
+                                                Message, e-mail, phone call, corridor. No
+                                                queue, no priority, no record, and no way
+                                                to show a client what you actually did for
+                                                them.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Capacity is a guess</h3>
+                                            <p>
+                                                You take on work without knowing whether
+                                                the team can absorb it, then discover the
+                                                answer during delivery.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a
+                                            href="/diagnostico-gratuito"
+                                            class="btn btn-outline-secondary"
+                                        >Talk it through in thirty minutes</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Features"
+                            >
+                                <div class="container">
+                                    <t t-call="escodoo_website.segment_features">
+                                        <t
+                                            t-set="segment_xmlid"
+                                            t-value="'escodoo_website.segment_services'"
+                                        />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Indicators"
+                            >
+                                <div class="container">
+                                    <h2>What you start being able to measure</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Billable share of the team's hours</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Margin per client and per contract</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Hours delivered against hours sold</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Contract renewal and churn rate</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Response time against what you promised</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Revenue per employee</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Case"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <t t-call="escodoo_website.case_teaser">
+                                                <t
+                                                    t-set="case_profile"
+                                                    t-value="'Technical services provider, 30 users, field teams'"
+                                                />
+                                                <t
+                                                    t-set="case_title"
+                                                    t-value="'Every hour in the field turned into an invoice'"
+                                                />
+                                                <t
+                                                    t-set="case_body"
+                                                    t-value="'Scheduling, worksheets with evidence and billing generated from the timesheet instead of reconstructed from a spreadsheet at the end of the month.'"
+                                                />
+                                                <t
+                                                    t-set="case_url"
+                                                    t-value="'/cases/servicos-tecnicos'"
+                                                />
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Closing"
+                            >
+                                <div class="container text-center">
+                                    <p class="lead mb-0">
+                                        We do not just deliver screens and forms. We
+                                        structure operations.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="segment_field_service_page" model="ir.ui.view">
+        <field name="name">Escodoo - ERP for field service</field>
+        <field name="key">escodoo_website.segment_field_service_page</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="ERP for field service"
+                t-name="escodoo_website.segment_field_service_page"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_segment_field_service"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">ERP for field service</h1>
+                                    <p class="lead">
+                                        Your revenue is produced by people you cannot
+                                        see. The visit happened, probably. The part was
+                                        used, apparently. The client will be invoiced,
+                                        eventually.
+                                    </p>
+                                    <p class="escodoo-audience">
+                                        This page is for companies whose teams travel to
+                                        the client to execute the work.
+                                    </p>
+                                    <div class="escodoo-siblings">
+                                        <span
+                                        >Looking for something more specific?</span>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-manutencao"
+                                                >You maintain assets on a plan</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-assistencia-tecnica"
+                                                >Equipment arrives at your bench</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-prestacao-de-servicos"
+                                                >You sell hours and contracts</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Pain"
+                            >
+                                <div class="container">
+                                    <h2>What usually hurts</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Scheduling happens by phone</h3>
+                                            <p>
+                                                Somebody spends the morning calling
+                                                technicians to find out where they are and
+                                                whether they can take one more job.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >The van is an unaudited warehouse</h3>
+                                            <p>
+                                                Parts leave stock and reappear as a
+                                                mystery. Some jobs fail because the part
+                                                was in the wrong van.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Evidence arrives late or never</h3>
+                                            <p>
+                                                A client disputes a visit and there is no
+                                                signature, no photo and no arrival time to
+                                                point at.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Billing lags the work by weeks</h3>
+                                            <p>
+                                                Hours and parts are transcribed from paper
+                                                at the end of the month, so the invoice is
+                                                both late and smaller than it should be.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a
+                                            href="/diagnostico-gratuito"
+                                            class="btn btn-outline-secondary"
+                                        >Talk it through in thirty minutes</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Features"
+                            >
+                                <div class="container">
+                                    <t t-call="escodoo_website.segment_features">
+                                        <t
+                                            t-set="segment_xmlid"
+                                            t-value="'escodoo_website.segment_field_service'"
+                                        />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Indicators"
+                            >
+                                <div class="container">
+                                    <h2>What you start being able to measure</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-2">
+                                            <p>First time fix rate</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Visits per technician per day</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Travel time as a share of paid time</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Days from visit completed to invoice issued</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Parts consumed against parts issued to vans</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Response time against the agreed level</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Closing"
+                            >
+                                <div class="container text-center">
+                                    <p class="lead mb-0">
+                                        We do not just deliver screens and forms. We
+                                        structure operations.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="segment_maintenance_page" model="ir.ui.view">
+        <field name="name">Escodoo - ERP for maintenance</field>
+        <field name="key">escodoo_website.segment_maintenance_page</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="ERP for maintenance"
+                t-name="escodoo_website.segment_maintenance_page"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_segment_maintenance"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">ERP for maintenance</h1>
+                                    <p class="lead">
+                                        Maintenance is either planned or it is an
+                                        emergency, and emergencies cost several times as
+                                        much. Most teams know that and still spend their
+                                        week reacting.
+                                    </p>
+                                    <p class="escodoo-audience">
+                                        This page is for teams that maintain assets on a
+                                        plan, whether the assets are yours or your
+                                        client's.
+                                    </p>
+                                    <div class="escodoo-siblings">
+                                        <span
+                                        >Looking for something more specific?</span>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-servico-de-campo"
+                                                >Your team travels to the client</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-assistencia-tecnica"
+                                                >Equipment arrives at your bench</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-manufatura"
+                                                >You maintain your own production line</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Pain"
+                            >
+                                <div class="container">
+                                    <h2>What usually hurts</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >The plan exists on paper only</h3>
+                                            <p>
+                                                Preventive work is scheduled in a
+                                                spreadsheet and skipped whenever something
+                                                breaks, which is most weeks.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">No history per asset</h3>
+                                            <p>
+                                                The same machine fails the same way every
+                                                quarter and nobody notices, because each
+                                                intervention is recorded separately or not
+                                                at all.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Parts are missing or hoarded</h3>
+                                            <p>
+                                                Missing parts delay the work; excess parts
+                                                trap capital in a store nobody has counted
+                                                this year.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >You cannot prove the service</h3>
+                                            <p>
+                                                Contract renewal comes up and you have no
+                                                report showing what you did, how fast you
+                                                responded and what it prevented.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a
+                                            href="/diagnostico-gratuito"
+                                            class="btn btn-outline-secondary"
+                                        >Talk it through in thirty minutes</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Features"
+                            >
+                                <div class="container">
+                                    <t t-call="escodoo_website.segment_features">
+                                        <t
+                                            t-set="segment_xmlid"
+                                            t-value="'escodoo_website.segment_maintenance'"
+                                        />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Indicators"
+                            >
+                                <div class="container">
+                                    <h2>What you start being able to measure</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Preventive against corrective work ratio</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Mean time between failures per asset</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Mean time to repair</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Asset availability</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Maintenance cost per asset per period</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Plan adherence</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Closing"
+                            >
+                                <div class="container text-center">
+                                    <p class="lead mb-0">
+                                        We do not just deliver screens and forms. We
+                                        structure operations.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="segment_repair_page" model="ir.ui.view">
+        <field name="name">Escodoo - ERP for repair centres</field>
+        <field name="key">escodoo_website.segment_repair_page</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="ERP for repair centres"
+                t-name="escodoo_website.segment_repair_page"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_segment_repair"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">ERP for repair centres</h1>
+                                    <p class="lead">
+                                        Equipment comes in, sits on a bench, and the
+                                        client calls to ask where it is. Somebody walks to
+                                        the workshop to find out. That walk is your
+                                        process.
+                                    </p>
+                                    <p class="escodoo-audience">
+                                        This page is for operations where the equipment
+                                        arrives at your bench, gets diagnosed and goes
+                                        back.
+                                    </p>
+                                    <div class="escodoo-siblings">
+                                        <span
+                                        >Looking for something more specific?</span>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-servico-de-campo"
+                                                >Your team travels to the client</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-manutencao"
+                                                >You maintain assets on a plan</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Pain"
+                            >
+                                <div class="container">
+                                    <h2>What usually hurts</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Nobody can say where an item is</h3>
+                                            <p>
+                                                Received, diagnosed, waiting for a part,
+                                                waiting for approval, done. The status
+                                                lives in a technician's head.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Quotes wait for approval by phone</h3>
+                                            <p>
+                                                The repair stops until somebody reaches
+                                                the client, and nobody is tracking how
+                                                many days that costs you per month.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Warranty is decided by memory</h3>
+                                            <p>
+                                                Whether this repair is covered depends on
+                                                who is asked, which means you absorb costs
+                                                you should not and charge for some you
+                                                should not.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Repeat failures are invisible</h3>
+                                            <p>
+                                                The same serial number comes back for the
+                                                third time and it looks like a new job,
+                                                because there is no history per unit.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a
+                                            href="/diagnostico-gratuito"
+                                            class="btn btn-outline-secondary"
+                                        >Talk it through in thirty minutes</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Features"
+                            >
+                                <div class="container">
+                                    <t t-call="escodoo_website.segment_features">
+                                        <t
+                                            t-set="segment_xmlid"
+                                            t-value="'escodoo_website.segment_repair'"
+                                        />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Indicators"
+                            >
+                                <div class="container">
+                                    <h2>What you start being able to measure</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Turnaround time per repair type</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Days lost waiting for client approval</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Repeat repair rate per serial number</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Warranty cost against billable repairs</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Bench occupancy and work in progress</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Margin per repair</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Closing"
+                            >
+                                <div class="container text-center">
+                                    <p class="lead mb-0">
+                                        We do not just deliver screens and forms. We
+                                        structure operations.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="segment_projects_page" model="ir.ui.view">
+        <field name="name">Escodoo - ERP for project management</field>
+        <field name="key">escodoo_website.segment_projects_page</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="ERP for project management"
+                t-name="escodoo_website.segment_projects_page"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_segment_projects"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        ERP for project management
+                                    </h1>
+                                    <p class="lead">
+                                        The project is on schedule until the week it
+                                        obviously is not. By then the hours are spent, the
+                                        scope has moved twice and nobody wrote down who
+                                        agreed to what.
+                                    </p>
+                                    <p class="escodoo-audience">
+                                        This page is for companies that deliver work as
+                                        projects, with a scope, a deadline and a budget.
+                                    </p>
+                                    <div class="escodoo-siblings">
+                                        <span
+                                        >Looking for something more specific?</span>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="/odoo-erp-para-prestacao-de-servicos"
+                                                >You sell recurring hours and contracts</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/arquitetura-de-processos"
+                                                >The process itself is the problem</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Pain"
+                            >
+                                <div class="container">
+                                    <h2>What usually hurts</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Progress is a feeling</h3>
+                                            <p>
+                                                Status comes from a meeting rather than
+                                                from the work, so a project can be
+                                                reported as eighty percent complete for
+                                                two months.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Cost arrives after the fact</h3>
+                                            <p>
+                                                You find out the project lost money when
+                                                the accounting closes, which is far too
+                                                late to do anything about it.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3
+                                                class="h5"
+                                            >Scope creep is undocumented</h3>
+                                            <p>
+                                                Small extras accumulate with no change
+                                                record, and the argument about them
+                                                happens at the end when the relationship
+                                                is already strained.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">People are double booked</h3>
+                                            <p>
+                                                Two project managers assign the same
+                                                specialist to the same week, and neither
+                                                finds out until it matters.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a
+                                            href="/diagnostico-gratuito"
+                                            class="btn btn-outline-secondary"
+                                        >Talk it through in thirty minutes</a>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Features"
+                            >
+                                <div class="container">
+                                    <t t-call="escodoo_website.segment_features">
+                                        <t
+                                            t-set="segment_xmlid"
+                                            t-value="'escodoo_website.segment_projects'"
+                                        />
+                                    </t>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Indicators"
+                            >
+                                <div class="container">
+                                    <h2>What you start being able to measure</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Margin per project, while it is running</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Hours consumed against hours planned</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p>Deadline adherence per project type</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Team utilisation and forecast capacity</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Approved changes against unbilled extras</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-2">
+                                            <p
+                                            >Days from milestone reached to invoice</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb32"
+                                data-snippet="s_text_block"
+                                data-name="Closing"
+                            >
+                                <div class="container text-center">
+                                    <p class="lead mb-0">
+                                        We do not just deliver screens and forms. We
+                                        structure operations.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

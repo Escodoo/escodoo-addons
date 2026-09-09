@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- The company's central differentiator is economic and the live site never
+         shows a calculation. This page does not publish an implementation price
+         list; it publishes the three things that reduce anxiety without giving
+         away margin: what drives the cost, how we contract, and a benchmark. -->
+    <record id="investment" model="ir.ui.view">
+        <field name="name">Escodoo - Investment</field>
+        <field name="key">escodoo_website.investment</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Investment" t-name="escodoo_website.investment">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_investment" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        What an Odoo project costs, and how we price it
+                                    </h1>
+                                    <p class="lead">
+                                        Most suppliers answer this with "it depends".
+                                        It does depend, and here is exactly on what.
+                                    </p>
+                                </div>
+                            </section>
+                            <!-- Saying this first is what makes the rest
+                                 believable. Community trades a licence fee for
+                                 service, and hiding that is how projects fail. -->
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Honest opening"
+                            >
+                                <div class="container">
+                                    <div class="escodoo-honest">
+                                        <h2 class="h4">
+                                            Zero licensing does not mean zero cost
+                                        </h2>
+                                        <p class="mb-0">
+                                            Community removes the licence, not the
+                                            work. You will usually spend more on
+                                            services than an Enterprise project of the
+                                            same size, and you stop paying a monthly
+                                            fee per user that never ends. Whether that
+                                            trade is worth it depends on your head
+                                            count, your growth plan and how much you
+                                            value controlling the code. On a small
+                                            team that is not growing, Enterprise can
+                                            be the cheaper answer — and we will say so.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Cost drivers"
+                            >
+                                <div class="container">
+                                    <h2>What actually drives the number</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Process complexity</h3>
+                                            <p>
+                                                Not head count. Twenty users in a
+                                                regulated manufacturing operation cost
+                                                more than eighty users in a
+                                                straightforward distribution business.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Fiscal profile</h3>
+                                            <p>
+                                                Which documents you issue, in how many
+                                                states, under which tax regimes, and
+                                                whether you have industrial operations
+                                                with tax substitution.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Integrations</h3>
+                                            <p>
+                                                Every external system that has to
+                                                exchange data — bank, marketplace,
+                                                carrier, payroll, legacy database — is
+                                                a scope item with its own risk.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Data to migrate</h3>
+                                            <p>
+                                                How many years, at what fidelity, from
+                                                a system that may or may not let you
+                                                export it cleanly.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">
+                                                How much is genuinely yours
+                                            </h3>
+                                            <p>
+                                                The share of your requirements already
+                                                solved by standard or community modules
+                                                versus what needs building. This is the
+                                                single biggest lever, and it is why we
+                                                start from the feature map.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Your team's availability</h3>
+                                            <p>
+                                                The cheapest projects are the ones
+                                                where the client's key users have real
+                                                hours reserved. The expensive ones are
+                                                where they do not.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Contract models"
+                            >
+                                <div class="container">
+                                    <h2>How we contract</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Fixed scope, fixed price</h3>
+                                            <p>
+                                                For the small productised services: a
+                                                readiness audit, a pre-upgrade
+                                                diagnostic, a second opinion. Scope
+                                                and price agreed before we start, no
+                                                surprises either way.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Phased implementation</h3>
+                                            <p>
+                                                Each phase has its own estimate and
+                                                its own deliverable. You can stop
+                                                between phases, which is the only
+                                                guarantee that actually protects a
+                                                buyer.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Hour packages</h3>
+                                            <p>
+                                                For evolution after go live. Bought in
+                                                blocks, consumed against a prioritised
+                                                backlog you control, reported monthly.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Monthly maintenance</h3>
+                                            <p>
+                                                Support with a response time per
+                                                severity, plus the version upgrade
+                                                spread across the fee instead of
+                                                charged as a shock every few years.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">Sustaining</h3>
+                                            <p>
+                                                For companies that already run Odoo
+                                                and want a team responsible for it,
+                                                including the parts somebody else
+                                                wrote.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <h3 class="h5">What we do not do</h3>
+                                            <p>
+                                                We do not sell a fixed price for a
+                                                whole implementation before discovery.
+                                                Anyone who does is either padding the
+                                                number heavily or planning to argue
+                                                about scope later.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- The anchor. Comparable companies publish it and it
+                                 lets a buyer sanity-check any proposal, including
+                                 ours. -->
+                            <section
+                                class="s_text_block pt32 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Benchmark"
+                            >
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h2
+                                            >A benchmark you can check us against</h2>
+                                            <p class="lead">
+                                                Companies comparable to our clients
+                                                invest around one percent of annual
+                                                revenue in their management platform,
+                                                and reserve fifteen to twenty five
+                                                percent of the implementation cost per
+                                                year for evolution and support.
+                                            </p>
+                                            <p>
+                                                If a proposal you receive — from us or
+                                                anyone else — is far outside that
+                                                range, ask what is different about your
+                                                case. There may be a good answer. There
+                                                may not.
+                                            </p>
+                                            <p>
+                                                The second number is the one people
+                                                forget. A project budgeted with nothing
+                                                reserved for the year after go live is
+                                                a project that will stall twelve months
+                                                in, and no supplier can fix that from
+                                                the outside.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Cost structure"
+                            >
+                                <div class="container">
+                                    <h2>Where the money goes, per edition</h2>
+                                    <t
+                                        t-call="escodoo_website.diagram_cost_structure"
+                                    />
+                                    <p class="mt-4 text-muted">
+                                        An interactive simulator comparing the two over
+                                        five years is on our roadmap. Until it is
+                                        honest enough to publish, we would rather run
+                                        the calculation with you on a call than show
+                                        you an invented chart.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.cta_section">
+                                <t
+                                    t-set="cta_title"
+                                    t-value="'Want a range for your specific case?'"
+                                />
+                                <t
+                                    t-set="cta_lead"
+                                    t-value="'Tell us your operation, your fiscal profile and your head count. We come back with a range and what would move it in either direction.'"
+                                />
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

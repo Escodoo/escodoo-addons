@@ -1,0 +1,668 @@
+// Copyright 2026 Escodoo
+// License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
+// The colour palette itself is applied through make_scss_customization in
+// data/website_theme_apply.xml so the website editor keeps working. These are
+// the local fallbacks for the custom blocks below.
+$escodoo-purple: #7963b8;
+$escodoo-purple-dark: #573f8c;
+$escodoo-purple-deep: #3d2c66;
+$escodoo-purple-soft: #cfc4e6;
+$escodoo-purple-tint: #f2eff9;
+$escodoo-ink: #241a3d;
+$escodoo-warn: #b8860b;
+
+// ---------------------------------------------------------------------------
+// Header call to action pair
+// ---------------------------------------------------------------------------
+.escodoo-header-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .btn {
+        white-space: nowrap;
+    }
+
+    @media (max-width: 991.98px) {
+        .escodoo-header-cta-secondary {
+            display: none;
+        }
+    }
+}
+
+.escodoo-cta-pair {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.escodoo-cta-section {
+    .escodoo-cta-title {
+        max-width: 46rem;
+        margin-inline: auto;
+    }
+
+    .escodoo-cta-lead {
+        max-width: 42rem;
+        margin-inline: auto;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Hero
+// ---------------------------------------------------------------------------
+.escodoo-hero {
+    position: relative;
+
+    .escodoo-hero-title {
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+
+    .escodoo-hero-lead {
+        max-width: 40rem;
+        font-size: 1.2rem;
+    }
+}
+
+// The verifiable seal. It has to read as evidence, not as a badge, so it is
+// laid out as a statement with a source link rather than as an award ribbon.
+.escodoo-seal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid $escodoo-purple;
+    background-color: rgba($escodoo-purple, 0.08);
+
+    .escodoo-seal-figure {
+        flex: 0 0 auto;
+        max-width: 5.5rem;
+    }
+
+    .escodoo-seal-body {
+        flex: 1 1 18rem;
+    }
+
+    .escodoo-seal-claim {
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+
+    .escodoo-seal-source {
+        font-size: 0.875rem;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Diagrams
+// ---------------------------------------------------------------------------
+.escodoo-diagram {
+    margin: 0;
+
+    .escodoo-diagram-svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .escodoo-diagram-caption,
+    figcaption {
+        margin-top: 0.75rem;
+        font-size: 0.875rem;
+        opacity: 0.75;
+    }
+}
+
+.escodoo-bar-strong {
+    fill: $escodoo-purple;
+}
+
+.escodoo-bar-soft {
+    fill: $escodoo-purple-soft;
+}
+
+.escodoo-bar-neutral {
+    fill: $escodoo-purple-dark;
+}
+
+.escodoo-bar-track {
+    fill: rgba($escodoo-purple, 0.12);
+}
+
+.escodoo-bar-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    fill: currentColor;
+}
+
+.escodoo-bar-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    fill: currentColor;
+}
+
+.escodoo-bar-caption {
+    font-size: 0.75rem;
+    fill: currentColor;
+    opacity: 0.7;
+}
+
+// ---------------------------------------------------------------------------
+// Feature table, shared by the comparison and the feature map
+// ---------------------------------------------------------------------------
+.escodoo-feature-table {
+    .escodoo-feature-toolbar {
+        margin-bottom: 1.5rem;
+    }
+
+    .escodoo-feature-search-label {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+    }
+
+    .escodoo-feature-search {
+        max-width: 26rem;
+    }
+
+    .escodoo-feature-empty {
+        margin: 0.75rem 0 0;
+        font-style: italic;
+        opacity: 0.75;
+    }
+
+    .escodoo-feature-group {
+        margin-bottom: 2.5rem;
+    }
+
+    .escodoo-feature-group-title {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 2px solid rgba($escodoo-purple, 0.25);
+        font-size: 1.2rem;
+    }
+
+    .escodoo-feature-group-count {
+        padding: 0.05rem 0.5rem;
+        border-radius: 1rem;
+        background-color: rgba($escodoo-purple, 0.12);
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .escodoo-feature-rows {
+        margin-bottom: 0;
+
+        th,
+        td {
+            vertical-align: top;
+        }
+
+        thead th {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+    }
+
+    // The middle column is the argument of the whole page, so it is the only
+    // one with a background.
+    .escodoo-feature-col-highlight {
+        background-color: rgba($escodoo-purple, 0.07);
+    }
+
+    .escodoo-feature-name {
+        font-weight: 600;
+    }
+
+    .escodoo-feature-note {
+        display: block;
+        margin-top: 0.2rem;
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: $escodoo-warn;
+    }
+
+    .escodoo-feature-modules {
+        display: block;
+        margin-top: 0.25rem;
+        font-family: var(--bs-font-monospace, monospace);
+        font-size: 0.75rem;
+        word-break: break-word;
+    }
+
+    .escodoo-feature-version {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        opacity: 0.7;
+    }
+
+    @media (max-width: 767.98px) {
+        .escodoo-feature-rows {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+    }
+}
+
+.escodoo-level {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+
+    .escodoo-level-dot {
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background-color: currentColor;
+        opacity: 0.35;
+    }
+
+    &.escodoo-level-full .escodoo-level-dot {
+        background-color: $escodoo-purple;
+        opacity: 1;
+    }
+
+    &.escodoo-level-partial .escodoo-level-dot {
+        background-color: $escodoo-purple-soft;
+        opacity: 1;
+    }
+
+    &.escodoo-level-none {
+        opacity: 0.55;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Segment feature list
+// ---------------------------------------------------------------------------
+.escodoo-segment-features {
+    padding: 1.75rem;
+    border-radius: 0.5rem;
+    background-color: $escodoo-purple-tint;
+
+    .escodoo-segment-features-lead {
+        max-width: 38rem;
+        opacity: 0.85;
+    }
+
+    .escodoo-segment-feature-list {
+        margin: 1.25rem 0 1.5rem;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.6rem;
+        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+
+        li {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba($escodoo-purple, 0.18);
+        }
+    }
+
+    .escodoo-segment-feature-name {
+        font-weight: 600;
+    }
+
+    .escodoo-segment-feature-module {
+        font-family: var(--bs-font-monospace, monospace);
+        font-size: 0.75rem;
+        word-break: break-word;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Implementation method
+// ---------------------------------------------------------------------------
+.escodoo-method {
+    .escodoo-method-steps {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        counter-reset: escodoo-method;
+    }
+
+    .escodoo-method-step {
+        position: relative;
+        padding: 1.5rem;
+        border-top: 3px solid $escodoo-purple;
+        background-color: rgba($escodoo-purple, 0.05);
+    }
+
+    .escodoo-method-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.75rem;
+        border-radius: 50%;
+        background-color: $escodoo-purple;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .escodoo-method-title {
+        font-size: 1.05rem;
+    }
+
+    .escodoo-method-body {
+        margin-bottom: 0.6rem;
+    }
+
+    // What every phase actually hands over. The live site describes the method
+    // three different ways and never names a single deliverable.
+    .escodoo-method-deliverable {
+        margin: 0;
+        padding-top: 0.6rem;
+        border-top: 1px dashed rgba($escodoo-purple, 0.4);
+        font-size: 0.82rem;
+        font-weight: 600;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Cost structure
+// ---------------------------------------------------------------------------
+.escodoo-cost {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+
+    .escodoo-cost-column {
+        padding: 1.5rem;
+        border: 1px solid rgba($escodoo-purple, 0.25);
+        border-radius: 0.5rem;
+    }
+
+    .escodoo-cost-column-highlight {
+        border-color: $escodoo-purple;
+        box-shadow: 0 0 0 3px rgba($escodoo-purple, 0.12);
+    }
+
+    .escodoo-cost-items {
+        margin: 1rem 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .escodoo-cost-item {
+        padding: 0.6rem 0 0.6rem 1.4rem;
+        border-bottom: 1px solid rgba($escodoo-purple, 0.15);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1.05rem;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-radius: 2px;
+            background-color: $escodoo-purple-soft;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .escodoo-cost-item-licence::before {
+        background-color: $escodoo-purple-deep;
+    }
+
+    .escodoo-cost-item-none {
+        font-weight: 700;
+
+        &::before {
+            background-color: transparent;
+            border: 2px solid $escodoo-purple;
+        }
+    }
+
+    .escodoo-cost-item-larger::before {
+        background-color: $escodoo-purple;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Trust block and cases
+// ---------------------------------------------------------------------------
+.escodoo-trust {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: $escodoo-purple-tint;
+
+    .escodoo-trust-title {
+        font-size: 1.05rem;
+    }
+
+    .escodoo-trust-steps {
+        margin: 0.75rem 0 1rem;
+        padding-left: 1.25rem;
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    .escodoo-trust-privacy {
+        margin: 0;
+        font-size: 0.82rem;
+        opacity: 0.8;
+    }
+}
+
+.escodoo-case-teaser {
+    height: 100%;
+    padding: 1.5rem;
+    border: 1px solid rgba($escodoo-purple, 0.22);
+    border-radius: 0.5rem;
+
+    .escodoo-case-profile {
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: $escodoo-purple-dark;
+    }
+
+    .escodoo-case-title {
+        font-size: 1.1rem;
+    }
+}
+
+.escodoo-metrics {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    margin: 1.5rem 0;
+
+    .escodoo-metric {
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+        background-color: rgba($escodoo-purple, 0.08);
+        text-align: center;
+    }
+
+    .escodoo-metric-value {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        color: $escodoo-purple-dark;
+    }
+
+    .escodoo-metric-label {
+        display: block;
+        margin-top: 0.35rem;
+        font-size: 0.85rem;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Comparison table used by the advisor and sovereignty pages
+// ---------------------------------------------------------------------------
+.escodoo-compare {
+    width: 100%;
+
+    th,
+    td {
+        vertical-align: top;
+    }
+
+    thead th {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .escodoo-compare-highlight {
+        background-color: rgba($escodoo-purple, 0.07);
+    }
+
+    .escodoo-compare-risk {
+        color: $escodoo-warn;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Page furniture
+// ---------------------------------------------------------------------------
+.escodoo-audience {
+    padding: 0.85rem 1.15rem;
+    border-left: 3px solid $escodoo-purple;
+    background-color: rgba($escodoo-purple, 0.06);
+    font-weight: 600;
+}
+
+.escodoo-siblings {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 0.35rem 0 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+.escodoo-honest {
+    padding: 1.5rem;
+    border: 1px dashed $escodoo-purple;
+    border-radius: 0.5rem;
+    background-color: rgba($escodoo-purple, 0.04);
+}
+
+.escodoo-plans {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+    .escodoo-plan {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        border: 1px solid rgba($escodoo-purple, 0.25);
+        border-radius: 0.5rem;
+    }
+
+    .escodoo-plan-featured {
+        border-color: $escodoo-purple;
+        box-shadow: 0 0 0 3px rgba($escodoo-purple, 0.12);
+    }
+
+    .escodoo-plan-name {
+        font-size: 1.1rem;
+    }
+
+    .escodoo-plan-meta {
+        margin-bottom: 0.75rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $escodoo-purple-dark;
+    }
+
+    .escodoo-plan-items {
+        margin: 0;
+        padding-left: 1.15rem;
+        font-size: 0.9rem;
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+    }
+}
+
+.escodoo-faq {
+    .escodoo-faq-group {
+        margin-bottom: 2rem;
+    }
+
+    .escodoo-faq-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba($escodoo-purple, 0.18);
+    }
+
+    .escodoo-faq-question {
+        margin-bottom: 0.4rem;
+        font-size: 1.02rem;
+        font-weight: 600;
+    }
+
+    .escodoo-faq-answer {
+        margin: 0;
+    }
+}
+
+.escodoo-form-layout {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+
+    @media (max-width: 991.98px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Sits beside a form and states what the visitor gets for filling it in.
+.escodoo-agenda,
+.escodoo-contact-details {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: $escodoo-purple-tint;
+
+    ul {
+        margin: 0;
+        padding-left: 1.15rem;
+        font-size: 0.95rem;
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+    }
+}
+
+// Numbers that still need confirmation before publication are wrapped so they
+// can be found in one search.
+.escodoo-pending {
+    border-bottom: 1px dotted $escodoo-warn;
+}

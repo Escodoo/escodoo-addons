@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Loaded last. Two things cannot be expressed as records.
+
+     The home page and the contact page belong to the website module, so they
+     cannot be claimed by a website.page and their arch has to be written onto
+     the shipped views instead.
+
+     The theme colours have to go through the SCSS customisation API rather than
+     a record, because the palette lives in a generated asset file.
+
+     Lead routing is not here: the sales team, the medium and the source are
+     resolved when a page renders, in website.escodoo_lead_defaults, so one form
+     template can serve every page and still record which page produced the
+     lead. -->
+<odoo>
+    <function model="website" name="escodoo_apply_theme" />
+    <function model="website" name="escodoo_apply_palette" />
+</odoo>

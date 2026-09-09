@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="cat_finance" model="escodoo.website.feature.category">
+        <field name="name">Finance and accounting</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="cat_fiscal_br" model="escodoo.website.feature.category">
+        <field name="name">Brazilian fiscal</field>
+        <field name="sequence">20</field>
+    </record>
+    <record id="cat_sales" model="escodoo.website.feature.category">
+        <field name="name">Sales and CRM</field>
+        <field name="sequence">30</field>
+    </record>
+    <record id="cat_purchase" model="escodoo.website.feature.category">
+        <field name="name">Purchasing and supply</field>
+        <field name="sequence">40</field>
+    </record>
+    <record id="cat_inventory" model="escodoo.website.feature.category">
+        <field name="name">Inventory and warehouse</field>
+        <field name="sequence">50</field>
+    </record>
+    <record id="cat_manufacturing" model="escodoo.website.feature.category">
+        <field name="name">Manufacturing</field>
+        <field name="sequence">60</field>
+    </record>
+    <record id="cat_quality" model="escodoo.website.feature.category">
+        <field name="name">Quality</field>
+        <field name="sequence">70</field>
+    </record>
+    <record id="cat_maintenance" model="escodoo.website.feature.category">
+        <field name="name">Maintenance</field>
+        <field name="sequence">80</field>
+    </record>
+    <record id="cat_field_service" model="escodoo.website.feature.category">
+        <field name="name">Field service</field>
+        <field name="sequence">90</field>
+    </record>
+    <record id="cat_repair" model="escodoo.website.feature.category">
+        <field name="name">Repairs and returns</field>
+        <field name="sequence">100</field>
+    </record>
+    <record id="cat_projects" model="escodoo.website.feature.category">
+        <field name="name">Projects and services</field>
+        <field name="sequence">110</field>
+    </record>
+    <record id="cat_hr" model="escodoo.website.feature.category">
+        <field name="name">People and payroll</field>
+        <field name="sequence">120</field>
+    </record>
+    <record id="cat_marketing" model="escodoo.website.feature.category">
+        <field name="name">Marketing, website and support</field>
+        <field name="sequence">130</field>
+    </record>
+    <record id="cat_analytics" model="escodoo.website.feature.category">
+        <field name="name">Reporting and analytics</field>
+        <field name="sequence">140</field>
+    </record>
+    <record id="cat_platform" model="escodoo.website.feature.category">
+        <field name="name">Platform and integration</field>
+        <field name="sequence">150</field>
+    </record>
+    <record id="cat_governance" model="escodoo.website.feature.category">
+        <field name="name">Governance, security and compliance</field>
+        <field name="sequence">160</field>
+    </record>
+</odoo>

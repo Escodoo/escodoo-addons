@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_feature_category_public,escodoo.website.feature.category public,model_escodoo_website_feature_category,base.group_public,1,0,0,0
+access_feature_category_portal,escodoo.website.feature.category portal,model_escodoo_website_feature_category,base.group_portal,1,0,0,0
+access_feature_category_user,escodoo.website.feature.category user,model_escodoo_website_feature_category,base.group_user,1,0,0,0
+access_feature_category_manager,escodoo.website.feature.category manager,model_escodoo_website_feature_category,website.group_website_designer,1,1,1,1
+access_feature_segment_public,escodoo.website.feature.segment public,model_escodoo_website_feature_segment,base.group_public,1,0,0,0
+access_feature_segment_portal,escodoo.website.feature.segment portal,model_escodoo_website_feature_segment,base.group_portal,1,0,0,0
+access_feature_segment_user,escodoo.website.feature.segment user,model_escodoo_website_feature_segment,base.group_user,1,0,0,0
+access_feature_segment_manager,escodoo.website.feature.segment manager,model_escodoo_website_feature_segment,website.group_website_designer,1,1,1,1
+access_feature_public,escodoo.website.feature public,model_escodoo_website_feature,base.group_public,1,0,0,0
+access_feature_portal,escodoo.website.feature portal,model_escodoo_website_feature,base.group_portal,1,0,0,0
+access_feature_user,escodoo.website.feature user,model_escodoo_website_feature,base.group_user,1,0,0,0
+access_feature_manager,escodoo.website.feature manager,model_escodoo_website_feature,website.group_website_designer,1,1,1,1

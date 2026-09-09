@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Routes. noupdate="1" so that a page edited in the Website Builder is not
+     overwritten by a module update, which is the whole point of shipping the
+     content as editable views rather than as controller templates.
+
+     "/" and "/contactus" are absent on purpose: the website module already owns
+     those routes, so data/website_theme_apply.xml writes our arch onto its
+     views instead. -->
+<odoo noupdate="1">
+    <!-- Solutions, organised by the buyer's situation rather than by our
+         service catalogue. -->
+    <record id="page_implementation" model="website.page">
+        <field name="view_id" ref="escodoo_website.implementation" />
+        <field name="url">/implantacao-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo implementation with phases, deliverables and an investment range stated up front. Discovery is quoted at a fixed price and delivered as a document you own.</field>
+    </record>
+    <record id="page_rescue" model="website.page">
+        <field name="view_id" ref="escodoo_website.rescue" />
+        <field name="url">/resgate-de-projeto-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Your Odoo project stalled, went over budget or went live badly. We assess what is salvageable, in a fixed scope, before anyone talks about a contract.</field>
+    </record>
+    <record id="page_version_upgrade" model="website.page">
+        <field name="view_id" ref="escodoo_website.version_upgrade" />
+        <field name="url">/migracao-de-versao-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo version upgrade, including installations several releases behind. Pre-upgrade diagnostic first, then a project with a rehearsed cut-over.</field>
+    </record>
+    <record id="page_migrate_to_odoo" model="website.page">
+        <field name="view_id" ref="escodoo_website.migrate_to_odoo" />
+        <field name="url">/migrar-para-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Moving from Totvs, SAP or a legacy ERP to Odoo. What actually transfers, what you should leave behind, and how the fiscal side is handled.</field>
+    </record>
+    <record id="page_standardisation" model="website.page">
+        <field name="view_id" ref="escodoo_website.standardisation" />
+        <field name="url">/padronizacao-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Replacing proprietary customisation with community modules, measured before and after. The service that makes upgrades cheap again.</field>
+    </record>
+    <record id="page_tax_reform" model="website.page">
+        <field name="view_id" ref="escodoo_website.tax_reform" />
+        <field name="url">/reforma-tributaria-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Brazilian tax reform readiness in Odoo. A fixed scope audit of NCM, CFOP and CST data, and an honest answer about whether your version will receive IBS and CBS.</field>
+    </record>
+
+    <!-- Services. -->
+    <record id="page_consulting" model="website.page">
+        <field name="view_id" ref="escodoo_website.consulting" />
+        <field name="url">/consultoria-e-desenvolvimento</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo development with code review, automated tests, continuous integration and an upstream contribution policy. Your code, in a repository you own.</field>
+    </record>
+    <record id="page_maintenance" model="website.page">
+        <field name="view_id" ref="escodoo_website.maintenance" />
+        <field name="url">/manutencao-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo support and maintenance with a published response time per severity, three plans and named channels. One business hour for a stopped operation.</field>
+    </record>
+    <record id="page_hosting" model="website.page">
+        <field name="view_id" ref="escodoo_website.hosting" />
+        <field name="url">/hospedagem-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo hosting and infrastructure with monitoring, tested restores and data in Brazil. Reproducible deployment, and the recipe belongs to you.</field>
+    </record>
+    <record id="page_process_architecture" model="website.page">
+        <field name="view_id" ref="escodoo_website.process_architecture" />
+        <field name="url">/arquitetura-de-processos</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Process architecture before configuration. Automating a broken process only makes it fail faster, so we map, decide and only then build.</field>
+    </record>
+    <record id="page_second_opinion" model="website.page">
+        <field name="view_id" ref="escodoo_website.second_opinion" />
+        <field name="url">/segunda-opiniao</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >An independent technical opinion on your Odoo, your quote or your supplier. Fixed scope, fixed price, and the report is yours whatever it concludes.</field>
+    </record>
+    <record id="page_academy" model="website.page">
+        <field name="view_id" ref="escodoo_website.academy" />
+        <field name="url">/academia</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Escodoo Academy: training for teams who use Odoo and for developers who want to work the way the community repositories require.</field>
+    </record>
+
+    <!-- Industries. URLs unchanged; these rank. -->
+    <record id="page_segment_manufacturing" model="website.page">
+        <field name="view_id" ref="escodoo_website.segment_manufacturing_page" />
+        <field name="url">/odoo-erp-para-manufatura</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo for industry and manufacturing: production planning, real cost per product, material requirements and traceability, with the community modules named.</field>
+    </record>
+    <record id="page_segment_trade" model="website.page">
+        <field name="view_id" ref="escodoo_website.segment_trade_page" />
+        <field name="url">/odoo-erp-para-comercio-e-distribuicao</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo for trade and distribution: stock accuracy, multi warehouse replenishment, guided picking and margin per order, with the community modules named.</field>
+    </record>
+    <record id="page_segment_services" model="website.page">
+        <field name="view_id" ref="escodoo_website.segment_services_page" />
+        <field name="url">/odoo-erp-para-prestacao-de-servicos</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo for service companies: timesheets that become invoices, recurring contracts and renewals, and margin per client rather than per invoice.</field>
+    </record>
+    <record id="page_segment_field_service" model="website.page">
+        <field name="view_id" ref="escodoo_website.segment_field_service_page" />
+        <field name="url">/odoo-erp-para-servico-de-campo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo for field service: scheduling, van stock, worksheets with evidence and billing generated from the field order. Community modules, no licence per technician.</field>
+    </record>
+    <record id="page_segment_maintenance" model="website.page">
+        <field name="view_id" ref="escodoo_website.segment_maintenance_page" />
+        <field name="url">/odoo-erp-para-manutencao</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo for maintenance: preventive plans that survive contact with reality, history per asset, spare parts and the indicators that prove the service.</field>
+    </record>
+    <record id="page_segment_repair" model="website.page">
+        <field name="view_id" ref="escodoo_website.segment_repair_page" />
+        <field name="url">/odoo-erp-para-assistencia-tecnica</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo for repair centres: status per item, quote approval, warranty control and history per serial number, so a repeat failure is visible.</field>
+    </record>
+    <record id="page_segment_projects" model="website.page">
+        <field name="view_id" ref="escodoo_website.segment_projects_page" />
+        <field name="url">/odoo-erp-para-gestao-de-projetos</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo for project management: margin per project while it is running, hours against plan, documented change control and forecast capacity.</field>
+    </record>
+
+    <!-- The positioning hub. -->
+    <record id="page_editions" model="website.page">
+        <field name="view_id" ref="escodoo_website.editions" />
+        <field name="url">/edicoes-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo Community, Community with the OCA ecosystem, or Enterprise. Three columns instead of two, and the rows where Enterprise wins are in the table.</field>
+    </record>
+    <record id="page_oca" model="website.page">
+        <field name="view_id" ref="escodoo_website.oca" />
+        <field name="url">/oca</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Two of our engineers rank in the global top twenty of the 2025 OCA contributor index, with 794 reviews. The dataset is public and linked.</field>
+    </record>
+    <record id="page_feature_map" model="website.page">
+        <field name="view_id" ref="escodoo_website.feature_map" />
+        <field name="url">/mapa-de-funcionalidades</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Around 150 Odoo capabilities across three editions, with the community module named on every row the ecosystem resolves. Filterable, and available as a PDF.</field>
+    </record>
+    <record id="page_investment" model="website.page">
+        <field name="view_id" ref="escodoo_website.investment" />
+        <field name="url">/investimento</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >What an Odoo project costs and why. Cost drivers, contract models, what to budget after go live, and a benchmark you can hold us to.</field>
+    </record>
+    <record id="page_sovereignty" model="website.page">
+        <field name="view_id" ref="escodoo_website.sovereignty" />
+        <field name="url">/soberania-e-portabilidade</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Who owns the code, where the data lives, how the LGPD applies, and the exit plan. The questions to ask any ERP supplier before signing.</field>
+    </record>
+    <record id="page_odoo" model="website.page">
+        <field name="view_id" ref="escodoo_website.odoo" />
+        <field name="url">/odoo</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >What Odoo is, what makes it different from a traditional ERP, and where it sits against the alternatives. Written for someone still deciding.</field>
+    </record>
+    <record id="page_odoo_brasil" model="website.page">
+        <field name="view_id" ref="escodoo_website.odoo_brasil" />
+        <field name="url">/odoo-brasil</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Odoo in Brazil: NF-e, CT-e, MDF-e, NFS-e, SPED and what no Odoo edition solves. One complete answer, the same on every page of this site.</field>
+    </record>
+    <record id="page_advisor" model="website.page">
+        <field name="view_id" ref="escodoo_website.advisor" />
+        <field name="url">/freelancer-odoo-ou-empresa-especializada</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Freelancer, specialist firm, official partner or traditional ERP consultancy. What each is genuinely good at, and the questions to ask all four.</field>
+    </record>
+
+    <!-- Company and proof. -->
+    <record id="page_aboutus" model="website.page">
+        <field name="view_id" ref="escodoo_website.aboutus" />
+        <field name="url">/aboutus</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Engineers who maintain what they sell. Working with Odoo since 2015, with a public contribution record and a stated view of who we work well with.</field>
+    </record>
+    <record id="page_cases" model="website.page">
+        <field name="view_id" ref="escodoo_website.cases" />
+        <field name="url">/cases</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Anonymous clients with real profiles: what the operation looked like before, which modules were used, and what changed after.</field>
+    </record>
+    <record id="page_case_manufacturing" model="website.page">
+        <field name="view_id" ref="escodoo_website.case_manufacturing" />
+        <field name="url">/cases/industria-metalmecanica</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Metalworking industry, 80 users: three disconnected systems replaced by one operation, with traceability from customer order to fiscal document.</field>
+    </record>
+    <record id="page_case_distribution" model="website.page">
+        <field name="view_id" ref="escodoo_website.case_distribution" />
+        <field name="url">/cases/distribuidora</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Wholesale distributor, 45 users, three warehouses: an inherited Odoo standardised and upgraded, with guided picking and a delivery promise that holds.</field>
+    </record>
+    <record id="page_case_services" model="website.page">
+        <field name="view_id" ref="escodoo_website.case_services" />
+        <field name="url">/cases/servicos-tecnicos</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Technical services provider, 30 users: field hours turned into invoices, and an honest account of the offline limitation we did not solve.</field>
+    </record>
+    <record id="page_international" model="website.page">
+        <field name="view_id" ref="escodoo_website.international" />
+        <field name="url">/internacional</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Engineering capacity for Odoo outside Brazil: development to community standard, sustaining, standardisation and upgrades. No new implementations.</field>
+    </record>
+    <record id="page_faq" model="website.page">
+        <field name="view_id" ref="escodoo_website.faq" />
+        <field name="url">/faq</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Editions, Brazilian tax, cost, delivery and the community. Including the questions with uncomfortable answers, like what payroll Odoo cannot run.</field>
+    </record>
+
+    <!-- Conversion. -->
+    <record id="page_diagnostic" model="website.page">
+        <field name="view_id" ref="escodoo_website.diagnostic" />
+        <field name="url">/diagnostico-gratuito</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Thirty minutes with an engineer about your operation. Five fields, no obligation, and you leave with an opinion whether or not you hire us.</field>
+    </record>
+    <record id="page_quote_request" model="website.page">
+        <field name="view_id" ref="escodoo_website.quote_request" />
+        <field name="url">/solicitacao-de-orcamento</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Request an Odoo implementation quote. What comes back is an order of magnitude and a discovery scope, not a fixed price invented before discovery.</field>
+    </record>
+    <record id="page_consulting_request" model="website.page">
+        <field name="view_id" ref="escodoo_website.consulting_request" />
+        <field name="url">/solicitacao-de-consultoria-e-desenvolvimento</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Request Odoo consulting or development. We check whether a community module already solves it first, even though that means a smaller invoice.</field>
+    </record>
+    <record id="page_maintenance_request" model="website.page">
+        <field name="view_id" ref="escodoo_website.maintenance_request" />
+        <field name="url">/solicitacao-de-contrato-de-manutencao</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Request an Odoo maintenance contract, including for an installation somebody else built. It starts with an assessment, not with a signature.</field>
+    </record>
+    <record id="page_hosting_request" model="website.page">
+        <field name="view_id" ref="escodoo_website.hosting_request" />
+        <field name="url">/solicitacao-de-migracao-e-hospedagem</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Request Odoo migration or hosting. Monitored infrastructure with tested restores, and a reproducible deployment recipe that belongs to you.</field>
+    </record>
+    <record id="page_demo_request" model="website.page">
+        <field name="view_id" ref="escodoo_website.demo_request" />
+        <field name="url">/solicitacao-de-demonstracao</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Request a guided Odoo demonstration on your own process, run by someone who can answer technical questions during the call.</field>
+    </record>
+    <record id="page_demo_access" model="website.page">
+        <field name="view_id" ref="escodoo_website.demo_access" />
+        <field name="url">/acesso-ao-ambiente-de-demonstracao</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field
+            name="website_meta_description"
+        >Access an Odoo Community environment with the Brazilian localisation, including NF-e in the tax authority's test environment. Five fields.</field>
+    </record>
+    <record id="page_thank_you" model="website.page">
+        <field name="view_id" ref="escodoo_website.thank_you" />
+        <field name="url">/obrigado</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field name="website_indexed" eval="False" />
+        <field
+            name="website_meta_description"
+        >Thank you. Your message reached a consultant, and we answer within one business day.</field>
+    </record>
+    <record id="page_feature_map_thank_you" model="website.page">
+        <field name="view_id" ref="escodoo_website.feature_map_thank_you" />
+        <field name="url">/mapa-de-funcionalidades/obrigado</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="is_published" eval="True" />
+        <field name="website_indexed" eval="False" />
+        <field
+            name="website_meta_description"
+        >Your Odoo feature map is ready to download.</field>
+    </record>
+
+    <!-- SEO preservation. The site is in production with accumulated
+         authority, so consolidated URLs are redirected rather than dropped. -->
+    <record id="rewrite_infrastructure" model="website.rewrite">
+        <field name="name">Infrastructure and sustaining split into two offers</field>
+        <field name="redirect_type">301</field>
+        <field name="url_from">/servicos-de-infraestrutura-e-sustentacao</field>
+        <field name="url_to">/hospedagem-odoo</field>
+        <field name="website_id" ref="website.default_website" />
+    </record>
+    <record id="rewrite_journey" model="website.rewrite">
+        <field name="name">Odoo journey becomes the second opinion offer</field>
+        <field name="redirect_type">301</field>
+        <field name="url_from">/sua-jornada-odoo</field>
+        <field name="url_to">/segunda-opiniao</field>
+        <field name="website_id" ref="website.default_website" />
+    </record>
+    <record id="rewrite_ebook_thank_you" model="website.rewrite">
+        <field name="name">Consolidated thank-you page</field>
+        <field name="redirect_type">301</field>
+        <field name="url_from">/ebook-thank-you</field>
+        <field name="url_to">/obrigado</field>
+        <field name="website_id" ref="website.default_website" />
+    </record>
+</odoo>

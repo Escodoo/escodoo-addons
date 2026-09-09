@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Reusable blocks shared by the public pages.
+
+     The diagrams are inline SVG rather than image attachments on purpose: the
+     labels then live in arch_db, so they are extracted for translation and the
+     shapes inherit the theme colours. An SVG served from /web/image cannot do
+     either. -->
+<odoo>
+    <!-- The two-speed call to action pair. Every page closes with it, in this
+         order: high commitment first, low commitment second. -->
+    <template id="cta_pair" name="Escodoo call to action pair">
+        <div class="escodoo-cta-pair">
+            <a href="/contactus" class="btn btn-primary btn-lg">
+                Talk to a specialist
+            </a>
+            <a href="/diagnostico-gratuito" class="btn btn-outline-secondary btn-lg">
+                Free 30 minute diagnostic
+            </a>
+        </div>
+    </template>
+
+    <template id="cta_section" name="Escodoo closing call to action">
+        <section
+            class="s_text_block pt56 pb56 o_cc o_cc2 escodoo-cta-section"
+            data-snippet="s_text_block"
+            data-name="Call to action"
+        >
+            <div class="container text-center">
+                <h2 class="escodoo-cta-title">
+                    <t t-out="cta_title or 'Want a straight answer about your case?'" />
+                </h2>
+                <p class="lead escodoo-cta-lead">
+                    <t
+                        t-out="cta_lead or 'We look at your operation first and tell you what Odoo already solves, what needs building and what is not worth doing.'"
+                    />
+                </p>
+                <t t-call="escodoo_website.cta_pair" />
+            </div>
+        </section>
+    </template>
+
+    <!-- Coverage level badge, shared by the feature map, the edition
+         comparison and the industry pages. -->
+    <template id="feature_level" name="Escodoo coverage level">
+        <span t-attf-class="escodoo-level escodoo-level-#{level or 'none'}">
+            <span class="escodoo-level-dot" aria-hidden="true" />
+            <span class="escodoo-level-label">
+                <t t-if="level == 'full'">Fully covered</t>
+                <t t-elif="level == 'partial'">Partially covered</t>
+                <t t-else="">Not covered</t>
+            </span>
+        </span>
+    </template>
+
+    <!-- Three column edition comparison, rendered from
+         escodoo.website.feature. The middle column is the whole argument: the
+         widely read comparisons put plain Community against Enterprise and
+         leave the community ecosystem out of the table. -->
+    <template id="feature_table" name="Escodoo edition comparison table">
+        <t
+            t-set="categories"
+            t-value="request.env['escodoo.website.feature']._get_public_categories(segment_xmlid)"
+        />
+        <div class="escodoo-feature-table" data-escodoo-feature-table="1">
+            <div class="escodoo-feature-toolbar">
+                <label
+                    class="escodoo-feature-search-label"
+                    for="escodoo_feature_search"
+                >
+                    Search a capability
+                </label>
+                <input
+                    id="escodoo_feature_search"
+                    type="search"
+                    class="form-control escodoo-feature-search"
+                    placeholder="Invoicing, production planning, payroll…"
+                />
+                <p class="escodoo-feature-empty" hidden="hidden">
+                    No capability matches that search.
+                </p>
+            </div>
+            <t t-foreach="categories" t-as="category">
+                <t
+                    t-set="features"
+                    t-value="request.env['escodoo.website.feature']._get_public_features(segment_xmlid, category)"
+                />
+                <section class="escodoo-feature-group">
+                    <h3 class="escodoo-feature-group-title">
+                        <span t-field="category.name" />
+                        <span class="escodoo-feature-group-count">
+                            <t t-out="len(features)" />
+                        </span>
+                    </h3>
+                    <table class="table escodoo-feature-rows">
+                        <thead>
+                            <tr>
+                                <th scope="col">Capability</th>
+                                <th scope="col">Community, on its own</th>
+                                <th scope="col" class="escodoo-feature-col-highlight">
+                                    Community + OCA
+                                </th>
+                                <th scope="col">Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                t-foreach="features"
+                                t-as="feature"
+                                class="escodoo-feature-row"
+                                t-att-data-escodoo-label="feature.name"
+                            >
+                                <th scope="row" class="escodoo-feature-name">
+                                    <span t-field="feature.name" />
+                                    <span
+                                        t-if="feature.note"
+                                        class="escodoo-feature-note"
+                                        t-field="feature.note"
+                                    />
+                                </th>
+                                <td>
+                                    <t t-call="escodoo_website.feature_level">
+                                        <t
+                                            t-set="level"
+                                            t-value="feature.community_level"
+                                        />
+                                    </t>
+                                </td>
+                                <td class="escodoo-feature-col-highlight">
+                                    <t t-call="escodoo_website.feature_level">
+                                        <t t-set="level" t-value="feature.oca_level" />
+                                    </t>
+                                    <span
+                                        t-if="feature.oca_module_names"
+                                        class="escodoo-feature-modules"
+                                    >
+                                        <a
+                                            t-if="feature.oca_repo_url"
+                                            t-att-href="feature.oca_repo_url"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            t-out="feature.oca_module_names"
+                                        />
+                                        <t t-else="" t-out="feature.oca_module_names" />
+                                    </span>
+                                </td>
+                                <td>
+                                    <t t-call="escodoo_website.feature_level">
+                                        <t
+                                            t-set="level"
+                                            t-value="feature.enterprise_level"
+                                        />
+                                    </t>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </t>
+            <p class="escodoo-feature-version">
+                Assessment for Odoo 18.0. Every row that the community ecosystem
+                resolves names the module, so the claim can be checked.
+            </p>
+        </div>
+    </template>
+
+    <!-- Compact variant for the industry pages: only what the segment needs,
+         with the module names visible. -->
+    <template id="segment_features" name="Escodoo segment features">
+        <t
+            t-set="features"
+            t-value="request.env['escodoo.website.feature']._get_public_features(segment_xmlid)"
+        />
+        <div t-if="features" class="escodoo-segment-features">
+            <h3 class="escodoo-segment-features-title">
+                What Odoo already covers for this operation
+            </h3>
+            <p class="escodoo-segment-features-lead">
+                Standard Odoo plus community modules, named so you can look them
+                up before talking to us.
+            </p>
+            <ul class="escodoo-segment-feature-list">
+                <li t-foreach="features" t-as="feature">
+                    <span class="escodoo-segment-feature-name" t-field="feature.name" />
+                    <t t-call="escodoo_website.feature_level">
+                        <t t-set="level" t-value="feature.oca_level" />
+                    </t>
+                    <a
+                        t-if="feature.oca_module_names and feature.oca_repo_url"
+                        class="escodoo-segment-feature-module"
+                        t-att-href="feature.oca_repo_url"
+                        target="_blank"
+                        rel="noreferrer"
+                        t-out="feature.oca_module_names"
+                    />
+                    <span
+                        t-elif="feature.oca_module_names"
+                        class="escodoo-segment-feature-module"
+                        t-out="feature.oca_module_names"
+                    />
+                </li>
+            </ul>
+            <a class="btn btn-outline-secondary" href="/mapa-de-funcionalidades">
+                See the full feature map
+            </a>
+        </div>
+    </template>
+
+    <!-- The proof layer. The ratio is the point: review capacity is the
+         scarcest resource in the community, and it reframes the credential
+         from output volume to audited quality. -->
+    <template id="diagram_curation" name="Escodoo curation diagram">
+        <figure class="escodoo-diagram escodoo-diagram-curation">
+            <svg
+                viewBox="0 0 640 230"
+                role="img"
+                aria-labelledby="escodoo_curation_title"
+                class="escodoo-diagram-svg"
+            >
+                <title id="escodoo_curation_title">
+                    Reviews compared with pull requests created in 2025
+                </title>
+                <rect
+                    x="0"
+                    y="34"
+                    width="520"
+                    height="46"
+                    rx="6"
+                    class="escodoo-bar-strong"
+                />
+                <text x="536" y="63" class="escodoo-bar-value">794</text>
+                <text x="0" y="24" class="escodoo-bar-label">
+                    Community contributions we reviewed
+                </text>
+                <rect
+                    x="0"
+                    y="126"
+                    width="63"
+                    height="46"
+                    rx="6"
+                    class="escodoo-bar-soft"
+                />
+                <text x="79" y="155" class="escodoo-bar-value">96</text>
+                <text x="0" y="116" class="escodoo-bar-label">
+                    Pull requests we opened
+                </text>
+                <text x="0" y="212" class="escodoo-bar-caption">
+                    2025, public contributor index. Most of the global top ten
+                    have the opposite ratio.
+                </text>
+            </svg>
+        </figure>
+    </template>
+
+    <!-- Coverage per edition, computed from the same records the feature map
+         publishes. -->
+    <template id="diagram_editions" name="Escodoo edition coverage diagram">
+        <t
+            t-set="chart"
+            t-value="request.env['escodoo.website.feature']._get_coverage_chart()"
+        />
+        <figure t-if="chart['total']" class="escodoo-diagram escodoo-diagram-editions">
+            <svg
+                viewBox="0 0 640 260"
+                role="img"
+                aria-labelledby="escodoo_editions_title"
+                class="escodoo-diagram-svg"
+            >
+                <title id="escodoo_editions_title">
+                    Capability coverage per Odoo edition
+                </title>
+                <text
+                    x="0"
+                    y="20"
+                    class="escodoo-bar-label"
+                >Community, on its own</text>
+                <rect
+                    x="0"
+                    y="30"
+                    width="500"
+                    height="34"
+                    rx="5"
+                    class="escodoo-bar-track"
+                />
+                <rect
+                    x="0"
+                    y="30"
+                    height="34"
+                    rx="5"
+                    class="escodoo-bar-soft"
+                    t-att-width="chart['community'] * 5"
+                />
+                <text x="516" y="53" class="escodoo-bar-value">
+                    <t t-out="chart['community']" />%
+                </text>
+                <text x="0" y="104" class="escodoo-bar-label">Community + OCA</text>
+                <rect
+                    x="0"
+                    y="114"
+                    width="500"
+                    height="34"
+                    rx="5"
+                    class="escodoo-bar-track"
+                />
+                <rect
+                    x="0"
+                    y="114"
+                    height="34"
+                    rx="5"
+                    class="escodoo-bar-strong"
+                    t-att-width="chart['oca'] * 5"
+                />
+                <text x="516" y="137" class="escodoo-bar-value">
+                    <t t-out="chart['oca']" />%
+                </text>
+                <text x="0" y="188" class="escodoo-bar-label">Enterprise</text>
+                <rect
+                    x="0"
+                    y="198"
+                    width="500"
+                    height="34"
+                    rx="5"
+                    class="escodoo-bar-track"
+                />
+                <rect
+                    x="0"
+                    y="198"
+                    height="34"
+                    rx="5"
+                    class="escodoo-bar-neutral"
+                    t-att-width="chart['enterprise'] * 5"
+                />
+                <text x="516" y="221" class="escodoo-bar-value">
+                    <t t-out="chart['enterprise']" />%
+                </text>
+            </svg>
+            <figcaption class="escodoo-diagram-caption">
+                Weighted across
+                <t t-out="chart['total']" />
+                capabilities assessed for Odoo 18.0. The middle bar is the one
+                the usual comparisons leave out.
+            </figcaption>
+        </figure>
+    </template>
+
+    <!-- Implementation method. One description of the process, in one place:
+         the live site tells it three different ways on three pages. -->
+    <template id="diagram_method" name="Escodoo implementation method">
+        <div class="escodoo-method">
+            <ol class="escodoo-method-steps">
+                <li class="escodoo-method-step">
+                    <span class="escodoo-method-index">1</span>
+                    <h3 class="escodoo-method-title">Discovery</h3>
+                    <p class="escodoo-method-body">
+                        We map the operation, the objectives and the constraints,
+                        then say plainly where Odoo fits and where it does not.
+                    </p>
+                    <p class="escodoo-method-deliverable">
+                        Deliverable: scope with stated assumptions and a risk list
+                    </p>
+                </li>
+                <li class="escodoo-method-step">
+                    <span class="escodoo-method-index">2</span>
+                    <h3 class="escodoo-method-title">Solution architecture</h3>
+                    <p class="escodoo-method-body">
+                        Standard modules first, community modules second, custom
+                        development only for what is genuinely yours.
+                    </p>
+                    <p class="escodoo-method-deliverable">
+                        Deliverable: module map and the customisation decisions
+                    </p>
+                </li>
+                <li class="escodoo-method-step">
+                    <span class="escodoo-method-index">3</span>
+                    <h3 class="escodoo-method-title">Configuration</h3>
+                    <p class="escodoo-method-body">
+                        Fiscal parameters, chart of accounts, warehouses, product
+                        data and the approval flows your operation actually uses.
+                    </p>
+                    <p class="escodoo-method-deliverable">
+                        Deliverable: configured environment with test documents
+                    </p>
+                </li>
+                <li class="escodoo-method-step">
+                    <span class="escodoo-method-index">4</span>
+                    <h3 class="escodoo-method-title">Data migration</h3>
+                    <p class="escodoo-method-body">
+                        Contacts, products, balances and open items, with the
+                        fidelity limits agreed before we start rather than after.
+                    </p>
+                    <p class="escodoo-method-deliverable">
+                        Deliverable: reconciled load with a validation report
+                    </p>
+                </li>
+                <li class="escodoo-method-step">
+                    <span class="escodoo-method-index">5</span>
+                    <h3 class="escodoo-method-title">Training</h3>
+                    <p class="escodoo-method-body">
+                        Key users first, then their teams, on your own data. A
+                        system nobody knows how to use has not been delivered.
+                    </p>
+                    <p class="escodoo-method-deliverable">
+                        Deliverable: trained key users and written procedures
+                    </p>
+                </li>
+                <li class="escodoo-method-step">
+                    <span class="escodoo-method-index">6</span>
+                    <h3 class="escodoo-method-title">Assisted go live</h3>
+                    <p class="escodoo-method-body">
+                        We stay on the operation during the first closing cycle,
+                        because that is when the real questions appear.
+                    </p>
+                    <p class="escodoo-method-deliverable">
+                        Deliverable: first fiscal and accounting close completed
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </template>
+
+    <!-- What composes the cost of each edition. Deliberately without values:
+         publishing invented numbers would undo the point of a positioning
+         built on checkable claims. The ranges live on /investimento. -->
+    <template id="diagram_cost_structure" name="Escodoo cost structure diagram">
+        <div class="escodoo-cost">
+            <div class="escodoo-cost-column">
+                <h3 class="escodoo-cost-title">Enterprise</h3>
+                <ul class="escodoo-cost-items">
+                    <li class="escodoo-cost-item escodoo-cost-item-licence">
+                        Licence per user, every month, forever
+                    </li>
+                    <li class="escodoo-cost-item">Hosting</li>
+                    <li class="escodoo-cost-item">Implementation services</li>
+                    <li class="escodoo-cost-item">Evolution and support</li>
+                </ul>
+            </div>
+            <div class="escodoo-cost-column escodoo-cost-column-highlight">
+                <h3 class="escodoo-cost-title">Community + OCA</h3>
+                <ul class="escodoo-cost-items">
+                    <li class="escodoo-cost-item escodoo-cost-item-none">
+                        No licence fee
+                    </li>
+                    <li class="escodoo-cost-item">Hosting</li>
+                    <li class="escodoo-cost-item escodoo-cost-item-larger">
+                        Implementation services, usually larger
+                    </li>
+                    <li class="escodoo-cost-item escodoo-cost-item-larger">
+                        Evolution and support, usually larger
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <!-- Sits next to every form. The live site asks for a company registration
+         number and an annual revenue figure with nothing offered in return. -->
+    <template id="trust_block" name="Escodoo form trust block">
+        <aside class="escodoo-trust">
+            <h3 class="escodoo-trust-title">What happens after you send this</h3>
+            <ol class="escodoo-trust-steps">
+                <li>We read it and answer within one business day.</li>
+                <li>
+                    A consultant, not a call centre, calls you for a
+                    conversation of about thirty minutes.
+                </li>
+                <li>
+                    If we are not the right fit, we say so and point you
+                    somewhere better.
+                </li>
+            </ol>
+            <p class="escodoo-trust-privacy">
+                We do not share your data, and we will not add you to a mailing
+                list you did not ask for.
+            </p>
+        </aside>
+    </template>
+
+    <!-- Low friction lead form, shared by every page that asks for a contact.
+         The team, the medium and the source are resolved when the page renders,
+         so one template can serve every form and still tell the sales team
+         which page the lead came from. -->
+    <template id="short_lead_form" name="Escodoo short lead form">
+        <t
+            t-set="lead_defaults"
+            t-value="request.env['website'].escodoo_lead_defaults(source_xmlid)"
+        />
+        <section
+            class="s_website_form"
+            data-vcss="001"
+            data-snippet="s_website_form"
+            data-name="Form"
+        >
+            <form
+                t-att-id="form_id"
+                action="/website/form/"
+                method="post"
+                enctype="multipart/form-data"
+                class="o_mark_required escodoo-form"
+                data-mark="*"
+                data-model_name="crm.lead"
+                data-success-mode="redirect"
+                t-att-data-success-page="success_page or '/obrigado'"
+                data-pre-fill="true"
+            >
+                <div class="s_website_form_rows row s_col_no_bgcolor">
+                    <div
+                        class="mb-3 col-12 s_website_form_field s_website_form_required s_website_form_model_required"
+                        data-type="char"
+                        data-name="Field"
+                    >
+                        <label
+                            class="s_website_form_label"
+                            t-attf-for="#{form_id}_contact_name"
+                        >
+                            <span class="s_website_form_label_content">Name</span>
+                            <span class="s_website_form_mark"> *</span>
+                        </label>
+                        <input
+                            t-attf-id="#{form_id}_contact_name"
+                            type="text"
+                            class="form-control s_website_form_input"
+                            name="contact_name"
+                            required="required"
+                            data-fill-with="name"
+                        />
+                    </div>
+                    <div
+                        class="mb-3 col-12 col-lg-6 s_website_form_field s_website_form_required s_website_form_model_required"
+                        data-type="email"
+                        data-name="Field"
+                    >
+                        <label
+                            class="s_website_form_label"
+                            t-attf-for="#{form_id}_email"
+                        >
+                            <span
+                                class="s_website_form_label_content"
+                            >Corporate e-mail</span>
+                            <span class="s_website_form_mark"> *</span>
+                        </label>
+                        <input
+                            t-attf-id="#{form_id}_email"
+                            type="email"
+                            class="form-control s_website_form_input"
+                            name="email_from"
+                            required="required"
+                            data-fill-with="email"
+                        />
+                    </div>
+                    <div
+                        class="mb-3 col-12 col-lg-6 s_website_form_field s_website_form_required s_website_form_model_required"
+                        data-type="char"
+                        data-name="Field"
+                    >
+                        <label
+                            class="s_website_form_label"
+                            t-attf-for="#{form_id}_company"
+                        >
+                            <span class="s_website_form_label_content">Company</span>
+                            <span class="s_website_form_mark"> *</span>
+                        </label>
+                        <input
+                            t-attf-id="#{form_id}_company"
+                            type="text"
+                            class="form-control s_website_form_input"
+                            name="partner_name"
+                            required="required"
+                            data-fill-with="commercial_company_name"
+                        />
+                    </div>
+                    <div
+                        class="mb-3 col-12 col-lg-6 s_website_form_field"
+                        data-type="tel"
+                        data-name="Field"
+                    >
+                        <label
+                            class="s_website_form_label"
+                            t-attf-for="#{form_id}_phone"
+                        >
+                            <span
+                                class="s_website_form_label_content"
+                            >Phone or WhatsApp</span>
+                        </label>
+                        <input
+                            t-attf-id="#{form_id}_phone"
+                            type="tel"
+                            class="form-control s_website_form_input"
+                            name="phone"
+                            data-fill-with="phone"
+                        />
+                    </div>
+                    <!-- The routing field. Its options map the solution pages,
+                         so a lead arrives already qualified by situation. -->
+                    <div
+                        t-if="not hide_situation"
+                        class="mb-3 col-12 col-lg-6 s_website_form_field s_website_form_required s_website_form_custom"
+                        data-type="selection"
+                        data-name="Field"
+                    >
+                        <label
+                            class="s_website_form_label"
+                            t-attf-for="#{form_id}_situation"
+                        >
+                            <span
+                                class="s_website_form_label_content"
+                            >Where are you right now?</span>
+                            <span class="s_website_form_mark"> *</span>
+                        </label>
+                        <select
+                            t-attf-id="#{form_id}_situation"
+                            class="form-select s_website_form_input"
+                            name="Current situation"
+                            required="required"
+                        >
+                            <option value="">Choose the closest one</option>
+                            <option
+                                value="We are evaluating Odoo"
+                            >We are evaluating Odoo</option>
+                            <option
+                                value="We use Odoo and need support"
+                            >We use Odoo and need support</option>
+                            <option
+                                value="Our Odoo project stalled"
+                            >Our Odoo project stalled</option>
+                            <option
+                                value="We want to leave another ERP"
+                            >We want to leave another ERP</option>
+                            <option
+                                value="We need to upgrade version"
+                            >We need to upgrade version</option>
+                            <option
+                                value="We need tax reform readiness"
+                            >We need tax reform readiness</option>
+                        </select>
+                    </div>
+                    <!-- Opt-in qualification. The live quote form asks for the
+                         company registration number before it asks anything
+                         useful, which excludes everyone still researching; the
+                         two fields below are the ones the site's own FAQ says
+                         speed up a proposal. -->
+                    <t t-if="qualification">
+                        <div
+                            class="mb-3 col-12 col-lg-6 s_website_form_field s_website_form_custom"
+                            data-type="selection"
+                            data-name="Field"
+                        >
+                            <label
+                                class="s_website_form_label"
+                                t-attf-for="#{form_id}_users"
+                            >
+                                <span
+                                    class="s_website_form_label_content"
+                                >How many people will use it</span>
+                            </label>
+                            <select
+                                t-attf-id="#{form_id}_users"
+                                class="form-select s_website_form_input"
+                                name="Number of users"
+                            >
+                                <option value="">Prefer not to say yet</option>
+                                <option value="Up to 10">Up to 10</option>
+                                <option value="11 to 30">11 to 30</option>
+                                <option value="31 to 80">31 to 80</option>
+                                <option value="81 to 200">81 to 200</option>
+                                <option value="More than 200">More than 200</option>
+                            </select>
+                        </div>
+                        <div
+                            class="mb-3 col-12 col-lg-6 s_website_form_field s_website_form_custom"
+                            data-type="selection"
+                            data-name="Field"
+                        >
+                            <label
+                                class="s_website_form_label"
+                                t-attf-for="#{form_id}_timeline"
+                            >
+                                <span
+                                    class="s_website_form_label_content"
+                                >When would you want to start</span>
+                            </label>
+                            <select
+                                t-attf-id="#{form_id}_timeline"
+                                class="form-select s_website_form_input"
+                                name="Desired timeline"
+                            >
+                                <option value="">Still deciding</option>
+                                <option value="Immediately">Immediately</option>
+                                <option value="Within 3 months">Within 3 months</option>
+                                <option value="Within 6 months">Within 6 months</option>
+                                <option
+                                    value="Researching for next year"
+                                >Researching for next year</option>
+                            </select>
+                        </div>
+                        <div
+                            class="mb-3 col-12 s_website_form_field s_website_form_custom"
+                            data-type="char"
+                            data-name="Field"
+                        >
+                            <label
+                                class="s_website_form_label"
+                                t-attf-for="#{form_id}_current_system"
+                            >
+                                <span
+                                    class="s_website_form_label_content"
+                                >What you use today</span>
+                            </label>
+                            <input
+                                t-attf-id="#{form_id}_current_system"
+                                type="text"
+                                class="form-control s_website_form_input"
+                                name="Current system"
+                                placeholder="Spreadsheets, a legacy ERP, another Odoo…"
+                            />
+                        </div>
+                    </t>
+                    <!-- Opt-in for the pages about an Odoo that already exists.
+                         Version and hosting are the two answers that decide
+                         whether the first conversation is useful. -->
+                    <t t-if="environment">
+                        <div
+                            class="mb-3 col-12 col-lg-6 s_website_form_field s_website_form_custom"
+                            data-type="char"
+                            data-name="Field"
+                        >
+                            <label
+                                class="s_website_form_label"
+                                t-attf-for="#{form_id}_odoo_version"
+                            >
+                                <span
+                                    class="s_website_form_label_content"
+                                >Which Odoo version you run</span>
+                            </label>
+                            <input
+                                t-attf-id="#{form_id}_odoo_version"
+                                type="text"
+                                class="form-control s_website_form_input"
+                                name="Odoo version"
+                                placeholder="18.0, 14.0, not sure…"
+                            />
+                        </div>
+                        <div
+                            class="mb-3 col-12 col-lg-6 s_website_form_field s_website_form_custom"
+                            data-type="selection"
+                            data-name="Field"
+                        >
+                            <label
+                                class="s_website_form_label"
+                                t-attf-for="#{form_id}_hosting"
+                            >
+                                <span
+                                    class="s_website_form_label_content"
+                                >Where it runs today</span>
+                            </label>
+                            <select
+                                t-attf-id="#{form_id}_hosting"
+                                class="form-select s_website_form_input"
+                                name="Current hosting"
+                            >
+                                <option value="">Not sure</option>
+                                <option
+                                    value="On our own server"
+                                >On our own server</option>
+                                <option
+                                    value="Cloud managed by us"
+                                >Cloud managed by us</option>
+                                <option
+                                    value="Cloud managed by a supplier"
+                                >Cloud managed by a supplier</option>
+                                <option
+                                    value="Odoo.sh or Odoo Online"
+                                >Odoo.sh or Odoo Online</option>
+                            </select>
+                        </div>
+                    </t>
+                    <div
+                        t-if="not hide_description"
+                        class="mb-3 col-12 s_website_form_field"
+                        data-type="text"
+                        data-name="Field"
+                    >
+                        <label
+                            class="s_website_form_label"
+                            t-attf-for="#{form_id}_description"
+                        >
+                            <span class="s_website_form_label_content">
+                                <t
+                                    t-out="description_label or 'Anything we should know before the call'"
+                                />
+                            </span>
+                        </label>
+                        <textarea
+                            t-attf-id="#{form_id}_description"
+                            class="form-control s_website_form_input"
+                            name="description"
+                            rows="4"
+                        />
+                    </div>
+                    <div
+                        class="mb-3 col-12 s_website_form_field s_website_form_dnone"
+                        data-type="many2one"
+                        data-name="Field"
+                    >
+                        <div class="row">
+                            <div class="col-12">
+                                <input
+                                    type="hidden"
+                                    class="form-control s_website_form_input"
+                                    name="team_id"
+                                    t-att-value="lead_defaults['team_id']"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mb-3 col-12 s_website_form_field s_website_form_dnone"
+                        data-type="many2one"
+                        data-name="Field"
+                    >
+                        <div class="row">
+                            <div class="col-12">
+                                <input
+                                    type="hidden"
+                                    class="form-control s_website_form_input"
+                                    name="medium_id"
+                                    t-att-value="lead_defaults['medium_id']"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mb-3 col-12 s_website_form_field s_website_form_dnone"
+                        data-type="many2one"
+                        data-name="Field"
+                    >
+                        <div class="row">
+                            <div class="col-12">
+                                <input
+                                    type="hidden"
+                                    class="form-control s_website_form_input"
+                                    name="source_id"
+                                    t-att-value="lead_defaults['source_id']"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mb-3 col-12 s_website_form_field s_website_form_dnone"
+                        data-type="char"
+                        data-name="Field"
+                    >
+                        <div class="row">
+                            <div class="col-12">
+                                <input
+                                    type="hidden"
+                                    class="form-control s_website_form_input"
+                                    name="name"
+                                    t-att-value="lead_subject or 'Website contact'"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-0 py-2 col-12 s_website_form_submit">
+                        <div style="width: 200px;" class="s_website_form_label" />
+                        <a
+                            href="#"
+                            role="button"
+                            class="btn btn-primary s_website_form_send"
+                        >
+                            <t t-out="submit_label or 'Send'" />
+                        </a>
+                        <span id="s_website_form_result" />
+                    </div>
+                </div>
+            </form>
+        </section>
+    </template>
+
+    <!-- Reused by the industry pages and the home page. -->
+    <template id="case_teaser" name="Escodoo case teaser">
+        <div class="escodoo-case-teaser">
+            <p class="escodoo-case-profile">
+                <t t-out="case_profile" />
+            </p>
+            <h3 class="escodoo-case-title">
+                <t t-out="case_title" />
+            </h3>
+            <p class="escodoo-case-body">
+                <t t-out="case_body" />
+            </p>
+            <a class="escodoo-case-link" t-att-href="case_url">
+                Read the case
+            </a>
+        </div>
+    </template>
+</odoo>

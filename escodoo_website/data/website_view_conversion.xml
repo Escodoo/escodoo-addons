@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The live site offers exactly two things: talk to us, or fill in a long form.
+     A reader who is still researching has nowhere to go, and the highest intent
+     page on the site asks for twelve fields including annual revenue.
+
+     Every form here creates a crm.lead through the shared short_lead_form
+     template, which resolves the team, the medium and its own source when the
+     page renders. -->
+<odoo>
+    <record id="diagnostic" model="ir.ui.view">
+        <field name="name">Escodoo - Free diagnostic</field>
+        <field name="key">escodoo_website.diagnostic</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Free diagnostic" t-name="escodoo_website.diagnostic">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_diagnostic" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Thirty minutes, no obligation
+                                    </h1>
+                                    <p class="lead">
+                                        A conversation with an engineer about your
+                                        operation. You leave with an opinion you can act
+                                        on, whether or not you hire us.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_diagnostic_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_diagnostic'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Free diagnostic'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Request the diagnostic'"
+                                                />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'In one or two lines, what is the problem?'"
+                                                />
+                                                <t
+                                                    t-set="success_page"
+                                                    t-value="'/obrigado'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <div class="escodoo-agenda">
+                                                <h2 class="h5">What we cover</h2>
+                                                <ul>
+                                                    <li>
+                                                        Where your process is losing time
+                                                        or money today
+                                                    </li>
+                                                    <li>
+                                                        What standard Odoo and the
+                                                        community modules already solve
+                                                        for it
+                                                    </li>
+                                                    <li>
+                                                        What would genuinely need building
+                                                    </li>
+                                                    <li>
+                                                        Whether Community or Enterprise
+                                                        fits your case better
+                                                    </li>
+                                                    <li>
+                                                        A realistic order of magnitude for
+                                                        effort and investment
+                                                    </li>
+                                                </ul>
+                                                <h2
+                                                    class="h5 mt-4"
+                                                >What we do not do</h2>
+                                                <p class="mb-0">
+                                                    No slide deck, no demo, and no
+                                                    proposal in the call. If your case is
+                                                    not a fit for us, we say so and point
+                                                    you somewhere better.
+                                                </p>
+                                            </div>
+                                            <div class="mt-4">
+                                                <t
+                                                    t-call="escodoo_website.trust_block"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Read first"
+                            >
+                                <div class="container">
+                                    <h2>Prefer to read before you talk?</h2>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-4 mb-3">
+                                            <a
+                                                href="/edicoes-odoo"
+                                            >Community, Community + OCA or Enterprise</a>
+                                            <p
+                                                class="text-muted mb-0"
+                                            >Row by row, including where Enterprise wins.</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <a
+                                                href="/investimento"
+                                            >What this costs and why</a>
+                                            <p
+                                                class="text-muted mb-0"
+                                            >Cost drivers, contract models and a benchmark.</p>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <a
+                                                href="/mapa-de-funcionalidades"
+                                            >The feature map</a>
+                                            <p
+                                                class="text-muted mb-0"
+                                            >Around 150 capabilities, with the module named.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- The website module owns /contactus, so this is a source view that
+         data/website_theme_apply.xml writes onto website.contactus. -->
+    <record id="contactus" model="ir.ui.view">
+        <field name="name">Escodoo - Contact</field>
+        <field name="key">escodoo_website.contactus</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Contact us" t-name="website.contactus">
+                <t t-call="website.layout">
+                    <!-- website_crm extends this anchor to pre-fill the form
+                         from the query string, so replacing the shipped arch
+                         has to keep it or the module fails to install. -->
+                    <t
+                        t-set="contactus_form_values"
+                        t-value="{
+                            'email_to': res_company.email,
+                            'name': request.params.get('name', ''),
+                            'phone': request.params.get('phone', ''),
+                            'email_from': request.params.get('email_from', ''),
+                            'company': request.params.get('company', ''),
+                            'subject': request.params.get('subject', ''),
+                        }"
+                    />
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_contactus" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Talk to a specialist</h1>
+                                    <p class="lead">
+                                        Your message is read by a consultant, not a form
+                                        handler. We answer within one business day.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_contact_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_contact'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Website contact'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Send message'"
+                                                />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'How can we help?'"
+                                                />
+                                                <t
+                                                    t-set="success_page"
+                                                    t-value="'/contactus-thank-you'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <div class="escodoo-contact-details">
+                                                <h2
+                                                    class="h5"
+                                                >Other ways to reach us</h2>
+                                                <p class="mb-1">
+                                                    <a
+                                                        href="mailto:contato@escodoo.com.br"
+                                                    >contato@escodoo.com.br</a>
+                                                </p>
+                                                <p class="mb-1">
+                                                    <a
+                                                        href="https://wa.me/5516988727010"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >WhatsApp +55 16 98872-7010</a>
+                                                </p>
+                                                <p class="mb-3">
+                                                    Monday to Friday, 8h to 18h, Brasília
+                                                    time.
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    Ribeirão Preto, São Paulo, Brazil.
+                                                    We work remotely across the country.
+                                                </p>
+                                                <hr />
+                                                <p class="mb-0">
+                                                    Already a client with an incident?
+                                                    Use the support channel in your
+                                                    contract rather than this form, so it
+                                                    is measured against your
+                                                    <a
+                                                    href="/manutencao-odoo"
+                                                >response time</a>
+                                                    .
+                                                </p>
+                                            </div>
+                                            <div class="mt-4">
+                                                <t
+                                                    t-call="escodoo_website.trust_block"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Low commitment"
+                            >
+                                <div class="container text-center">
+                                    <h2>Not ready for a proposal?</h2>
+                                    <p class="lead">
+                                        Take the thirty minute diagnostic instead. It
+                                        commits you to nothing and you still leave with
+                                        an opinion.
+                                    </p>
+                                    <a
+                                        href="/diagnostico-gratuito"
+                                        class="btn btn-outline-secondary btn-lg"
+                                    >Free 30 minute diagnostic</a>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- The best form on the live site, kept. Three fixes: the company
+         registration number stops being mandatory on a first contact, the two
+         fields the FAQ itself says speed up a proposal are added, and the
+         heading that literally reads "Whatsapp" is gone. -->
+    <record id="quote_request" model="ir.ui.view">
+        <field name="name">Escodoo - Implementation quote request</field>
+        <field name="key">escodoo_website.quote_request</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Implementation quote request"
+                t-name="escodoo_website.quote_request"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_quote_request"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Request a quote</h1>
+                                    <p class="lead">
+                                        The more you tell us here, the more specific our
+                                        first answer is. Nothing below is required except
+                                        how to reach you.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_quote_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_quote'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Implementation quote request'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Request the quote'"
+                                                />
+                                                <t
+                                                    t-set="qualification"
+                                                    t-value="True"
+                                                />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'What do you need Odoo to do, and by when?'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <div class="escodoo-agenda">
+                                                <h2 class="h5">What comes back</h2>
+                                                <p>
+                                                    An order of magnitude and a proposed
+                                                    discovery scope, not a fixed price for
+                                                    the whole project. Anyone quoting the
+                                                    whole project before discovery is
+                                                    either padding the number or planning
+                                                    to argue about scope later.
+                                                </p>
+                                                <p class="mb-0">
+                                                    <a
+                                                        href="/investimento"
+                                                    >How we price, in the open</a>
+                                                </p>
+                                            </div>
+                                            <div class="mt-4">
+                                                <t
+                                                    t-call="escodoo_website.trust_block"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="consulting_request" model="ir.ui.view">
+        <field name="name">Escodoo - Consulting request</field>
+        <field name="key">escodoo_website.consulting_request</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Consulting request" t-name="escodoo_website.consulting_request">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_consulting_request"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1
+                                        class="display-3-fs"
+                                    >Request consulting or development</h1>
+                                    <p class="lead">
+                                        For a specific piece of work on an Odoo that is
+                                        already running.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_consulting_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_consulting'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Consulting and development request'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Send the request'"
+                                                />
+                                                <t t-set="environment" t-value="True" />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'Describe the work: what it should do, and what breaks today'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <div class="escodoo-agenda">
+                                                <h2 class="h5">Before you send this</h2>
+                                                <p>
+                                                    Around half of the development
+                                                    requests we receive are already solved
+                                                    by a community module. We check that
+                                                    first and tell you, even though it
+                                                    means a smaller invoice.
+                                                </p>
+                                                <p class="mb-0">
+                                                    <a
+                                                        href="/mapa-de-funcionalidades"
+                                                    >Search the feature map yourself</a>
+                                                </p>
+                                            </div>
+                                            <div class="mt-4">
+                                                <t
+                                                    t-call="escodoo_website.trust_block"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="maintenance_request" model="ir.ui.view">
+        <field name="name">Escodoo - Maintenance contract request</field>
+        <field name="key">escodoo_website.maintenance_request</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Maintenance contract request"
+                t-name="escodoo_website.maintenance_request"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_maintenance_request"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1
+                                        class="display-3-fs"
+                                    >Request a maintenance contract</h1>
+                                    <p class="lead">
+                                        Including when the Odoo you want supported was
+                                        implemented by somebody else. That is most of
+                                        them.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_maintenance_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_maintenance'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Maintenance contract request'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Request the contract'"
+                                                />
+                                                <t t-set="environment" t-value="True" />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'What hurts most about how it is supported today?'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <div class="escodoo-agenda">
+                                                <h2 class="h5">How it starts</h2>
+                                                <p>
+                                                    With an assessment, not with a
+                                                    contract. We need to know what we are
+                                                    taking responsibility for before we
+                                                    promise a response time on it.
+                                                </p>
+                                                <p class="mb-0">
+                                                    <a
+                                                        href="/manutencao-odoo"
+                                                    >The plans and the response times</a>
+                                                </p>
+                                            </div>
+                                            <div class="mt-4">
+                                                <t
+                                                    t-call="escodoo_website.trust_block"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="hosting_request" model="ir.ui.view">
+        <field name="name">Escodoo - Migration and hosting request</field>
+        <field name="key">escodoo_website.hosting_request</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Migration and hosting request"
+                t-name="escodoo_website.hosting_request"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_hosting_request"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1
+                                        class="display-3-fs"
+                                    >Request migration or hosting</h1>
+                                    <p class="lead">
+                                        Moving an Odoo to infrastructure that is
+                                        monitored, backed up and restorable.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_hosting_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_hosting'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Migration and hosting request'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Send the request'"
+                                                />
+                                                <t t-set="environment" t-value="True" />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'Where is it hosted today, and what worries you about it?'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <div class="escodoo-agenda">
+                                                <h2
+                                                    class="h5"
+                                                >Two different questions</h2>
+                                                <p>
+                                                    <a
+                                                    href="/hospedagem-odoo"
+                                                >Hosting</a>
+                                                    is about where it runs and who is
+                                                    woken up when it stops.
+                                                    <a
+                                                    href="/migracao-de-versao-odoo"
+                                                >Version upgrade</a>
+                                                    is about moving to a newer Odoo.
+                                                </p>
+                                                <p class="mb-0">
+                                                    They arrive together often enough that
+                                                    this form covers both. Tell us which
+                                                    one you actually need.
+                                                </p>
+                                            </div>
+                                            <div class="mt-4">
+                                                <t
+                                                    t-call="escodoo_website.trust_block"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="demo_request" model="ir.ui.view">
+        <field name="name">Escodoo - Demo request</field>
+        <field name="key">escodoo_website.demo_request</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Demo request" t-name="escodoo_website.demo_request">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_demo_request"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1
+                                        class="display-3-fs"
+                                    >Request a demonstration</h1>
+                                    <p class="lead">
+                                        A guided session on your own process, run by
+                                        someone who can answer technical questions in the
+                                        call.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_demo_request_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_demo'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Guided demonstration request'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Request the demonstration'"
+                                                />
+                                                <t
+                                                    t-set="description_label"
+                                                    t-value="'Which process should we demonstrate?'"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <div class="escodoo-agenda">
+                                                <h2 class="h5">
+                                                    A demonstration is not a diagnostic
+                                                </h2>
+                                                <p>
+                                                    A demonstration shows you the software.
+                                                    A
+                                                    <a
+                                                    href="/diagnostico-gratuito"
+                                                >diagnostic</a>
+                                                    looks at your operation and tells you
+                                                    whether the software is the answer.
+                                                </p>
+                                                <p class="mb-0">
+                                                    Most people are better served by the
+                                                    second one first, and it costs you the
+                                                    same thirty minutes.
+                                                </p>
+                                            </div>
+                                            <div class="mt-4">
+                                                <t
+                                                    t-call="escodoo_website.trust_block"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- Highest intent page on the live site and its largest conversion loss: it
+         promises an immediate trial, asks for twelve fields including annual
+         revenue, delivers a request for access, and ships a typo in its main
+         button. -->
+    <record id="demo_access" model="ir.ui.view">
+        <field name="name">Escodoo - Demo environment access</field>
+        <field name="key">escodoo_website.demo_access</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Demo environment access" t-name="escodoo_website.demo_access">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_demo_access" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        See Odoo Community running, with the Brazilian
+                                        localisation
+                                    </h1>
+                                    <p class="lead">
+                                        Not a generic vendor trial. An environment
+                                        assembled the way we deliver, so what you click
+                                        on is what you would actually get.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Scope"
+                            >
+                                <div class="container">
+                                    <h2>What is in the environment</h2>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Included</h3>
+                                            <ul>
+                                                <li>
+                                                    Sales, purchasing, stock, invoicing,
+                                                    accounting, projects and manufacturing
+                                                </li>
+                                                <li>
+                                                    The community Brazilian localisation,
+                                                    with taxes calculated inside Odoo
+                                                </li>
+                                                <li>
+                                                    NF-e in the tax authority's test
+                                                    environment, so you can issue one and
+                                                    watch it come back authorised
+                                                </li>
+                                                <li>
+                                                    Sample data for a fictitious company,
+                                                    so the reports are not empty
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <h3 class="h5">Not included</h3>
+                                            <ul>
+                                                <li>
+                                                    Payroll, which no Odoo edition solves
+                                                </li>
+                                                <li>
+                                                    NFS-e, because it depends on your
+                                                    municipality
+                                                </li>
+                                                <li>
+                                                    Enterprise-only apps such as Studio and
+                                                    the mobile app
+                                                </li>
+                                                <li>
+                                                    Your data, your processes and your
+                                                    fiscal profile — that is what a
+                                                    <a
+                                                    href="/solicitacao-de-demonstracao"
+                                                >guided demonstration</a>
+                                                    is for
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="escodoo-honest">
+                                        <p class="mb-0">
+                                            Access lasts seven days, it is shared with
+                                            other visitors, and it is reset weekly. It is
+                                            for looking around, not for testing your own
+                                            scenario. If you need a private environment
+                                            with your data in it, ask for one and we will
+                                            set it up as part of a discovery.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb64 o_cc o_cc2"
+                                data-snippet="s_text_block"
+                                data-name="Form"
+                            >
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <h2>Get the access</h2>
+                                            <p>
+                                                Five fields. The credentials arrive by
+                                                e-mail within one business day.
+                                            </p>
+                                            <t t-call="escodoo_website.short_lead_form">
+                                                <t
+                                                    t-set="form_id"
+                                                    t-value="'escodoo_demo_access_form'"
+                                                />
+                                                <t
+                                                    t-set="source_xmlid"
+                                                    t-value="'escodoo_website.utm_source_demo'"
+                                                />
+                                                <t
+                                                    t-set="lead_subject"
+                                                    t-value="'Demo environment access'"
+                                                />
+                                                <t
+                                                    t-set="submit_label"
+                                                    t-value="'Send me the access'"
+                                                />
+                                                <t
+                                                    t-set="hide_description"
+                                                    t-value="True"
+                                                />
+                                            </t>
+                                        </div>
+                                        <div class="col-lg-5 mt-4 mt-lg-0">
+                                            <div class="escodoo-agenda">
+                                                <h2 class="h5">
+                                                    Prefer to just watch?
+                                                </h2>
+                                                <p>
+                                                    The recorded tour covers the same
+                                                    ground in about twelve minutes, with
+                                                    no form.
+                                                </p>
+                                                <p>
+                                                    <a
+                                                        href="https://www.youtube.com/@escodoo"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        class="btn btn-outline-secondary"
+                                                    >Watch the recorded tour</a>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    Poking at a demo tells you whether you
+                                                    like the interface. It does not tell
+                                                    you whether the platform fits your
+                                                    operation — for that, take the
+                                                    <a
+                                                    href="/diagnostico-gratuito"
+                                                >diagnostic</a>
+                                                    .
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <!-- Thank-you pages. Each one carries a next step, because the moment right
+         after a form is submitted is the only time a visitor is guaranteed to be
+         paying attention. -->
+    <template id="thank_you_reading" name="Escodoo thank you reading list">
+        <section
+            class="s_text_block pt16 pb64 o_cc o_cc2"
+            data-snippet="s_text_block"
+            data-name="Reading"
+        >
+            <div class="container">
+                <h2>While you wait</h2>
+                <p class="lead">
+                    These are the three pages our clients say they read before
+                    deciding.
+                </p>
+                <div class="row mt-3">
+                    <div class="col-lg-4 mb-3">
+                        <a
+                            href="/edicoes-odoo"
+                        >Community, Community + OCA or Enterprise</a>
+                        <p class="text-muted mb-0">
+                            The comparison nobody else publishes, including the rows
+                            where Enterprise wins.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <a
+                            href="/soberania-e-portabilidade"
+                        >Sovereignty and portability</a>
+                        <p class="text-muted mb-0">
+                            Who owns the code, where the data lives, and how you
+                            leave if you want to.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <a href="/cases">Results</a>
+                        <p class="text-muted mb-0">
+                            Anonymous clients, real profiles, and the modules that
+                            were actually used.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <record id="thank_you" model="ir.ui.view">
+        <field name="name">Escodoo - Thank you</field>
+        <field name="key">escodoo_website.thank_you</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Thank you" t-name="escodoo_website.thank_you">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div id="oe_structure_escodoo_thank_you" class="oe_structure">
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">
+                                        Thank you. Here is what happens now.
+                                    </h1>
+                                    <p class="lead">
+                                        Your message reached a consultant, not a queue.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Next"
+                            >
+                                <div class="container">
+                                    <ol class="escodoo-trust-steps">
+                                        <li>
+                                            We read what you sent and answer within one
+                                            business day.
+                                        </li>
+                                        <li>
+                                            If your case needs a conversation, we propose
+                                            two times for a thirty minute call.
+                                        </li>
+                                        <li>
+                                            If we are not the right fit, we tell you and
+                                            point you somewhere better.
+                                        </li>
+                                    </ol>
+                                    <p>
+                                        Something urgent in the meantime?
+                                        <a
+                                        href="https://wa.me/5516988727010"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >WhatsApp us</a>
+                                        or write to
+                                        <a
+                                        href="mailto:contato@escodoo.com.br"
+                                    >contato@escodoo.com.br</a>
+                                        .
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.thank_you_reading" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="contactus_thank_you" model="ir.ui.view">
+        <field name="name">Escodoo - Contact thank you</field>
+        <field name="key">escodoo_website.contactus_thank_you</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t name="Contact thank you" t-name="website.contactus_thanks">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_contactus_thank_you"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1 class="display-3-fs">Message received</h1>
+                                    <p class="lead">
+                                        We answer within one business day, Monday to
+                                        Friday, 8h to 18h Brasília time.
+                                    </p>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="Next"
+                            >
+                                <div class="container">
+                                    <p>
+                                        If it is urgent,
+                                        <a
+                                        href="https://wa.me/5516988727010"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >WhatsApp +55 16 98872-7010</a>
+                                        gets a faster answer than e-mail during business
+                                        hours.
+                                    </p>
+                                    <p class="mb-0">
+                                        Already a client with an incident? The support
+                                        channel in your contract is measured against your
+                                        <a href="/manutencao-odoo">response time</a>
+                                        ; this form is not.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.thank_you_reading" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="feature_map_thank_you" model="ir.ui.view">
+        <field name="name">Escodoo - Feature map thank you</field>
+        <field name="key">escodoo_website.feature_map_thank_you</field>
+        <field name="type">qweb</field>
+        <field name="website_id" ref="website.default_website" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <t
+                name="Feature map thank you"
+                t-name="escodoo_website.feature_map_thank_you"
+            >
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div
+                            id="oe_structure_escodoo_feature_map_thank_you"
+                            class="oe_structure"
+                        >
+                            <section
+                                class="s_title pt96 pb32"
+                                data-snippet="s_title"
+                                data-name="Title"
+                            >
+                                <div class="container">
+                                    <h1
+                                        class="display-3-fs"
+                                    >Your feature map is ready</h1>
+                                    <p class="lead">
+                                        Around 150 capabilities across three editions,
+                                        with the community module named on every row that
+                                        the ecosystem resolves.
+                                    </p>
+                                    <a
+                                        href="/mapa-de-funcionalidades/pdf"
+                                        class="btn btn-primary btn-lg"
+                                    >Download the PDF</a>
+                                </div>
+                            </section>
+                            <section
+                                class="s_text_block pt16 pb48"
+                                data-snippet="s_text_block"
+                                data-name="How to use it"
+                            >
+                                <div class="container">
+                                    <h2>How to use it</h2>
+                                    <p>
+                                        Take it to whoever is quoting you and ask them to
+                                        fill in the same three columns for the rows that
+                                        matter to your operation. If they cannot name the
+                                        module behind a claim, that is the useful part.
+                                    </p>
+                                    <p class="mb-0">
+                                        It is an assessment for Odoo 18.0 and it will age.
+                                        The
+                                        <a
+                                        href="/mapa-de-funcionalidades"
+                                    >version on the site</a>
+                                        is the current one.
+                                    </p>
+                                </div>
+                            </section>
+                            <t t-call="escodoo_website.thank_you_reading" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

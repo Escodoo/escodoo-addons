@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_report_feature_map" model="ir.actions.report">
+        <field name="name">Feature Map</field>
+        <field name="model">escodoo.website.feature.category</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">escodoo_website.report_feature_map</field>
+        <field name="report_file">escodoo_website.report_feature_map</field>
+        <field name="print_report_name">'Escodoo Feature Map'</field>
+        <field name="binding_model_id" ref="model_escodoo_website_feature_category" />
+        <field name="binding_type">report</field>
+    </record>
+    <template id="report_feature_map">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Feature map — Odoo Community + OCA</h2>
+                    <p class="text-muted">
+                        Coverage assessment per capability, comparing Odoo
+                        Community on its own, Community combined with the OCA
+                        ecosystem, and Enterprise. Modules that close a gap are
+                        named so the assessment can be checked.
+                    </p>
+                    <t t-foreach="docs" t-as="category">
+                        <h3 t-field="category.name" class="mt-4" />
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Capability</th>
+                                    <th>Community</th>
+                                    <th>Community + OCA</th>
+                                    <th>Enterprise</th>
+                                    <th>Modules</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="category.feature_ids" t-as="feature">
+                                    <td>
+                                        <span t-field="feature.name" />
+                                        <div
+                                            t-if="feature.note"
+                                            class="text-muted small"
+                                            t-field="feature.note"
+                                        />
+                                    </td>
+                                    <td>
+                                        <span t-field="feature.community_level" />
+                                    </td>
+                                    <td>
+                                        <span t-field="feature.oca_level" />
+                                    </td>
+                                    <td>
+                                        <span t-field="feature.enterprise_level" />
+                                    </td>
+                                    <td class="small">
+                                        <span t-field="feature.oca_module_names" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
