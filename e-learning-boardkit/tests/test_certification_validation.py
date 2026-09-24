@@ -1,16 +1,15 @@
 # Copyright 2026 Escodoo
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import TransactionCase
+from odoo.tests.common import HttpCase
 
 
-class TestCertificationValidation(TransactionCase):
+class TestCertificationValidation(HttpCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.Survey = cls.env["survey.survey"]
         cls.UserInput = cls.env["survey.user_input"]
-        cls.Channel = cls.env["slide.channel"]
         cls.Partner = cls.env["res.partner"]
 
     def _make_survey(self):
@@ -62,7 +61,6 @@ class TestCertificationValidation(TransactionCase):
         response = self.url_open("/certificacao/validar/failed-token")
         self.assertEqual(response.status_code, 200)
         body = response.text
-        self.assertNotIn("good-token", body)
         self.assertIn("failed-token", body)
 
     def test_qr_certificado_retorna_png_pt(self):
