@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo><data noupdate="1">
 
+    <record id="slide_tag_demo_howto" model="slide.tag">
+        <field name="name">How-to</field>
+    </record>
+
+    <record id="slide_tag_demo_theory" model="slide.tag">
+        <field name="name">Theory</field>
+    </record>
+
+    <record id="slide_tag_demo_tools" model="slide.tag">
+        <field name="name">Tools</field>
+    </record>
+
+    <record id="slide_tag_demo_cheatsheet" model="slide.tag">
+        <field name="name">Cheatsheet</field>
+    </record>
+
     <record id="slide_channel_boardkit" model="slide.channel">
         <field name="name">Boardkit — Curso Completo (Odoo 16/17/18)</field>
         <field name="channel_type">training</field>
