@@ -17,16 +17,22 @@ class TestCertificationValidation(HttpCase):
             {
                 "title": "Test Certification Survey",
                 "certification": True,
+                "scoring_success_min": 0.0,
             }
         )
 
     def _make_user_input(self, survey, token, success=True):
+        """Create a user_input that *evaluates* scoring_success=True.
+
+        scoring_success is a compute field; we set scoring_percentage to 100
+        and force the survey's threshold to 0 so the compute produces True.
+        """
         return self.UserInput.create(
             {
                 "survey_id": survey.id,
                 "access_token": token,
-                "scoring_success": success,
                 "state": "done",
+                "scoring_percentage": 100.0 if success else 0.0,
                 "partner_id": self.Partner.create({"name": "Tester"}).id,
             }
         )
