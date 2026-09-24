@@ -33,15 +33,15 @@ class TestCertificationValidation(HttpCase):
 
     def test_validar_certificado_token_invalido(self):
         """Token sem user_input matching deve renderizar template inválido."""
-        response = self.url_open("/certificacao/validar/no-such-token")
+        response = self.url_open("/certificacao/validar/nosuchtoken")
         self.assertEqual(response.status_code, 200)
         body = response.text
         self.assertIn("token", body.lower())
 
     def test_validar_certificado_token_valido_pt(self):
         survey = self._make_survey()
-        self._make_user_input(survey, "good-token-pt", success=True)
-        response = self.url_open("/certificacao/validar/good-token-pt")
+        self._make_user_input(survey, "goodtokenpt", success=True)
+        response = self.url_open("/certificacao/validar/goodtokenpt")
         self.assertEqual(response.status_code, 200)
         body = response.text
         self.assertIn("Tester", body)
@@ -49,34 +49,34 @@ class TestCertificationValidation(HttpCase):
     def test_validar_certificado_token_valido_es(self):
         """Spanish route must also resolve."""
         survey = self._make_survey()
-        self._make_user_input(survey, "good-token-es", success=True)
-        response = self.url_open("/certificacion/validar/good-token-es")
+        self._make_user_input(survey, "goodtokenes", success=True)
+        response = self.url_open("/certificacion/validar/goodtokenes")
         self.assertEqual(response.status_code, 200)
         self.assertIn("Tester", response.text)
 
     def test_validar_certificado_sem_scoring_success(self):
         """Token that exists but is not scoring_success must render invalid."""
         survey = self._make_survey()
-        self._make_user_input(survey, "failed-token", success=False)
-        response = self.url_open("/certificacao/validar/failed-token")
+        self._make_user_input(survey, "failedtoken", success=False)
+        response = self.url_open("/certificacao/validar/failedtoken")
         self.assertEqual(response.status_code, 200)
         body = response.text
-        self.assertIn("failed-token", body)
+        self.assertIn("failedtoken", body)
 
     def test_qr_certificado_retorna_png_pt(self):
-        response = self.url_open("/certificacao/validar/qr/any-token")
+        response = self.url_open("/certificacao/validar/qr/anytoken")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("Content-Type"), "image/png")
         # PNG magic bytes: 89 50 4E 47
         self.assertEqual(response.content[:4], b"\x89PNG")
 
     def test_qr_certificado_retorna_png_es(self):
-        response = self.url_open("/certificacion/validar/qr/any-token-es")
+        response = self.url_open("/certificacion/validar/qr/anytoken")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("Content-Type"), "image/png")
         self.assertEqual(response.content[:4], b"\x89PNG")
 
     def test_qr_certificado_tem_cache_control(self):
-        response = self.url_open("/certificacao/validar/qr/cache-test")
+        response = self.url_open("/certificacao/validar/qr/cachetest")
         cache = response.headers.get("Cache-Control", "")
         self.assertIn("max-age", cache)
