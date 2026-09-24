@@ -67,10 +67,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">5</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Modo edit visual: como arrastar, redimensionar e salvar cards no grid de 12 colunas. Layout default vs pessoal.</p></field>
         <field name="html_content" type="html">
@@ -550,10 +546,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">7</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_theory'))]"
-            />
         <field name="description" type="html"><p
                 >Definição do Boardkit, características, quando usar, público-alvo e visão geral dos 12 capítulos.</p></field>
         <field name="html_content" type="html">
@@ -1207,10 +1199,6 @@
                 type="base64"
                 file="e-learning-boardkit/static/src/img/01-boardkit-crm-dashboard.png"
             />
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Walkthrough guiado pelo template CRM Pipeline: 5 coisas para olhar, fluxo de uso no dia a dia e composição técnica.</p></field>
         <field name="html_content" type="html">
@@ -1674,10 +1662,6 @@
                 name="image_1920"
                 type="base64"
                 file="e-learning-boardkit/static/src/img/02-boardkit-filters.png"
-            />
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
             />
         <field name="description" type="html"><p
                 >Showcase dos presets de data do boardkit: períodos, dias, semanas, meses, trimestres, anos e últimos N dias.</p></field>
@@ -2155,10 +2139,6 @@
                 name="image_1920"
                 type="base64"
                 file="e-learning-boardkit/static/src/img/03-boardkit-add-item.png"
-            />
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
             />
         <field name="description" type="html"><p
                 >Passo a passo para abrir o formulário de item a partir do dashboard: 4 etapas, anatomia visual e mapa das próximas lições.</p></field>
@@ -2648,10 +2628,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">7</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Mapa do formulário: header, 4 abas (Valor, Drill down, Aparência, Interação) com prints reais do boardkit no Odoo 18.</p></field>
         <field name="html_content" type="html">
@@ -3431,10 +3407,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">10</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Detalhe da aba Drill Down: drill_level_ids One2many, os 7 campos de cada nível (sequence, group_by_field_id, group_by_granularity, chart_type, chart_sort, record_limit), os 7 chart_type disponíveis, validação e 3 estratégias comuns (geográfica, comercial, pipeline).</p></field>
         <field name="html_content" type="html">
@@ -3995,10 +3967,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">10</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Matriz decisão dos 16 tipos suportados: quando usar cada um, campos obrigatórios e exemplo prático.</p></field>
         <field name="html_content" type="html">
@@ -4734,10 +4702,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">10</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Detalhe da aba Value: aggregation, measure_field_id, compare_previous_period, alvo e o modo comparison entre dois modelos.</p></field>
         <field name="html_content" type="html">
@@ -5485,10 +5449,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">12</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >A aba mais densa do formulário: group_by, subgroup, measure_ids, chart_sort, stacked, linhas auxiliares, scatter XY e a galeria dos 8 tipos + map.</p></field>
         <field name="html_content" type="html">
@@ -6243,10 +6203,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">8</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Detalhe da aba List: list_type (plain vs grouped), page_size, sort, list_column_ids, measure_ids, tipos de campo excluídos e quando usar / não usar.</p></field>
         <field name="html_content" type="html">
@@ -6710,10 +6666,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">8</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Detalhe da aba Domain: campo único domain com widget domain nativo, 3 tipos de filtro (Normal/OR/Avançado), tokens dinâmicos (uid, context_today), notação prefix-polish, validação e receitas prontas.</p></field>
         <field name="html_content" type="html">
@@ -7272,10 +7224,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">7</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Detalhe da aba Appearance: 8 campos visuais, icon Font Awesome, color_palette (dashboard/preset/custom), background_style (palette/manual), number_style (compact/exact), unit_type (none/monetary/custom) e restrições por item_type.</p></field>
         <field name="html_content" type="html">
@@ -8057,10 +8005,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">5</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
-            />
         <field name="description" type="html"><p
                 >Detalhe da aba Interaction: 4 campos (show_records, action_id, sequence, description), comportamento padrão do clique, 3 usos comuns de action_id, boas práticas de tooltip e diferença entre List e Interaction.</p></field>
         <field name="html_content" type="html">
@@ -8507,10 +8451,6 @@
                 type="base64"
                 file="e-learning-boardkit/static/src/img/06-boardkit-templates.png"
             />
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_theory'))]"
-            />
         <field name="description" type="html"><p
                 >Acesse a lista de templates prontos disponíveis no boardkit.</p></field>
         <field name="html_content" type="html">
@@ -8838,10 +8778,6 @@
                 name="image_1920"
                 type="base64"
                 file="e-learning-boardkit/static/src/img/05-boardkit-template-form.png"
-            />
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_theory'))]"
             />
         <field name="description" type="html"><p
                 >Anatomia completa do formulário de um template: payload JSON, campos derivados, grupos permitidos e fluxo de criação de dashboard a partir dele.</p></field>
@@ -9226,10 +9162,6 @@
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">3</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_theory'))]"
-            />
         <field name="description" type="html"><p
                 >Layout default vs pessoal: como o boardkit gerencia personalizações, filtros salvos, como resetar para o default e a função reset_personal_layout.</p></field>
         <field name="html_content" type="html">
@@ -9659,10 +9591,6 @@
                 type="base64"
                 file="e-learning-boardkit/static/src/img/07-boardkit-settings-panel.png"
             />
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_tools'))]"
-            />
         <field name="description" type="html"><p
                 >Painel de Settings do Boardkit: paleta padrão global e menu de Color Palettes. Hierarquia de resolução da paleta entre empresa, dashboard e item.</p></field>
         <field name="html_content" type="html">
@@ -10075,10 +10003,6 @@
                 name="image_1920"
                 type="base64"
                 file="e-learning-boardkit/static/src/img/08-boardkit-module.png"
-            />
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_howto'))]"
             />
         <field name="description" type="html"><p
                 >Setup mínimo e completo do boardkit em uma base Odoo 18: módulo raiz, 31 sub-módulos, autoinstall via 8 comandos CLI ou 1 wizard.</p></field>
@@ -10549,10 +10473,6 @@ $ odoo -d $DB -i crm,sale_management,account,stock,project,hr_timesheet,helpdesk
                 name="image_1920"
                 type="base64"
                 file="e-learning-boardkit/static/src/img/09-error-empty-dashboard.png"
-            />
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_tools'))]"
             />
         <field name="description" type="html"><p
                 >Troubleshooting prático: os 10 erros mais comuns em produção (ACL, visibilidade, cache, paleta, drill) com diagnóstico via shell e solução em &lt;5 min.</p></field>
@@ -11105,10 +11025,6 @@ $ odoo shell -d $DB
         <field name="is_published" eval="True" />
         <field name="website_published" eval="True" />
         <field name="completion_time">5</field>
-        <field
-                name="tag_ids"
-                eval="[(4, ref('e-learning-boardkit.slide_tag_demo_cheatsheet'))]"
-            />
         <field name="description" type="html"><p
                 >Referência rápida do curso: 6 cards por objetivo, mapa das 21 lições, cheat sheet de atalhos UI + CLI, links úteis e próximos passos.</p></field>
         <field name="html_content" type="html">
