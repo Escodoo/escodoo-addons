@@ -3778,7 +3778,7 @@
                   <pre
                                     class="bg-light p-2 rounded small mb-0"
                                     style="font-size:0.78rem;"
-                                >Drill field %(field)s does not belong to model %(model)s.</pre>
+                                >Drill field % (field) s does not belong to model % (model) s.</pre>
                 </div>
               </div>
 
