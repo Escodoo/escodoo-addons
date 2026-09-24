@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data noupdate="1">
+
+    <!--
+        Paper format A4 Portrait com bordas zero.
+        Toda a margem de segurança (10mm) é controlada via CSS no template.
+    -->
+    <record id="paperformat_escodoo_certification" model="report.paperformat">
+        <field name="name">Escodoo Certification (A4 Portrait)</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="disable_shrinking">True</field>
+        <field name="dpi">96</field>
+    </record>
+
+    <!--
+        Novo ir.actions.report que usa o layout Escodoo Portrait.
+        Mantém o XML ID nativo 'certification_report' como binding para aparecer
+        no menu "Print" do survey.user_input, mas aponta para nosso template.
+    -->
+    <function name="write" model="ir.actions.report">
+        <function name="search" model="ir.actions.report">
+            <value eval="[('report_name', '=', 'survey.certification_report_view')]" />
+        </function>
+        <value
+                eval="{
+            'paperformat_id': ref('paperformat_escodoo_certification'),
+        }"
+            />
+    </function>
+
+</data></odoo>

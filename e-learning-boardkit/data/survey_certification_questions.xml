@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data noupdate="1">
+
+    <!--
+        12 perguntas de certificação do curso Boardkit.
+        Cobertura:
+        Q1  → Lição 1.1 (visão geral)
+        Q2  → Lição 2.1 (CRM Pipeline)
+        Q3  → Lição 3.1 (filtros)
+        Q4  → Lição 4.4 (aba Value)
+        Q5  → Lição 4.5 (aba Chart)
+        Q6  → Lição 4.7 (drill down)
+        Q7  → Lição 4.8 (domain)
+        Q8  → Lição 5.1 (reorganização)
+        Q9  → Lição 6.1 (templates)
+        Q10 → Lição 7.1 (settings/paletas)
+        Q11 → Lição 9.1 (erros comuns)
+        Q12 → Quiz Final 12.1/12.2 (calibragem Suporte Escodoo)
+
+        Linguagem user-facing (sem CLI/deploy/install técnico).
+        Cada pergunta = simple_choice com 4 opções, 1 correta.
+    -->
+
+    <!-- Q1 - Lição 1.1 -->
+    <record id="survey_q_cert_01" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Qual é o principal diferencial do boardkit em relação aos dashboards nativos do Odoo?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">10</field>
+        <field name="answer_score">1.0</field>
+    </record>
+    <record id="survey_a_cert_01_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_01" />
+        <field
+                name="value"
+            >Substitui todos os módulos padrão do Odoo, eliminando a necessidade de personalização.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_01_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_01" />
+        <field
+                name="value"
+            >Permite criar dashboards analíticos configuráveis, sem código, reaproveitando dados que já existem no Odoo.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_01_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_01" />
+        <field
+                name="value"
+            >É uma ferramenta externa que conecta ao Odoo via API.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_01_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_01" />
+        <field
+                name="value"
+            >Só funciona com módulos customizados — não lê dados nativos.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q2 - Lição 2.1 -->
+    <record id="survey_q_cert_02" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Para que serve o dashboard "CRM Pipeline" que vem como template no boardkit?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">20</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_02_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_02" />
+        <field name="value">Para criar novas oportunidades a partir de gráficos.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_02_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_02" />
+        <field
+                name="value"
+            >Para visualizar de forma consolidada o pipeline de oportunidades em tiles, KPIs e listas prontas para uso.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_02_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_02" />
+        <field name="value">Para substituir o módulo CRM nativo do Odoo.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_02_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_02" />
+        <field name="value">Para exportar dados para um BI externo.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q3 - Lição 3.1 -->
+    <record id="survey_q_cert_03" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Qual é a diferença prática entre o filtro de Período e o filtro de Domínio em um item?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">30</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_03_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_03" />
+        <field name="value">São a mesma coisa, só muda o nome.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_03_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_03" />
+        <field
+                name="value"
+            >Período é uma preset nativa para intervalo de datas; Domínio é uma expressão de filtro Odoo completa para qualquer campo.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_03_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_03" />
+        <field
+                name="value"
+            >Período filtra registros; Domínio só serve para mudar a cor dos itens.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_03_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_03" />
+        <field name="value">Domínio só funciona para usuários administradores.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q4 - Lição 4.4 -->
+    <record id="survey_q_cert_04" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Na aba Value, qual a diferença entre as agregações count e sum?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">40</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_04_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_04" />
+        <field
+                name="value"
+            >count conta registros; sum soma um campo numérico dos registros.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_04_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_04" />
+        <field name="value">As duas fazem a mesma coisa, só muda o nome.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_04_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_04" />
+        <field
+                name="value"
+            >count soma valores; sum conta quantos registros existem.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_04_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_04" />
+        <field name="value">sum só funciona com campos booleanos.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q5 - Lição 4.5 -->
+    <record id="survey_q_cert_05" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Qual tipo de gráfico NÃO suporta drill-down no boardkit?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">50</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_05_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_05" />
+        <field name="value">Bar (coluna).</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_05_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_05" />
+        <field name="value">Line (linha).</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_05_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_05" />
+        <field name="value">Gauge (medidor).</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_05_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_05" />
+        <field name="value">Pie (pizza).</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q6 - Lição 4.7 -->
+    <record id="survey_q_cert_06" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Por que um drill-down configurado com target_model igual ao modelo do item não dispara ao clicar?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">60</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_06_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_06" />
+        <field
+                name="value"
+            >Porque o boardkit bloqueia drill em itens de categoria "article".</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_06_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_06" />
+        <field
+                name="value"
+            >Porque target_model precisa apontar para um modelo diferente do item (subir na hierarquia via FK).</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_06_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_06" />
+        <field name="value">Porque o gráfico precisa estar em modo "kiosk".</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_06_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_06" />
+        <field
+                name="value"
+            >Porque o usuário precisa ter permissão de administrador.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q7 - Lição 4.8 -->
+    <record id="survey_q_cert_07" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Qual das expressões abaixo é um Domain válido para filtrar oportunidades ganhas?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">70</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_07_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_07" />
+        <field name="value">[(probability, =, 100)]</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_07_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_07" />
+        <field name="value">[('probability', '=', 100)]</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_07_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_07" />
+        <field name="value">[probability == 100]</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_07_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_07" />
+        <field name="value">WHERE probability = 100</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q8 - Lição 5.1 -->
+    <record id="survey_q_cert_08" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Por que a reorganização de cards via drag-and-drop não aparece igual para outros usuários?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">80</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_08_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_08" />
+        <field
+                name="value"
+            >Porque o boardkit não está sincronizando — basta pedir para a equipe recarregar (Ctrl+F5).</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_08_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_08" />
+        <field
+                name="value"
+            >Drag é pessoal; para afetar todos, o gerente ajusta layout_x/y/w/h dos itens no painel administrativo.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_08_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_08" />
+        <field
+                name="value"
+            >O dashboard precisa ser salvo como template para sincronizar.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_08_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_08" />
+        <field name="value">Cada usuário deve arrastar até ficar igual ao seu.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q9 - Lição 6.1 -->
+    <record id="survey_q_cert_09" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Por que NÃO devemos editar o payload de um template padrão do boardkit?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">90</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_09_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_09" />
+        <field name="value">Porque o template fica read-only na interface.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_09_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_09" />
+        <field
+                name="value"
+            >Porque edições em template padrão são sobrescritas em upgrades do módulo.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_09_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_09" />
+        <field
+                name="value"
+            >Porque outros usuários não conseguem acessar templates editados.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_09_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_09" />
+        <field name="value">Porque o payload é criptografado.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q10 - Lição 7.1 -->
+    <record id="survey_q_cert_10" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Para que uma paleta custom passe a ser usada por padrão nos novos dashboards, o que precisa estar configurado?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">100</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_10_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_10" />
+        <field
+                name="value"
+            >Apenas criar a paleta — o boardkit detecta automaticamente.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_10_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_10" />
+        <field
+                name="value"
+            >Criar a paleta e marcar "Default Custom Palette" + definir "Paleta padrão" como Custom nas Settings.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_10_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_10" />
+        <field name="value">Reiniciar o servidor Odoo após criar a paleta.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_10_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_10" />
+        <field name="value">Renomear a paleta para "Default".</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q11 - Lição 9.1 -->
+    <record id="survey_q_cert_11" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Um dashboard mostra todos os tiles com valor 0, mas os registros existem no menu nativo. O que verificar primeiro?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">110</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_11_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_11" />
+        <field name="value">Se o servidor Odoo está com cache ativo.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_11_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_11" />
+        <field
+                name="value"
+            >Se o usuário logado tem ACL (grupos) para acessar o modelo de origem dos itens.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_11_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_11" />
+        <field name="value">Se o domínio do item está vazio.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_11_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_11" />
+        <field name="value">Se a paleta de cores está configurada.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+    <!-- Q12 - Calibragem (Quiz Final) -->
+    <record id="survey_q_cert_12" model="survey.question">
+        <field name="survey_id" ref="survey_certification_boardkit" />
+        <field
+                name="title"
+            >Um dashboard está lento (3s para abrir) e nenhum item sozinho parece culpado após DevTools. Qual é o caminho certo?</field>
+        <field name="question_type">simple_choice</field>
+        <field name="sequence">120</field>
+    <field name="answer_score" eval="1.0" />
+    </record>
+    <record id="survey_a_cert_12_a" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_12" />
+        <field
+                name="value"
+            >Aumentar o TTL do cache para 60 segundos em Settings → Boardkit.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="survey_a_cert_12_b" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_12" />
+        <field name="value">Trocar todos os gráficos por tiles para "aliviar".</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="survey_a_cert_12_c" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_12" />
+        <field
+                name="value"
+            >Acionar o Suporte Escodoo para análise de performance (profiling) e otimização.</field>
+        <field name="is_correct" eval="True" />
+        <field name="answer_score" eval="1.0" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="survey_a_cert_12_d" model="survey.question.answer">
+        <field name="question_id" ref="survey_q_cert_12" />
+        <field name="value">Comprar mais RAM no servidor.</field>
+        <field name="is_correct" eval="False" />
+        <field name="answer_score" eval="-0.25" />
+        <field name="sequence">4</field>
+    </record>
+
+</data></odoo>

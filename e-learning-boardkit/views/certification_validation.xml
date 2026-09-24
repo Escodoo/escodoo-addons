@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data>
+
+    <!--
+        Páginas públicas de validação de certificado (acessíveis via QR code).
+        Renderiza layout Escodoo (OpenSans + paleta #714B67 + #D4A857).
+        - /certificado_valido: mostra dados do certificado (válido)
+        - /certificado_invalido: token inválido/expirado
+    -->
+    <template id="certificado_valido" name="Certificado Válido — Escodoo">
+        <t t-call="website.layout">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-lg overflow-hidden">
+                            <!-- Header roxo -->
+                            <div
+                                    class="text-center py-4"
+                                    style="background: linear-gradient(135deg, #714B67 0%, #5E3A57 100%); color: #F5EFE0;"
+                                >
+                                <img
+                                        src="/e-learning-boardkit/static/src/img/logo-horizontal.png"
+                                        style="max-height: 40px; margin-bottom: 12px; filter: brightness(0) invert(1);"
+                                    />
+                                <h2
+                                        class="mb-0"
+                                        style="font-family: 'OpenSans', sans-serif; font-weight: 700; letter-spacing: 4px;"
+                                    >
+                                    <i
+                                            class="fa fa-check-circle me-2"
+                                        />CERTIFICADO VÁLIDO
+                                </h2>
+                            </div>
+
+                            <div class="card-body p-5" style="background: #F5EFE0;">
+                                <p
+                                        class="text-muted text-uppercase small mb-2"
+                                        style="letter-spacing: 2px;"
+                                    >Certificamos que</p>
+
+                                <h3
+                                        class="text-center my-4"
+                                        style="font-family: 'OpenSans', sans-serif; font-weight: 700; color: #5E3A57; letter-spacing: 2px; padding: 16px 24px; border-top: 2px solid #D4A857; border-bottom: 2px solid #D4A857; background: rgba(212, 168, 87, 0.08);"
+                                    >
+                                    <t
+                                            t-esc="user_input.partner_id.name or user_input.email"
+                                        />
+                                </h3>
+
+                                <p
+                                        class="text-center text-muted"
+                                    >concluiu com sucesso o curso</p>
+
+                                <div
+                                        class="text-center my-4 p-3"
+                                        style="background: linear-gradient(135deg, #714B67 0%, #5E3A57 100%); color: #F5EFE0; border-radius: 4px;"
+                                    >
+                                    <h4
+                                            class="mb-0"
+                                            style="font-family: 'OpenSans', sans-serif; font-weight: 700; letter-spacing: 2px;"
+                                        >
+                                        <t
+                                                t-esc="user_input.survey_id.display_name.upper()"
+                                            />
+                                    </h4>
+                                </div>
+
+                                <table
+                                        class="table table-borderless mt-4 mb-0"
+                                        style="font-family: 'OpenSans', sans-serif;"
+                                    >
+                                    <tbody>
+                                        <tr>
+                                            <td
+                                                    class="text-muted"
+                                                    style="width: 40%;"
+                                                >Data de emissão</td>
+                                            <td><strong
+                                                        t-esc="user_input.create_date"
+                                                        t-options='{"widget": "date"}'
+                                                    /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Aproveitamento</td>
+                                            <td><strong><t
+                                                            t-esc="int(user_input.scoring_percentage)"
+                                                        />%</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Identificador</td>
+                                            <td><code
+                                                        t-esc="'#%s' % str(user_input.id).zfill(6)"
+                                                    /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Validade</td>
+                                            <td><strong
+                                                        class="text-success"
+                                                    >Permanente</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <hr style="border-color: #D4A857;" />
+
+                                <p class="text-center small text-muted mb-0">
+                                    <strong
+                                        >Escodoo ERP &amp; CRM open source — Academia Escodoo</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a href="/" class="btn btn-outline-secondary">
+                                <i class="fa fa-arrow-left me-1" />Voltar para o site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="certificado_invalido" name="Certificado Inválido — Escodoo">
+        <t t-call="website.layout">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow">
+                            <div
+                                    class="card-body p-5 text-center"
+                                    style="background: #F5EFE0;"
+                                >
+                                <img
+                                        src="/e-learning-boardkit/static/src/img/logo-horizontal.png"
+                                        style="max-height: 36px; margin-bottom: 24px;"
+                                    />
+                                <div class="mb-3">
+                                    <i
+                                            class="fa fa-exclamation-triangle"
+                                            style="font-size: 48pt; color: #D4A857;"
+                                        />
+                                </div>
+                                <h2
+                                        class="mb-3"
+                                        style="font-family: 'OpenSans', sans-serif; font-weight: 700; color: #5E3A57;"
+                                    >
+                                    Certificado não encontrado
+                                </h2>
+                                <p class="text-muted">
+                                    O token <code><t
+                                                t-esc="token[:12]"
+                                            />...</code> não corresponde a um certificado válido em nossa base de dados.
+                                </p>
+                                <p class="text-muted small">
+                                    Verifique se o QR code foi escaneado corretamente ou entre em contato com a equipe que emitiu o certificado.
+                                </p>
+                                <hr style="border-color: #D4A857;" />
+                                <a
+                                        href="/"
+                                        class="btn"
+                                        style="background: #714B67; color: #F5EFE0;"
+                                    >
+                                    <i class="fa fa-home me-1" />Voltar para o site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</data></odoo>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data noupdate="1">
+
+    <record id="paperformat_escodoo_certification" model="report.paperformat">
+        <field name="name">Escodoo Certification (A4 Portrait)</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="disable_shrinking">True</field>
+        <field name="dpi">96</field>
+    </record>
+
+    <!--
+        Layout final:
+        - TOPO: Logo Escodoo centralizado (sem nº certificado no header)
+        - MEIO: "Certificamos que" + Nome + Banner curso + Carga horária + Conteúdo + Aproveitamento
+        - RODAPÉ: 3 colunas equilibradas (Selo | QR+Data | Assinatura)
+        - Footer: Escodoo ERP & CRM
+    -->
+    <template
+            id="certification_report_view_modern_escodoo"
+            inherit_id="survey.certification_report_view_modern"
+            name="Certificate: Escodoo Portrait layout"
+            priority="99"
+        >
+        <xpath expr="//div[@id='o_survey_certification']" position="replace">
+
+            <t
+                    t-set="certif_channel"
+                    t-value="env['slide.slide'].sudo().search([('survey_id', '=', user_input.survey_id.id)], limit=1).channel_id"
+                />
+            <t
+                    t-set="certif_total_minutes"
+                    t-value="sum(certif_channel.sudo().slide_content_ids.mapped('completion_time')) if certif_channel else 0"
+                />
+            <t t-set="certif_hours" t-value="int(certif_total_minutes // 60)" />
+            <t t-set="certif_minutes" t-value="int(certif_total_minutes % 60)" />
+            <t
+                    t-set="certif_slides_count"
+                    t-value="len(certif_channel.sudo().slide_content_ids.filtered(lambda s: s.slide_category != 'certification')) if certif_channel else 0"
+                />
+            <t
+                    t-set="certif_chapters_count"
+                    t-value="len(certif_channel.sudo().slide_category_ids.filtered(lambda c: c.is_category)) if certif_channel else 0"
+                />
+
+            <div
+                    id="o_survey_certification"
+                    class="article"
+                    t-att-data-oe-model="user_input._name"
+                    t-att-data-oe-id="user_input.id"
+                    style="font-family: 'OpenSans', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #3C3C3C; background: #F5EFE0; width: 210mm; min-height: 297mm; padding: 0; margin: 0;"
+                >
+
+                <!-- ÁREA DE SEGURANÇA 10mm -->
+                <div style="padding: 10mm;">
+
+                    <!-- TOPO: Logo Escodoo centralizado + nº certificado -->
+                    <div style="text-align: center; margin-bottom: 6mm;">
+                        <img
+                                t-att-src="'/e-learning-boardkit/static/src/img/logo-horizontal.png'"
+                                style="max-height: 20mm; max-width: 90mm;"
+                            />
+                        <p
+                                style="font-size: 9pt; color: #714B67; margin: 3mm 0 0 0; letter-spacing: 1px; font-weight: 600;"
+                            >
+                            CERTIFICADO Nº <t
+                                    t-esc="str(user_input.id).rjust(6, '0')"
+                                />
+                        </p>
+                    </div>
+
+                    <!-- "Certificamos que" -->
+                    <p
+                            style="text-align: center; font-size: 12pt; color: #5E3A57; margin: 4mm 0; font-style: italic;"
+                        >
+                        Certificamos que
+                    </p>
+
+                    <!-- NOME -->
+                    <div style="text-align: center; margin: 2mm 0 6mm 0;">
+                        <div
+                                style="display: inline-block; padding: 4mm 14mm; border-top: 0.7mm solid #D4A857; border-bottom: 0.7mm solid #D4A857; background: rgba(212, 168, 87, 0.05);"
+                            >
+                            <span
+                                    style="font-size: 22pt; font-weight: 700; color: #5E3A57; letter-spacing: 2px;"
+                                    t-esc="user_input.partner_id.name or user_input.email or ''"
+                                />
+                        </div>
+                    </div>
+
+                    <!-- "concluiu com sucesso o curso" -->
+                    <p
+                            style="text-align: center; font-size: 11pt; color: #5E3A57; margin: 0 0 4mm 0;"
+                        >
+                        concluiu com sucesso o curso
+                    </p>
+
+                    <!-- BANNER DO CURSO -->
+                    <div style="text-align: center; margin: 2mm 0 5mm 0;">
+                        <div
+                                style="display: inline-block; padding: 4mm 14mm; background: linear-gradient(135deg, #714B67 0%, #5E3A57 100%); color: #F5EFE0; border-radius: 1mm;"
+                            >
+                            <h2
+                                    style="font-size: 13pt; font-weight: 700; letter-spacing: 3px; margin: 0; color: #F5EFE0;"
+                                >
+                                <t t-esc="user_input.survey_id.display_name.upper()" />
+                            </h2>
+                        </div>
+                    </div>
+
+                    <!-- CARGA HORÁRIA -->
+                    <div
+                            style="text-align: center; margin-bottom: 4mm; padding: 2mm 0; border-top: 0.3mm solid #D4A857; border-bottom: 0.3mm solid #D4A857;"
+                        >
+                        <p
+                                style="font-size: 10pt; color: #714B67; margin: 0; letter-spacing: 1px;"
+                            >
+                            <strong>Carga horária:</strong>
+                            <t t-if="certif_hours > 0"><t t-esc="certif_hours" />h</t>
+                            <t t-if="certif_minutes > 0"><t
+                                        t-esc="certif_minutes"
+                                    />min</t>
+                            <t
+                                    t-if="certif_hours == 0 and certif_minutes == 0"
+                                >não especificada</t>
+                            &#160;|&#160; <strong><t
+                                        t-esc="certif_chapters_count"
+                                    /></strong> capítulos &#160;|&#160; <strong><t
+                                        t-esc="certif_slides_count"
+                                    /></strong> lições
+                        </p>
+                    </div>
+
+                    <!-- CONTEÚDO PROGRAMÁTICO -->
+                    <div style="margin-bottom: 4mm;">
+                        <h3
+                                style="font-size: 10pt; font-weight: 700; color: #714B67; letter-spacing: 2px; margin: 0 0 4mm 0; text-transform: uppercase; text-align: center;"
+                            >
+                            Conteúdo Programático
+                        </h3>
+                        <table
+                                style="width: 100%; font-size: 9pt; color: #3C3C3C; border-collapse: collapse;"
+                            >
+                            <tr>
+                                <td
+                                        style="width: 50%; vertical-align: top; text-align: center;"
+                                    >
+                                    <table style="margin: 0 auto; line-height: 1.8;">
+                                        <tr><td
+                                                    style="text-align: left; padding: 0;"
+                                                >• Fundamentos do boardkit</td></tr>
+                                        <tr><td
+                                                    style="text-align: left; padding: 0;"
+                                                >• Dashboards, KPIs e listas</td></tr>
+                                        <tr><td
+                                                    style="text-align: left; padding: 0;"
+                                                >• Filtros e drill-down</td></tr>
+                                        <tr><td
+                                                    style="text-align: left; padding: 0;"
+                                                >• Formulário de item (avançado)</td></tr>
+                                    </table>
+                                </td>
+                                <td
+                                        style="width: 50%; vertical-align: top; text-align: center;"
+                                    >
+                                    <table style="margin: 0 auto; line-height: 1.8;">
+                                        <tr><td
+                                                    style="text-align: left; padding: 0;"
+                                                >• Reorganização e templates</td></tr>
+                                        <tr><td
+                                                    style="text-align: left; padding: 0;"
+                                                >• Settings e personalização</td></tr>
+                                        <tr><td
+                                                    style="text-align: left; padding: 0;"
+                                                >• Instalação e troubleshooting</td></tr>
+                                        <tr><td
+                                                    style="text-align: left; padding: 0;"
+                                                >• Boas práticas do dia-a-dia</td></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- XP / APROVEITAMENTO -->
+                    <div
+                            t-if="user_input.scoring_success"
+                            style="text-align: center; margin-bottom: 6mm;"
+                        >
+                        <span
+                                style="display: inline-block; padding: 2mm 6mm; background: #714B67; color: #F5EFE0; font-size: 11pt; font-weight: 600; letter-spacing: 1px; border-radius: 1mm;"
+                            >
+                            Aproveitamento: <t
+                                    t-esc="int(user_input.scoring_percentage)"
+                                />% &#160;|&#160; XP: <t
+                                    t-esc="user_input.create_uid.karma"
+                                />
+                        </span>
+                    </div>
+
+                    <!-- SEPARADOR -->
+                    <div
+                            style="width: 100%; height: 0.3mm; background: linear-gradient(90deg, transparent 0%, #714B67 50%, transparent 100%); margin: 4mm 0;"
+                        />
+
+                    <!-- RODAPÉ: 3 colunas equilibradas (mesma altura visível 38mm) -->
+                    <table
+                            style="width: 100%; margin-top: 6mm; border-collapse: collapse;"
+                        >
+                        <tr>
+                            <!-- COLUNA ESQUERDA: Selo 12 anos -->
+                            <td
+                                    style="width: 33%; text-align: center; padding: 0 4mm; vertical-align: middle;"
+                                >
+                                <img
+                                        t-att-src="'/e-learning-boardkit/static/src/img/12anos.png'"
+                                        style="height: 38mm;"
+                                    />
+                            </td>
+
+                            <!-- COLUNA CENTRO: QR Code + Validar -->
+                            <td
+                                    style="width: 28%; text-align: center; padding: 0 4mm; vertical-align: middle;"
+                                >
+                                <img
+                                        t-att-src="'/certificacao/validar/qr/%s' % user_input.access_token"
+                                        style="width: 22mm; height: 22mm; padding: 1mm; background: #FFFFFF; border: 0.3mm solid #714B67;"
+                                    />
+                                <p
+                                        style="font-size: 8pt; color: #714B67; margin: 2mm 0 0 0; letter-spacing: 1px; text-align: center; line-height: 1.3;"
+                                    >
+                                    <strong>Validar online</strong><br />
+                                    <span
+                                            style="font-size: 6pt; word-break: break-all;"
+                                        >escodoo.com/cv/<t
+                                                t-esc="user_input.access_token[:8]"
+                                            />...</span>
+                                </p>
+                            </td>
+
+                            <!-- COLUNA DIREITA: Data emissão + Assinatura -->
+                            <td
+                                    style="width: 39%; text-align: center; padding: 0 4mm; vertical-align: middle;"
+                                >
+                                <p
+                                        style="font-size: 9pt; color: #714B67; margin: 0 0 1mm 0; letter-spacing: 1px; text-transform: uppercase; text-align: center;"
+                                    >Data de Emissão</p>
+                                <p
+                                        style="font-size: 13pt; color: #3C3C3C; font-weight: 700; margin: 0 0 3mm 0; text-align: center;"
+                                    >
+                                    <t
+                                            t-esc="user_input.create_date"
+                                            t-options='{"widget": "date", "format": "dd/MM/yyyy"}'
+                                        />
+                                </p>
+                                <div
+                                        style="border-top: 0.4mm solid #3C3C3C; margin: 0 4mm 1mm 4mm; padding-top: 1.5mm; text-align: center;"
+                                    >
+                                    <p
+                                            style="font-size: 10pt; color: #3C3C3C; font-weight: 700; margin: 0;"
+                                            t-esc="certif_channel.user_id.partner_id.name if certif_channel else ''"
+                                        />
+                                    <p
+                                            style="font-size: 6.5pt; color: #714B67; margin: 0.5mm 0 0 0; letter-spacing: 1px; text-transform: uppercase;"
+                                        >
+                                        Responsável pelo curso
+                                    </p>
+                                </div>
+                                <p
+                                        style="font-size: 6.5pt; color: #714B67; margin: 1.5mm 0 0 0; font-style: italic; text-align: center;"
+                                    >Válido permanentemente</p>
+                            </td>
+
+                        </tr>
+                    </table>
+
+                    <!-- FOOTER ESCODOO -->
+                    <div
+                            style="margin-top: 8mm; padding-top: 4mm; border-top: 0.3mm solid #D4A857; text-align: center;"
+                        >
+                        <p
+                                style="font-size: 9pt; color: #714B67; margin: 0; font-weight: 600; letter-spacing: 1px;"
+                            >
+                            Escodoo ERP &amp; CRM open source — Academia Escodoo (2026)
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template
+            id="certification_report_view_classic_escodoo"
+            inherit_id="survey.certification_report_view_classic"
+            name="Certificate: Escodoo Portrait layout (classic)"
+            priority="99"
+        >
+        <xpath expr="//div[@id='o_survey_certification']" position="replace">
+            <t
+                    t-set="certif_channel"
+                    t-value="env['slide.slide'].sudo().search([('survey_id', '=', user_input.survey_id.id)], limit=1).channel_id"
+                />
+            <div
+                    id="o_survey_certification"
+                    class="article"
+                    t-att-data-oe-model="user_input._name"
+                    t-att-data-oe-id="user_input.id"
+                    style="font-family: 'OpenSans', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #3C3C3C; background: #F5EFE0; width: 210mm; min-height: 297mm;"
+                >
+                <div style="padding: 10mm;">
+                    <p
+                            style="text-align: center; color: #714B67; font-weight: 700; font-size: 9pt; letter-spacing: 2px;"
+                        >
+                        CERTIFICADO DE CONCLUSÃO — <t
+                                t-esc="user_input.survey_id.display_name.upper()"
+                            />
+                    </p>
+                    <p
+                            style="text-align: center; font-size: 18pt; font-weight: 700; color: #5E3A57; margin: 6mm 0;"
+                            t-esc="user_input.partner_id.name or user_input.email or ''"
+                        />
+                    <p style="text-align: center; font-size: 9pt; color: #3C3C3C;">
+                        Data de emissão: <t
+                                t-esc="user_input.create_date"
+                                t-options='{"widget": "date"}'
+                            />
+                    </p>
+                    <p
+                            style="text-align: center; font-size: 8pt; color: #714B67; margin-top: 6mm;"
+                        >
+                        Escodoo ERP &amp; CRM open source — Academia Escodoo (2026)
+                    </p>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</data></odoo>

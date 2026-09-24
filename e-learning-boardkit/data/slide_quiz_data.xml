@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data noupdate="1">
+
+    <!-- ============ QUIZ FINAL (12.2) ============ -->
+    <!--
+        NOTE: 12.1 (study guide) was created via seed_quiz_split.py and lives at slide.id=138.
+        It is not defined here to avoid duplication (it existed before being recategorised).
+        Future upgrades must rely on the existing slide 138, managed via DB seed / html_content injection.
+    -->
+    <record id="slide_lesson_quiz" model="slide.slide">
+        <field name="name">12.2 - Quiz Final</field>
+        <field name="sequence">35</field>
+        <field
+                name="tag_ids"
+                eval="[(4, ref('website_slides.slide_tag_demo_theory'))]"
+            />
+        <field name="slide_category">quiz</field>
+        <field name="channel_id" ref="slide_channel_boardkit" />
+        <field name="category_id" ref="slide_chapter_quiz" />
+        <field name="is_published" eval="True" />
+        <field name="website_published" eval="True" />
+        <field name="completion_time">15</field>
+        <!--
+            12.2 final quiz: 100 XP ao acertar tudo de primeira (recompensa do slide).
+            +10 lições × 10 XP = 100 XP dos quizzes opcionais.
+            Total máximo = 200 XP.
+            Usuário com ≥100 XP passa da regra nativa "completion" (alinhado com karma gain).
+        -->
+        <field name="quiz_first_attempt_reward">100</field>
+        <field name="quiz_second_attempt_reward">70</field>
+        <field name="quiz_third_attempt_reward">50</field>
+        <field name="quiz_fourth_attempt_reward">20</field>
+        <field name="description" type="html"><p
+                >10 questões do dia-a-dia de quem cria e usa dashboards (formato nativo Odoo). Acertar todas de primeira dá <strong
+                    >100 XP</strong>; nas tentativas seguintes o XP diminui (70, 50, 20). Use o XP ganho aqui em conjunto com o XP dos quizzes das lições (10 XP cada) para fechar os 200 XP máximos do curso.</p></field>
+    </record>
+
+</data></odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data noupdate="1">
+
+    <record id="slide_channel_boardkit" model="slide.channel">
+        <field name="name">Boardkit — Curso Completo (Odoo 16/17/18)</field>
+        <field name="channel_type">training</field>
+        <field name="user_id" ref="base.user_admin" />
+        <field name="enroll">public</field>
+        <field name="visibility">public</field>
+        <field name="promote_strategy">most_voted</field>
+        <field name="allow_comment" eval="True" />
+        <field name="is_published" eval="True" />
+        <field name="website_published" eval="True" />
+        <!--
+            Native Odoo gamification, sem customização:
+            - karma_gen_channel_finish = 0: o XP do canal vem dos quizzes (10 lições × 10 XP + 12.2 × 100 XP = 200 XP máx.)
+            - karma_review, karma_slide_comment, karma_slide_vote: thresholds padrão do upstream
+        -->
+        <field name="karma_gen_channel_finish" eval="0" />
+        <field name="karma_gen_channel_rank" eval="0" />
+        <field
+                name="image_1920"
+                type="base64"
+                file="e-learning-boardkit/static/src/img/cover.png"
+            />
+        <field name="description_short" type="html"><p
+                >Dashboards analíticos configuráveis, sem código. 12 capítulos + quiz.</p></field>
+        <field name="description" type="html"><p
+                >Bem-vindo ao curso completo sobre o boardkit! Em 12 capítulos você vai aprender a criar, configurar e personalizar dashboards analíticos no Odoo.</p><p
+                ><strong>O que você vai aprender:</strong></p><ul><li
+                    >O que é o boardkit e como ele se diferencia dos dashboards nativos do Odoo;</li><li
+                    >Tipos de item suportados (tile, KPI, gráficos, mapa, lista);</li><li
+                    >Filtros, períodos e drill-down;</li><li
+                    >Templates prontos para CRM, Vendas, Projeto, RH, Fabricação, Estoque, Frotas, Helpdesk e mais — <strong
+                        >31 sub-módulos auto_install</strong>;</li><li
+                    >Personalização de layouts, paletas e permissões;</li><li
+                    >Como instalar e configurar o boardkit em uma base Odoo.</li></ul><p
+                >Curso composto por 12 capítulos + quiz final de 3 perguntas.</p></field>
+        <field name="description_html" type="html"><section
+                    class="s_text_block pt64 pb32"
+                ><div class="container text-center"><h1
+                            class="display-4"
+                        >Boardkit</h1><p
+                            class="lead"
+                        >Curso completo da suíte de dashboards da <strong
+                            >Escodoo</strong></p><p
+                            class="text-muted"
+                        >12 capítulos · ~2 horas · Quiz final</p><a
+                            class="btn btn-primary btn-lg mt-3"
+                            href="#slide_lesson_intro"
+                        >Começar agora</a></div></section></field>
+    </record>
+
+</data></odoo>

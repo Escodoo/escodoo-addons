@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data noupdate="1">
+
+    <!--
+        Survey de certificação (website_slides_survey + survey nativos).
+        Configuração:
+        - 12 perguntas, foco no usuário que cria e usa dashboards no dia-a-dia
+        - 80% para passar (10/12 acertos)
+        - 3 tentativas no máximo
+        - Layout "Modern Blue" (certificado profissional em PDF)
+        - Email automático do survey (certification_mail_template_id) já vem do native
+    -->
+    <record id="survey_certification_boardkit" model="survey.survey">
+        <field name="title">Boardkit — Curso Completo (Odoo 16/17/18)</field>
+        <field name="questions_layout">page_per_question</field>
+        <field name="is_attempts_limited" eval="True" />
+        <field name="attempts_limit">3</field>
+        <field name="is_time_limited" eval="False" />
+        <field name="scoring_type">scoring_without_answers</field>
+        <field name="certification" eval="True" />
+        <field name="scoring_success_min">80.0</field>
+        <field name="certification_report_layout">modern_blue</field>
+        <field
+                name="description"
+            >&lt;p&gt;Prova de certificação do curso &lt;strong&gt;Boardkit — Curso Completo&lt;/strong&gt;. São 12 questões cobrindo o conteúdo das lições do curso. Você precisa de &lt;strong&gt;10 acertos (80%)&lt;/strong&gt; para receber o certificado. Tem até &lt;strong&gt;3 tentativas&lt;/strong&gt;.&lt;/p&gt;</field>
+        <field
+                name="description_done"
+            >&lt;p&gt;&lt;strong&gt;Parabéns!&lt;/strong&gt; Você concluiu a certificação do Boardkit. O certificado em PDF está disponível abaixo — basta clicar em &lt;strong&gt;Baixar certificado&lt;/strong&gt;.&lt;/p&gt;</field>
+    </record>
+
+</data></odoo>

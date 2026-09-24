@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data noupdate="1">
+
+    <!--
+        Quiz opcional por lição — vinculado a slides existentes.
+        Cada slide ganha 1 question (10 XP no first attempt).
+        10 lições × 10 XP = 100 XP.
+        + Quiz final (12.2) com 10 questions × 10 XP = 100 XP.
+        Total máximo = 200 XP.
+        Mínimo para certificação = 100 XP.
+    -->
+
+    <!-- 2.1 - Dashboard CRM Pipeline -->
+    <record id="slide_question_lesson_2_1" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_crm" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Para que serve o dashboard CRM Pipeline que vem no boardkit?</field>
+    </record>
+    <record id="slide_answer_lesson_2_1_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_2_1" />
+        <field name="sequence">1</field>
+        <field name="text_value">Para substituir o módulo CRM nativo do Odoo.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — o boardkit complementa o CRM, não substitui. Ele agrega visualizações sobre os dados que já existem no CRM.</field>
+    </record>
+    <record id="slide_answer_lesson_2_1_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_2_1" />
+        <field name="sequence">2</field>
+        <field
+                name="text_value"
+            >Para visualizar de forma consolidada o pipeline de oportunidades em tiles, KPIs e listas prontas para uso.</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! É um dashboard de exemplo que mostra como tiles, KPIs e listas funcionam juntos.</field>
+    </record>
+    <record id="slide_answer_lesson_2_1_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_2_1" />
+        <field name="sequence">3</field>
+        <field
+                name="text_value"
+            >Para criar novos registros de oportunidade a partir de gráficos.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — o boardkit é leitura (visualização). Criação continua no CRM nativo.</field>
+    </record>
+    <record id="slide_answer_lesson_2_1_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_2_1" />
+        <field name="sequence">4</field>
+        <field name="text_value">Para exportar dados para BI externo.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — o boardkit é uma camada de visualização interna do Odoo, não uma ferramenta de exportação para BI externo.</field>
+    </record>
+
+    <!-- 3.1 - Filtros e Períodos -->
+    <record id="slide_question_lesson_3_1" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_filters" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Qual é a diferença prática entre o filtro de Período e o filtro de Domínio em um item?</field>
+    </record>
+    <record id="slide_answer_lesson_3_1_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_3_1" />
+        <field name="sequence">1</field>
+        <field name="text_value">São a mesma coisa, com nomes diferentes.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — Período é um filtro rápido nativo do boardkit (últimos 7 dias, último mês, etc.) e Domínio é uma expressão técnica completa de filtro Odoo.</field>
+    </record>
+    <record id="slide_answer_lesson_3_1_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_3_1" />
+        <field name="sequence">2</field>
+        <field
+                name="text_value"
+            >Período é uma preset nativa para intervalo de datas; Domínio é uma expressão de filtro Odoo completa para qualquer campo.</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! Período cuida de intervalo de datas; Domínio é a forma flexível de filtrar por qualquer campo do modelo.</field>
+    </record>
+    <record id="slide_answer_lesson_3_1_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_3_1" />
+        <field name="sequence">3</field>
+        <field
+                name="text_value"
+            >Período filtra registros; Domínio só serve para mudar a cor dos itens.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — Domínio é a forma técnica de aplicar filtros do Odoo (mesmo formato que em search()). Não tem relação com cor.</field>
+    </record>
+    <record id="slide_answer_lesson_3_1_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_3_1" />
+        <field name="sequence">4</field>
+        <field
+                name="text_value"
+            >Domínio só funciona para usuários administradores.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — qualquer usuário com permissão de edição no item pode configurar um Domínio, desde que a expressão seja válida.</field>
+    </record>
+
+    <!-- 4.4 - Aba Value -->
+    <record id="slide_question_lesson_4_4" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_value" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Na aba Value, qual a diferença entre as agregações count e sum?</field>
+    </record>
+    <record id="slide_answer_lesson_4_4_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_4" />
+        <field name="sequence">1</field>
+        <field
+                name="text_value"
+            >count conta registros; sum soma um campo numérico dos registros.</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! count simplesmente conta, sum precisa de um campo numérico para somar.</field>
+    </record>
+    <record id="slide_answer_lesson_4_4_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_4" />
+        <field name="sequence">2</field>
+        <field name="text_value">As duas fazem a mesma coisa, só muda o nome.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — count não exige campo; sum exige um campo numérico definido.</field>
+    </record>
+    <record id="slide_answer_lesson_4_4_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_4" />
+        <field name="sequence">3</field>
+        <field
+                name="text_value"
+            >count soma valores; sum conta quantos registros existem.</field>
+        <field name="is_correct" eval="False" />
+        <field name="comment">Inverteu. count conta, sum soma.</field>
+    </record>
+    <record id="slide_answer_lesson_4_4_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_4" />
+        <field name="sequence">4</field>
+        <field name="text_value">sum só funciona com campos booleanos.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — sum exige campo numérico (Integer, Float, Monetary).</field>
+    </record>
+
+    <!-- 4.5 - Aba Chart -->
+    <record id="slide_question_lesson_4_5" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_chart" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Qual tipo de gráfico NÃO suporta drill-down no boardkit?</field>
+    </record>
+    <record id="slide_answer_lesson_4_5_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_5" />
+        <field name="sequence">1</field>
+        <field name="text_value">Bar (coluna).</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — bar suporta drill. É justamente o caso da lição.</field>
+    </record>
+    <record id="slide_answer_lesson_4_5_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_5" />
+        <field name="sequence">2</field>
+        <field name="text_value">Line (linha).</field>
+        <field name="is_correct" eval="False" />
+        <field name="comment">Não — line suporta drill.</field>
+    </record>
+    <record id="slide_answer_lesson_4_5_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_5" />
+        <field name="sequence">3</field>
+        <field name="text_value">Gauge (medidor).</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! Gauge é um indicador pontual — não faz sentido "descer" em níveis.</field>
+    </record>
+    <record id="slide_answer_lesson_4_5_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_5" />
+        <field name="sequence">4</field>
+        <field name="text_value">Pie (pizza).</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — pie suporta drill na maioria dos casos (drill por categoria).</field>
+    </record>
+
+    <!-- 4.7 - Aba Drill Down -->
+    <record id="slide_question_lesson_4_7" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_add_item_drill" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Por que um drill-down configurado com target_model igual ao modelo do item não dispara?</field>
+    </record>
+    <record id="slide_answer_lesson_4_7_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_7" />
+        <field name="sequence">1</field>
+        <field
+                name="text_value"
+            >Porque o boardkit bloqueia drill em itens de categoria "article".</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — a categoria não tem relação. O problema é a configuração do target_model.</field>
+    </record>
+    <record id="slide_answer_lesson_4_7_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_7" />
+        <field name="sequence">2</field>
+        <field
+                name="text_value"
+            >Porque target_model precisa apontar para um modelo diferente do item (subir na hierarquia via FK).</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! O drill funciona como cadeia de subqueries — não há para onde ir se o destino é o mesmo modelo.</field>
+    </record>
+    <record id="slide_answer_lesson_4_7_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_7" />
+        <field name="sequence">3</field>
+        <field name="text_value">Porque o gráfico precisa estar em modo "kiosk".</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — kiosk é um modo de visualização em TV, sem relação com drill.</field>
+    </record>
+    <record id="slide_answer_lesson_4_7_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_7" />
+        <field name="sequence">4</field>
+        <field
+                name="text_value"
+            >Porque o usuário precisa ter permissão de administrador.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — drill funciona para qualquer usuário que visualize o dashboard.</field>
+    </record>
+
+    <!-- 4.8 - Aba Domain -->
+    <record id="slide_question_lesson_4_8" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_domain" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Qual das expressões abaixo é um Domain válido para filtrar oportunidades ganhas?</field>
+    </record>
+    <record id="slide_answer_lesson_4_8_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_8" />
+        <field name="sequence">1</field>
+        <field name="text_value">[(probability, =, 100)]</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Inválido — em domains, nomes técnicos e strings precisam de aspas: [('probability', '=', 100)].</field>
+    </record>
+    <record id="slide_answer_lesson_4_8_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_8" />
+        <field name="sequence">2</field>
+        <field name="text_value">[('probability', '=', 100)]</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! Nomes técnicos entre aspas simples, valor numérico sem aspas, operador entre aspas.</field>
+    </record>
+    <record id="slide_answer_lesson_4_8_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_8" />
+        <field name="sequence">3</field>
+        <field name="text_value">[probability == 100]</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — domains usam formato de lista de tuplas, não sintaxe Python.</field>
+    </record>
+    <record id="slide_answer_lesson_4_8_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_4_8" />
+        <field name="sequence">4</field>
+        <field name="text_value">WHERE probability = 100</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — isso é SQL, não Domain. O boardkit/ORM do Odoo espera formato de tuplas.</field>
+    </record>
+
+    <!-- 5.1 - Reorganização -->
+    <record id="slide_question_lesson_5_1" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_reorg_cards" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Por que a reorganização via drag-and-drop não aparece igual para outros usuários?</field>
+    </record>
+    <record id="slide_answer_lesson_5_1_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_5_1" />
+        <field name="sequence">1</field>
+        <field
+                name="text_value"
+            >Porque o boardkit não está sincronizando — clique em recarregar.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — drag não sincroniza por design. Cada usuário tem seu próprio layout pessoal (boardkit.dashboard.layout).</field>
+    </record>
+    <record id="slide_answer_lesson_5_1_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_5_1" />
+        <field name="sequence">2</field>
+        <field
+                name="text_value"
+            >Porque drag é pessoal; para afetar todos, o gerente ajusta layout_x/y/w/h dos itens.</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! O boardkit separa layout global (do item) de layout pessoal (do drag).</field>
+    </record>
+    <record id="slide_answer_lesson_5_1_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_5_1" />
+        <field name="sequence">3</field>
+        <field
+                name="text_value"
+            >Porque o dashboard precisa ser salvo como template.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — template cria um NOVO dashboard, não muda o layout do My Day existente.</field>
+    </record>
+    <record id="slide_answer_lesson_5_1_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_5_1" />
+        <field name="sequence">4</field>
+        <field
+                name="text_value"
+            >Porque o navegador do outro usuário está desatualizado.</field>
+        <field name="is_correct" eval="False" />
+        <field name="comment">Não — é por design, não por cache.</field>
+    </record>
+
+    <!-- 6.1 - Lista de Templates -->
+    <record id="slide_question_lesson_6_1" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_templates_list" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Por que NÃO devemos editar o payload de um template padrão do boardkit?</field>
+    </record>
+    <record id="slide_answer_lesson_6_1_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_6_1" />
+        <field name="sequence">1</field>
+        <field name="text_value">Porque o template fica read-only na interface.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não é só UI — o problema é estrutural: edits em template padrão são sobrescritos em upgrades.</field>
+    </record>
+    <record id="slide_answer_lesson_6_1_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_6_1" />
+        <field name="sequence">2</field>
+        <field
+                name="text_value"
+            >Porque edições em template padrão são sobrescritas em upgrades do módulo.</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! Por convenção, templates padrão são read-only para garantir persistência. Duplique para customizar.</field>
+    </record>
+    <record id="slide_answer_lesson_6_1_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_6_1" />
+        <field name="sequence">3</field>
+        <field
+                name="text_value"
+            >Porque outros usuários não conseguem acessar templates editados.</field>
+        <field name="is_correct" eval="False" />
+        <field name="comment">Não é questão de permissão, é questão de upgrade.</field>
+    </record>
+    <record id="slide_answer_lesson_6_1_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_6_1" />
+        <field name="sequence">4</field>
+        <field name="text_value">Porque o payload é criptografado.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — payload é só um dict Python serializado, sem criptografia.</field>
+    </record>
+
+    <!-- 7.1 - Settings Globais -->
+    <record id="slide_question_lesson_7_1" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_settings" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Para que uma paleta custom passe a ser usada por padrão nos novos dashboards, o que precisa estar configurado?</field>
+    </record>
+    <record id="slide_answer_lesson_7_1_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_7_1" />
+        <field name="sequence">1</field>
+        <field
+                name="text_value"
+            >Apenas criar a paleta — o boardkit detecta automaticamente.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — criar não basta. O segundo campo (Paleta padrão) precisa estar como Custom.</field>
+    </record>
+    <record id="slide_answer_lesson_7_1_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_7_1" />
+        <field name="sequence">2</field>
+        <field
+                name="text_value"
+            >Criar a paleta e marcar "Default Custom Palette" + definir "Paleta padrão" como Custom nas Settings.</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! A hierarquia é empresa → dashboard → item. Sem o campo Paleta padrão = Custom, o sistema ignora.</field>
+    </record>
+    <record id="slide_answer_lesson_7_1_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_7_1" />
+        <field name="sequence">3</field>
+        <field name="text_value">Reiniciar o servidor Odoo após criar a paleta.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — paletas são registros comuns, não precisam de reload.</field>
+    </record>
+    <record id="slide_answer_lesson_7_1_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_7_1" />
+        <field name="sequence">4</field>
+        <field name="text_value">Renomear a paleta para "Default".</field>
+        <field name="is_correct" eval="False" />
+        <field name="comment">Não — referência é por ID, não por nome.</field>
+    </record>
+
+    <!-- 9.1 - Erros Comuns -->
+    <record id="slide_question_lesson_9_1" model="slide.question">
+        <field name="slide_id" ref="slide_lesson_errors" />
+        <field name="sequence">1</field>
+        <field
+                name="question"
+            >Um dashboard mostra todos os tiles com valor 0, mas os registros existem no menu nativo. O que verificar primeiro?</field>
+    </record>
+    <record id="slide_answer_lesson_9_1_a" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_9_1" />
+        <field name="sequence">1</field>
+        <field name="text_value">Se o servidor Odoo está com cache ativo.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — cache não causa zero em todos os tiles ao mesmo tempo.</field>
+    </record>
+    <record id="slide_answer_lesson_9_1_b" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_9_1" />
+        <field name="sequence">2</field>
+        <field
+                name="text_value"
+            >Se o usuário logado tem ACL (grupos) para acessar o modelo de origem dos itens.</field>
+        <field name="is_correct" eval="True" />
+        <field
+                name="comment"
+            >Correto! O boardkit respeita ACL e roda com sudo=False. Sem grupo, o item mostra 0 mesmo com dados existentes.</field>
+    </record>
+    <record id="slide_answer_lesson_9_1_c" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_9_1" />
+        <field name="sequence">3</field>
+        <field name="text_value">Se o domínio do item está vazio.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — domain vazio mostraria TODOS os registros, não zero.</field>
+    </record>
+    <record id="slide_answer_lesson_9_1_d" model="slide.answer">
+        <field name="question_id" ref="slide_question_lesson_9_1" />
+        <field name="sequence">4</field>
+        <field name="text_value">Se a paleta de cores está configurada.</field>
+        <field name="is_correct" eval="False" />
+        <field
+                name="comment"
+            >Não — paleta é só visual, não tem relação com os valores numéricos.</field>
+    </record>
+
+</data></odoo>

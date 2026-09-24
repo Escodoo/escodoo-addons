@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo><data>
+
+    <!--
+        Inject a header badge + label inside the quiz container
+        so the user knows if this is an optional lesson quiz or the
+        mandatory final quiz. Native XP bar (top of channel page) is used as-is.
+    -->
+    <template
+            id="lesson_content_quiz_optional"
+            inherit_id="website_slides.lesson_content_quiz"
+            name="Lesson: optional vs final quiz header"
+        >
+        <xpath expr="//div[@id='lessonQuiz']" position="before">
+            <div class="col-12 mb-2">
+                <t t-if="slide.slide_category == 'quiz'">
+                    <div class="alert alert-warning mb-2 py-2">
+                        <i class="fa fa-flag-checkered me-1" />
+                        <strong>Quiz Final (obrigatório).</strong>
+                        Acerte todas as questões para ganhar
+                        <strong t-esc="slide.quiz_first_attempt_reward" /> XP
+                        e validar sua certificação.
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="alert alert-info mb-2 py-2">
+                        <i class="fa fa-question-circle me-1" />
+                        <strong>Quiz opcional da lição.</strong>
+                        Acerte para ganhar
+                        <strong t-esc="slide.quiz_first_attempt_reward" /> XP
+                        que contam para a certificação.
+                    </div>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+</data></odoo>

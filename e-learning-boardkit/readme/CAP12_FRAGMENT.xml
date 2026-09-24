@@ -1,0 +1,1317 @@
+<div class="container py-4 o_wslides_lesson_content_wrapper">
+            <section class="o_wslides_lesson_content">
+
+              <style>
+                /* Interactive study guide — show feedback only after user picks an option */
+                .sg-situation { margin-bottom: 2.5rem; }
+                .sg-options { margin-top: 1rem; }
+                .sg-option-row {
+                  display: flex;
+                  align-items: flex-start;
+                  gap: .65rem;
+                  border: 1px solid #dee2e6;
+                  border-radius: .375rem;
+                  padding: .75rem 1rem;
+                  margin-bottom: .5rem;
+                  cursor: pointer;
+                  background: #fff;
+                  transition: all .15s ease-in-out;
+                }
+                .sg-option-row:hover { background: #f8f9fa; border-color: #adb5bd; }
+                .sg-option-row input[type="radio"] {
+                  margin: 0.25rem 0 0 0;
+                  flex-shrink: 0;
+                  cursor: pointer;
+                }
+                .sg-option-row:has(input[type="radio"]:checked) {
+                  background: #e7f1ff;
+                  border-color: #0d6efd;
+                  box-shadow: 0 0 0 .2rem rgba(13,110,253,.15);
+                }
+                .sg-option-row label {
+                  flex-grow: 1;
+                  cursor: pointer;
+                  margin: 0;
+                }
+                .sg-feedback { display: none; margin-top: 1rem; }
+                .sg-feedback-title { font-weight: 600; margin-bottom: .5rem; }
+                /* Reveal feedback matching the picked option */
+                .sg-options:has(input[value="A"]:checked) ~ .sg-fb-A,
+                .sg-options:has(input[value="B"]:checked) ~ .sg-fb-B,
+                .sg-options:has(input[value="C"]:checked) ~ .sg-fb-C,
+                .sg-options:has(input[value="D"]:checked) ~ .sg-fb-D { display: block; }
+              </style>
+
+              <div
+            class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom flex-wrap"
+        >
+                <span class="badge text-bg-primary px-3 py-2 fs-6">Capítulo 12</span>
+                <span class="badge text-bg-warning px-3 py-2 fs-6">Guia de Estudo</span>
+                <span class="badge text-bg-light text-dark border px-3 py-2 fs-6"><i
+                    class="fa fa-clock-o me-1"
+                />~30 min</span>
+                <span class="badge text-bg-info px-3 py-2 fs-6">Lição 12.1</span>
+              </div>
+
+              <h1 class="display-5 fw-bold mb-3"><i
+                class="fa fa-graduation-cap text-primary me-2"
+            />Guia de Estudo — Boardkit Completo</h1>
+              <p class="lead text-muted mb-5">Esta é a <strong
+            >preparação oficial</strong> para a prova de certificação Boardkit. Voltada para <strong
+            >quem cria e usa dashboards no dia-a-dia</strong>: aqui você revisa <strong
+            >10 situações reais</strong> do cotidiano, escolhe <strong
+            >um dos quatro caminhos</strong> e vê o feedback detalhado (justificativa, referência à lição e snippet, quando aplicável). Em seguida, faça o <a
+                href="/slides/slide/12-2-quiz-final-141"
+            ><strong>Quiz Oficial</strong></a> para validar.</p>
+
+              <div
+            class="alert alert-info border-start border-4 border-info rounded-0 mb-5"
+            role="alert"
+        >
+                <div class="d-flex align-items-start gap-3">
+                  <i class="fa fa-lightbulb fa-2x mt-1 text-info" />
+                  <div>
+                    <h5 class="alert-heading mb-2">Como usar este guia interativo</h5>
+                    <ol class="mb-0 small">
+                      <li>Para cada situação, leia com atenção — é um cenário <strong
+                            >real</strong> do dia-a-dia;</li>
+                      <li>Escolha <strong
+                            >UM dos 4 caminhos</strong> (A, B, C, D) que você acha correto;</li>
+                      <li
+                        >O feedback aparece abaixo — correto (verde) ou errado (vermelho) com explicação completa;</li>
+                      <li
+                        >Tente novamente escolhendo outro caminho para entender as armadilhas;</li>
+                      <li>Quando terminar, clique no link interno para o <strong
+                            >Quiz Oficial</strong> (12.2).</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <div
+            class="alert alert-secondary border-start border-4 border-secondary rounded-0 mb-5"
+            role="alert"
+        >
+                <div class="d-flex align-items-start gap-3">
+                  <i class="fa fa-life-ring fa-2x mt-1 text-secondary" />
+                  <div>
+                    <h5 class="alert-heading mb-2">Quando acionar o Suporte Escodoo</h5>
+                    <p class="mb-0 small">Em <strong
+                        >poucas situações</strong> a melhor saída é escalar para o time da Escodoo — quando o cenário exige decisão de arquitetura, segurança ou profiling de banco que está além do que o criador do dashboard pode resolver sozinho. <strong
+                        >Nos demais casos</strong>, você resolve olhando a lição certa. Saber distinguir é parte da certificação.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-2 mb-5 text-center">
+                <div class="col-6 col-md-3"><div
+                    class="bg-o-color-3 rounded p-3 h-100"
+                ><div class="display-6 fw-bold text-o-color-1">10</div><small
+                        class="text-muted"
+                    >situações do dia-a-dia</small></div></div>
+                <div class="col-6 col-md-3"><div
+                    class="bg-o-color-3 rounded p-3 h-100"
+                ><div class="display-6 fw-bold text-o-color-1">4</div><small
+                        class="text-muted"
+                    >caminhos cada</small></div></div>
+                <div class="col-6 col-md-3"><div
+                    class="bg-o-color-3 rounded p-3 h-100"
+                ><div class="display-6 fw-bold text-o-color-1">30</div><small
+                        class="text-muted"
+                    >armadilhas explicadas</small></div></div>
+                <div class="col-6 col-md-3"><div
+                    class="bg-o-color-3 rounded p-3 h-100"
+                ><div class="display-6 fw-bold text-o-color-1">2</div><small
+                        class="text-muted"
+                    >casos de escalar pro Suporte</small></div></div>
+              </div>
+
+              <h2 class="mt-4 mb-4"><i
+                class="fa fa-list-ol text-primary me-2"
+            />As 10 situações (interativas)</h2>
+
+              <!-- SITUAÇÃO 1 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-primary sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 1</span>
+                    <span class="badge bg-secondary">Visibilidade</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: alta</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Tile mostra 0 mas você vê os registros no menu</h3>
+                  <p class="lead mb-4">Você criou um dashboard <em
+                    >CRM Pipeline</em> e adicionou um <em
+                    >tile</em> que deveria contar oportunidades no estágio <em
+                    >"Qualificado"</em>. Ao abrir o dashboard, o tile mostra <code
+                    >0</code> — mas no menu <em
+                    >CRM → Oportunidades</em> você conta 23 registros. O tile está errado?</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s1-a"
+                            name="s1"
+                            value="A"
+                        /><label for="s1-a"><strong
+                            >A)</strong> Apagar o item e criar de novo — provavelmente é cache do navegador.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s1-b"
+                            name="s1"
+                            value="B"
+                        /><label for="s1-b"><strong
+                            >B)</strong> Olhar se o seu usuário pertence aos grupos certos (ex.: Vendas / Usuário).</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s1-c"
+                            name="s1"
+                            value="C"
+                        /><label for="s1-c"><strong
+                            >C)</strong> Limpar o filtro de domínio do item e deixar vazio.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s1-d"
+                            name="s1"
+                            value="D"
+                        /><label for="s1-d"><strong
+                            >D)</strong> Abrir um chamado no Suporte Escodoo pedindo socorro.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p class="mb-2">Recriar o item <strong
+                            >não muda o usuário</strong>. Se a causa for permissão, o item novo vai mostrar <code
+                            >0</code> do mesmo jeito.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1 — Erro 1</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que B é o caminho certo</div>
+                      <p class="mb-2">O boardkit <strong
+                            >respeita as permissões do usuário logado</strong>. Se o tile mostra <code
+                            >0</code> e o menu mostra 23, é porque o usuário <strong
+                            >não tem acesso ao modelo</strong> (ex.: <em
+                            >crm.lead</em>) no estágio do filtro — provavelmente falta um grupo.</p>
+                      <p class="mb-2"><strong>O que fazer:</strong></p>
+                      <ul class="small mb-0">
+                        <li>Configurações → Usuários → [seu usuário] → Grupos;</li>
+                        <li>Adicione ao grupo <em
+                                >Vendas / Usuário: todos os documentos</em> (ou similar).</li>
+                      </ul>
+                      <p class="small text-muted mb-0 mt-2"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.4 — Aba Value, 4.8 — Aba Domain</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que C não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Tirar o filtro muda a regra de negócio (você perderia o filtro "Qualificado"). E a questão de permissão continua lá.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.8 — Aba Domain</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p class="mb-2">Esse problema <strong
+                            >não é bug do boardkit</strong> — é configuração do seu próprio usuário. Escalar antes de tentar resolver localmente desperdiça tempo do suporte e o seu. Tente o caminho B primeiro.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1 — Erro 1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 2 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-warning sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 2</span>
+                    <span class="badge bg-secondary">Visibilidade</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: alta</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Você criou o dashboard, marcou Published, deu grupo — mas nada aparece no menu</h3>
+                  <p class="lead mb-4">Você criou um dashboard <em
+                    >Pipeline SDR</em>, marcou <em>Publicar</em> e adicionou o grupo <em
+                    >Vendas / Gerente</em> em <em
+                    >Grupos permitidos</em>. Mesmo assim, o dashboard <strong
+                    >não aparece no menu lateral</strong> quando você entra com esse usuário.</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s2-a"
+                            name="s2"
+                            value="A"
+                        /><label for="s2-a"><strong
+                            >A)</strong> O nome precisa começar com letra maiúscula. Renomear para "Pipeline Sdr".</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s2-b"
+                            name="s2"
+                            value="B"
+                        /><label for="s2-b"><strong
+                            >B)</strong> Verificar o menu pai — pode estar em um nó (ex.: Configuração) onde seu usuário não tem acesso.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s2-c"
+                            name="s2"
+                            value="C"
+                        /><label for="s2-c"><strong
+                            >C)</strong> Marcar a opção "Menu as App" para ele virar item de menu raiz.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s2-d"
+                            name="s2"
+                            value="D"
+                        /><label for="s2-d"><strong
+                            >D)</strong> Trocar a imagem do dashboard para PNG — SVG quebra o menu.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p class="mb-2">O case do nome não afeta visibilidade de menu.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1 — Erro 4</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que B é o caminho certo</div>
+                      <p class="mb-2">A visibilidade do Odoo <strong
+                            >segue o caminho do menu</strong>. Se o dashboard está embaixo de um menu pai (ex.: <em
+                            >Configuração</em>) onde o usuário <em
+                            >Vendas / Gerente</em> não entra, ele fica invisível mesmo com grupos liberados no dashboard.</p>
+                      <p class="mb-2"><strong
+                            >Solução:</strong> abra o menu pai e libere os grupos (ex.: <em
+                            >Internal User</em>), ou mova o dashboard para um nó onde o usuário já tem acesso.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1 — Erro 4, 4.1 — Como adicionar um item</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que C não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >"Menu as App" é só cosmético (define se o item aparece como app na barra superior). Não resolve visibilidade.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.1</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >SVG é suportado em todas as versões modernas. O problema é de permissão, não de imagem.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 3 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-info sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 3</span>
+                    <span class="badge bg-secondary">UX pessoal</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: alta</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Você arrastou cards do My Day, mas a equipe não vê igual</h3>
+                  <p class="lead mb-4">Você passou a tarde reorganizando os cards do <em
+                    >My Day</em> arrastando pelo handle <code
+                    >+</code>. Você queria que <strong
+                    >toda a equipe</strong> abrisse o <em>My Day</em> e visse <strong
+                    >a mesma organização</strong> que você montou — mas cada um vê do seu jeito.</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s3-a"
+                            name="s3"
+                            value="A"
+                        /><label for="s3-a"><strong
+                            >A)</strong> O boardkit já sincroniza — peça para a equipe recarregar (Ctrl+F5).</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s3-b"
+                            name="s3"
+                            value="B"
+                        /><label for="s3-b"><strong
+                            >B)</strong> Reorganizar é pessoal; peça ao gerente para ajustar o layout dos itens no painel administrativo.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s3-c"
+                            name="s3"
+                            value="C"
+                        /><label for="s3-c"><strong
+                            >C)</strong> Salvar como template e mandar a equipe "usar template".</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s3-d"
+                            name="s3"
+                            value="D"
+                        /><label for="s3-d"><strong
+                            >D)</strong> Cada usuário deve arrastar até ficar igual ao seu.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Drag não sincroniza por design. Cada usuário tem seu próprio layout pessoal.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 5.1 — Reorganizar cards</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que B é o caminho certo</div>
+                      <p class="mb-2">O boardkit separa <strong
+                            >dois layouts</strong>:</p>
+                      <ul class="small mb-0">
+                        <li><strong>Global</strong> — posição <code
+                                >layout_x/y/w/h</code> do item (definido pelo gerente/admin);</li>
+                        <li><strong
+                                >Pessoal</strong> — drag-and-drop do dia-a-dia (salvo por usuário).</li>
+                      </ul>
+                      <p class="mb-0 mt-2"><strong
+                            >O que fazer:</strong> peça ao gerente para ajustar o layout dos itens no painel administrativo — esse sim vale para todos.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 5.1, 5.2 — Layout pessoal e reset</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que C não é o caminho</div>
+                      <p class="mb-2">"Salvar como template" cria um <em
+                            >novo dashboard</em>, não muda a ordem do My Day existente.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 6.1 — Templates</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Cada usuário arrastando do seu jeito gera layouts levemente diferentes — e ninguém vai manter isso no longo prazo. É trabalho braçal e propenso a erro.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 5.2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 4 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-primary sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 4</span>
+                    <span class="badge bg-secondary">Filtros</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: alta</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Filtrar só oportunidades da minha equipe nos últimos 30 dias</h3>
+                  <p
+                    class="lead mb-4"
+                >Você é vendedor e quer que seu dashboard mostre apenas as oportunidades da <strong
+                    >sua equipe</strong> criadas nos <strong
+                    >últimos 30 dias</strong>. Como você configura?</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s4-a"
+                            name="s4"
+                            value="A"
+                        /><label for="s4-a"><strong
+                            >A)</strong> Usar o filtro de período (Período = "Últimos 30 dias") e adicionar um domínio <code
+                            >[('team_id', '=', minha_equipe.id)]</code> na aba Domain.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s4-b"
+                            name="s4"
+                            value="B"
+                        /><label for="s4-b"><strong
+                            >B)</strong> Filtrar manualmente abrindo cada oportunidade e somando.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s4-c"
+                            name="s4"
+                            value="C"
+                        /><label for="s4-c"><strong
+                            >C)</strong> Criar um dashboard novo para cada vendedor da equipe.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s4-d"
+                            name="s4"
+                            value="D"
+                        /><label for="s4-d"><strong
+                            >D)</strong> Pedir ao Suporte Escodoo para criar o filtro automaticamente.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que A é o caminho certo</div>
+                      <p class="mb-2">Você usa o <strong
+                            >filtro de período nativo</strong> do boardkit (Período → "Últimos 30 dias") e adiciona um <strong
+                            >domínio</strong> na aba Domain do item para limitar à sua equipe. Combinar os dois é o jeito limpo.</p>
+                      <pre
+                            class="bg-dark text-light p-2 rounded small mb-0"
+                        >[('team_id', '=', minha_equipe.id)]</pre>
+                      <p class="small text-muted mb-0 mt-2"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 3.1 — Filtros e Períodos, 4.8 — Aba Domain</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que B não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Filtrar manualmente ignora o propósito do dashboard — que existe justamente para fazer essa conta por você.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 1.1 — O que é o Boardkit</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que C não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Multiplica dashboards sem necessidade. O boardkit foi feito para um dashboard servir toda a equipe com filtros por contexto.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 2.1 — Dashboard CRM Pipeline</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Filtros de equipe + período são funcionalidades padrão e cobertas na lição 3.1. Você consegue fazer sozinho sem abrir chamado.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 3.1 — Filtros e Períodos</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 5 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-warning sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 5</span>
+                    <span class="badge bg-secondary">Aparência</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: média</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Você criou a paleta "Q4 Sunset" e nada muda nos gráficos</h3>
+                  <p class="lead mb-4">Você criou uma paleta <em
+                    >"Q4 Sunset"</em> com tons de laranja/vermelho, e marcou ela como <em
+                    >Paleta custom padrão</em>. Mas os gráficos dos dashboards continuam aparecendo na paleta roxa padrão do Odoo.</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s5-a"
+                            name="s5"
+                            value="A"
+                        /><label for="s5-a"><strong
+                            >A)</strong> Adicionar a paleta manualmente em cada item, na aba Appearance.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s5-b"
+                            name="s5"
+                            value="B"
+                        /><label for="s5-b"><strong
+                            >B)</strong> Verificar se a configuração <em
+                            >Paleta padrão</em> nas Settings está como "Custom".</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s5-c"
+                            name="s5"
+                            value="C"
+                        /><label for="s5-c"><strong
+                            >C)</strong> Reiniciar o servidor Odoo para a paleta ser carregada.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s5-d"
+                            name="s5-d"
+                            value="D"
+                        /><label for="s5-d"><strong
+                            >D)</strong> Renomear a paleta para "Default" para virar a oficial.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Você pode fazer isso pontualmente, mas não é o caminho se você quer que <strong
+                            >todos os novos gráficos</strong> já usem a paleta.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.9 — Aba Appearance</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que B é o caminho certo</div>
+                      <p class="mb-2">A hierarquia é <strong
+                            >empresa → dashboard → item</strong>. Você marcou a paleta na empresa (Custom), mas o segundo campo <em
+                            >Paleta padrão</em> precisa estar como <em
+                            >Custom</em> para que o sistema passe a olhar a paleta custom em vez da Odoo. Trocar isso resolve para todos os novos gráficos.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 7.1 — Settings Globais, 4.9 — Appearance</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que C não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Paletas são registros salvos, não exigem reload do servidor. Settings aplicam ao salvar.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 7.1</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p class="mb-2">A referência é por <strong
+                            >ID</strong>, não por nome. Renomear não muda nada.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 7.1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 6 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-info sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 6</span>
+                    <span class="badge bg-secondary">Templates</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: média</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Reaproveitar o template CRM Pipeline para um cliente novo</h3>
+                  <p
+                    class="lead mb-4"
+                >Um cliente novo pediu um dashboard parecido com o <em
+                    >CRM Pipeline</em> do template, mas com algumas adaptações (filtro por estado, um item extra, agrupamento diferente). Você quer reaproveitar o que já existe sem perder o original.</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s6-a"
+                            name="s6"
+                            value="A"
+                        /><label for="s6-a"><strong
+                            >A)</strong> Editar direto o template padrão com as mudanças do cliente.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s6-b"
+                            name="s6"
+                            value="B"
+                        /><label for="s6-b"><strong
+                            >B)</strong> Duplicar o template (Action → Duplicar), dar uma nova key/identificador e ajustar o payload.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s6-c"
+                            name="s6"
+                            value="C"
+                        /><label for="s6-c"><strong
+                            >C)</strong> Apenas instanciar via wizard "A partir de template" e editar a cópia.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s6-d"
+                            name="s6"
+                            value="D"
+                        /><label for="s6-d"><strong
+                            >D)</strong> Copiar o dashboard via shell <code
+                            >copy()</code>.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p class="mb-2">Edit no template padrão é <strong
+                            >sobrescrito em upgrades</strong>. Você vai perder as mudanças na próxima atualização do boardkit.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 6.2 — Formulário de Template</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que B é o caminho certo</div>
+                      <p class="mb-2">Duplicar gera um <strong
+                            >novo template independente</strong>, preservando o original. Você dá uma <em
+                            >key</em> própria (ex.: <code
+                            >crm_pipeline_brasil_usa</code>) e ajusta payload/items/filtros livremente, sem risco em upgrades.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 6.1 — Templates, 6.2 — Formulário de Template</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que C não funciona bem aqui</div>
+                      <p class="mb-2">"A partir de template" instancia <em
+                            >um dashboard</em>, não um novo template reusável. Funciona para um uso pontual, mas você perde a possibilidade de oferecer o template custom para outros clientes no futuro.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 6.1</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p class="mb-2"><code>copy()</code> duplica um <em
+                            >dashboard</em> já instanciado, não o template fonte. Você não consegue reusar em outros clientes.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 7 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-danger sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 7</span>
+                    <span class="badge bg-danger">Suporte Escodoo</span>
+                    <span class="badge bg-secondary">Performance</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: alta</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Dashboard demora 3 segundos para abrir — e nenhum item sozinho parece culpado</h3>
+                  <p class="lead mb-4">Seu dashboard <em
+                    >Real-time Sales</em> tem 12 itens (tiles, gráficos, lista). Os usuários reclamam que demora cerca de <em
+                    >3 segundos</em> para abrir. Você abriu DevTools → Network e <strong
+                    >nenhum item sozinho demora mais que 600ms</strong>, mas o todo fica lento.</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s7-a"
+                            name="s7"
+                            value="A"
+                        /><label for="s7-a"><strong
+                            >A)</strong> Aumentar TTL do cache para 60 segundos — assim o navegador repete menos.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s7-b"
+                            name="s7"
+                            value="B"
+                        /><label for="s7-b"><strong
+                            >B)</strong> Trocar todos os gráficos por tiles para "aliviar".</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s7-c"
+                            name="s7"
+                            value="C"
+                        /><label for="s7-c"><strong
+                            >C)</strong> Acionar o Suporte Escodoo para uma análise de performance (profiling) e otimização do banco/dashboard.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s7-d"
+                            name="s7"
+                            value="D"
+                        /><label for="s7-d"><strong
+                            >D)</strong> Comprar mais RAM no servidor.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p class="mb-2">TTL alto traz dados <em
+                            >velhos</em>, não deixa o dashboard abrir mais rápido. E mascara o problema em vez de resolver.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 10.1 — Próximo nível</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que B não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Você perde a capacidade analítica dos gráficos — o cliente pediu aqueles gráficos por algum motivo.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.5 — Aba Chart</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que C é o caminho certo</div>
+                      <p class="mb-2">Quando <strong
+                            >nenhum item sozinho é o vilão</strong> mas o conjunto demora, o problema está em interações sutis: queries sem índice, N+1, agregações pesadas, joins mal escritos. Identificar isso exige <strong
+                            >profiling de banco e log de queries</strong> — trabalho de especialista.</p>
+                      <p class="mb-2"><strong
+                            >Por que escalar aqui é legítimo:</strong></p>
+                      <ul class="small mb-0">
+                        <li
+                            >Você já fez a parte que podia (DevTools, DevTools Network);</li>
+                        <li
+                            >O próximo passo exige conhecimento de banco, ORM e infraestrutura do boardkit;</li>
+                        <li
+                            >O Suporte Escodoo tem acesso a logs e ferramentas de profiling que você não tem.</li>
+                      </ul>
+                      <p class="small text-muted mb-0 mt-2"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 10.1, 9.1 — Alerta debug</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Mais RAM no servidor não resolve query lenta — só dá mais cache de página. Você precisa entender <em
+                            >onde</em> o tempo está sendo gasto.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 10.1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 8 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-warning sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 8</span>
+                    <span class="badge bg-secondary">Drill</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: média</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Drill-down não dispara quando você clica na barra</h3>
+                  <p class="lead mb-4">Você configurou um gráfico de barras de <em
+                    >valor total de pedidos por vendedor</em>, com dois níveis de drill na aba <em
+                    >Drill Down</em>: Vendedor → Equipe. Mas quando você clica numa barra, <strong
+                    >nada acontece</strong>.</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s8-a"
+                            name="s8"
+                            value="A"
+                        /><label for="s8-a"><strong
+                            >A)</strong> Trocar o gráfico de barra por gauge — talvez "bar" não suporte drill.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s8-b"
+                            name="s8"
+                            value="B"
+                        /><label for="s8-b"><strong
+                            >B)</strong> Conferir se o nível 1 do drill aponta para um modelo diferente do item (não pode ser o mesmo).</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s8-c"
+                            name="s8"
+                            value="C"
+                        /><label for="s8-c"><strong
+                            >C)</strong> Ativar a flag "Mostrar registros" na aba Interaction.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s8-d"
+                            name="s8"
+                            value="D"
+                        /><label for="s8-d"><strong
+                            >D)</strong> Pedir ao Suporte Escodoo para configurar o drill automaticamente.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Bar suporta drill. Gauge é que não suporta. A troca piora a situação.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.5 — Aba Chart</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que B é o caminho certo</div>
+                      <p class="mb-2">O drill funciona como <em
+                            >cadeia de subqueries</em>: o nível 1 precisa apontar para um <strong
+                            >modelo superior</strong> ao item (ex.: item é <em
+                            >sale.order</em>, nível 1 é <em>res.users</em>, FK <code
+                            >user_id</code>). Se <code
+                            >target_model</code> do nível 1 está igual ao modelo do item, não há para onde "descer".</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.7 — Aba Drill Down</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que C não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >"Mostrar registros" é ortogonal ao drill — controla o popup que aparece ao clicar, não a navegação entre níveis.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.10 — Aba Interaction</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Drill é configuração declarativa do item — você mesmo ajusta lendo a lição 4.7. Não há razão para escalar.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 4.7</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 9 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-info sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 9</span>
+                    <span class="badge bg-secondary">Kiosk / TV</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: alta</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >A TV do escritório congela os números após um tempo</h3>
+                  <p class="lead mb-4">Você montou um dashboard <em
+                    >Real-time Sales</em> em uma TV na sala do escritório, com <em
+                    >Auto-refresh</em> configurado para 30 segundos. No começo tudo bem — mas depois de uns minutos, <strong
+                    >os números congelam</strong> até alguém tocar no teclado.</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s9-a"
+                            name="s9"
+                            value="A"
+                        /><label for="s9-a"><strong
+                            >A)</strong> Comprar licença do módulo <code
+                            >boardkit_dashboard_kiosk</code> (pago).</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s9-b"
+                            name="s9"
+                            value="B"
+                        /><label for="s9-b"><strong
+                            >B)</strong> Reduzir o TTL do cache de dados para 0.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s9-c"
+                            name="s9"
+                            value="C"
+                        /><label for="s9-c"><strong
+                            >C)</strong> Iniciar o navegador em <em
+                            >kiosk mode</em> (ex.: Chromium com <code
+                            >--kiosk</code>).</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s9-d"
+                            name="s9-d"
+                            value="D"
+                        /><label for="s9-d"><strong
+                            >D)</strong> Acessar o dashboard via HTTPS em vez de HTTP.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p class="mb-2"><code
+                            >boardkit_dashboard_kiosk</code> não existe. Suspeite de qualquer módulo "pago" que apareça sem estar documentado nas lições.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que B não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >TTL 0 não impede o navegador de suspender o timer da aba — só força mais requisições. O problema é da aba ficar inativa, não do cache.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1 — Erro 6</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que C é o caminho certo</div>
+                      <p class="mb-2">Navegadores modernos <strong
+                            >suspendem timers</strong> em abas não ativas / minimizadas / background. O kiosk mode mantém a aba ativa e visível, evitando a suspensão.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1 — Erro 6</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >HTTPS não muda comportamento de timers. Funciona em HTTP local.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 9.1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SITUAÇÃO 10 -->
+              <div
+            class="card border-0 shadow-sm border-top border-4 border-danger sg-situation"
+        >
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+                    <span class="badge bg-primary">Situação 10</span>
+                    <span class="badge bg-danger">Suporte Escodoo</span>
+                    <span class="badge bg-secondary">Compartilhamento</span>
+                    <span
+                        class="badge bg-light text-dark border"
+                    >Frequência: média</span>
+                  </div>
+                  <h3
+                    class="card-title h4 mb-3"
+                >Cliente externo quer ver um dashboard seu sem virar usuário interno</h3>
+                  <p
+                    class="lead mb-4"
+                >Um cliente / parceiro pediu acesso para visualizar um dos seus dashboards — mas você não quer criar um usuário Odoo interno (comercial e jurídico mandam não dar esse tipo de acesso). Como proceder?</p>
+
+                  <div class="sg-options">
+                    <p class="fw-bold text-primary mb-2"><i
+                            class="fa fa-code-branch me-2"
+                        />Escolha o caminho:</p>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s10-a"
+                            name="s10"
+                            value="A"
+                        /><label for="s10-a"><strong
+                            >A)</strong> Criar um usuário Odoo comum com permissão somente-leitura nos modelos relevantes.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s10-b"
+                            name="s10"
+                            value="B"
+                        /><label for="s10-b"><strong
+                            >B)</strong> Mandar um PDF semanal com os números relevantes.</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s10-c"
+                            name="s10"
+                            value="C"
+                        /><label for="s10-c"><strong
+                            >C)</strong> Acionar o Suporte Escodoo para avaliar a melhor forma de conceder acesso externo seguro (portal, multi-company, SSO, etc.).</label></div>
+                    <div class="sg-option-row"><input
+                            type="radio"
+                            id="s10-d"
+                            name="s10-d"
+                            value="D"
+                        /><label for="s10-d"><strong
+                            >D)</strong> Compartilhar a URL pública do dashboard com a senha do seu próprio usuário.</label></div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-A">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que A não é o caminho</div>
+                      <p
+                            class="mb-2"
+                        >Você mesmo disse que comercial/jurídico vetaram usuário interno. Mesmo com permissão somente-leitura, conta interna é conta interna — não atende o requisito.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 11.1 — Compartilhamento e Boas Práticas</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-B">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que B não é o caminho</div>
+                      <p class="mb-2">O cliente pediu para <em
+                            >ver</em> um dashboard interativo — não receber PDF estático semanal. B mata a proposta de valor do boardkit.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 1.1 — O que é o Boardkit</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-C">
+                    <div class="alert alert-success mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-check-circle me-2"
+                            />✅ Por que C é o caminho certo</div>
+                      <p class="mb-2">Esse cenário cruza <strong
+                            >várias camadas</strong> que você, como usuário do boardkit, não deveria decidir sozinho:</p>
+                      <ul class="small mb-0">
+                        <li><strong
+                                >Segurança</strong> — o que o externo pode ou não ver (LGPD, dados sensíveis);</li>
+                        <li><strong
+                                >Arquitetura</strong> — portal público, multi-company, SSO, link com expiração;</li>
+                        <li><strong
+                                >Contratos</strong> — definir limites de uso e quem responde pelo acesso.</li>
+                      </ul>
+                      <p class="mb-0 mt-2"><strong
+                            >Por que escalar aqui é legítimo:</strong> é decisão de impacto legal e operacional, não de configuração de item. O Suporte Escodoo alinha com você, com o comercial e com o jurídico antes de qualquer mudança.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 11.1 — Compartilhamento e Boas Práticas</p>
+                    </div>
+                  </div>
+
+                  <div class="sg-feedback sg-fb-D">
+                    <div class="alert alert-danger mb-0">
+                      <div class="sg-feedback-title"><i
+                                class="fa fa-times-circle me-2"
+                            />❌ Por que D não é o caminho</div>
+                      <p class="mb-2">Compartilhar seu próprio usuário é <strong
+                            >anti-pattern grave</strong>: o externo passa a ter tudo que você tem (logs, configs, dados sensíveis). Viola rastreabilidade e compliance.</p>
+                      <p class="small text-muted mb-0"><i
+                                class="fa fa-bookmark me-1"
+                            />📖 lição 11.1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="mt-5 mb-3"><i
+                class="fa fa-flag-checkered text-primary me-2"
+            />Próximo passo: Quiz Oficial</h2>
+
+              <div class="bg-light rounded p-4 text-center">
+                <p
+                class="lead text-muted mb-3"
+            >Releia quantas vezes precisar as situações. Quando estiver confiante, faça o <strong
+                >Quiz Oficial</strong> na próxima lição para validar.</p>
+                <a
+                href="/slides/slide/12-2-quiz-final-141"
+                class="btn btn-primary btn-lg fw-bold"
+            >
+                  <i class="fa fa-arrow-right me-2" />Ir para o Quiz Oficial (12.2)
+                </a>
+              </div>
+
+            </section>
+            </div>
