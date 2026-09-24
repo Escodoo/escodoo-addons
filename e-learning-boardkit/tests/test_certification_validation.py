@@ -37,9 +37,18 @@ class TestCertificationValidation(HttpCase):
             }
         )
 
+    # ---- validar_certificado ----
+
     def test_validar_certificado_token_invalido(self):
         """Token sem user_input matching deve renderizar template inválido."""
         response = self.url_open("/certificacao/validar/nosuchtoken")
+        self.assertEqual(response.status_code, 200)
+        body = response.text
+        self.assertIn("token", body.lower())
+
+    def test_validar_certificado_token_invalido_es(self):
+        """ES route, token sem user_input matching deve renderizar template inválido."""
+        response = self.url_open("/certificacion/validar/nosuchtoken")
         self.assertEqual(response.status_code, 200)
         body = response.text
         self.assertIn("token", body.lower())
@@ -68,6 +77,8 @@ class TestCertificationValidation(HttpCase):
         self.assertEqual(response.status_code, 200)
         body = response.text
         self.assertIn("failedtoken", body)
+
+    # ---- qr_certificado ----
 
     def test_qr_certificado_retorna_png_pt(self):
         response = self.url_open("/certificacao/validar/qr/anytoken")
