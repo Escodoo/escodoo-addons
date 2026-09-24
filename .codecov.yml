@@ -4,9 +4,21 @@ coverage:
       default:
         target: 100%
         threshold: 0%
-        paths:
-          - "e-learning-boardkit/"
+        flags:
+          - e-learning-boardkit
     patch:
       default:
         target: 100%
         threshold: 0%
+        flags:
+          - e-learning-boardkit
+
+flags:
+  e-learning-boardkit:
+    paths:
+      - e-learning-boardkit/
+
+ignore:
+  - "escodoo_*/"
+  - "l10n_br_*/"
+  - "setup/"
