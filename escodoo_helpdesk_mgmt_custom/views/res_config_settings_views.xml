@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_environment_update" model="ir.ui.view">
+        <field name="name">res.config.settings.environment.update</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='helpdesk_mgmt']" position="inside">
+                <h2>Environment updates</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane" />
+                        <div class="o_setting_right_pane">
+                            <label for="environment_update_team_id" />
+                            <div class="text-muted">
+                                Choose the team responsible for environment updates for this company.
+                                The wizard routes every request to this team.
+                            </div>
+                            <div class="content-group mt16">
+                                <field
+                                    name="environment_update_team_id"
+                                    domain="[('company_id', 'in', [False, company_id])]"
+                                    options="{'no_create': True}"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
