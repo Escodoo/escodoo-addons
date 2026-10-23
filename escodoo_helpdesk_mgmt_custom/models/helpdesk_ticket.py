@@ -1,5 +1,5 @@
 # Copyright 2025 Marcel Savegnago <marcel.savegnago@escodoo.com.br>
-# Copyright 2026 Escodoo
+# Copyright 2026 Marcus Paulo Dib Lopes
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo import _, models
 

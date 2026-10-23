@@ -1,4 +1,4 @@
-# Copyright 2026 Escodoo
+# Copyright 2026 Marcus Paulo Dib Lopes
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo import fields
 from odoo.exceptions import AccessError, UserError
