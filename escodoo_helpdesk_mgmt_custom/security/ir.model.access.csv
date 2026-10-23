@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_environment_change_wizard,Environment change wizard,model_helpdesk_environment_change_wizard,helpdesk_mgmt.group_helpdesk_user_own,1,1,1,1

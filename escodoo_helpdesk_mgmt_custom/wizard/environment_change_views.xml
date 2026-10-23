@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="environment_change_wizard_form" model="ir.ui.view">
+        <field name="name">helpdesk.environment.change.wizard.form</field>
+        <field name="model">helpdesk.environment.change.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Request environment update">
+                <div class="alert alert-info" role="alert">
+                    Create a new request for Infrastructure. Identify the environment
+                    in the title, for example: [Customer] Update Production.
+                    Contact and team come from the source ticket.
+                </div>
+                <group>
+                    <group string="Source ticket details">
+                        <field name="source_ticket_id" invisible="1" />
+                        <field name="partner_id" options="{'no_open': True}" />
+                        <field name="team_id" options="{'no_open': True}" />
+                    </group>
+                    <group string="Change request">
+                        <field name="name" placeholder="[Customer] Update Production" />
+                        <field name="team_user_ids" invisible="1" />
+                        <field
+                            name="user_id"
+                            domain="[('id', 'in', team_user_ids)]"
+                            options="{'no_create': True}"
+                        />
+                        <field
+                            name="release_ref"
+                            placeholder="PR URL, version or commit to apply"
+                        />
+                        <field
+                            name="description"
+                            placeholder="Example: Apply the PR to fix fiscal detail popups in purchase order lines."
+                        />
+                    </group>
+                </group>
+                <footer>
+                    <button
+                        name="action_confirm"
+                        type="object"
+                        string="Create request"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" special="cancel" class="btn-secondary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-08 19:32+0000\n"
-"PO-Revision-Date: 2025-11-08 16:35-0300\n"
+"PO-Revision-Date: 2026-10-23 10:00-0300\n"
 "Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -19,6 +19,7 @@ msgstr ""
 
 #. module: escodoo_helpdesk_mgmt_custom
 #: model:ir.model,name:escodoo_helpdesk_mgmt_custom.model_res_partner
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__partner_id
 msgid "Contact"
 msgstr "Contato"
 
@@ -81,8 +82,220 @@ msgid ""
 "This partner must have at least one portal user to be authorized to create "
 "tickets through the portal."
 msgstr ""
-"Esse parceiro precisa ter pelo menos um usuário do portal autorizado a "
-"criar chamados por meio do portal."
+"Esse parceiro precisa ter pelo menos um usuário do portal autorizado a criar"
+" chamados por meio do portal."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,help:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__description
+msgid ""
+"Briefly describe what Infrastructure should update. The customer's original "
+"problem remains in the source ticket."
+msgstr ""
+"Descreva brevemente o que a Infraestrutura deve atualizar. O relato original"
+" do cliente permanece no chamado de origem."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+msgid "Change request"
+msgstr "Solicitação de mudança"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.res_config_settings_view_environment_update
+msgid ""
+"Choose the team responsible for environment updates for this company.\n"
+"                                The wizard routes every request to this team."
+msgstr ""
+"Escolha a equipe responsável pelas atualizações de ambiente desta empresa. O"
+" assistente encaminha toda solicitação para essa equipe."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model,name:escodoo_helpdesk_mgmt_custom.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model,name:escodoo_helpdesk_mgmt_custom.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configurações"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#. odoo-python
+#: code:addons/escodoo_helpdesk_mgmt_custom/wizard/environment_change.py:0
+#, python-format
+msgid "Configure an active environment update team in Helpdesk settings."
+msgstr ""
+"Configure uma equipe ativa para atualização de ambiente nas configurações da"
+" Central de Ajuda."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+msgid ""
+"Create a new request for Infrastructure. Identify the environment\n"
+"                    in the title, for example: [Customer] Update Production.\n"
+"                    Contact and team come from the source ticket."
+msgstr ""
+"Crie um novo chamado para a Infraestrutura. Informe o ambiente no título, "
+"por exemplo: [Cliente] Atualizar Produção. Contato e equipe vêm do chamado "
+"de origem."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+msgid "Create request"
+msgstr "Criar solicitação"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#. odoo-python
+#: code:addons/escodoo_helpdesk_mgmt_custom/wizard/environment_change.py:0
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__description
+#, python-format
+msgid "Description"
+msgstr "Descrição"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__display_name
+msgid "Display Name"
+msgstr "Nome de exibição"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#. odoo-python
+#: code:addons/escodoo_helpdesk_mgmt_custom/wizard/environment_change.py:0
+#, python-format
+msgid "Environment change request"
+msgstr "Solicitação de mudança de ambiente"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_res_company__environment_update_team_id
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_res_config_settings__environment_update_team_id
+msgid "Environment update team"
+msgstr "Equipe de atualização de ambiente"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.res_config_settings_view_environment_update
+msgid "Environment updates"
+msgstr "Atualizações de ambiente"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+msgid ""
+"Example: Apply the PR to fix fiscal detail popups in purchase order lines."
+msgstr ""
+"Exemplo: Aplicar a PR para corrigir a janela de detalhes fiscais nos "
+"produtos do pedido de compra."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,help:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__team_id
+#: model:ir.model.fields,help:escodoo_helpdesk_mgmt_custom.field_res_company__environment_update_team_id
+#: model:ir.model.fields,help:escodoo_helpdesk_mgmt_custom.field_res_config_settings__environment_update_team_id
+msgid "Fixed team used for environment update requests from this company."
+msgstr ""
+"Equipe fixa usada nas solicitações de atualização de ambiente desta empresa."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificação em"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__team_user_ids
+msgid "Members"
+msgstr "Membros"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#. odoo-python
+#: code:addons/escodoo_helpdesk_mgmt_custom/wizard/environment_change.py:0
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__release_ref
+#, python-format
+msgid "PR / version or commit"
+msgstr "PR / versão ou commit"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+msgid "PR URL, version or commit to apply"
+msgstr "Link da PR, versão ou commit a aplicar"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#. odoo-python
+#: code:addons/escodoo_helpdesk_mgmt_custom/models/helpdesk_ticket.py:0
+#: model:ir.model,name:escodoo_helpdesk_mgmt_custom.model_helpdesk_environment_change_wizard
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.helpdesk_ticket_environment_change_form
+#, python-format
+msgid "Request environment update"
+msgstr "Solicitar atualização de ambiente"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__user_id
+msgid "Responsible"
+msgstr "Responsável"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__source_ticket_id
+msgid "Source ticket"
+msgstr "Chamado de origem"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+msgid "Source ticket details"
+msgstr "Dados do chamado de origem"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__team_id
+msgid "Team"
+msgstr "Equipe"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#. odoo-python
+#: code:addons/escodoo_helpdesk_mgmt_custom/wizard/environment_change.py:0
+#, python-format
+msgid "The configured team must have an open stage."
+msgstr "A equipe configurada deve ter uma etapa aberta."
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model:ir.model.fields,field_description:escodoo_helpdesk_mgmt_custom.field_helpdesk_environment_change_wizard__name
+msgid "Title"
+msgstr "Título"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#. odoo-python
+#: code:addons/escodoo_helpdesk_mgmt_custom/wizard/environment_change.py:0
+#, python-format
+msgid "Update environment"
+msgstr "Atualizar ambiente"
+
+#. module: escodoo_helpdesk_mgmt_custom
+#: model_terms:ir.ui.view,arch_db:escodoo_helpdesk_mgmt_custom.environment_change_wizard_form
+msgid "[Customer] Update Production"
+msgstr "[Cliente] Atualizar Produção"
 
 #~ msgid "Authorized By"
 #~ msgstr "Autorizado Por"
