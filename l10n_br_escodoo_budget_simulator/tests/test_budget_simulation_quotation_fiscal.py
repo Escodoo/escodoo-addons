@@ -190,6 +190,11 @@ class TestBudgetSimulationQuotationFiscal(TransactionCase):
         self.assertEqual(
             simulation.support_contract_sale_order_id.fiscal_operation_id, self.fo_venda
         )
+        support_line = simulation.support_contract_sale_order_id.order_line.filtered(
+            lambda line: not line.display_type
+        )
+        expected_price = 2000.0 + (simulation.sale_order_id.amount_total * 0.125)
+        self.assertAlmostEqual(support_line.price_unit, expected_price, places=2)
 
     def test_migration_contract_quotation_inherits_fiscal_operation(self):
         self.company.write(
@@ -219,3 +224,10 @@ class TestBudgetSimulationQuotationFiscal(TransactionCase):
             simulation.migration_contract_sale_order_id.fiscal_operation_id,
             self.fo_venda,
         )
+        migration_line = (
+            simulation.migration_contract_sale_order_id.order_line.filtered(
+                lambda line: not line.display_type
+            )
+        )
+        expected_price = 1500.0 + (simulation.sale_order_id.amount_total * 0.125)
+        self.assertAlmostEqual(migration_line.price_unit, expected_price, places=2)
