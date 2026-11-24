@@ -2,9 +2,13 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo.exceptions import UserError
+from odoo.tests import tagged
 from odoo.tests.common import TransactionCase
 
+from odoo.addons.l10n_br_fiscal.constants.fiscal import PRODUCT_FISCAL_TYPE_SERVICE
 
+
+@tagged("post_install", "-at_install")
 class TestBudgetSimulation(TransactionCase):
     @classmethod
     def setUpClass(cls):
@@ -16,9 +20,68 @@ class TestBudgetSimulation(TransactionCase):
         cls.BudgetLine = cls.env["budget.line"]
         cls.BudgetSimulationLine = cls.env["budget.simulation.line"]
         cls.Partner = cls.env["res.partner"]
+        cls.ResConfigSettings = cls.env["res.config.settings"]
+        cls.ConfigParameter = cls.env["ir.config_parameter"].sudo()
 
         # Create test partner
         cls.partner = cls.Partner.create({"name": "Test Partner"})
+
+        quotation_template = cls.env["product.template"].create(
+            {
+                "name": "Quotation Hours Product",
+                "type": "service",
+                "sale_ok": True,
+                "purchase_ok": False,
+                "list_price": 100.0,
+                "fiscal_type": PRODUCT_FISCAL_TYPE_SERVICE,
+            }
+        )
+        cls.quotation_product = quotation_template.product_variant_id
+        cls.ConfigParameter.set_param(
+            "escodoo_budget_simulator.default_quotation_product_id",
+            str(cls.quotation_product.id),
+        )
+
+        support_template = cls.env["product.template"].create(
+            {
+                "name": "Support Contract Product",
+                "type": "service",
+                "sale_ok": True,
+                "purchase_ok": False,
+                "fiscal_type": PRODUCT_FISCAL_TYPE_SERVICE,
+            }
+        )
+        cls.support_product = support_template.product_variant_id
+        cls.ConfigParameter.set_param(
+            "escodoo_budget_simulator.support_maintenance_contract_product_id",
+            str(cls.support_product.id),
+        )
+        migration_template = cls.env["product.template"].create(
+            {
+                "name": "Migration Contract Product",
+                "type": "service",
+                "sale_ok": True,
+                "purchase_ok": False,
+                "fiscal_type": PRODUCT_FISCAL_TYPE_SERVICE,
+            }
+        )
+        cls.migration_product = migration_template.product_variant_id
+        cls.ConfigParameter.set_param(
+            "escodoo_budget_simulator.migration_contract_product_id",
+            str(cls.migration_product.id),
+        )
+        cls.ConfigParameter.set_param(
+            "escodoo_budget_simulator.default_project_cost_percent",
+            "12.5",
+        )
+        cls.ConfigParameter.set_param(
+            "escodoo_budget_simulator.support_maintenance_contract_fixed_amount",
+            "2000.0",
+        )
+        cls.ConfigParameter.set_param(
+            "escodoo_budget_simulator.migration_contract_fixed_amount",
+            "1500.0",
+        )
 
         # Get or create test integrations (may exist from demo data)
         cls.integration_nfe = cls.BudgetIntegration.search(
@@ -485,3 +548,177 @@ class TestBudgetSimulation(TransactionCase):
         simulation._compute_totals()
         # final_hours = 100 * 1.15 * 1.05 * 1.30 = 156.975
         self.assertAlmostEqual(simulation.total_hours, 156.98, places=2)
+
+    def test_default_project_cost_percent_from_settings(self):
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+            }
+        )
+        self.assertEqual(simulation.project_cost_percent, 12.5)
+
+    def test_settings_persist_contract_configuration(self):
+        settings = self.ResConfigSettings.create(
+            {
+                "quotation_product_id": self.quotation_product.id,
+                "support_maintenance_contract_product_id": self.support_product.id,
+                "migration_contract_product_id": self.migration_product.id,
+                "default_project_cost_percent": 7.5,
+                "support_maintenance_contract_fixed_amount": 2500.0,
+                "migration_contract_fixed_amount": 1800.0,
+            }
+        )
+        settings.set_values()
+
+        reloaded_settings = self.ResConfigSettings.create({})
+        values = reloaded_settings.get_values()
+
+        self.assertEqual(
+            values["support_maintenance_contract_product_id"], self.support_product.id
+        )
+        self.assertEqual(
+            values["migration_contract_product_id"], self.migration_product.id
+        )
+        self.assertEqual(values["default_project_cost_percent"], 7.5)
+        self.assertEqual(values["support_maintenance_contract_fixed_amount"], 2500.0)
+        self.assertEqual(values["migration_contract_fixed_amount"], 1800.0)
+
+    def test_project_cost_amount_computation(self):
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "project_cost_percent": 10.0,
+            }
+        )
+        self.BudgetSimulationLine.create(
+            {
+                "simulation_id": simulation.id,
+                "line_id": self.line_test.id,
+            }
+        )
+        simulation.action_confirm()
+        simulation.action_create_quotation()
+        simulation._compute_totals()
+        self.assertAlmostEqual(simulation.total_hours, 100.0, places=2)
+        self.assertAlmostEqual(simulation.sale_order_id.amount_total, 10000.0, places=2)
+        self.assertAlmostEqual(simulation.project_cost_amount, 1000.0, places=2)
+
+    def test_create_support_contract_quotation_when_enabled(self):
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "generate_support_contract_quotation": True,
+                "module_line_ids": [(0, 0, {"module_id": self.module_sale.id})],
+            }
+        )
+        simulation.action_confirm()
+        simulation.action_create_quotation()
+
+        self.assertTrue(simulation.sale_order_id)
+        self.assertTrue(simulation.support_contract_sale_order_id)
+        support_line = simulation.support_contract_sale_order_id.order_line.filtered(
+            lambda line: not line.display_type
+        )
+        self.assertEqual(len(support_line), 1)
+        expected_price = 2000.0 + (simulation.sale_order_id.amount_total * 0.125)
+        self.assertAlmostEqual(support_line.price_unit, expected_price, places=2)
+
+    def test_create_migration_contract_quotation_when_enabled(self):
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "generate_migration_contract_quotation": True,
+                "module_line_ids": [(0, 0, {"module_id": self.module_sale.id})],
+            }
+        )
+        simulation.action_confirm()
+        simulation.action_create_quotation()
+
+        self.assertTrue(simulation.sale_order_id)
+        self.assertTrue(simulation.migration_contract_sale_order_id)
+        migration_line = (
+            simulation.migration_contract_sale_order_id.order_line.filtered(
+                lambda line: not line.display_type
+            )
+        )
+        self.assertEqual(len(migration_line), 1)
+        expected_price = 1500.0 + (simulation.sale_order_id.amount_total * 0.125)
+        self.assertAlmostEqual(migration_line.price_unit, expected_price, places=2)
+
+    def test_do_not_create_support_contract_quotation_when_disabled(self):
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "generate_support_contract_quotation": False,
+                "module_line_ids": [(0, 0, {"module_id": self.module_sale.id})],
+            }
+        )
+        simulation.action_confirm()
+        simulation.action_create_quotation()
+        self.assertFalse(simulation.support_contract_sale_order_id)
+
+    def test_do_not_create_migration_contract_quotation_when_disabled(self):
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "generate_migration_contract_quotation": False,
+                "module_line_ids": [(0, 0, {"module_id": self.module_sale.id})],
+            }
+        )
+        simulation.action_confirm()
+        simulation.action_create_quotation()
+        self.assertFalse(simulation.migration_contract_sale_order_id)
+
+    def test_error_when_support_product_not_configured(self):
+        self.ConfigParameter.set_param(
+            "escodoo_budget_simulator.support_maintenance_contract_product_id", False
+        )
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "generate_support_contract_quotation": True,
+                "module_line_ids": [(0, 0, {"module_id": self.module_sale.id})],
+            }
+        )
+        simulation.action_confirm()
+        with self.assertRaises(UserError):
+            simulation.action_create_quotation()
+
+    def test_error_when_migration_product_not_configured(self):
+        self.ConfigParameter.set_param(
+            "escodoo_budget_simulator.migration_contract_product_id", False
+        )
+        simulation = self.BudgetSimulation.create(
+            {
+                "partner_id": self.partner.id,
+                "users_qty": 5,
+                "company_qty": 1,
+                "complexity": "low",
+                "generate_migration_contract_quotation": True,
+                "module_line_ids": [(0, 0, {"module_id": self.module_sale.id})],
+            }
+        )
+        simulation.action_confirm()
+        with self.assertRaises(UserError):
+            simulation.action_create_quotation()

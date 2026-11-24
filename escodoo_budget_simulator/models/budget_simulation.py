@@ -31,6 +31,19 @@ class BudgetSimulation(models.Model):
     _description = "Budget Simulation"
     _inherit = ["mail.thread", "mail.activity.mixin", "budget.mixin"]
     _order = "create_date desc"
+    _SUPPORT_PRODUCT_PARAM = (
+        "escodoo_budget_simulator.support_maintenance_contract_product_id"
+    )
+    _MIGRATION_PRODUCT_PARAM = "escodoo_budget_simulator.migration_contract_product_id"
+    _PROJECT_COST_PERCENT_PARAM = (
+        "escodoo_budget_simulator.default_project_cost_percent"
+    )
+    _SUPPORT_FIXED_AMOUNT_PARAM = (
+        "escodoo_budget_simulator.support_maintenance_contract_fixed_amount"
+    )
+    _MIGRATION_FIXED_AMOUNT_PARAM = (
+        "escodoo_budget_simulator.migration_contract_fixed_amount"
+    )
 
     # Fields
     name = fields.Char(
@@ -235,6 +248,61 @@ class BudgetSimulation(models.Model):
         "is confirmed, it can be converted to a sale order using the 'Create "
         "Quotation' button. This field links back to the created sale order.",
     )
+    support_contract_sale_order_id = fields.Many2one(
+        "sale.order",
+        string="Support Contract Quotation",
+        readonly=True,
+        copy=False,
+        tracking=True,
+        help="Optional support/maintenance contract quotation generated from this "
+        "simulation.",
+    )
+    migration_contract_sale_order_id = fields.Many2one(
+        "sale.order",
+        string="Migration Contract Quotation",
+        readonly=True,
+        copy=False,
+        tracking=True,
+        help="Optional migration contract quotation generated from this simulation.",
+    )
+    generate_support_contract_quotation = fields.Boolean(
+        default=False,
+        help="If enabled, creating the implementation quotation also creates "
+        "a support/maintenance contract quotation.",
+    )
+    generate_migration_contract_quotation = fields.Boolean(
+        default=False,
+        help="If enabled, creating the implementation quotation also creates "
+        "a migration contract quotation.",
+    )
+    project_cost_percent = fields.Float(
+        string="Project Cost Percentage",
+        default=lambda self: self._default_project_cost_percent(),
+        help="Percentage used to estimate project cost.",
+    )
+    project_cost_amount = fields.Float(
+        string="Project Cost",
+        compute="_compute_project_cost_amount",
+        store=True,
+        help="Estimated project cost based on the simulation total and project "
+        "cost percentage.",
+    )
+
+    @api.model
+    def _default_project_cost_percent(self):
+        value = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param(self._PROJECT_COST_PERCENT_PARAM, "0.0")
+        )
+        return float(value or 0.0)
+
+    @api.depends("project_cost_percent", "sale_order_id.amount_total")
+    def _compute_project_cost_amount(self):
+        for simulation in self:
+            simulation.project_cost_amount = (
+                simulation.sale_order_id.amount_total or 0.0
+            ) * (simulation.project_cost_percent / 100.0)
 
     # Methods
     @api.model_create_multi
@@ -438,6 +506,8 @@ class BudgetSimulation(models.Model):
                 )
         if self.state in ("confirmed", "quotation", "cancelled"):
             self.state = "draft"
+            self.support_contract_sale_order_id = False
+            self.migration_contract_sale_order_id = False
         return True
 
     def action_view_quotation(self):
@@ -464,7 +534,7 @@ class BudgetSimulation(models.Model):
             "target": "current",
         }
 
-    def action_create_quotation(self):
+    def action_create_quotation(self):  # noqa: C901
         """Create sale order from confirmed simulation.
 
         This method creates a sale order from this confirmed simulation. All
@@ -583,6 +653,14 @@ class BudgetSimulation(models.Model):
         # Link sale order to simulation and update state
         self.sale_order_id = sale_order.id
         self.state = "quotation"
+        if self.generate_support_contract_quotation:
+            self.support_contract_sale_order_id = (
+                self._create_support_contract_quotation(sale_order).id
+            )
+        if self.generate_migration_contract_quotation:
+            self.migration_contract_sale_order_id = (
+                self._create_migration_contract_quotation(sale_order).id
+            )
 
         return {
             "type": "ir.actions.act_window",
@@ -592,6 +670,119 @@ class BudgetSimulation(models.Model):
             "view_mode": "form",
             "target": "current",
         }
+
+    def _create_support_contract_quotation(self, implementation_sale_order):
+        self.ensure_one()
+        return self._create_contract_quotation(
+            implementation_sale_order=implementation_sale_order,
+            product=self._get_support_maintenance_contract_product(),
+            fixed_amount=self._get_support_contract_fixed_amount(),
+            suffix=_("Support Contract"),
+            line_name=_("Support and Maintenance Contract"),
+        )
+
+    def _create_migration_contract_quotation(self, implementation_sale_order):
+        self.ensure_one()
+        return self._create_contract_quotation(
+            implementation_sale_order=implementation_sale_order,
+            product=self._get_migration_contract_product(),
+            fixed_amount=self._get_migration_contract_fixed_amount(),
+            suffix=_("Migration Contract"),
+            line_name=_("Migration Contract"),
+        )
+
+    def _create_contract_quotation(
+        self, implementation_sale_order, product, fixed_amount, suffix, line_name
+    ):
+        contract_total = fixed_amount + self._get_project_cost_from_sale_order(
+            implementation_sale_order
+        )
+        contract_order = self.env["sale.order"].create(
+            {
+                "partner_id": self.partner_id.id,
+                "company_id": self.company_id.id,
+                "client_order_ref": "%s - Support Contract" % self.name,
+                "note": self.description or "",
+            }
+        )
+        self.env["sale.order.line"].create(
+            {
+                "order_id": contract_order.id,
+                "product_id": product.id,
+                "name": line_name,
+                "product_uom_qty": 1.0,
+                "price_unit": contract_total,
+            }
+        )
+        return contract_order
+
+    def _get_project_cost_from_sale_order(self, implementation_sale_order):
+        self.ensure_one()
+        return implementation_sale_order.amount_total * (
+            self.project_cost_percent / 100.0
+        )
+
+    def _get_support_maintenance_contract_product(self):
+        product_id = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param(self._SUPPORT_PRODUCT_PARAM)
+        )
+        if not product_id:
+            raise UserError(
+                _(
+                    "Please configure the support/maintenance contract product in "
+                    "Budget Simulator settings."
+                )
+            )
+        product = self.env["product.product"].browse(int(product_id))
+        if not product.exists() or product.type != "service" or not product.sale_ok:
+            raise UserError(
+                _(
+                    "The configured support/maintenance contract product is invalid. "
+                    "Please select a saleable service product."
+                )
+            )
+        return product
+
+    def _get_migration_contract_product(self):
+        product_id = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param(self._MIGRATION_PRODUCT_PARAM)
+        )
+        if not product_id:
+            raise UserError(
+                _(
+                    "Please configure the migration contract product in Budget "
+                    "Simulator settings."
+                )
+            )
+        product = self.env["product.product"].browse(int(product_id))
+        if not product.exists() or product.type != "service" or not product.sale_ok:
+            raise UserError(
+                _(
+                    "The configured migration contract product is invalid. Please "
+                    "select a saleable service product."
+                )
+            )
+        return product
+
+    def _get_support_contract_fixed_amount(self):
+        value = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param(self._SUPPORT_FIXED_AMOUNT_PARAM, "0.0")
+        )
+        return float(value or 0.0)
+
+    def _get_migration_contract_fixed_amount(self):
+        value = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param(self._MIGRATION_FIXED_AMOUNT_PARAM, "0.0")
+        )
+        return float(value or 0.0)
 
     def _get_service_product(self):
         """Get or create a service product for hours.

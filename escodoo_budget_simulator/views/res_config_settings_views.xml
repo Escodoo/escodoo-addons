@@ -36,6 +36,99 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <label
+                                    for="migration_contract_product_id"
+                                    string="Migration Contract Product"
+                                />
+                                <div class="text-muted">
+                                    Product used when generating a migration contract quotation from the simulator.
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field
+                                            name="migration_contract_product_id"
+                                            options="{'no_create': True, 'no_open': True}"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <label
+                                    for="support_maintenance_contract_product_id"
+                                    string="Support/Maintenance Contract Product"
+                                />
+                                <div class="text-muted">
+                                    Product used when generating a support/maintenance contract quotation from the simulator.
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field
+                                            name="support_maintenance_contract_product_id"
+                                            options="{'no_create': True, 'no_open': True}"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <label
+                                    for="default_project_cost_percent"
+                                    string="Default Project Cost Percentage"
+                                />
+                                <div class="text-muted">
+                                    Default percentage used for project cost calculations in the simulator.
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="default_project_cost_percent" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <label
+                                    for="support_maintenance_contract_fixed_amount"
+                                    string="Support/Maintenance Fixed Amount"
+                                />
+                                <div class="text-muted">
+                                    Fixed amount added to the support/maintenance contract quotation.
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field
+                                            name="support_maintenance_contract_fixed_amount"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <label
+                                    for="migration_contract_fixed_amount"
+                                    string="Migration Fixed Amount"
+                                />
+                                <div class="text-muted">
+                                    Fixed amount added to the migration contract quotation.
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="migration_contract_fixed_amount" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </xpath>
