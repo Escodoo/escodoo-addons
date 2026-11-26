@@ -31,4 +31,32 @@ class BudgetSimulation(models.Model):
             lambda line: not line.display_type
         )
         lines.write({"fiscal_operation_id": fiscal_operation.id})
+        # Fiscal operation replaces the taxes used while the contract price
+        # was calculated, so amount_total changes after that write.
+        self._reprice_contract_quotations()
         return res
+
+    def _reprice_contract_quotations(self):
+        """Set contract prices from the implementation total after fiscal taxes."""
+        for simulation in self:
+            implementation = simulation.sale_order_id
+            if not implementation:
+                continue
+            project_cost = simulation._get_project_cost_from_sale_order(implementation)
+            contracts = (
+                (
+                    simulation.support_contract_sale_order_id,
+                    simulation._get_support_contract_fixed_amount(),
+                ),
+                (
+                    simulation.migration_contract_sale_order_id,
+                    simulation._get_migration_contract_fixed_amount(),
+                ),
+            )
+            for contract, fixed_amount in contracts:
+                if not contract:
+                    continue
+                product_lines = contract.order_line.filtered(
+                    lambda line: not line.display_type
+                )
+                product_lines.write({"price_unit": fixed_amount + project_cost})

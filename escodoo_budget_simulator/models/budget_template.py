@@ -11,7 +11,7 @@ class BudgetTemplate(models.Model):
     Budget templates are reusable configurations that can be used to quickly
     create new budget simulations. Templates contain pre-configured modules,
     integrations, and general activities with default values for complexity,
-    number of users, and number of companies.
+    user count, and company count (informational defaults for simulations).
 
     Templates can be in two states:
     - Draft: Can be edited and modified
@@ -45,16 +45,18 @@ class BudgetTemplate(models.Model):
     users_qty = fields.Integer(
         tracking=True,
         states={"confirmed": [("readonly", True)]},
-        help="Default number of users for this template. This value will be "
-        "applied when the template is loaded into a simulation, but can be "
-        "adjusted in the simulation if needed.",
+        help="Default number of users for this template (informational). "
+        "Applied when the template is loaded into a simulation; not used "
+        "automatically in hour calculations unless referenced in a catalog "
+        "formula.",
     )
     company_qty = fields.Integer(
         tracking=True,
         states={"confirmed": [("readonly", True)]},
-        help="Default number of companies for this template. This value will "
-        "be applied when the template is loaded into a simulation, but can be "
-        "adjusted in the simulation if needed.",
+        help="Default number of companies for this template (informational). "
+        "Applied when the template is loaded into a simulation; not used "
+        "automatically in hour calculations unless referenced in a catalog "
+        "formula.",
     )
     complexity = fields.Selection(
         tracking=True,
